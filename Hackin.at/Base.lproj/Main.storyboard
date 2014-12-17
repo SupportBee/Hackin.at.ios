@@ -37,6 +37,15 @@
                                     <segue destination="vzt-cu-N6B" kind="show" id="CPB-ok-tS0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juL-yO-pGx">
+                                <rect key="frame" x="106" y="397" width="71" height="30"/>
+                                <state key="normal" title="Broadcast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XcH-6w-yue" kind="show" id="JRs-c2-Qe8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -181,6 +190,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BkQ-JZ-560" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="831" y="294"/>
+        </scene>
+        <!--New Broadcast View Controller-->
+        <scene sceneID="pT7-NG-jA7">
+            <objects>
+                <viewController id="XcH-6w-yue" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1qJ-UJ-jCL"/>
+                        <viewControllerLayoutGuide type="bottom" id="bfs-3C-7Yb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oye-wK-tK7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What are you hackin.at?" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-7A-XqQ">
+                                <rect key="frame" x="16" y="73" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qiA-3O-HrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1243" y="294"/>
         </scene>
     </scenes>
 </document>
