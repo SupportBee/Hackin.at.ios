@@ -1,25 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d1r-VX-tIl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Dashboard View Controller-->
+        <scene sceneID="wXR-PA-Bc7">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d1r-VX-tIl" customClass="DashboardViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="zxs-VI-zdd"/>
+                        <viewControllerLayoutGuide type="bottom" id="w0e-i3-0xa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="2Kb-jQ-Psb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Hackin.at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xys-aP-Eij">
+                                <rect key="frame" x="76" y="284" width="168" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nothing more to see yet!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-Mb-Yxj">
+                                <rect key="frame" x="66" y="318" width="189" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4X-xx-RN9">
+                                <rect key="frame" x="106" y="362" width="109" height="30"/>
+                                <state key="normal" title="See Your Profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HOF-Mb-Yxj" firstAttribute="top" secondItem="Xys-aP-Eij" secondAttribute="bottom" constant="16" id="CNm-Uq-XJE"/>
+                            <constraint firstAttribute="centerX" secondItem="Xys-aP-Eij" secondAttribute="centerX" id="QDI-Ca-tpw"/>
+                            <constraint firstAttribute="centerY" secondItem="Xys-aP-Eij" secondAttribute="centerY" id="d12-Cn-EVh"/>
+                            <constraint firstAttribute="centerY" secondItem="Xys-aP-Eij" secondAttribute="centerY" id="jPX-tq-ESL"/>
+                            <constraint firstItem="HOF-Mb-Yxj" firstAttribute="top" secondItem="Xys-aP-Eij" secondAttribute="bottom" constant="16" id="q3x-i9-tBI"/>
+                            <constraint firstAttribute="centerX" secondItem="HOF-Mb-Yxj" secondAttribute="centerX" id="uIL-Tw-er8"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="Xys-aP-Eij" id="DF1-FF-9kG"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-e1-XqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="442" y="294"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="IJz-OQ-mPX">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" id="fSb-Ll-298" customClass="LoginViewController" customModule="hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EOH-eA-M4f"/>
+                        <viewControllerLayoutGuide type="bottom" id="1N8-vz-fIY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dy6-Ls-WK2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js7-tD-VEq">
+                                <rect key="frame" x="100" y="274" width="121" height="30"/>
+                                <state key="normal" title="Login with Github">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="fSb-Ll-298" eventType="touchUpInside" id="M4K-V8-VHy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="js7-tD-VEq" secondAttribute="centerX" id="OfZ-1B-XXS"/>
+                            <constraint firstAttribute="centerY" secondItem="js7-tD-VEq" secondAttribute="centerY" id="SfV-7K-y26"/>
+                            <constraint firstAttribute="centerY" secondItem="js7-tD-VEq" secondAttribute="centerY" id="iAM-Of-33w"/>
+                            <constraint firstAttribute="centerX" secondItem="js7-tD-VEq" secondAttribute="centerX" id="nEU-8X-MEs"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="containerView" destination="dy6-Ls-WK2" id="SvG-oB-QWG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5d3-pi-Vxs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87" y="294"/>
         </scene>
     </scenes>
 </document>
