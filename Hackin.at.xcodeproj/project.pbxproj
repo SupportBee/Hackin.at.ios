@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F016885B1A41FE7F00566C8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01688551A41FDD300566C8D /* Alamofire.framework */; };
 		F016885F1A41FEE400566C8D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F01688551A41FDD300566C8D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
 		F080FD201A42011F00B9DD9F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC41A41FABF00DC8C9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */; };
@@ -68,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F016885B1A41FE7F00566C8D /* Alamofire.framework in Frameworks */,
+				F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +116,7 @@
 		F0DB3BB31A41FABF00DC8C9B = {
 			isa = PBXGroup;
 			children = (
+				F065B9171A420C6D00CF2A38 /* CoreLocation.framework */,
 				F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */,
 				F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */,
 				F0DB3BD41A41FABF00DC8C9B /* Hackin.atTests */,
