@@ -15,12 +15,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
     var login: String!
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,21 @@ class DashboardViewController: UIViewController {
         if login != nil {
             welcomeLabel.text = "Welcome to Hackin.at \(login)"
         }
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        println("should update locations")
         // Do any additional setup after loading the view.
+    }
+    
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
+        println("locations = \(locations)")
+        //gpsResult.text = "success"
+    }
+    
+    func locationManager(manager:CLLocationManager, didFailWithError error:NSError!) {
+        println("failed \(error)")
     }
     
     override func viewDidAppear(animated: Bool) {
