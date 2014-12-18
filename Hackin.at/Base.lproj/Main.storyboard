@@ -218,5 +218,35 @@
             </objects>
             <point key="canvasLocation" x="1243" y="294"/>
         </scene>
+        <!--Places View Controller-->
+        <scene sceneID="x9Q-ly-wkd">
+            <objects>
+                <viewController storyboardIdentifier="placesViewController" id="7Dz-p6-7tt" customClass="PlacesViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t0C-bw-GKP"/>
+                        <viewControllerLayoutGuide type="bottom" id="aIT-1J-7EY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTx-31-Ooh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you hackin.at?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IB-FB-efI">
+                                <rect key="frame" x="16" y="13" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="containerView" destination="cTx-31-Ooh" id="SaZ-Uw-ASw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NtQ-JQ-PWG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="294"/>
+        </scene>
     </scenes>
 </document>

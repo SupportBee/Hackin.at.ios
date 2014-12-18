@@ -11,4 +11,17 @@ import UIKit
 class NewBroadcastViewController: UIViewController {
     
     
+    var place: AnyObject?
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if place == nil {
+            println("There is no place!")
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
 }
