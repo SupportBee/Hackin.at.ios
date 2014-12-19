@@ -17,8 +17,6 @@ import UIKit
 import WebKit
 import Alamofire
 
-//let baseDomain = "http://lvh.me:3000"
-let baseDomain = "https://hackin.at"
 
 class LoginViewController: UIViewController, WKNavigationDelegate {
     

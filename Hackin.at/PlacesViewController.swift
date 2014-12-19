@@ -16,7 +16,25 @@ class PlacesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchPlaces()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func fetchPlaces() {
+        
+        var placesURL = "\(baseDomain)/places?auth_key=\(authKey)&ll=\(currentLocation.latitude),\(currentLocation.longitude)"
+        println("Let's get the places around")
+        
+        Alamofire.request(.GET, placesURL)
+            .responseJSON { (_, _, JSON, _) in
+                self.renderPlaces(JSON)
+        }
+        
+    }
+    
+    func renderPlaces(placesJSON: AnyObject!) {
+        var userDetails = JSON(placesJSON)["places"]
+        println(userDetails)
     }
     
     override func didReceiveMemoryWarning() {
