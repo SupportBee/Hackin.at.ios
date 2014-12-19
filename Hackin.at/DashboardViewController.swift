@@ -19,7 +19,7 @@ import CoreLocation
 
 // All Globals here for now
 
-let baseDomain = "http://10.1.10.78.xip.io:3000"
+let baseDomain = "http://192.168.224.132:3000"
 //let baseDomain = "https://hackin.at"
 
 
