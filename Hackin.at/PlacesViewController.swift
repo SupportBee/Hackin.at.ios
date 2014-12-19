@@ -11,8 +11,11 @@ import UIKit
 import Alamofire
 
 class PlacesViewController: UIViewController {
-    
+
     @IBOutlet var containerView: UIView!
+    @IBOutlet weak var placesTableView: UITableView!
+    
+    var places: JSON!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +36,8 @@ class PlacesViewController: UIViewController {
     }
     
     func renderPlaces(placesJSON: AnyObject!) {
-        var userDetails = JSON(placesJSON)["places"]
-        println(userDetails)
+        places = JSON(placesJSON)["places"]
+        println(places)
     }
     
     override func didReceiveMemoryWarning() {
