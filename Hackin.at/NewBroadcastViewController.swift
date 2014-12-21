@@ -12,6 +12,10 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     
     var place: JSON?
+    @IBOutlet weak var broadcastMessageTextView: UITextView!
+    @IBOutlet weak var currentPlaceLabel: UILabel!
+    
+    @IBOutlet weak var postBroadcastButton: UIButton!
     
     override func viewDidAppear(animated: Bool) {
         
@@ -27,7 +31,12 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     func placeSelected(place: JSON) {
         println("Hacker is at \(place)")
         self.place = place
+        var placeName = place["name"]
+        currentPlaceLabel.text = "You are at \(placeName)"
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func postBroadcast(sender: AnyObject) {
+        println("Ok! I am going to post this broadcast \(broadcastMessageTextView.text)")
+    }
 }
