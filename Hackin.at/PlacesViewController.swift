@@ -58,7 +58,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        println("You selected the place #\(places[indexPath.row])!")
     }
 
     
