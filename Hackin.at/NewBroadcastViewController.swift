@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
@@ -37,6 +38,14 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     }
     
     @IBAction func postBroadcast(sender: AnyObject) {
-        println("Ok! I am going to post this broadcast \(broadcastMessageTextView.text)")
+        let parameters = [
+            "log": [
+                "message": broadcastMessageTextView.text,
+                "place_id": self.place!["id"].stringValue
+            ]
+        ]
+        println("Ok! I am going to post this broadcast \(parameters)")
+        Alamofire.request(.POST, "\(baseDomain)/logs?auth_key=\(authKey)", parameters: parameters)
+
     }
 }
