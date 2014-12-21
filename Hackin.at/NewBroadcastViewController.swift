@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewBroadcastViewController: UIViewController {
+class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     
     var place: AnyObject?
@@ -18,10 +18,14 @@ class NewBroadcastViewController: UIViewController {
         if place == nil {
             println("There is no place!")
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
+            vc.delegate = self
             self.presentViewController(vc, animated: true, completion: nil)
         }
         
-        
+    }
+    
+    func placeSelected(place: JSON) {
+        println("Hacker is at \(place)")
     }
     
 }

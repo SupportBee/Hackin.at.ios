@@ -10,12 +10,19 @@
 import UIKit
 import Alamofire
 
+protocol PlacesViewProtocol {
+    
+    func placeSelected(place:JSON)
+    
+}
+
 class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var placesTableView: UITableView!
     
     var places: Array<JSON> = []
+    var delegate: PlacesViewProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +66,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected the place #\(places[indexPath.row])!")
+        self.delegate?.placeSelected(places[indexPath.row])
     }
 
     
