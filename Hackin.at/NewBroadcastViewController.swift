@@ -11,7 +11,7 @@ import UIKit
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     
-    var place: AnyObject?
+    var place: JSON?
     
     override func viewDidAppear(animated: Bool) {
         
@@ -26,6 +26,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     func placeSelected(place: JSON) {
         println("Hacker is at \(place)")
+        self.place = place
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
