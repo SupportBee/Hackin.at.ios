@@ -41,7 +41,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         let parameters = [
             "log": [
                 "message": broadcastMessageTextView.text,
-                "place_id": self.place!["id"].stringValue
+                "place_id": self.place!["id"].stringValue,
+                "client_id": 1 // Yo! Goodbye Android
             ]
         ]
         println("Ok! I am going to post this broadcast \(parameters)")
