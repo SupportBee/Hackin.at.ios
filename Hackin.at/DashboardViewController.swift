@@ -17,11 +17,20 @@
 import UIKit
 import CoreLocation
 
+// All Globals here for now
+
+//let baseDomain = "http://192.168.224.132:3000"
+let baseDomain = "https://hackin.at"
+
+
+var login: String!
+var authKey: String!
+var currentLocation: CLLocationCoordinate2D!
+
 class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    var login: String!
     
     // Location setup
     var locationManager = CLLocationManager()
@@ -30,6 +39,7 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         login = NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
         if login != nil {
+            authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
             welcomeLabel.text = "Welcome to Hackin.at \(login)"
             
             // Location Setup
@@ -43,8 +53,13 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
-        println("locations = \(locations)")
-        //gpsResult.text = "success"
+//        location["lat"] = locations[0].location.coordinate.latitude
+//        location[1] = locations[0].location.coordinate.longitude
+        var locationArray = locations as NSArray
+        var locationObj = locationArray[0] as CLLocation
+        currentLocation = locationObj.coordinate
+        println("location = \(currentLocation)")
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(manager:CLLocationManager, didFailWithError error:NSError!) {
