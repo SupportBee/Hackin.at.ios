@@ -18,6 +18,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBOutlet weak var postBroadcastButton: UIButton!
     
+    @IBOutlet weak var postToTwitterSwitch: UISwitch!
+    
     override func viewDidAppear(animated: Bool) {
         
         if place == nil {
@@ -38,11 +40,13 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     }
     
     @IBAction func postBroadcast(sender: AnyObject) {
+        let postToTwitter = postToTwitterSwitch.on ? "true" : "false"
         let parameters = [
             "log": [
                 "message": broadcastMessageTextView.text,
                 "place_id": self.place!["id"].stringValue,
-                "client_id": 1 // Yo! Goodbye Android
+                "client_id": 1,
+                "twitter_cross_post": postToTwitter
             ]
         ]
         println("Ok! I am going to post this broadcast \(parameters)")
