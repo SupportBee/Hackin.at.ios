@@ -18,33 +18,28 @@ var login: String!
 var authKey: String!
 var currentLocation: CLLocationCoordinate2D!
 
-class InitialViewController: UIViewController, CLLocationManagerDelegate {
+class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginViewDelegate {
     
     // Location setup
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        login = NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
-        if login != nil {
-            authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
-            
-            // Location Setup
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-        }
-        println("should update locations")
     }
     
-    
     override func viewDidAppear(animated: Bool) {
+        setupHackerAndKey()
         if login == nil {
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as LoginViewController;
-            self.presentViewController(vc, animated: true, completion: nil)
+            showLoginView()
+        }else{
+            postLoginInit()
         }
+    }
+    
+    func showLoginView(){
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as LoginViewController;
+        vc.delegate = self
+        self.presentViewController(vc, animated: true, completion: nil)
     }
  
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
@@ -57,6 +52,32 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager:CLLocationManager, didFailWithError error:NSError!) {
         println("failed \(error)")
+    }
+    
+    func hackerLoggedIn() {
+        println("Hacker Logged In!")
+        self.dismissViewControllerAnimated(true, completion: nil)
+        setupHackerAndKey()
+        postLoginInit()
+    }
+    
+    func setupHackerAndKey(){
+        login = NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
+        if login != nil {
+            authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
+        }
+    }
+    
+    func postLoginInit(){
+        setupLocationManager()
+    }
+    
+    func setupLocationManager(){
+        // Location Setup
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
  
     
