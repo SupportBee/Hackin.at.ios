@@ -18,10 +18,17 @@ import WebKit
 import Alamofire
 
 
+protocol LoginViewDelegate {
+    
+    func hackerLoggedIn()
+    
+}
+
 class LoginViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet var containerView: UIView!
     var webView: WKWebView?
+    var delegate: LoginViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +68,8 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
                 
                 // Replace this with something more secure later
                 NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+                self.delegate?.hackerLoggedIn()
             }
-            let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DashboardViewController") as DashboardViewController
-            self.presentViewController(secondViewController, animated: true, completion: nil)
-            
         }
         
     }
