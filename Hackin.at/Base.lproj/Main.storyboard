@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="q2g-lW-nup">
             <objects>
-                <tabBarController id="aiO-YC-gXH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainViewController" title="Main View Controller" id="aiO-YC-gXH" customClass="MainViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TDX-1h-hu1">

@@ -13,7 +13,6 @@ import CoreLocation
 //let baseDomain = "http://192.168.224.132:3000"
 let baseDomain = "https://hackin.at"
 
-
 var login: String!
 var authKey: String!
 var currentLocation: CLLocationCoordinate2D!
@@ -46,7 +45,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
         var locationArray = locations as NSArray
         var locationObj = locationArray[0] as CLLocation
         currentLocation = locationObj.coordinate
-        println("location = \(currentLocation)")
+        println("acquired location \(currentLocation)")
         locationManager.stopUpdatingLocation()
     }
     
@@ -70,6 +69,12 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     
     func postLoginInit(){
         setupLocationManager()
+        launchApp()
+    }
+    
+    func launchApp() {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as MainViewController;
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func setupLocationManager(){
