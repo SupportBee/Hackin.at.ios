@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d1r-VX-tIl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ztF-2J-Qhp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="q2g-lW-nup">
+            <objects>
+                <tabBarController id="aiO-YC-gXH" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="TDX-1h-hu1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-m2-g37" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="278"/>
+        </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="wXR-PA-Bc7">
             <objects>
@@ -103,7 +119,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d3-pi-Vxs" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="294"/>
+            <point key="canvasLocation" x="-1517" y="266"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="bwn-ov-MLU">
+            <objects>
+                <viewController id="ztF-2J-Qhp" customClass="InitialViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JMF-YH-Fme"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Pe-T1-KFT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5VC-l4-AWW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_square.png" translatesAutoresizingMaskIntoConstraints="NO" id="NqM-yh-qkJ">
+                                <rect key="frame" x="91" y="-62" width="138" height="602"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROE-98-FSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-912" y="268"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="uih-gq-rEx">
@@ -284,4 +324,7 @@
             <point key="canvasLocation" x="1609" y="294"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_square.png" width="768" height="768"/>
+    </resources>
 </document>
