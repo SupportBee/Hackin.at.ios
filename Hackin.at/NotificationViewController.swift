@@ -55,7 +55,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         println("You selected \(indexPath.row)")
         let hacker = self.notifications[indexPath.row]["actor"]["login"].stringValue
         println("Should show you profile of \(hacker)")
-        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
+        vc.hacker = hacker
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 

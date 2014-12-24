@@ -197,7 +197,7 @@
         <!--Profile View Controller-->
         <scene sceneID="uih-gq-rEx">
             <objects>
-                <viewController title="Profile View Controller" id="vzt-cu-N6B" customClass="ProfileViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileViewController" title="Profile View Controller" id="vzt-cu-N6B" customClass="ProfileViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VEE-CN-1FK"/>
                         <viewControllerLayoutGuide type="bottom" id="rBz-5x-r9N"/>
