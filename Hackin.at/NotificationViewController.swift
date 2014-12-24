@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var notificationsTableView: UITableView!
-    var notifications: Array<JSON>?
+    var notifications: Array<JSON> = []
     
     override func viewDidLoad() {
         println("Going to fetch your notifications")
@@ -41,12 +42,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
  
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return notifications.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = "I am a notificaiton"
+        cell.textLabel?.text = self.notifications[indexPath.row]["message"].stringValue
         return cell
     }
     
