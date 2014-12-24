@@ -15,12 +15,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="d1r-VX-tIl" kind="relationship" relationship="viewControllers" id="mm5-TN-8KK"/>
+                        <segue destination="vzt-cu-N6B" kind="relationship" relationship="viewControllers" id="IxO-JH-4E0"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-m2-g37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="278"/>
+            <point key="canvasLocation" x="-137" y="348"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Item-->
         <scene sceneID="wXR-PA-Bc7">
             <objects>
                 <viewController storyboardIdentifier="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d1r-VX-tIl" customClass="DashboardViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,15 +48,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4X-xx-RN9">
-                                <rect key="frame" x="106" y="362" width="109" height="30"/>
-                                <state key="normal" title="See Your Profile">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vzt-cu-N6B" kind="show" id="CPB-ok-tS0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juL-yO-pGx">
                                 <rect key="frame" x="106" y="397" width="71" height="30"/>
                                 <state key="normal" title="Broadcast">
@@ -73,6 +68,7 @@
                             <constraint firstAttribute="centerX" secondItem="HOF-Mb-Yxj" secondAttribute="centerX" id="uIL-Tw-er8"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="Xys-aP-Eij" id="DF1-FF-9kG"/>
@@ -80,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-e1-XqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="294"/>
+            <point key="canvasLocation" x="469" y="56"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IJz-OQ-mPX">
@@ -119,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d3-pi-Vxs" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1517" y="266"/>
+            <point key="canvasLocation" x="-1027" y="348"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="bwn-ov-MLU">
@@ -143,9 +139,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROE-98-FSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-912" y="268"/>
+            <point key="canvasLocation" x="-512" y="348"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Item-->
         <scene sceneID="uih-gq-rEx">
             <objects>
                 <viewController id="vzt-cu-N6B" customClass="ProfileViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,6 +212,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="nfi-1Z-0Xg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="companyLabel" destination="ozv-uC-4zq" id="ZbL-Ki-uAv"/>
@@ -229,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BkQ-JZ-560" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="294"/>
+            <point key="canvasLocation" x="469" y="782"/>
         </scene>
         <!--New Broadcast View Controller-->
         <scene sceneID="pT7-NG-jA7">
