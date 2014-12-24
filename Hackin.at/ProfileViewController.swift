@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     
-    var login:String!
+    var hacker:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,9 @@ class ProfileViewController: UIViewController {
     
     func setupLoggedInUser(){
         //self.login = NSUserDefaults.standardUserDefaults().objectForKey("login") as String
-        self.login = "prateekdayal"
+        if self.hacker == nil {
+            self.hacker = login
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,7 +50,7 @@ class ProfileViewController: UIViewController {
     }
     
     func fetchUserDetails(){
-        var profileURL = "\(baseDomain)/\(login)"
+        var profileURL = "\(baseDomain)/\(hacker)"
         
         Alamofire.request(.GET, profileURL)
             .responseJSON { (_, _, JSON, _) in
@@ -83,8 +85,7 @@ class ProfileViewController: UIViewController {
     }
     
     func populateBasicInfo(){
-        loginLabel.text = login
-        
+        loginLabel.text = hacker
     }
     
     
