@@ -26,7 +26,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     func fetchNotifications() {
         
         var notificationsURL = "\(baseDomain)/\(login)/notifications?auth_key=\(authKey)"
-        println("Let's get the places around")
+        println("Let's get the notifications")
         
         Alamofire.request(.GET, notificationsURL)
             .responseJSON { (_, _, JSON, _) in
@@ -52,6 +52,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected \(indexPath.row)")
+        let hacker = self.notifications[indexPath.row]["actor"]["login"].stringValue
+        println("Should show you profile of \(hacker)")
+        
     }
 
 
