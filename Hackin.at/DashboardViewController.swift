@@ -55,8 +55,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func broadcastButtonPressed(sender: AnyObject) {
+        println("Broadcast button pressed")
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("newBroadcastViewController") as NewBroadcastViewController;
+        self.presentViewController(vc, animated: true, completion: nil)
     }
-        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("Number of rows \(self.broadcasts.count)")
         return self.broadcasts.count;
     }

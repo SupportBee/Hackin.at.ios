@@ -53,6 +53,9 @@
                                 <state key="normal" title="Broadcast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="broadcastButtonPressed:" destination="d1r-VX-tIl" eventType="touchUpInside" id="IUV-4C-9G0"/>
+                                </connections>
                             </button>
                             <connections>
                                 <action selector="broadcastButtonPressed:" destination="d1r-VX-tIl" id="Ejg-0r-ntt"/>
@@ -277,7 +280,7 @@
         <!--New Broadcast View Controller-->
         <scene sceneID="pT7-NG-jA7">
             <objects>
-                <viewController id="XcH-6w-yue" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newBroadcastViewController" id="XcH-6w-yue" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1qJ-UJ-jCL"/>
                         <viewControllerLayoutGuide type="bottom" id="bfs-3C-7Yb"/>
