@@ -15,19 +15,38 @@
 //
 
 import UIKit
-import CoreLocation
+import Alamofire
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var broadcastsTableView: UITableView!
     
+    var broadcasts: Array<JSON> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
        // Do any additional setup after loading the view.
-        welcomeLabel.text = "Welcome to Hackin.at \(login)"
+        self.broadcastsTableView.delegate = self
+        self.broadcastsTableView.dataSource = self
+        fetchBroadcasts()
     }
-   
+    
+    func fetchBroadcasts(){
+        var broadcastsURL = "\(baseDomain)/logs"
+        
+        Alamofire.request(.GET, broadcastsURL)
+            .responseJSON { (_, _, JSON, _) in
+                self.renderBroadcasts(JSON)
+        }
+        
+    }
+    
+    func renderBroadcasts(broadcastsJSON:AnyObject!){
+        broadcasts = JSON(broadcastsJSON)["logs"].arrayValue
+        self.broadcastsTableView.reloadData()
+    }
+ 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,6 +54,26 @@ class DashboardViewController: UIViewController {
     
     @IBAction func broadcastButtonPressed(sender: AnyObject) {
     }
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("Number of rows \(self.broadcasts.count)")
+        return self.broadcasts.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        let placeName = broadcasts[indexPath.row]["name"].stringValue
+        let broadcast = broadcasts[indexPath.row]
+        let message = broadcast["message"].stringValue
+        let hacker = broadcast["logged_by"]["login"].stringValue
+        cell.textLabel?.text = "\(hacker) says \(message)"
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected the place #\(broadcasts[indexPath.row])!")
+    }
+
+ 
     /*
     // MARK: - Navigation
     

@@ -61,6 +61,9 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="broadcastsTableView" destination="hFx-bs-9HO" id="hXO-VS-mh5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-e1-XqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
