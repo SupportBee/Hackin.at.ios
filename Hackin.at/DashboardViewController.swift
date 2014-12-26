@@ -63,15 +63,22 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(
-            "BroadcastCell", forIndexPath:indexPath) as UITableViewCell
-        let placeName = broadcasts[indexPath.row]["name"].stringValue
+            "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        let message = broadcast["message"].stringValue
-        
         let hacker = broadcast["logged_by"]["login"].stringValue
-        let loginLabel = cell.viewWithTag(1) as UILabel
+        let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
+        println(avatarURL)
+        let message = broadcast["message"].stringValue
+        let placeName = broadcast["logged_at"]["place"]["name"].stringValue
         
-        loginLabel.text = "\(hacker) says \(message)"
+        cell.loginLabel.text = hacker
+        cell.messageLabel.text = message
+        cell.whereLabel.text = placeName
+        
+        Alamofire.request(.GET, avatarURL)
+            .response{ (_, _, data, _) in
+                cell.profileImageView.image = UIImage(data: (data as NSData) )
+        }
         return cell
     }
     
