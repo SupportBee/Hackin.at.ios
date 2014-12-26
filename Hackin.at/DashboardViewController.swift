@@ -15,26 +15,82 @@
 //
 
 import UIKit
-import CoreLocation
+import Alamofire
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var broadcastsTableView: UITableView!
     
+    var broadcasts: Array<JSON> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
        // Do any additional setup after loading the view.
-        welcomeLabel.text = "Welcome to Hackin.at \(login)"
+        self.broadcastsTableView.delegate = self
+        self.broadcastsTableView.dataSource = self
+        self.broadcastsTableView.registerNib(
+            UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
+        fetchBroadcasts()
     }
     
-   
-   
+    func fetchBroadcasts(){
+        var broadcastsURL = "\(baseDomain)/logs?auth_key=\(authKey)"
+        
+        Alamofire.request(.GET, broadcastsURL)
+            .responseJSON { (_, _, JSON, _) in
+                self.renderBroadcasts(JSON)
+        }
+        
+    }
+    
+    func renderBroadcasts(broadcastsJSON:AnyObject!){
+        broadcasts = JSON(broadcastsJSON)["logs"].arrayValue
+        self.broadcastsTableView.reloadData()
+    }
+ 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func broadcastButtonPressed(sender: AnyObject) {
+        println("Broadcast button pressed")
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("newBroadcastViewController") as NewBroadcastViewController;
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("Number of rows \(self.broadcasts.count)")
+        return self.broadcasts.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
+        let broadcast = broadcasts[indexPath.row]
+        let hacker = broadcast["logged_by"]["login"].stringValue
+        let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
+        println(avatarURL)
+        let message = broadcast["message"].stringValue
+        let placeName = broadcast["logged_at"]["place"]["name"].stringValue
+        
+        cell.loginLabel.text = hacker
+        cell.messageLabel.text = message
+        cell.whereLabel.text = placeName
+        
+        Alamofire.request(.GET, avatarURL)
+            .response{ (_, _, data, _) in
+                cell.profileImageView.image = UIImage(data: (data as NSData) )
+        }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected the place #\(broadcasts[indexPath.row])!")
+    }
+
+ 
     /*
     // MARK: - Navigation
     

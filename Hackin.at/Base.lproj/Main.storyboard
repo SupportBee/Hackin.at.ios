@@ -37,40 +37,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Hackin.at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xys-aP-Eij">
-                                <rect key="frame" x="76" y="284" width="168" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nothing more to see yet!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-Mb-Yxj">
-                                <rect key="frame" x="66" y="318" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juL-yO-pGx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-bs-9HO">
+                                <rect key="frame" x="0.0" y="158" width="320" height="361"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
+                    <navigationItem key="navigationItem" id="Vxh-c3-hSI">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lYc-4h-Ow4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="juL-yO-pGx">
                                 <rect key="frame" x="106" y="397" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Broadcast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="broadcastButtonPressed:" destination="d1r-VX-tIl" eventType="touchUpInside" id="IUV-4C-9G0"/>
+                                </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HOF-Mb-Yxj" firstAttribute="top" secondItem="Xys-aP-Eij" secondAttribute="bottom" constant="16" id="CNm-Uq-XJE"/>
-                            <constraint firstAttribute="centerX" secondItem="Xys-aP-Eij" secondAttribute="centerX" id="QDI-Ca-tpw"/>
-                            <constraint firstAttribute="centerY" secondItem="Xys-aP-Eij" secondAttribute="centerY" id="d12-Cn-EVh"/>
-                            <constraint firstAttribute="centerY" secondItem="Xys-aP-Eij" secondAttribute="centerY" id="jPX-tq-ESL"/>
-                            <constraint firstItem="HOF-Mb-Yxj" firstAttribute="top" secondItem="Xys-aP-Eij" secondAttribute="bottom" constant="16" id="q3x-i9-tBI"/>
-                            <constraint firstAttribute="centerX" secondItem="HOF-Mb-Yxj" secondAttribute="centerX" id="uIL-Tw-er8"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
-                    <navigationItem key="navigationItem" id="Vxh-c3-hSI"/>
+                            <connections>
+                                <action selector="broadcastButtonPressed:" destination="d1r-VX-tIl" id="Ejg-0r-ntt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="welcomeLabel" destination="Xys-aP-Eij" id="DF1-FF-9kG"/>
+                        <outlet property="broadcastsTableView" destination="hFx-bs-9HO" id="hXO-VS-mh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-e1-XqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,7 +280,7 @@
         <!--New Broadcast View Controller-->
         <scene sceneID="pT7-NG-jA7">
             <objects>
-                <viewController id="XcH-6w-yue" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newBroadcastViewController" id="XcH-6w-yue" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1qJ-UJ-jCL"/>
                         <viewControllerLayoutGuide type="bottom" id="bfs-3C-7Yb"/>
