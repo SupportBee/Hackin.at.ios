@@ -28,6 +28,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
        // Do any additional setup after loading the view.
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
+        self.broadcastsTableView.registerNib(
+            UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
         fetchBroadcasts()
     }
     
@@ -60,12 +62,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "BroadcastCell", forIndexPath:indexPath) as UITableViewCell
         let placeName = broadcasts[indexPath.row]["name"].stringValue
         let broadcast = broadcasts[indexPath.row]
         let message = broadcast["message"].stringValue
+        
         let hacker = broadcast["logged_by"]["login"].stringValue
-        cell.textLabel?.text = "\(hacker) says \(message)"
+        let loginLabel = cell.viewWithTag(1) as UILabel
+        
+        loginLabel.text = "\(hacker) says \(message)"
         return cell
     }
     
