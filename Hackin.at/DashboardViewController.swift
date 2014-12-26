@@ -32,7 +32,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func fetchBroadcasts(){
-        var broadcastsURL = "\(baseDomain)/logs"
+        var broadcastsURL = "\(baseDomain)/logs?auth_key=\(authKey)"
         
         Alamofire.request(.GET, broadcastsURL)
             .responseJSON { (_, _, JSON, _) in

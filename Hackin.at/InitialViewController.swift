@@ -10,8 +10,8 @@ import UIKit
 import CoreLocation
 
 // All Globals here for now
-let baseDomain = "http://10.0.4.248:3000"
-//let baseDomain = "https://hackin.at"
+//let baseDomain = "http://10.0.4.248:3000"
+let baseDomain = "https://hackin.at"
 
 var login: String!
 var authKey: String!
