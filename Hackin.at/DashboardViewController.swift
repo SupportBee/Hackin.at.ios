@@ -15,69 +15,82 @@
 //
 
 import UIKit
-import CoreLocation
+import Alamofire
 
-// All Globals here for now
-
-//let baseDomain = "http://192.168.224.132:3000"
-let baseDomain = "https://hackin.at"
-
-
-var login: String!
-var authKey: String!
-var currentLocation: CLLocationCoordinate2D!
-
-class DashboardViewController: UIViewController, CLLocationManagerDelegate {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var broadcastsTableView: UITableView!
     
-    
-    // Location setup
-    var locationManager = CLLocationManager()
+    var broadcasts: Array<JSON> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        login = NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
-        if login != nil {
-            authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
-            welcomeLabel.text = "Welcome to Hackin.at \(login)"
-            
-            // Location Setup
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
+       // Do any additional setup after loading the view.
+        self.broadcastsTableView.delegate = self
+        self.broadcastsTableView.dataSource = self
+        self.broadcastsTableView.registerNib(
+            UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
+        fetchBroadcasts()
+    }
+    
+    func fetchBroadcasts(){
+        var broadcastsURL = "\(baseDomain)/logs?auth_key=\(authKey)"
+        
+        Alamofire.request(.GET, broadcastsURL)
+            .responseJSON { (_, _, JSON, _) in
+                self.renderBroadcasts(JSON)
         }
-        println("should update locations")
-        // Do any additional setup after loading the view.
+        
     }
     
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
-//        location["lat"] = locations[0].location.coordinate.latitude
-//        location[1] = locations[0].location.coordinate.longitude
-        var locationArray = locations as NSArray
-        var locationObj = locationArray[0] as CLLocation
-        currentLocation = locationObj.coordinate
-        println("location = \(currentLocation)")
-        locationManager.stopUpdatingLocation()
+    func renderBroadcasts(broadcastsJSON:AnyObject!){
+        broadcasts = JSON(broadcastsJSON)["logs"].arrayValue
+        self.broadcastsTableView.reloadData()
     }
-    
-    func locationManager(manager:CLLocationManager, didFailWithError error:NSError!) {
-        println("failed \(error)")
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        if login == nil {
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as LoginViewController;
-            self.presentViewController(vc, animated: true, completion: nil)
-        }
-    }
+ 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func broadcastButtonPressed(sender: AnyObject) {
+        println("Broadcast button pressed")
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("newBroadcastViewController") as NewBroadcastViewController;
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("Number of rows \(self.broadcasts.count)")
+        return self.broadcasts.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
+        let broadcast = broadcasts[indexPath.row]
+        let hacker = broadcast["logged_by"]["login"].stringValue
+        let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
+        println(avatarURL)
+        let message = broadcast["message"].stringValue
+        let placeName = broadcast["logged_at"]["place"]["name"].stringValue
+        
+        cell.loginLabel.text = hacker
+        cell.messageLabel.text = message
+        cell.whereLabel.text = placeName
+        
+        Alamofire.request(.GET, avatarURL)
+            .response{ (_, _, data, _) in
+                cell.profileImageView.image = UIImage(data: (data as NSData) )
+        }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected the place #\(broadcasts[indexPath.row])!")
+    }
+
+ 
     /*
     // MARK: - Navigation
     
