@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ztF-2J-Qhp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -37,12 +38,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-bs-9HO">
-                                <rect key="frame" x="0.0" y="158" width="320" height="361"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-bs-9HO">
+                                <rect key="frame" x="6" y="72" width="309" height="439"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="leading" secondItem="2Kb-jQ-Psb" secondAttribute="leadingMargin" id="5dQ-2T-d3V"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="leading" secondItem="2Kb-jQ-Psb" secondAttribute="leadingMargin" constant="-16" id="AhY-ah-6yt"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="top" secondItem="2Kb-jQ-Psb" secondAttribute="topMargin" constant="64" id="Bd1-NJ-uG8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hFx-bs-9HO" secondAttribute="trailing" id="Rtr-yr-wNm"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="top" secondItem="zxs-VI-zdd" secondAttribute="bottom" id="SEc-jg-uZV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hFx-bs-9HO" secondAttribute="trailing" constant="-16" id="cEo-m7-YM8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hFx-bs-9HO" secondAttribute="trailing" constant="10" id="hiA-WP-0u8"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="leading" secondItem="2Kb-jQ-Psb" secondAttribute="leadingMargin" constant="10" id="rvk-dT-Mu8"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="top" secondItem="zxs-VI-zdd" secondAttribute="bottom" constant="10" id="u4l-HK-bRo"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="leading" secondItem="2Kb-jQ-Psb" secondAttribute="leadingMargin" constant="10" id="vkM-Qj-xim"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5dQ-2T-d3V"/>
+                                <exclude reference="AhY-ah-6yt"/>
+                                <exclude reference="Bd1-NJ-uG8"/>
+                                <exclude reference="Rtr-yr-wNm"/>
+                                <exclude reference="SEc-jg-uZV"/>
+                                <exclude reference="cEo-m7-YM8"/>
+                                <exclude reference="hiA-WP-0u8"/>
+                                <exclude reference="rvk-dT-Mu8"/>
+                                <exclude reference="u4l-HK-bRo"/>
+                                <exclude reference="vkM-Qj-xim"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
                     <navigationItem key="navigationItem" id="Vxh-c3-hSI">
