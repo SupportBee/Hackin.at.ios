@@ -13,6 +13,6 @@ class BroadcastTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var whereLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageLabel: UITextView!
     @IBOutlet weak var loginLabel: UILabel!
 }
