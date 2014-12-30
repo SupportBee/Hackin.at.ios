@@ -14,7 +14,6 @@
 		F080FD201A42011F00B9DD9F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */; };
 		F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */; };
 		F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546F1A4324E000133D25 /* PlacesViewController.swift */; };
-		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
 		F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */; };
 		F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */; };
@@ -80,7 +79,6 @@
 		F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBroadcastViewController.swift; sourceTree = "<group>"; };
 		F0AA546F1A4324E000133D25 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
-		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastTableViewCell.xib; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */,
 				F0E674151A4A129000DCA9F8 /* MainViewController.swift */,
 				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
-				F0AD153D1A49E94A00C1E456 /* logo_square.png */,
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
 				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
@@ -304,7 +301,6 @@
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
-				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
