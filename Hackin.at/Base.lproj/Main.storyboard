@@ -277,63 +277,6 @@
             </objects>
             <point key="canvasLocation" x="974" y="1130"/>
         </scene>
-        <!--New Broadcast View Controller-->
-        <scene sceneID="pT7-NG-jA7">
-            <objects>
-                <viewController storyboardIdentifier="newBroadcastViewController" id="XcH-6w-yue" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1qJ-UJ-jCL"/>
-                        <viewControllerLayoutGuide type="bottom" id="bfs-3C-7Yb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Oye-wK-tK7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sup?" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-7A-XqQ">
-                                <rect key="frame" x="16" y="101" width="274" height="166"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2y-vm-tSl">
-                                <rect key="frame" x="16" y="290" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post to Twitter?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-UD-P85">
-                                <rect key="frame" x="16" y="320" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccp-QM-fbQ">
-                                <rect key="frame" x="233" y="14" width="71" height="30"/>
-                                <state key="normal" title="Broadcast">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="postBroadcast:" destination="XcH-6w-yue" eventType="touchUpInside" id="SyE-dk-lDE"/>
-                                </connections>
-                            </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0f-lG-acZ">
-                                <rect key="frame" x="241" y="315" width="51" height="31"/>
-                            </switch>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="broadcastMessageTextView" destination="HbG-7A-XqQ" id="AJ9-3V-0u6"/>
-                        <outlet property="currentPlaceLabel" destination="s2y-vm-tSl" id="oJf-uy-hdx"/>
-                        <outlet property="postBroadcastButton" destination="Ccp-QM-fbQ" id="sWP-FG-6VS"/>
-                        <outlet property="postToTwitterSwitch" destination="F0f-lG-acZ" id="xc6-cL-W8h"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qiA-3O-HrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1375" y="-265"/>
-        </scene>
         <!--Notification View Controller-->
         <scene sceneID="V8A-mD-Cvr">
             <objects>
@@ -362,41 +305,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oia-yH-Fqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="974" y="348"/>
-        </scene>
-        <!--Places View Controller-->
-        <scene sceneID="x9Q-ly-wkd">
-            <objects>
-                <viewController storyboardIdentifier="placesViewController" id="7Dz-p6-7tt" customClass="PlacesViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="t0C-bw-GKP"/>
-                        <viewControllerLayoutGuide type="bottom" id="aIT-1J-7EY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cTx-31-Ooh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you hackin.at?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IB-FB-efI">
-                                <rect key="frame" x="16" y="13" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="S54-nG-4yF">
-                                <rect key="frame" x="0.0" y="75" width="320" height="285"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="containerView" destination="cTx-31-Ooh" id="SaZ-Uw-ASw"/>
-                        <outlet property="placesTableView" destination="S54-nG-4yF" id="cLh-fa-BWg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NtQ-JQ-PWG" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1381" y="383"/>
         </scene>
     </scenes>
     <resources>
