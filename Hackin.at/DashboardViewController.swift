@@ -48,14 +48,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.broadcastsTableView.reloadData()
     }
  
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func broadcastButtonPressed(sender: AnyObject) {
-        println("Broadcast button pressed")
         var newBroadcastStoryBoard = UIStoryboard(name: "NewBroadcast", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("newBroadcastViewController") as NewBroadcastViewController;
         self.presentViewController(vc, animated: true, completion: nil)
@@ -88,7 +86,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected the place #\(broadcasts[indexPath.row])!")
+        var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
+        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
  
