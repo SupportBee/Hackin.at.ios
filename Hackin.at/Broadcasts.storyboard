@@ -48,6 +48,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="loginLabel" destination="jG7-ky-gqj" id="lw2-bz-vtu"/>
+                        <outlet property="messageTextView" destination="4eu-ib-q9O" id="bL9-PS-cdK"/>
+                        <outlet property="nameLabel" destination="rDc-lV-1Xg" id="DrP-rg-saT"/>
+                        <outlet property="placeLabel" destination="wDC-Tp-TaU" id="TqJ-IA-e21"/>
+                        <outlet property="profileImageView" destination="9uK-iV-Dyd" id="FU5-HA-nRX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEH-0e-Fnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

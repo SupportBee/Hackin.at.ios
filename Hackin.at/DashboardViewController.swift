@@ -88,6 +88,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
+        vc.broadcast = broadcasts[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
