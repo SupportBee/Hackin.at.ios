@@ -11,6 +11,7 @@
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
 		F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */; };
 		F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */; };
+		F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
 		F080FD201A42011F00B9DD9F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */; };
 		F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */; };
@@ -78,6 +79,7 @@
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
 		F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewBroadcast.storyboard; sourceTree = "<group>"; };
+		F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Broadcasts.storyboard; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBroadcastViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
 				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
+				F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
+				F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
