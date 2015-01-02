@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--New Broadcast View Controller-->
+        <scene sceneID="2ka-pX-jpp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmU-k2-j0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="newBroadcastViewController" id="5Xu-GC-Ecs" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Eg-Ue-wAh"/>
+                        <viewControllerLayoutGuide type="bottom" id="XFL-gp-Ta8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0mj-fu-Ksw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sup?" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-fH-UXW">
+                                <rect key="frame" x="16" y="101" width="274" height="166"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-BU-m9D">
+                                <rect key="frame" x="16" y="290" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post to Twitter?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-WZ-fxa">
+                                <rect key="frame" x="16" y="320" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRR-Dd-zpk">
+                                <rect key="frame" x="233" y="14" width="71" height="30"/>
+                                <state key="normal" title="Broadcast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postBroadcast:" destination="5Xu-GC-Ecs" eventType="touchUpInside" id="2JI-f9-XFU"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCL-JD-vse">
+                                <rect key="frame" x="241" y="315" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="broadcastMessageTextView" destination="d6g-fH-UXW" id="kKq-Hq-4fi"/>
+                        <outlet property="currentPlaceLabel" destination="KX0-BU-m9D" id="aNS-Nc-Jwp"/>
+                        <outlet property="postBroadcastButton" destination="pRR-Dd-zpk" id="60X-BV-feS"/>
+                        <outlet property="postToTwitterSwitch" destination="XCL-JD-vse" id="LJS-SZ-9TB"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1359" y="-321"/>
+        </scene>
+        <!--Places View Controller-->
+        <scene sceneID="SbQ-qM-5T0">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78n-Zs-Pfd" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="placesViewController" id="oqb-P9-eBU" customClass="PlacesViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1yD-aH-lNP"/>
+                        <viewControllerLayoutGuide type="bottom" id="uf9-sl-CBf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Db7-SC-lh8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you hackin.at?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT6-fH-n2M">
+                                <rect key="frame" x="16" y="13" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-p4-6zc">
+                                <rect key="frame" x="0.0" y="75" width="320" height="285"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="containerView" destination="Db7-SC-lh8" id="iD6-X0-29G"/>
+                        <outlet property="placesTableView" destination="fEe-p4-6zc" id="25E-K1-RaA"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1769" y="-331"/>
+        </scene>
+    </scenes>
+</document>
