@@ -1,0 +1,45 @@
+//
+//  BroadcastDetails.swift
+//  Hackin.at
+//
+//  Created by Prateek on 1/2/15.
+//  Copyright (c) 2015 Prateek Dayal. All rights reserved.
+//
+
+
+import UIKit
+import Alamofire
+
+class BroadcastViewController: UIViewController {
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
+    
+    @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var placeLabel: UILabel!
+    
+    var broadcast: JSON! = nil
+    
+    override func viewDidLoad() {
+        renderBroadcast()
+    }
+    
+    func renderBroadcast() {
+        let hacker = broadcast["logged_by"]["login"].stringValue
+        let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
+        println(avatarURL)
+        let message = broadcast["message"].stringValue
+        let placeName = broadcast["logged_at"]["place"]["name"].stringValue
+        
+        loginLabel.text = hacker
+        messageTextView.text = message
+        placeLabel.text = placeName
+        
+        Alamofire.request(.GET, avatarURL)
+            .response{ (_, _, data, _) in
+                self.profileImageView.image = UIImage(data: (data as NSData) )
+        }
+    }
+    
+}
