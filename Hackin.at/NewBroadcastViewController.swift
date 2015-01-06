@@ -11,7 +11,6 @@ import Alamofire
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
-    
     var place: JSON?
     @IBOutlet weak var broadcastMessageTextView: UITextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
@@ -52,6 +51,18 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         ]
         println("Ok! I am going to post this broadcast \(parameters)")
         Alamofire.request(.POST, "\(baseDomain)/logs?auth_key=\(authKey)", parameters: parameters)
+            .validate()
+            .responseJSON({ (_, _, JSON, _) in
+                println("Posted \(JSON)")
+                self.dismissScreen()
+            })
+    }
 
+    func dismissScreen(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        dismissScreen()
     }
 }
