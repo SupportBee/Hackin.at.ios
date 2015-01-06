@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F016885F1A41FEE400566C8D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F01688551A41FDD300566C8D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F043F0391A5C57BB00E337E5 /* Places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F043F0381A5C57BB00E337E5 /* Places.storyboard */; };
+		F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043F03B1A5C590100E337E5 /* PlaceViewController.swift */; };
 		F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */; };
 		F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */; };
 		F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */; };
@@ -78,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F043F0381A5C57BB00E337E5 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Places.storyboard; sourceTree = "<group>"; };
+		F043F03B1A5C590100E337E5 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
 		F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewBroadcast.storyboard; sourceTree = "<group>"; };
 		F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Broadcasts.storyboard; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
 				F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */,
+				F043F0381A5C57BB00E337E5 /* Places.storyboard */,
+				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F043F0391A5C57BB00E337E5 /* Places.storyboard in Resources */,
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
 				F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */,
@@ -343,6 +350,7 @@
 				F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */,
 				F080FD201A42011F00B9DD9F /* SwiftyJSON.swift in Sources */,
 				F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */,
+				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,

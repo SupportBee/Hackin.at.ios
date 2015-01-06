@@ -17,7 +17,7 @@ class BroadcastViewController: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
     
     @IBOutlet weak var messageTextView: UITextView!
-    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var placeLabelButton: UIButton!
     
     var broadcast: JSON! = nil
     
@@ -34,7 +34,8 @@ class BroadcastViewController: UIViewController {
         
         loginLabel.text = hacker
         messageTextView.text = message
-        placeLabel.text = placeName
+        println("At \(placeName)")
+        placeLabelButton.setTitle(placeName, forState: UIControlState.Normal)
         
         Alamofire.request(.GET, avatarURL)
             .response{ (_, _, data, _) in
@@ -42,4 +43,10 @@ class BroadcastViewController: UIViewController {
         }
     }
     
+    @IBAction func placeLabelButtonClicked(sender: AnyObject) {
+        var newPlacesStoryBoard = UIStoryboard(name: "Places", bundle: nil)
+        let vc = newPlacesStoryBoard.instantiateViewControllerWithIdentifier("placeViewController") as PlaceViewController;
+        vc.place = broadcast["logged_at"]["place"]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

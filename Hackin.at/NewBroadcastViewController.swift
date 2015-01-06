@@ -24,7 +24,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         
         if place == nil {
             println("There is no place!")
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
+            var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
+            let vc = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
             vc.delegate = self
             self.presentViewController(vc, animated: true, completion: nil)
         }
