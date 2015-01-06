@@ -27,7 +27,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
             let vc = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
             vc.delegate = self
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
@@ -37,7 +37,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         self.place = place
         var placeName = place["name"]
         currentPlaceLabel.text = "You are at \(placeName)"
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func postBroadcast(sender: AnyObject) {

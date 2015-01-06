@@ -55,7 +55,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func broadcastButtonPressed(sender: AnyObject) {
         var newBroadcastStoryBoard = UIStoryboard(name: "NewBroadcast", bundle: nil)
-        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("newBroadcastViewController") as NewBroadcastViewController;
+        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("newBroadcastViewController") as UINavigationController;
         self.presentViewController(vc, animated: true, completion: nil)
     }
     

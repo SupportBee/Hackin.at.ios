@@ -7,7 +7,7 @@
         <!--New Broadcast View Controller-->
         <scene sceneID="2ka-pX-jpp">
             <objects>
-                <viewController storyboardIdentifier="newBroadcastViewController" id="5Xu-GC-Ecs" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Xu-GC-Ecs" customClass="NewBroadcastViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Eg-Ue-wAh"/>
                         <viewControllerLayoutGuide type="bottom" id="XFL-gp-Ta8"/>
@@ -49,6 +49,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4Ph-W1-65e"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="broadcastMessageTextView" destination="d6g-fH-UXW" id="kKq-Hq-4fi"/>
@@ -59,7 +60,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OmU-k2-j0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="-321"/>
+            <point key="canvasLocation" x="1311" y="-399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8gA-aV-4Ya">
+            <objects>
+                <navigationController storyboardIdentifier="newBroadcastViewController" id="Tkn-oz-TM5" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V0t-iO-MCz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5Xu-GC-Ecs" kind="relationship" relationship="rootViewController" id="KE7-qT-4EU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TLC-kD-WqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="-399"/>
         </scene>
     </scenes>
 </document>
