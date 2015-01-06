@@ -11,10 +11,22 @@ import Alamofire
 
 class PlaceViewController: UIViewController {
     
-    var place: JSON?
+    var place: JSON!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var latLongLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override func viewDidLoad() {
-        println("At \(place)")
+        
+        let name = place["name"].stringValue
+        let lonlat = place["lonlat"]["coordinates"].arrayValue
+
+        println("At \(place) \(name) \(lonlat)")
+        
+        nameLabel.text = name
+        latLongLabel.text = "\(lonlat[0]),\(lonlat[1])"
+        
     }
 
 }
