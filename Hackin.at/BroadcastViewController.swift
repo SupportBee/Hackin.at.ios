@@ -43,4 +43,10 @@ class BroadcastViewController: UIViewController {
         }
     }
     
+    @IBAction func placeLabelButtonClicked(sender: AnyObject) {
+        var newPlacesStoryBoard = UIStoryboard(name: "Places", bundle: nil)
+        let vc = newPlacesStoryBoard.instantiateViewControllerWithIdentifier("placeViewController") as PlaceViewController;
+        vc.place = broadcast["logged_at"]["place"]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
