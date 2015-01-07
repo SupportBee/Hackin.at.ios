@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,28 +13,39 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u0L-xN-Vfh" id="ht6-B3-Gyh">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXQ-a4-HmP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXQ-a4-HmP">
                         <rect key="frame" x="10" y="10" width="128" height="128"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1V-Fs-qgn">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1V-Fs-qgn">
                         <rect key="frame" x="157" y="10" width="213" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-Yy-jRy">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-Yy-jRy">
                         <rect key="frame" x="157" y="46" width="213" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="where" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcD-4w-Nh6">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="where" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcD-4w-Nh6">
                         <rect key="frame" x="157" y="117" width="87" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="KcD-4w-Nh6" firstAttribute="top" secondItem="nHm-Yy-jRy" secondAttribute="bottom" constant="15" id="1Qx-uE-Jx1"/>
+                    <constraint firstItem="X1V-Fs-qgn" firstAttribute="top" secondItem="ht6-B3-Gyh" secondAttribute="topMargin" constant="20" id="91n-CY-JGk"/>
+                    <constraint firstItem="xXQ-a4-HmP" firstAttribute="leading" secondItem="ht6-B3-Gyh" secondAttribute="leadingMargin" constant="20" id="CRS-B3-5BB"/>
+                    <constraint firstItem="xXQ-a4-HmP" firstAttribute="top" secondItem="ht6-B3-Gyh" secondAttribute="topMargin" constant="20" id="EjA-DM-Ft5"/>
+                    <constraint firstItem="KcD-4w-Nh6" firstAttribute="leading" secondItem="xXQ-a4-HmP" secondAttribute="trailing" constant="20" id="G2Y-vn-n08"/>
+                    <constraint firstItem="nHm-Yy-jRy" firstAttribute="top" secondItem="X1V-Fs-qgn" secondAttribute="bottom" constant="15" id="S14-dW-MVv"/>
+                    <constraint firstItem="nHm-Yy-jRy" firstAttribute="leading" secondItem="xXQ-a4-HmP" secondAttribute="trailing" constant="20" id="mzb-50-hgv"/>
+                    <constraint firstItem="X1V-Fs-qgn" firstAttribute="leading" secondItem="xXQ-a4-HmP" secondAttribute="trailing" constant="20" id="tsf-h4-ig1"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="xXQ-a4-HmP" secondAttribute="bottom" constant="20" id="xzk-qr-8IA"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="loginLabel" destination="X1V-Fs-qgn" id="sPW-dn-qqd"/>

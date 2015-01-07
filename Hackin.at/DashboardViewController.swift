@@ -30,6 +30,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.broadcastsTableView.dataSource = self
         self.broadcastsTableView.registerNib(
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
+        self.broadcastsTableView.estimatedRowHeight = 200.0
+        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension
         fetchBroadcasts()
     }
     
