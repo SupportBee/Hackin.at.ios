@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F016885F1A41FEE400566C8D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F01688551A41FDD300566C8D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */; };
+		F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */; };
+		F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */; };
 		F043F0391A5C57BB00E337E5 /* Places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F043F0381A5C57BB00E337E5 /* Places.storyboard */; };
 		F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043F03B1A5C590100E337E5 /* PlaceViewController.swift */; };
 		F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */; };
@@ -80,6 +83,16 @@
 
 /* Begin PBXFileReference section */
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		F03B33A71A5DF24B00A3EBA0 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		F03B33A91A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		F03B33AB1A5DF24B00A3EBA0 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		F03B33AC1A5DF24B00A3EBA0 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		F03B33AD1A5DF24B00A3EBA0 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		F043F0381A5C57BB00E337E5 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Places.storyboard; sourceTree = "<group>"; };
 		F043F03B1A5C590100E337E5 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
@@ -137,9 +150,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F03B33A21A5DF22300A3EBA0 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */,
+				F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */,
+				F03B33A71A5DF24B00A3EBA0 /* NSArray+PureLayout.h */,
+				F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */,
+				F03B33A91A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.h */,
+				F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */,
+				F03B33AB1A5DF24B00A3EBA0 /* PureLayout.h */,
+				F03B33AC1A5DF24B00A3EBA0 /* PureLayout+Internal.h */,
+				F03B33AD1A5DF24B00A3EBA0 /* PureLayoutDefines.h */,
+			);
+			name = PureLayout;
+			sourceTree = "<group>";
+		};
 		F0DB3BB31A41FABF00DC8C9B = {
 			isa = PBXGroup;
 			children = (
+				F03B33A21A5DF22300A3EBA0 /* PureLayout */,
 				F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */,
 				F065B9171A420C6D00CF2A38 /* CoreLocation.framework */,
 				F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */,
@@ -161,6 +191,7 @@
 		F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */ = {
 			isa = PBXGroup;
 			children = (
+				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
 				F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */,
@@ -177,8 +208,8 @@
 				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
 				F0AD153D1A49E94A00C1E456 /* logo_square.png */,
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
-				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
+				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */,
 				F043F0381A5C57BB00E337E5 /* Places.storyboard */,
 				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
@@ -342,8 +373,10 @@
 			files = (
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
+				F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				F0DB3BC41A41FABF00DC8C9B /* ViewController.swift in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
+				F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */,
@@ -353,6 +386,7 @@
 				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
+				F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -481,6 +516,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -488,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -496,6 +534,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -15,4 +15,11 @@ class BroadcastTableViewCell: UITableViewCell {
     @IBOutlet weak var whereLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
+    
+    override func updateConstraints(){
+      let kLabelHorizontalInsets: CGFloat = 15.0
+      self.profileImageView.autoCenterInSuperview()
+      self.whereLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: kLabelHorizontalInsets)
+      super.updateConstraints()
+    }
 }

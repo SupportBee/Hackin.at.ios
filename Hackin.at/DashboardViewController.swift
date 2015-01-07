@@ -33,6 +33,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         fetchBroadcasts()
     }
     
+    
     func fetchBroadcasts(){
         var broadcastsURL = "\(baseDomain)/logs?auth_key=\(authKey)"
         
