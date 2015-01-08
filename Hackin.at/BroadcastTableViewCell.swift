@@ -18,8 +18,8 @@ class BroadcastTableViewCell: UITableViewCell {
     
     override func updateConstraints(){
       let kLabelHorizontalInsets: CGFloat = 15.0
+      println("print constraints \(self.profileImageView.constraints())")
       self.profileImageView.autoCenterInSuperview()
-      self.whereLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: kLabelHorizontalInsets)
       super.updateConstraints()
     }
 }
