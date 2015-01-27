@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import TwitterKit
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
@@ -20,7 +21,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     @IBOutlet weak var postToTwitterSwitch: UISwitch!
     
     override func viewDidAppear(animated: Bool) {
-        
+
         if place == nil {
             println("There is no place!")
             var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
@@ -29,6 +30,18 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+    }
+    
+    @IBAction func twitterSwitchToggled(sender: AnyObject) {
+        Twitter.sharedInstance().logInWithCompletion {
+            (session, error) -> Void in
+            if (session != nil) {
+                println("signed in as \(session.userName)")
+                println("IN TWITTER SESSION! AuthToken: \(session.authToken) and AuthSecret: \(session.authTokenSecret)")
+            } else {
+                println("error: \(error.localizedDescription)")
+            }
+        }
     }
     
     func placeSelected(place: JSON) {
