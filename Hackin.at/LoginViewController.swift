@@ -58,6 +58,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         println("Finished navigating to url \(url)")
         if url.absoluteString?.rangeOfString("afterauth") != nil{
             let queryString = url.query
+            
             var keys = [String: String]()
             queryString?.componentsSeparatedByString("&").map {
                 (keyValuePair: String) -> Void in
@@ -68,8 +69,11 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
                 
                 // Replace this with something more secure later
                 NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+                
                 self.delegate?.hackerLoggedIn()
             }
+            
+            NSUserDefaults.standardUserDefaults().setObject(0, forKey: "twitterLinked")
         }
         
     }

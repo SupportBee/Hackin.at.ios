@@ -13,6 +13,7 @@ import TwitterKit
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     var place: JSON?
+    var twitterLinked: Int?
     @IBOutlet weak var broadcastMessageTextView: UITextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
     
@@ -30,16 +31,29 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        postToTwitterSwitch.on = false
+        twitterLinked = NSUserDefaults.standardUserDefaults().objectForKey("twitterLinked") as? Int
+        if twitterLinked == 1 {
+            postToTwitterSwitch.on = true
+        }
+        
     }
     
     @IBAction func twitterSwitchToggled(sender: AnyObject) {
-        Twitter.sharedInstance().logInWithCompletion {
-            (session, error) -> Void in
-            if (session != nil) {
-                println("signed in as \(session.userName)")
-                println("IN TWITTER SESSION! AuthToken: \(session.authToken) and AuthSecret: \(session.authTokenSecret)")
-            } else {
-                println("error: \(error.localizedDescription)")
+        if postToTwitterSwitch.on && twitterLinked == 0 {
+            Twitter.sharedInstance().logInWithCompletion {
+                (session, error) -> Void in
+                if (session != nil) {
+                    self.postToTwitterSwitch.on = true
+                    self.twitterLinked = 1
+                    NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
+                    
+                    println("signed in as \(session.userName)")
+                    println("IN TWITTER SESSION! AuthToken: \(session.authToken) and AuthSecret: \(session.authTokenSecret)")
+                } else {
+                    self.postToTwitterSwitch.on = false
+                    println("error: \(error.localizedDescription)")
+                }
             }
         }
     }
