@@ -73,7 +73,6 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
                 self.delegate?.hackerLoggedIn()
             }
             
-            NSUserDefaults.standardUserDefaults().setObject(0, forKey: "twitterLinked")
         }
         
     }
