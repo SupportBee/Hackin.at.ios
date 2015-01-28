@@ -28,7 +28,6 @@
 		F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */; };
 		F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
-		F0DB3BC41A41FABF00DC8C9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
 		F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */; };
@@ -104,7 +103,6 @@
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F0DB3BC61A41FABF00DC8C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0DB3BD11A41FABF00DC8C9B /* Hackin.atTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hackin.atTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BD61A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			children = (
 				F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
-				F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
 				F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */,
 				F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */,
@@ -371,7 +368,6 @@
 			files = (
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
-				F0DB3BC41A41FABF00DC8C9B /* ViewController.swift in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
