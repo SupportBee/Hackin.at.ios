@@ -21,15 +21,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBOutlet weak var postToTwitterSwitch: UISwitch!
     
-    override func viewDidAppear(animated: Bool) {
-
-        if place == nil {
-            println("There is no place!")
-            var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
-            let vc = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
-            vc.delegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         postToTwitterSwitch.on = false
         twitterLinked = NSUserDefaults.standardUserDefaults().objectForKey("twitterLinked") as? Int
@@ -39,24 +32,50 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        if place == nil {
+            println("There is no place!")
+            var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
+            let vc = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+    
+    
     @IBAction func twitterSwitchToggled(sender: AnyObject) {
         if postToTwitterSwitch.on && twitterLinked == 0 {
             Twitter.sharedInstance().logInWithCompletion {
                 (session, error) -> Void in
                 if (session != nil) {
-                    self.postToTwitterSwitch.on = true
-                    self.twitterLinked = 1
-                    NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
                     
-                    println("signed in as \(session.userName)")
-                    println("IN TWITTER SESSION! AuthToken: \(session.authToken) and AuthSecret: \(session.authTokenSecret)")
+                    let parameters = [
+                        "user": [
+                            "auth_token": session.authToken,
+                            "auth_secret": session.authTokenSecret
+                        ]
+                    ]
+                    
+                    Alamofire.request(.PUT, "\(baseDomain)/\(login)/twitter_credentials?auth_key=\(authKey)", parameters: parameters)
+                        .validate()
+                        .response({ (_, _, success, error) in
+                            if(success != nil){
+                                self.twitterLinked = 1
+                                NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
+                            }else{
+                                self.postToTwitterSwitch.on = false
+                            }
+                        })
+                    
                 } else {
                     self.postToTwitterSwitch.on = false
-                    println("error: \(error.localizedDescription)")
                 }
             }
         }
     }
+    
     
     func placeSelected(place: JSON) {
         println("Hacker is at \(place)")
