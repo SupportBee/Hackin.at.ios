@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 // All Globals here for now
 //let baseDomain = "http://10.0.4.248:3000"
@@ -62,9 +63,25 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     
     func setupHackerAndKey(){
         login = NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
+        let twitterLinked = NSUserDefaults.standardUserDefaults().objectForKey("twitterLinked") as? Int
+        
         if login != nil {
             authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
+            if twitterLinked == nil{
+                var profileURL = "\(baseDomain)/\(login)?auth_key=\(authKey)"
+                
+                Alamofire.request(.GET, profileURL)
+                    .responseJSON { (_, _, JSON, _) in
+                        self.setupHackerDetails(JSON)
+                }
+            }
         }
+    }
+    
+    func setupHackerDetails(userJSON:AnyObject!){
+        var userDetails = JSON(userJSON)["hacker"]
+         NSUserDefaults.standardUserDefaults().setObject(userDetails["twitter_enabled"].int!, forKey: "twitterLinked")
+        
     }
     
     func postLoginInit(){

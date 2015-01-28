@@ -59,7 +59,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         let placeName = places[indexPath.row]["name"].stringValue
-        cell.textLabel?.text = placeName
+        cell.textLabel.text = placeName
         println("At \(indexPath.row) \(placeName)")
         return cell
     }
