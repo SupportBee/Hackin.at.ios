@@ -23,16 +23,16 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>b404d9c9ff53f280b1730a3647feff3523fd5a16</string>
+		<string>INSERT FABRIC API KEY HERE</string>
 		<key>Kits</key>
 		<array>
 			<dict>
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>yKv0l3IbEQy8sKrttWmqSRiOq</string>
+					<string>INSERT FABRIC APP CONSUMER KEY HERE</string>
 					<key>consumerSecret</key>
-					<string>TNG3TPngN1dzDcsghIDzLgOLF7xZBf9lXO2sCkWleAxSFzgPKe</string>
+					<string>INSERT FABRIC APP CONSUMER SECRET HERE</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
