@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import Alamofire
 import SwiftyJSON
 
 // All Globals here for now

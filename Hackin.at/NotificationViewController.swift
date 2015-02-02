@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 
 
@@ -25,15 +24,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func fetchNotifications() {
-        
-        var notificationsURL = "\(baseDomain)/\(login)/notifications?auth_key=\(authKey)"
-        println("Let's get the notifications")
-        
-        Alamofire.request(.GET, notificationsURL)
-            .responseJSON { (_, _, JSON, _) in
-                self.renderNotifications(JSON)
-        }
-        
+        Hackinat.sharedInstance.fetchCurrentHackerNotifications(login: login, authKey: authKey, success: renderNotifications)
     }
     
     func renderNotifications(notificationsJSON: AnyObject!) {

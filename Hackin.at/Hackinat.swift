@@ -100,5 +100,15 @@ class Hackinat: NSObject {
         }
     }
     
+    func fetchCurrentHackerNotifications(#login:String, authKey:String, success: (AnyObject) -> (), failure: () -> () = {}){
+        var notificationsURL = "\(apiBaseDomain)/\(login)/notifications?auth_key=\(authKey)"
+        println("Let's get the notifications")
+        
+        Alamofire.request(.GET, notificationsURL)
+            .responseJSON { (_, _, JSON, _) in
+                success(JSON!)
+        }
+    }
+    
     
 }
