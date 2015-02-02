@@ -36,7 +36,6 @@ class BroadcastViewController: UIViewController {
     func renderBroadcast() {
         let hacker = broadcast["logged_by"]["login"].stringValue
         let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
-        println(avatarURL)
         let message = broadcast["message"].stringValue
         let placeName = broadcast["logged_at"]["place"]["name"].stringValue
         
