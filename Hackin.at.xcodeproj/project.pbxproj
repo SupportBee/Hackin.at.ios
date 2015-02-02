@@ -10,8 +10,8 @@
 		0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0161A7786A3000A836F /* TwitterKit.framework */; };
 		0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */; };
 		0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0181A7786A3000A836F /* Fabric.framework */; };
+		A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C58A03B72B5875578D89A0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
-		F027A1D11A7F3B5000F363E1 /* Alamofire.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */; };
 		F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */; };
 		F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */; };
 		F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */; };
@@ -22,7 +22,6 @@
 		F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */; };
 		F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
-		F080FD201A42011F00B9DD9F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */; };
 		F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */; };
 		F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546F1A4324E000133D25 /* PlacesViewController.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
@@ -65,8 +64,10 @@
 		0FFFA0161A7786A3000A836F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FFFA0181A7786A3000A836F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		20C58A03B72B5875578D89A0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Alamofire.xcworkspace; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
 		F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Broadcasts.storyboard; sourceTree = "<group>"; };
 		F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBroadcastViewController.swift; sourceTree = "<group>"; };
 		F0AA546F1A4324E000133D25 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_square.png; sourceTree = "<group>"; };
@@ -112,6 +112,7 @@
 				F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */,
 				0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */,
 				0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */,
+				A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFC0F59973AE4B42AD44039C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */,
+				6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F03B33A21A5DF22300A3EBA0 /* PureLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +157,14 @@
 				F03B33A21A5DF22300A3EBA0 /* PureLayout */,
 				F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */,
 				F065B9171A420C6D00CF2A38 /* CoreLocation.framework */,
-				F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */,
 				F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */,
 				F0DB3BD41A41FABF00DC8C9B /* Hackin.atTests */,
 				F0DB3BBD1A41FABF00DC8C9B /* Products */,
 				0FFFA0161A7786A3000A836F /* TwitterKit.framework */,
 				0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */,
 				0FFFA0181A7786A3000A836F /* Fabric.framework */,
+				BFC0F59973AE4B42AD44039C /* Pods */,
+				F4F0913888F877786F5CE72B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,7 +180,6 @@
 		F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */ = {
 			isa = PBXGroup;
 			children = (
-				F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */,
 				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
@@ -219,6 +229,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F4F0913888F877786F5CE72B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20C58A03B72B5875578D89A0 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,11 +244,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0DB3BDB1A41FAC000DC8C9B /* Build configuration list for PBXNativeTarget "Hackin.at" */;
 			buildPhases = (
+				E24E22D038EF12948C944C7D /* Check Pods Manifest.lock */,
 				F0DB3BB81A41FABF00DC8C9B /* Sources */,
 				F0DB3BB91A41FABF00DC8C9B /* Frameworks */,
 				F0DB3BBA1A41FABF00DC8C9B /* Resources */,
 				F016885E1A41FEAD00566C8D /* Copy Frameworks */,
 				0FFFA0151A77863F000A836F /* ShellScript */,
+				2E4008E6833F311D1CC7F727 /* Embed Pods Frameworks */,
+				4E0B2BF5F8A278FECF092ACA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,7 +327,6 @@
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
 				F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */,
-				F027A1D11A7F3B5000F363E1 /* Alamofire.xcworkspace in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
@@ -336,6 +356,51 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run b404d9c9ff53f280b1730a3647feff3523fd5a16 07256f65c820af087fc3980bc26de56cee99bde78a696409eba163efddcd8e41";
 		};
+		2E4008E6833F311D1CC7F727 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E0B2BF5F8A278FECF092ACA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E24E22D038EF12948C944C7D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -352,7 +417,6 @@
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */,
 				F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */,
-				F080FD201A42011F00B9DD9F /* SwiftyJSON.swift in Sources */,
 				F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */,
 				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
@@ -471,6 +535,7 @@
 		};
 		F0DB3BDC1A41FAC000DC8C9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -490,6 +555,7 @@
 		};
 		F0DB3BDD1A41FAC000DC8C9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
