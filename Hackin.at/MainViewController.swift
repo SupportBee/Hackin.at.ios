@@ -10,15 +10,16 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let viewControllers = self.viewControllers as Array<UINavigationController>
-        let vc1 = viewControllers[0]
-        let vc2 = viewControllers[1]
-        let vc3 = viewControllers[2]
-        vc1.title = "Home"
-        vc2.title = "Notifications"
-        vc3.title = "Me"
+        let home = viewControllers[0]
+        let notifications = viewControllers[1]
+        let me = viewControllers[2]
+        
+        home.title = "Broadcasts"
+        notifications.title = "Hackers"
+        me.title = "Me"
     }
 }

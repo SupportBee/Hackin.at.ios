@@ -8,16 +8,29 @@
 
 import UIKit
 import Alamofire
+import TwitterKit
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     var place: JSON?
+    var twitterLinked: Int?
     @IBOutlet weak var broadcastMessageTextView: UITextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
     
     @IBOutlet weak var postBroadcastButton: UIButton!
     
     @IBOutlet weak var postToTwitterSwitch: UISwitch!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        postToTwitterSwitch.on = false
+        twitterLinked = NSUserDefaults.standardUserDefaults().objectForKey("twitterLinked") as? Int
+        if twitterLinked == 1 {
+            postToTwitterSwitch.on = true
+        }
+        
+    }
     
     override func viewDidAppear(animated: Bool) {
         
@@ -30,6 +43,39 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         }
         
     }
+    
+    
+    @IBAction func twitterSwitchToggled(sender: AnyObject) {
+        if postToTwitterSwitch.on && twitterLinked == 0 {
+            Twitter.sharedInstance().logInWithCompletion {
+                (session, error) -> Void in
+                if (session != nil) {
+                    
+                    let parameters = [
+                        "user": [
+                            "auth_token": session.authToken,
+                            "auth_secret": session.authTokenSecret
+                        ]
+                    ]
+                    
+                    Alamofire.request(.PUT, "\(baseDomain)/\(login)/twitter_credentials?auth_key=\(authKey)", parameters: parameters)
+                        .validate()
+                        .response({ (_, _, success, error) in
+                            if(success != nil){
+                                self.twitterLinked = 1
+                                NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
+                            }else{
+                                self.postToTwitterSwitch.on = false
+                            }
+                        })
+                    
+                } else {
+                    self.postToTwitterSwitch.on = false
+                }
+            }
+        }
+    }
+    
     
     func placeSelected(place: JSON) {
         println("Hacker is at \(place)")

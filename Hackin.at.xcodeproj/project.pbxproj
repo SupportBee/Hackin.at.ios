@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0161A7786A3000A836F /* TwitterKit.framework */; };
+		0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */; };
+		0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0181A7786A3000A836F /* Fabric.framework */; };
 		F016885F1A41FEE400566C8D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F01688551A41FDD300566C8D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
 		F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */; };
@@ -28,7 +31,6 @@
 		F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */; };
 		F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
-		F0DB3BC41A41FABF00DC8C9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
 		F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */; };
@@ -82,6 +84,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0FFFA0161A7786A3000A836F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		0FFFA0181A7786A3000A836F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
@@ -111,7 +116,6 @@
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F0DB3BC61A41FABF00DC8C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0DB3BD11A41FABF00DC8C9B /* Hackin.atTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hackin.atTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BD61A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */,
+				0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */,
+				0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +182,9 @@
 				F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */,
 				F0DB3BD41A41FABF00DC8C9B /* Hackin.atTests */,
 				F0DB3BBD1A41FABF00DC8C9B /* Products */,
+				0FFFA0161A7786A3000A836F /* TwitterKit.framework */,
+				0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */,
+				0FFFA0181A7786A3000A836F /* Fabric.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,7 +203,6 @@
 				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
-				F0DB3BC31A41FABF00DC8C9B /* ViewController.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
 				F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */,
 				F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */,
@@ -253,6 +261,7 @@
 				F0DB3BB91A41FABF00DC8C9B /* Frameworks */,
 				F0DB3BBA1A41FABF00DC8C9B /* Resources */,
 				F016885E1A41FEAD00566C8D /* Copy Frameworks */,
+				0FFFA0151A77863F000A836F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -347,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */,
 				F043F0391A5C57BB00E337E5 /* Places.storyboard in Resources */,
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
@@ -365,6 +375,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FFFA0151A77863F000A836F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run b404d9c9ff53f280b1730a3647feff3523fd5a16 07256f65c820af087fc3980bc26de56cee99bde78a696409eba163efddcd8e41";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0DB3BB81A41FABF00DC8C9B /* Sources */ = {
@@ -511,6 +537,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -529,6 +556,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
