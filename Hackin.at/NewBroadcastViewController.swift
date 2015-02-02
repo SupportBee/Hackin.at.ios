@@ -51,25 +51,13 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             Twitter.sharedInstance().logInWithCompletion {
                 (session, error) -> Void in
                 if (session != nil) {
-                    
-                    let parameters = [
-                        "user": [
-                            "auth_token": session.authToken,
-                            "auth_secret": session.authTokenSecret
-                        ]
-                    ]
-                    
-                    Alamofire.request(.PUT, "\(baseDomain)/\(login)/twitter_credentials?auth_key=\(authKey)", parameters: parameters)
-                        .validate()
-                        .response({ (_, _, success, error) in
-                            if(success != nil){
-                                self.twitterLinked = 1
-                                NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
-                            }else{
-                                self.postToTwitterSwitch.on = false
-                            }
-                        })
-                    
+                    Hackinat.sharedInstance.updateHackerTwitterCredentials(login: login, authToken: session.authToken, authSecret: session.authTokenSecret, authKey: authKey, success: {
+                            self.twitterLinked = 1
+                            NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
+                        }, failure: {
+                            self.postToTwitterSwitch.on = false
+                        }
+                    )
                 } else {
                     self.postToTwitterSwitch.on = false
                 }
