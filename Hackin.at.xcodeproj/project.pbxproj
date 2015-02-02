@@ -11,7 +11,6 @@
 		0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */; };
 		0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0181A7786A3000A836F /* Fabric.framework */; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
-		F027A1D11A7F3B5000F363E1 /* Alamofire.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */; };
 		F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */; };
 		F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */; };
 		F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */; };
@@ -66,7 +65,6 @@
 		0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FFFA0181A7786A3000A836F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Alamofire.xcworkspace; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
 		F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */ = {
 			isa = PBXGroup;
 			children = (
-				F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */,
 				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
@@ -306,7 +303,6 @@
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
 				F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */,
-				F027A1D11A7F3B5000F363E1 /* Alamofire.xcworkspace in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
