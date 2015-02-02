@@ -30,8 +30,13 @@ class Hackinat: NSObject {
         //httpClient = HttpClient()
     }
     
-    func getHacker(#login:String, success: (AnyObject) -> ()){
-        Alamofire.request(.GET, "\(apiBaseDomain)/\(login)")
+    func getHacker(#login:String, authKey:String = "", success: (AnyObject) -> ()){
+        var profileURL = "\(apiBaseDomain)/\(login)"
+        if authKey != "" {
+            profileURL = "\(profileURL)?auth_key=\(authKey)"
+        }
+        
+        Alamofire.request(.GET, profileURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }

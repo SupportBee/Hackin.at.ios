@@ -69,12 +69,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
         if login != nil {
             authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
             if twitterLinked == nil{
-                var profileURL = "\(baseDomain)/\(login)?auth_key=\(authKey)"
-                
-                Alamofire.request(.GET, profileURL)
-                    .responseJSON { (_, _, JSON, _) in
-                        self.setupHackerDetails(JSON)
-                }
+                Hackinat.sharedInstance.getHacker(login: login, authKey: authKey, success: setupHackerDetails)
             }
         }
     }
