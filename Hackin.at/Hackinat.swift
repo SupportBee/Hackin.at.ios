@@ -7,6 +7,8 @@
 //
 
 import Alamofire
+import CoreLocation
+
 
 //class HttpClient {
 //
@@ -79,6 +81,15 @@ class Hackinat: NSObject {
         var broadcastsURL = "\(apiBaseDomain)/logs?auth_key=\(authKey)"
         
         Alamofire.request(.GET, broadcastsURL)
+            .responseJSON { (_, _, JSON, _) in
+                success(JSON!)
+        }
+    }
+    
+    func fetchPlacesAroundLocation(#authKey:String, location: CLLocationCoordinate2D, success: (AnyObject) -> (), failure: () -> () = {}){
+        var placesURL = "\(apiBaseDomain)/places?auth_key=\(authKey)&ll=\(location.latitude),\(location.longitude)"
+        println("Let's get the places around")
+        Alamofire.request(.GET, placesURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
