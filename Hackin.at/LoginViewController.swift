@@ -15,8 +15,6 @@
 
 import UIKit
 import WebKit
-import Alamofire
-
 
 protocol LoginViewDelegate {
     
