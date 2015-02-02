@@ -23,7 +23,14 @@ class BroadcastViewController: UIViewController {
     var broadcast: JSON! = nil
     
     override func viewDidLoad() {
+        setupStyles()
         renderBroadcast()
+    }
+    
+    
+    func setupStyles(){
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+        self.profileImageView.clipsToBounds = true;
     }
     
     func renderBroadcast() {
