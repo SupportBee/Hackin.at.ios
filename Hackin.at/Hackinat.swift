@@ -35,7 +35,7 @@ class Hackinat: NSObject {
         }
     }
     
-    func updateHackerTwitterCredentials(#login:String, authToken: String, authSecret: String, authKey: String, success: () -> (), failure: () -> ()){
+    func updateHackerTwitterCredentials(#login:String, authKey: String, authToken: String, authSecret: String,  success: () -> (), failure: () -> ()){
         
         let parameters = [
             "user": [
@@ -53,6 +53,26 @@ class Hackinat: NSObject {
                     failure()
                 }
             })
+    }
+    
+    func broadcast(#login:String, authkey:String, message:String, placeID:String, postToTwitter:String, clientID:Int = 1, success: (AnyObject) -> (), failure: () -> () = {}){
+        
+        let parameters = [
+            "log": [
+                "message": message,
+                "place_id": placeID,
+                "client_id": clientID,
+                "twitter_cross_post": postToTwitter
+            ]
+        ]
+        
+        Alamofire.request(.POST, "\(apiBaseDomain)/logs?auth_key=\(authKey)", parameters: parameters)
+            .validate()
+            .responseJSON({ (_, _, JSON, _) in
+                println("Posted \(JSON)")
+                success(JSON!)
+            })
+        
     }
     
     

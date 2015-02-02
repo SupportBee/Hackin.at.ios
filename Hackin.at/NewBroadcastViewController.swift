@@ -51,7 +51,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             Twitter.sharedInstance().logInWithCompletion {
                 (session, error) -> Void in
                 if (session != nil) {
-                    Hackinat.sharedInstance.updateHackerTwitterCredentials(login: login, authToken: session.authToken, authSecret: session.authTokenSecret, authKey: authKey, success: {
+                    Hackinat.sharedInstance.updateHackerTwitterCredentials(login: login, authKey: authKey, authToken: session.authToken, authSecret: session.authTokenSecret, success: {
                             self.twitterLinked = 1
                             NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
                         }, failure: {
@@ -76,23 +76,14 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBAction func postBroadcast(sender: AnyObject) {
         let postToTwitter = postToTwitterSwitch.on ? "true" : "false"
-        let parameters = [
-            "log": [
-                "message": broadcastMessageTextView.text,
-                "place_id": self.place!["id"].stringValue,
-                "client_id": 1,
-                "twitter_cross_post": postToTwitter
-            ]
-        ]
-        println("Ok! I am going to post this broadcast \(parameters)")
-        Alamofire.request(.POST, "\(baseDomain)/logs?auth_key=\(authKey)", parameters: parameters)
-            .validate()
-            .responseJSON({ (_, _, JSON, _) in
-                println("Posted \(JSON)")
-                self.dismissScreen()
-            })
+        let placeID = self.place!["id"].stringValue
+        Hackinat.sharedInstance.broadcast(login: login, authkey: authKey, message: broadcastMessageTextView.text, placeID: placeID, postToTwitter: postToTwitter, success: broadcastSuccessHandler)
     }
 
+    private func broadcastSuccessHandler(responseJSON:AnyObject!){
+        dismissScreen()
+    }
+    
     func dismissScreen(){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
