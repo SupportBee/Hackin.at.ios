@@ -10,8 +10,11 @@
 		0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0161A7786A3000A836F /* TwitterKit.framework */; };
 		0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */; };
 		0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0181A7786A3000A836F /* Fabric.framework */; };
-		F016885F1A41FEE400566C8D /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F01688551A41FDD300566C8D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F027A1D11A7F3B5000F363E1 /* Alamofire.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */; };
+		F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */; };
+		F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */; };
+		F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */; };
 		F043F0391A5C57BB00E337E5 /* Places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F043F0381A5C57BB00E337E5 /* Places.storyboard */; };
 		F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043F03B1A5C590100E337E5 /* PlaceViewController.swift */; };
 		F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */; };
@@ -36,27 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F01688541A41FDD300566C8D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		F01688561A41FDD300566C8D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = AlamofireTests;
-		};
-		F016885C1A41FE8900566C8D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
 		F0DB3BD21A41FABF00DC8C9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0DB3BB41A41FABF00DC8C9B /* Project object */;
@@ -73,7 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F016885F1A41FEE400566C8D /* Alamofire.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +66,17 @@
 		0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FFFA0181A7786A3000A836F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Alamofire.xcworkspace; sourceTree = "<group>"; };
+		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		F03B33A71A5DF24B00A3EBA0 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		F03B33A91A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		F03B33AB1A5DF24B00A3EBA0 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		F03B33AC1A5DF24B00A3EBA0 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		F03B33AD1A5DF24B00A3EBA0 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		F043F0381A5C57BB00E337E5 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Places.storyboard; sourceTree = "<group>"; };
 		F043F03B1A5C590100E337E5 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
@@ -109,7 +101,6 @@
 		F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackin_atTests.swift; sourceTree = "<group>"; };
 		F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,18 +125,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F01688501A41FDD200566C8D /* Products */ = {
+		F03B33A21A5DF22300A3EBA0 /* PureLayout */ = {
 			isa = PBXGroup;
 			children = (
-				F01688551A41FDD300566C8D /* Alamofire.framework */,
-				F01688571A41FDD300566C8D /* AlamofireTests.xctest */,
+				F03B33A51A5DF24B00A3EBA0 /* ALView+PureLayout.h */,
+				F03B33A61A5DF24B00A3EBA0 /* ALView+PureLayout.m */,
+				F03B33A71A5DF24B00A3EBA0 /* NSArray+PureLayout.h */,
+				F03B33A81A5DF24B00A3EBA0 /* NSArray+PureLayout.m */,
+				F03B33A91A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.h */,
+				F03B33AA1A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m */,
+				F03B33AB1A5DF24B00A3EBA0 /* PureLayout.h */,
+				F03B33AC1A5DF24B00A3EBA0 /* PureLayout+Internal.h */,
+				F03B33AD1A5DF24B00A3EBA0 /* PureLayoutDefines.h */,
 			);
-			name = Products;
+			name = PureLayout;
 			sourceTree = "<group>";
 		};
 		F0DB3BB31A41FABF00DC8C9B = {
 			isa = PBXGroup;
 			children = (
+				F03B33A21A5DF22300A3EBA0 /* PureLayout */,
 				F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */,
 				F065B9171A420C6D00CF2A38 /* CoreLocation.framework */,
 				F080FD1F1A42011F00B9DD9F /* SwiftyJSON.swift */,
@@ -170,7 +169,8 @@
 		F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */ = {
 			isa = PBXGroup;
 			children = (
-				F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */,
+				F027A1D01A7F3B5000F363E1 /* Alamofire.xcworkspace */,
+				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
 				F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */,
@@ -185,8 +185,8 @@
 				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
 				F0AD153D1A49E94A00C1E456 /* logo_square.png */,
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
-				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
+				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
 				F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */,
 				F043F0381A5C57BB00E337E5 /* Places.storyboard */,
 				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
@@ -235,7 +235,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F016885D1A41FE8900566C8D /* PBXTargetDependency */,
 			);
 			name = Hackin.at;
 			productName = Hackin.at;
@@ -289,12 +288,6 @@
 			mainGroup = F0DB3BB31A41FABF00DC8C9B;
 			productRefGroup = F0DB3BBD1A41FABF00DC8C9B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F01688501A41FDD200566C8D /* Products */;
-					ProjectRef = F0DB3BE51A41FC5700DC8C9B /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F0DB3BBB1A41FABF00DC8C9B /* Hackin.at */,
@@ -302,23 +295,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F01688551A41FDD300566C8D /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = F01688541A41FDD300566C8D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F01688571A41FDD300566C8D /* AlamofireTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
-			remoteRef = F01688561A41FDD300566C8D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F0DB3BBA1A41FABF00DC8C9B /* Resources */ = {
@@ -330,6 +306,7 @@
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
 				F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */,
+				F027A1D11A7F3B5000F363E1 /* Alamofire.xcworkspace in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
@@ -368,7 +345,9 @@
 			files = (
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
+				F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
+				F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */,
@@ -378,6 +357,7 @@
 				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
+				F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,11 +373,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F016885D1A41FE8900566C8D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = F016885C1A41FE8900566C8D /* PBXContainerItemProxy */;
-		};
 		F0DB3BD31A41FABF00DC8C9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0DB3BBB1A41FABF00DC8C9B /* Hackin.at */;
@@ -498,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -507,6 +483,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -514,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -523,6 +502,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 			};
 			name = Release;
 		};
