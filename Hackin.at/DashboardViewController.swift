@@ -25,6 +25,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor.blueColor()
        // Do any additional setup after loading the view.
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
@@ -32,6 +33,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
         fetchBroadcasts()
     }
+    
     
     func fetchBroadcasts(){
         var broadcastsURL = "\(baseDomain)/logs?auth_key=\(authKey)"
