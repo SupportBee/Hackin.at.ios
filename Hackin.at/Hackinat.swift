@@ -75,5 +75,14 @@ class Hackinat: NSObject {
         
     }
     
+    func fetchCurrentHackerBroadcasts(#authKey:String, success: (AnyObject) -> ()){
+        var broadcastsURL = "\(apiBaseDomain)/logs?auth_key=\(authKey)"
+        
+        Alamofire.request(.GET, broadcastsURL)
+            .responseJSON { (_, _, JSON, _) in
+                success(JSON!)
+        }
+    }
+    
     
 }
