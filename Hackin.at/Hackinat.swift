@@ -24,11 +24,13 @@ class Hackinat: NSObject {
     }
   
     //private let httpClient: HttpClient
-    private let apiBaseDomain = "https://hackin.at"
+    let apiBaseDomain = "https://hackin.at"
     
     override init() {
         //httpClient = HttpClient()
     }
+    
+    var githhubAuthURL:String { return "\(apiBaseDomain)/auth/github?api=true" }
     
     func getHacker(#login:String, authKey:String = "", success: (AnyObject) -> ()){
         var profileURL = "\(apiBaseDomain)/\(login)"

@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         webView = WKWebView()
         webView?.navigationDelegate = self
         view = self.webView!
-        var url = NSURL(string:"\(baseDomain)/auth/github?api=true")
+        var url = NSURL(string: Hackinat.sharedInstance.githhubAuthURL)
         var req = NSURLRequest(URL:url!)
         self.webView!.loadRequest(req)
     }
