@@ -16,6 +16,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     

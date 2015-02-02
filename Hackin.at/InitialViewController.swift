@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import Alamofire
+import SwiftyJSON
 
 // All Globals here for now
 //let baseDomain = "http://10.0.4.248:3000"
