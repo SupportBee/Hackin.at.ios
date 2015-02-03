@@ -48,7 +48,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         let hacker = self.notifications[indexPath.row]["actor"]["login"].stringValue
         println("Should show you profile of \(hacker)")
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
-        vc.hacker = hacker
+        vc.hacker = Hacker(login: hacker)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

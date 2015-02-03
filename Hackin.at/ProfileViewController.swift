@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 class ProfileViewController: UIViewController {
     
@@ -23,7 +22,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     
-    var hacker:String!
+    var hacker:Hacker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +30,15 @@ class ProfileViewController: UIViewController {
         setupLoggedInUser()
         populateBasicInfo()
         fetchUserDetails()
-        
-        // Do any additional setup after loading the view.
     }
+    
     @IBAction func followButtonPressed(sender: AnyObject) {
         println("so you want to follow huh!")
     }
     
     func setupLoggedInUser(){
         if self.hacker == nil {
-            self.hacker = CurrentHacker.login!
+            self.hacker = CurrentHacker.hacker()!
         }
     }
     
@@ -50,11 +48,12 @@ class ProfileViewController: UIViewController {
     }
     
     func fetchUserDetails(){
-        Hackinat.sharedInstance.getHacker(login: hacker, success: renderFullProfile)
+        hacker.fetchFullProfile(success: renderFullProfile)
     }
     
-    func renderFullProfile(userJSON:AnyObject!){
-        var userDetails = JSON(userJSON)["hacker"]
+    func renderFullProfile(){
+        var userDetails = hacker.userDetails!
+
         var avatarURL = userDetails["avatar_url"].string
         
         // Personal Info
@@ -79,18 +78,7 @@ class ProfileViewController: UIViewController {
     }
     
     func populateBasicInfo(){
-        loginLabel.text = hacker
+        loginLabel.text = hacker.login
     }
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }
