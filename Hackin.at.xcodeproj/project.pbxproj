@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350241A7F76FF00D58243 /* Hackinat.swift */; };
 		0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350261A7FABDD00D58243 /* Hacker.swift */; };
+		0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350281A80D1F000D58243 /* CurrentHacker.swift */; };
 		0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0161A7786A3000A836F /* TwitterKit.framework */; };
 		0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */; };
 		0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0181A7786A3000A836F /* Fabric.framework */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		0F4350241A7F76FF00D58243 /* Hackinat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hackinat.swift; sourceTree = "<group>"; };
 		0F4350261A7FABDD00D58243 /* Hacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacker.swift; sourceTree = "<group>"; };
+		0F4350281A80D1F000D58243 /* CurrentHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHacker.swift; sourceTree = "<group>"; };
 		0FFFA0161A7786A3000A836F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FFFA0181A7786A3000A836F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
 				0F4350241A7F76FF00D58243 /* Hackinat.swift */,
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
+				0F4350281A80D1F000D58243 /* CurrentHacker.swift */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
 				F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
+				0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

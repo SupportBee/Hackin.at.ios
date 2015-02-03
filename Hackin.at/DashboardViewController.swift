@@ -37,7 +37,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func fetchBroadcasts(){
-        Hackinat.sharedInstance.fetchCurrentHackerBroadcasts(authKey: authKey, success: renderBroadcasts)        
+        Hackinat.sharedInstance.fetchCurrentHackerBroadcasts(authKey: CurrentHacker.authKey!, success: renderBroadcasts)
     }
     
     func renderBroadcasts(broadcastsJSON:AnyObject!){

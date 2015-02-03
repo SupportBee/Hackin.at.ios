@@ -25,7 +25,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         super.viewDidLoad()
         
         postToTwitterSwitch.on = false
-        twitterLinked = NSUserDefaults.standardUserDefaults().objectForKey("twitterLinked") as? Int
+        twitterLinked = CurrentHacker.twitterEnabled!
         if twitterLinked == 1 {
             postToTwitterSwitch.on = true
         }
@@ -50,9 +50,9 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             Twitter.sharedInstance().logInWithCompletion {
                 (session, error) -> Void in
                 if (session != nil) {
-                    Hackinat.sharedInstance.updateHackerTwitterCredentials(login: login, authKey: authKey, authToken: session.authToken, authSecret: session.authTokenSecret, success: {
+                    Hackinat.sharedInstance.updateHackerTwitterCredentials(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, authToken: session.authToken, authSecret: session.authTokenSecret, success: {
                             self.twitterLinked = 1
-                            NSUserDefaults.standardUserDefaults().setObject(self.twitterLinked!, forKey: "twitterLinked")
+                            CurrentHacker.twitterEnabled = self.twitterLinked!
                         }, failure: {
                             self.postToTwitterSwitch.on = false
                         }
@@ -76,7 +76,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     @IBAction func postBroadcast(sender: AnyObject) {
         let postToTwitter = postToTwitterSwitch.on ? "true" : "false"
         let placeID = self.place!["id"].stringValue
-        Hackinat.sharedInstance.broadcast(login: login, authkey: authKey, message: broadcastMessageTextView.text, placeID: placeID, postToTwitter: postToTwitter, success: broadcastSuccessHandler)
+        Hackinat.sharedInstance.broadcast(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, message: broadcastMessageTextView.text, placeID: placeID, postToTwitter: postToTwitter, success: broadcastSuccessHandler)
     }
 
     private func broadcastSuccessHandler(responseJSON:AnyObject!){

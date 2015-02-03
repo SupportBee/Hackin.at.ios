@@ -39,9 +39,8 @@ class ProfileViewController: UIViewController {
     }
     
     func setupLoggedInUser(){
-        //self.login = NSUserDefaults.standardUserDefaults().objectForKey("login") as String
         if self.hacker == nil {
-            self.hacker = login
+            self.hacker = CurrentHacker.login!
         }
     }
     

@@ -7,11 +7,15 @@
 //
 
 class Hacker: NSObject {
-    var login:String
-    
     var authKey:String?
+    let login:String
     
     init(login: String) {
         self.login = login
+    }
+    
+    convenience init(login: String, authKey: String){
+        self.init(login: login)
+        self.authKey = authKey
     }
 }

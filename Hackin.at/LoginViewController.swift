@@ -57,16 +57,14 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         if url.absoluteString?.rangeOfString("afterauth") != nil{
             let queryString = url.query
             
-            var keys = [String: String]()
             queryString?.componentsSeparatedByString("&").map {
                 (keyValuePair: String) -> Void in
                 let keyValue = keyValuePair.componentsSeparatedByString("=")
                 let key = keyValue[0]
                 let value = keyValue[1]
-                keys[key] = value
                 
-                // Replace this with something more secure later
-                NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+                if(key == "login"){ CurrentHacker.login = value }
+                if(key == "auth_key"){ CurrentHacker.authKey = value }
                 
                 self.delegate?.hackerLoggedIn()
             }

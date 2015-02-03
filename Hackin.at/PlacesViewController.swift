@@ -34,7 +34,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func fetchPlaces() {
-        Hackinat.sharedInstance.fetchPlacesAroundLocation(authKey: authKey, location: currentLocation, success: renderPlaces)
+        Hackinat.sharedInstance.fetchPlacesAroundLocation(authKey: CurrentHacker.authKey!, location: currentLocation, success: renderPlaces)
     }
     
     func renderPlaces(placesJSON: AnyObject!) {

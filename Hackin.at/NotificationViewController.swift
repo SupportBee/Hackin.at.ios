@@ -24,7 +24,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func fetchNotifications() {
-        Hackinat.sharedInstance.fetchCurrentHackerNotifications(login: login, authKey: authKey, success: renderNotifications)
+        Hackinat.sharedInstance.fetchCurrentHackerNotifications(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, success: renderNotifications)
     }
     
     func renderNotifications(notificationsJSON: AnyObject!) {

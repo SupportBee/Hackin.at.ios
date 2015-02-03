@@ -64,7 +64,7 @@ class Hackinat: NSObject {
             })
     }
     
-    func broadcast(#login:String, authkey:String, message:String, placeID:String, postToTwitter:String, clientID:Int = 1, success: (AnyObject) -> (), failure: () -> () = {}){
+    func broadcast(#login:String, authKey:String, message:String, placeID:String, postToTwitter:String, clientID:Int = 1, success: (AnyObject) -> (), failure: () -> () = {}){
         
         let parameters = [
             "log": [

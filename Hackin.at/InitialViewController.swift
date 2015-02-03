@@ -11,8 +11,6 @@ import CoreLocation
 import SwiftyJSON
 
 // All Globals here for now
-var login: String!
-var authKey: String!
 var currentLocation: CLLocationCoordinate2D!
 
 class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginViewDelegate {
@@ -26,10 +24,10 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     
     override func viewDidAppear(animated: Bool) {
         setupHackerAndKey()
-        if login == nil {
-            showLoginView()
-        }else{
+        if CurrentHacker.doesExist() {
             postLoginInit()
+        }else{
+            showLoginView()
         }
     }
     
@@ -59,21 +57,16 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     }
     
     func setupHackerAndKey(){
-        login = NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
-        let twitterLinked = NSUserDefaults.standardUserDefaults().objectForKey("twitterLinked") as? Int
-        
-        if login != nil {
-            authKey = NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
-            if twitterLinked == nil{
-                Hackinat.sharedInstance.getHacker(login: login, authKey: authKey, success: setupHackerDetails)
+        if CurrentHacker.doesExist() {
+            if CurrentHacker.twitterEnabled == nil{
+                Hackinat.sharedInstance.getHacker(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, success: setupHackerDetails)
             }
         }
     }
     
     func setupHackerDetails(userJSON:AnyObject!){
         var userDetails = JSON(userJSON)["hacker"]
-         NSUserDefaults.standardUserDefaults().setObject(userDetails["twitter_enabled"].int!, forKey: "twitterLinked")
-        
+        CurrentHacker.twitterEnabled = userDetails["twitter_enabled"].int!
     }
     
     func postLoginInit(){
