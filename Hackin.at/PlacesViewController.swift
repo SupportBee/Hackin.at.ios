@@ -8,7 +8,6 @@
 
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 
 protocol PlacesViewProtocol {
@@ -35,15 +34,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func fetchPlaces() {
-        
-        var placesURL = "\(baseDomain)/places?auth_key=\(authKey)&ll=\(currentLocation.latitude),\(currentLocation.longitude)"
-        println("Let's get the places around")
-        
-        Alamofire.request(.GET, placesURL)
-            .responseJSON { (_, _, JSON, _) in
-                self.renderPlaces(JSON)
-        }
-        
+        Hackinat.sharedInstance.fetchPlacesAroundLocation(authKey: authKey, location: currentLocation, success: renderPlaces)
     }
     
     func renderPlaces(placesJSON: AnyObject!) {

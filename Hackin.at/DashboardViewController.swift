@@ -43,13 +43,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func fetchBroadcasts(){
-        var broadcastsURL = "\(baseDomain)/logs?auth_key=\(authKey)"
-        
-        Alamofire.request(.GET, broadcastsURL)
-            .responseJSON { (_, _, JSON, _) in
-                self.renderBroadcasts(JSON)
-        }
-        
+        Hackinat.sharedInstance.fetchCurrentHackerBroadcasts(authKey: authKey, success: renderBroadcasts)        
     }
     
     func renderBroadcasts(broadcastsJSON:AnyObject!){

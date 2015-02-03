@@ -51,13 +51,7 @@ class ProfileViewController: UIViewController {
     }
     
     func fetchUserDetails(){
-        var profileURL = "\(baseDomain)/\(hacker)"
-        
-        Alamofire.request(.GET, profileURL)
-            .responseJSON { (_, _, JSON, _) in
-                self.renderFullProfile(JSON)
-        }
-        
+        Hackinat.sharedInstance.getHacker(login: hacker, success: renderFullProfile)
     }
     
     func renderFullProfile(userJSON:AnyObject!){
