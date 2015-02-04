@@ -23,6 +23,7 @@ class BroadcastTableViewCell: UITableViewCell {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
         self.profileImageView.clipsToBounds = true;
         
+        self.messageText.scrollEnabled = false
         
         // Align the login and Image elements
         
