@@ -23,21 +23,28 @@ class BroadcastTableViewCell: UITableViewCell {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
         self.profileImageView.clipsToBounds = true;
         
+        
         // Align the login and Image elements
         
     }
 
     override func updateConstraints(){
         let kLabelHorizontalInsets: CGFloat = 15.0
-//        self.profileImageView.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: self.superview, withOffset: kLabelHorizontalInsets)
+        
         self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
         self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: kLabelHorizontalInsets)
         
         
-        self.messageText.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
-        self.messageText.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
         self.messageText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.profileImageView, withOffset: kLabelHorizontalInsets)
         self.messageText.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Top, ofView: self.whereLabel, withOffset: kLabelHorizontalInsets)
+        
+        self.messageText.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: self.contentView, withOffset: 0)
+
+        
+        // Width of message == Width of ContentView
+        let fixedWidth = self.contentView.frame.size.width;
+        let newSize = messageText.sizeThatFits(CGSizeMake(fixedWidth, 300));
+        self.messageText.autoSetDimensionsToSize(newSize)
         
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: kLabelHorizontalInsets)
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
