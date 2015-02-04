@@ -36,16 +36,16 @@ class BroadcastTableViewCell: UITableViewCell {
         
         
         self.messageText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.profileImageView, withOffset: kLabelHorizontalInsets)
-        self.messageText.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Top, ofView: self.whereLabel, withOffset: kLabelHorizontalInsets)
         
         self.messageText.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: self.contentView, withOffset: 0)
 
         
         // Width of message == Width of ContentView
         let fixedWidth = self.contentView.frame.size.width;
-        let newSize = messageText.sizeThatFits(CGSizeMake(fixedWidth, 300));
+        let newSize = messageText.sizeThatFits(CGSizeMake(fixedWidth, 500));
         self.messageText.autoSetDimensionsToSize(newSize)
         
+        self.whereLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.messageText, withOffset: kLabelHorizontalInsets)
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: kLabelHorizontalInsets)
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
         
