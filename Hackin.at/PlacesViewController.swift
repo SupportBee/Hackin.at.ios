@@ -8,11 +8,10 @@
 
 
 import UIKit
-import SwiftyJSON
 
 protocol PlacesViewProtocol {
     
-    func placeSelected(place:JSON)
+    func placeSelected(place:Place)
     
 }
 
@@ -21,7 +20,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var placesTableView: UITableView!
     
-    var places: Array<JSON> = []
+    var places: Array<Place> = []
     var delegate: PlacesViewProtocol?
     
     override func viewDidLoad() {
@@ -30,16 +29,16 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.placesTableView.dataSource = self
         self.placesTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         fetchPlaces()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func fetchPlaces() {
-        Hackinat.sharedInstance.fetchPlacesAroundLocation(authKey: CurrentHacker.authKey!, location: currentLocation, success: renderPlaces)
+        Place.fetchPlacesAround(success: renderPlaces)
     }
     
-    func renderPlaces(placesJSON: AnyObject!) {
-        places = JSON(placesJSON)["places"].arrayValue
+    func renderPlaces(places: [Place]) {
         println(places)
+
+        self.places = places
         placesTableView.reloadData()
     }
     
@@ -50,14 +49,14 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        let placeName = places[indexPath.row]["name"].stringValue
+        let placeName = places[indexPath.row].name
         cell.textLabel?.text = placeName
         println("At \(indexPath.row) \(placeName)")
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected the place #\(places[indexPath.row])!")
+        println("You selected the place #\(places[indexPath.row].name)!")
         self.delegate?.placeSelected(places[indexPath.row])
     }
 

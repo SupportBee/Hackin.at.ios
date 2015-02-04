@@ -8,11 +8,10 @@
 
 import UIKit
 import TwitterKit
-import SwiftyJSON
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
-    var place: JSON?
+    var place: Place?
     var twitterLinked: Int?
     @IBOutlet weak var broadcastMessageTextView: UITextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
@@ -66,17 +65,17 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     }
     
     
-    func placeSelected(place: JSON) {
+    func placeSelected(place: Place) {
         println("Hacker is at \(place)")
         self.place = place
-        var placeName = place["name"]
+        var placeName = place.name
         currentPlaceLabel.text = "You are at \(placeName)"
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func postBroadcast(sender: AnyObject) {
         let postToTwitter = postToTwitterSwitch.on ? "true" : "false"
-        let placeID = self.place!["id"].stringValue
+        let placeID = self.place!.id //["id"].stringValue
         Hackinat.sharedInstance.broadcast(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, message: broadcastMessageTextView.text, placeID: placeID, postToTwitter: postToTwitter, success: broadcastSuccessHandler)
     }
 
