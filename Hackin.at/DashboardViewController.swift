@@ -38,7 +38,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func setupNavigationBarStyle(){
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 242.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = AppColors.barTint
     }
     
     func setupTableViewStyle(){
