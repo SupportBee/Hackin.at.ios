@@ -11,6 +11,7 @@ import SwiftyJSON
 class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
+    
     let login:String
     
     init(login: String) {
@@ -20,6 +21,18 @@ class Hacker: NSObject {
     convenience init(login: String, authKey: String){
         self.init(login: login)
         self.authKey = authKey
+    }
+    
+    var avatarURL:String?{
+        if(userDetails == nil){
+            return nil
+        }
+        return userDetails!["avatar_url"].stringValue
+    }
+    
+    convenience init(json: JSON){
+        self.init(login: json["login"].stringValue)
+        self.userDetails = json
     }
     
     func fetchFullProfile(#success: () -> ()){

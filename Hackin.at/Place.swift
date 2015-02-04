@@ -24,6 +24,15 @@ class Place: NSObject {
         self.location = Location(latitude: latitude, longitude: longitude)
     }
     
+    convenience init(json: JSON){
+        let name = json["name"].stringValue
+        let lonlat = json["lonlat"]["coordinates"].arrayValue
+        let longitude = lonlat[0].stringValue
+        let latitude = lonlat[1].stringValue
+        let id = json["id"].stringValue
+        self.init(id: id, name: name, latitude: latitude, longitude: longitude)
+    }
+    
     class func fetchPlacesAround(#success: ([Place]) -> ()){
         
         func onFetch(result: AnyObject){
@@ -32,12 +41,7 @@ class Place: NSObject {
             
             places = placesJSON.map({
                 (place) -> Place in
-                let name = place["name"].stringValue
-                let lonlat = place["lonlat"]["coordinates"].arrayValue
-                let longitude = lonlat[0].stringValue
-                let latitude = lonlat[1].stringValue
-                let id = place["id"].stringValue
-                return Place(id: id, name: name, latitude: latitude, longitude: longitude)
+                return Place(json: place)
             })
             
             success(places)

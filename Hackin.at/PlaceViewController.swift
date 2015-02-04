@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import SwiftyJSON
+//import SwiftyJSON
 
 class PlaceViewController: UIViewController {
     
-    var place: JSON!
+    var place: Place!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var latLongLabel: UILabel!
@@ -19,13 +19,13 @@ class PlaceViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let name = place["name"].stringValue
-        let lonlat = place["lonlat"]["coordinates"].arrayValue
+        let name = place!.name //["name"].stringValue
+        let location = place!.location //["lonlat"]["coordinates"].arrayValue
 
-        println("At \(place) \(name) \(lonlat)")
+        println("At \(place) \(name) \(location)")
         
         nameLabel.text = name
-        latLongLabel.text = "\(lonlat[0]),\(lonlat[1])"
+        latLongLabel.text = "\(location.longitude),\(location.latitude)"
         
     }
 

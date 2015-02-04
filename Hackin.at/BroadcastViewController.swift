@@ -9,7 +9,7 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
 
 class BroadcastViewController: UIViewController {
     
@@ -20,18 +20,21 @@ class BroadcastViewController: UIViewController {
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var placeLabelButton: UIButton!
     
-    var broadcast: JSON! = nil
+    var broadcast: Broadcast! = nil
     
     override func viewDidLoad() {
         renderBroadcast()
     }
     
     func renderBroadcast() {
-        let hacker = broadcast["logged_by"]["login"].stringValue
-        let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
+        let hacker = broadcast.hacker.login //["logged_by"]["login"].stringValue
+        let avatarURL = broadcast.hacker.avatarURL! //["logged_by"]["avatar_url"].stringValue
         println(avatarURL)
-        let message = broadcast["message"].stringValue
-        let placeName = broadcast["logged_at"]["place"]["name"].stringValue
+        let message = broadcast.message //["message"].stringValue
+        var placeName = ""
+        if broadcast.place != nil {
+            placeName = broadcast.place!.name //["logged_at"]["place"]["name"].stringValue
+        }
         
         loginLabel.text = hacker
         messageTextView.text = message
@@ -47,7 +50,7 @@ class BroadcastViewController: UIViewController {
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {
         var newPlacesStoryBoard = UIStoryboard(name: "Places", bundle: nil)
         let vc = newPlacesStoryBoard.instantiateViewControllerWithIdentifier("placeViewController") as PlaceViewController;
-        vc.place = broadcast["logged_at"]["place"]
+        vc.place = broadcast.place! //["logged_at"]["place"]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

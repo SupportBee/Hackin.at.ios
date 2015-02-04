@@ -16,13 +16,13 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var broadcastsTableView: UITableView!
     
-    var broadcasts: Array<JSON> = []
+    var broadcasts: Array<Broadcast> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +37,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func fetchBroadcasts(){
-        Hackinat.sharedInstance.fetchCurrentHackerBroadcasts(authKey: CurrentHacker.authKey!, success: renderBroadcasts)
+        Broadcast.fetchBroadcasts(success: renderBroadcasts)
     }
     
-    func renderBroadcasts(broadcastsJSON:AnyObject!){
-        broadcasts = JSON(broadcastsJSON)["logs"].arrayValue
+    func renderBroadcasts(broadcasts:[Broadcast]){
+        self.broadcasts = broadcasts //JSON)["logs"].arrayValue
         self.broadcastsTableView.reloadData()
     }
  
@@ -65,11 +65,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(
             "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        let hacker = broadcast["logged_by"]["login"].stringValue
-        let avatarURL = broadcast["logged_by"]["avatar_url"].stringValue
+        let hacker = broadcast.hacker.login //["logged_by"]["login"].stringValue
+        let avatarURL = broadcast.hacker.avatarURL! //["logged_by"]["avatar_url"].stringValue
         println(avatarURL)
-        let message = broadcast["message"].stringValue
-        let placeName = broadcast["logged_at"]["place"]["name"].stringValue
+        let message = broadcast.message //["message"].stringValue
+        
+        var placeName:String = ""
+        if broadcast.place != nil{
+            placeName = broadcast.place!.name //["logged_at"]["place"]["name"].stringValue
+        }
         
         cell.loginLabel.text = hacker
         cell.messageLabel.text = message
