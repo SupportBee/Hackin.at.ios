@@ -25,13 +25,23 @@ class BroadcastTableViewCell: UITableViewCell {
         
         // Align the login and Image elements
         
-        
     }
-    
+
     override func updateConstraints(){
-      let kLabelHorizontalInsets: CGFloat = 15.0
-      println("print constraints \(self.profileImageView.constraints())")
-      self.profileImageView.autoCenterInSuperview()
-      super.updateConstraints()
+        let kLabelHorizontalInsets: CGFloat = 15.0
+//        self.profileImageView.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: self.superview, withOffset: kLabelHorizontalInsets)
+        self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
+        self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: kLabelHorizontalInsets)
+        
+        
+        self.messageText.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
+        self.messageText.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
+        self.messageText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.profileImageView, withOffset: kLabelHorizontalInsets)
+        self.messageText.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Top, ofView: self.whereLabel, withOffset: kLabelHorizontalInsets)
+        
+        self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: kLabelHorizontalInsets)
+        self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
+        
+        super.updateConstraints()
     }
 }
