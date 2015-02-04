@@ -16,7 +16,6 @@
 
 import UIKit
 import Alamofire
-//import SwiftyJSON
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -62,7 +61,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func renderBroadcasts(broadcasts:[Broadcast]){
-        self.broadcasts = broadcasts //JSON)["logs"].arrayValue
+        self.broadcasts = broadcasts
         self.broadcastsTableView.reloadData()
     }
  
@@ -86,14 +85,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(
             "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        let hacker = broadcast.hacker.login //["logged_by"]["login"].stringValue
-        let avatarURL = broadcast.hacker.avatarURL! //["logged_by"]["avatar_url"].stringValue
+        let hacker = broadcast.hacker.login
+        let avatarURL = broadcast.hacker.avatarURL!
         println(avatarURL)
-        let message = broadcast.message //["message"].stringValue
+        let message = broadcast.message
         
         var placeName:String = ""
         if broadcast.place != nil{
-            placeName = broadcast.place!.name //["logged_at"]["place"]["name"].stringValue
+            placeName = broadcast.place!.name
         }
         
         cell.loginLabel.text = hacker
@@ -114,14 +113,4 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
- 
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
 }

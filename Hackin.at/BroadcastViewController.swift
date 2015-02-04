@@ -9,7 +9,6 @@
 
 import UIKit
 import Alamofire
-//import SwiftyJSON
 
 class BroadcastViewController: UIViewController {
     
@@ -37,13 +36,13 @@ class BroadcastViewController: UIViewController {
     
     func renderBroadcast() {
 
-        let hacker = broadcast.hacker.login //["logged_by"]["login"].stringValue
-        let avatarURL = broadcast.hacker.avatarURL! //["logged_by"]["avatar_url"].stringValue
+        let hacker = broadcast.hacker.login
+        let avatarURL = broadcast.hacker.avatarURL!
         println(avatarURL)
-        let message = broadcast.message //["message"].stringValue
+        let message = broadcast.message
         var placeName = ""
         if broadcast.place != nil {
-            placeName = broadcast.place!.name //["logged_at"]["place"]["name"].stringValue
+            placeName = broadcast.place!.name
         }
         
         loginLabel.text = hacker
@@ -60,7 +59,7 @@ class BroadcastViewController: UIViewController {
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {
         var newPlacesStoryBoard = UIStoryboard(name: "Places", bundle: nil)
         let vc = newPlacesStoryBoard.instantiateViewControllerWithIdentifier("placeViewController") as PlaceViewController;
-        vc.place = broadcast.place! //["logged_at"]["place"]
+        vc.place = broadcast.place! 
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
