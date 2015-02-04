@@ -43,7 +43,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func setupTableViewStyle(){
         self.broadcastsTableView.estimatedRowHeight = 100
-        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension 
+        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension
+        self.broadcastsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
     }
     
