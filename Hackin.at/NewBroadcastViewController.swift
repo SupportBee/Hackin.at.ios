@@ -50,13 +50,14 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             Twitter.sharedInstance().logInWithCompletion {
                 (session, error) -> Void in
                 if (session != nil) {
-                    Hackinat.sharedInstance.updateHackerTwitterCredentials(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, authToken: session.authToken, authSecret: session.authTokenSecret, success: {
-                            self.twitterLinked = 1
-                            CurrentHacker.twitterEnabled = self.twitterLinked!
+                    
+                    CurrentHacker.hacker()!.updateTwitterCredentials(authToken: session.authToken, authSecret: session.authTokenSecret, success: {
+                        self.twitterLinked = 1
+                        CurrentHacker.twitterEnabled = self.twitterLinked!
                         }, failure: {
                             self.postToTwitterSwitch.on = false
-                        }
-                    )
+                    })
+                    
                 } else {
                     self.postToTwitterSwitch.on = false
                 }

@@ -31,6 +31,19 @@ class Hacker: NSObject {
         
         Hackinat.sharedInstance.getHacker(login: login, success: onFetch)
     }
+
+    func updateTwitterCredentials(#authToken:String, authSecret: String, success: () -> (), failure: () -> () = {}){
+        
+        func onUpdate(){
+            success()
+        }
+
+        func onFailure(){
+            failure()
+        }
+
+        Hackinat.sharedInstance.updateHackerTwitterCredentials(login: login, authKey: authKey!, authToken: authToken, authSecret: authSecret, success: onUpdate, failure: onFailure)
+    }
     
     private func setUserDetails(userJSON:AnyObject!){
         self.userDetails = JSON(userJSON)["hacker"]
