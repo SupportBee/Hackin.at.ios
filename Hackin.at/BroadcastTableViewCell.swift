@@ -24,6 +24,7 @@ class BroadcastTableViewCell: UITableViewCell {
         self.profileImageView.clipsToBounds = true;
         
         self.messageText.scrollEnabled = false
+        self.messageText.backgroundColor = AppColors.textBackground
         
         // Align the login and Image elements
         

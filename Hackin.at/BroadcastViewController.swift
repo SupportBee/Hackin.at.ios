@@ -31,7 +31,7 @@ class BroadcastViewController: UIViewController {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         self.profileImageView.clipsToBounds = true;
         
-        self.messageTextView.backgroundColor = UIColor(red: 255.0/255.0, green: 248.0/255.0, blue: 248.0/255.0, alpha: 1)
+        self.messageTextView.backgroundColor = AppColors.textBackground
     }
     
     func renderBroadcast() {
