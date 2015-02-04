@@ -23,10 +23,20 @@ class BroadcastViewController: UIViewController {
     var broadcast: Broadcast! = nil
     
     override func viewDidLoad() {
+        setupStyles()
         renderBroadcast()
     }
     
+    
+    func setupStyles(){
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+        self.profileImageView.clipsToBounds = true;
+        
+        self.messageTextView.backgroundColor = UIColor(red: 255.0/255.0, green: 248.0/255.0, blue: 248.0/255.0, alpha: 1)
+    }
+    
     func renderBroadcast() {
+
         let hacker = broadcast.hacker.login //["logged_by"]["login"].stringValue
         let avatarURL = broadcast.hacker.avatarURL! //["logged_by"]["avatar_url"].stringValue
         println(avatarURL)

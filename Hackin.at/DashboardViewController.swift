@@ -26,13 +26,26 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        setupNavigationBarStyle()
+        setupTableViewStyle()
        // Do any additional setup after loading the view.
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
         self.broadcastsTableView.registerNib(
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
         fetchBroadcasts()
+    }
+    
+    func setupNavigationBarStyle(){
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 242.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1)
+    }
+    
+    func setupTableViewStyle(){
+        self.broadcastsTableView.estimatedRowHeight = 100
+        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension 
+        
     }
     
     
@@ -76,7 +89,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         cell.loginLabel.text = hacker
-        cell.messageLabel.text = message
+        cell.messageText.text = message
         cell.whereLabel.text = placeName
         
         Alamofire.request(.GET, avatarURL)

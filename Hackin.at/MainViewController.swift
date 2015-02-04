@@ -12,7 +12,10 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTabBarTitles()
+    }
+    
+    func setupTabBarTitles(){
         let viewControllers = self.viewControllers as Array<UINavigationController>
         let home = viewControllers[0]
         let notifications = viewControllers[1]
@@ -22,4 +25,5 @@ class MainViewController: UITabBarController {
         notifications.title = "Hackers"
         me.title = "Me"
     }
+
 }
