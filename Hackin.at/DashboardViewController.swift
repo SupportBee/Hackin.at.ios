@@ -85,7 +85,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let placeName = broadcast["logged_at"]["place"]["name"].stringValue
         
         cell.loginLabel.text = hacker
-        cell.messageLabel.text = message
+        cell.messageText.text = message
         cell.whereLabel.text = placeName
         
         Alamofire.request(.GET, avatarURL)
