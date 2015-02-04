@@ -19,7 +19,7 @@ class PlaceViewController: UIViewController {
     override func viewDidLoad() {
         
         let name = place!.name
-        let location = place!.location 
+        let location = place!.location
 
         println("At \(place) \(name) \(location)")
         
