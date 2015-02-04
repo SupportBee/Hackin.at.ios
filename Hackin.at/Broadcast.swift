@@ -20,9 +20,8 @@ class Broadcast: NSObject {
         self.id = json["id"].stringValue
         self.message = json["message"].stringValue
         self.hacker = Hacker(json: json["logged_by"])
-
-        if json["logged_at"]["id"] != nil {
-            self.place = Place(json: json["logged_at"])
+        if json["logged_at"]["place"]["id"] != nil {
+            self.place = Place(json: json["logged_at"]["place"])
         }
     }
     

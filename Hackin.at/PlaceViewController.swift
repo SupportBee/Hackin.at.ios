@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import SwiftyJSON
 
 class PlaceViewController: UIViewController {
     
@@ -19,8 +18,8 @@ class PlaceViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let name = place!.name //["name"].stringValue
-        let location = place!.location //["lonlat"]["coordinates"].arrayValue
+        let name = place!.name
+        let location = place!.location 
 
         println("At \(place) \(name) \(location)")
         
