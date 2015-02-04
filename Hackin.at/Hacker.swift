@@ -45,6 +45,14 @@ class Hacker: NSObject {
         Hackinat.sharedInstance.getHacker(login: login, success: onFetch)
     }
 
+    func checkTwitterAccess(#success: (Int) -> ()){
+        func onFetch(){
+            success(self.userDetails!["twitter_enabled"].int!)
+        }
+        
+        fetchFullProfile(success: onFetch)
+    }
+    
     func updateTwitterCredentials(#authToken:String, authSecret: String, success: () -> (), failure: () -> () = {}){
         
         func onUpdate(){
