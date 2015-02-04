@@ -48,6 +48,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    override func updateViewConstraints() {
+        self.broadcastsTableView.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
+        self.broadcastsTableView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+        self.broadcastsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        self.broadcastsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        super.updateViewConstraints()
+    }
+    
     
     func fetchBroadcasts(){
         Broadcast.fetchBroadcasts(success: renderBroadcasts)
