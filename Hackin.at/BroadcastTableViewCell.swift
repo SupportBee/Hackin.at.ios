@@ -26,7 +26,10 @@ class BroadcastTableViewCell: UITableViewCell {
         self.messageText.scrollEnabled = false
         self.messageText.backgroundColor = AppColors.textBackground
         
-        // Align the login and Image elements
+        // No inset for cell border
+        // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
+        self.preservesSuperviewLayoutMargins = false
+        self.layoutMargins = UIEdgeInsetsZero
         
     }
 

@@ -43,6 +43,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func setupTableViewStyle(){
         self.broadcastsTableView.estimatedRowHeight = 100
         self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension
+        self.broadcastsTableView.separatorInset = UIEdgeInsetsZero
     }
     
     override func updateViewConstraints() {
