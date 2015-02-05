@@ -65,11 +65,13 @@ class Hacker: NSObject {
     }
 
     func checkTwitterAccess(#success: (Int) -> ()){
-        func onFetch(){
-            success(self.userDetails!["twitter_enabled"].int!)
-        }
+        if(authKey != nil){
+            func onFetch(){
+                success(self.userDetails!["twitter_enabled"].int!)
+            }
         
-        fetchFullProfile(success: onFetch)
+            fetchFullProfile(success: onFetch)
+        }
     }
     
     func updateTwitterCredentials(#authToken:String, authSecret: String, success: () -> (), failure: () -> () = {}){

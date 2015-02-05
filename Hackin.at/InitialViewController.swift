@@ -23,7 +23,6 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     }
     
     override func viewDidAppear(animated: Bool) {
-        setupHackerAndKey()
         if CurrentHacker.doesExist() {
             postLoginInit()
         }else{
@@ -55,7 +54,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
         postLoginInit()
     }
     
-    func setupHackerAndKey(){
+    func setupHackerPrefs(){
         if CurrentHacker.doesExist() {
             if CurrentHacker.twitterEnabled == nil{
                 CurrentHacker.hacker()!.checkTwitterAccess(success: setupHackerDetails)
@@ -68,7 +67,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     }
     
     func postLoginInit(){
-        setupHackerAndKey()
+        setupHackerPrefs()
         setupLocationManager()
         launchApp()
     }
