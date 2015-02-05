@@ -17,6 +17,8 @@ class BroadcastTableViewCell: UITableViewCell {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var whenLabel: UILabel!
     
+    let kLabelHorizontalInsets: CGFloat = 10.0
+    
     override func awakeFromNib() {
         
         // Circular image
@@ -25,6 +27,11 @@ class BroadcastTableViewCell: UITableViewCell {
         
         self.messageText.scrollEnabled = false
         self.messageText.backgroundColor = AppColors.textBackground
+        self.messageText.textContainerInset = UIEdgeInsets(top: kLabelHorizontalInsets, left: kLabelHorizontalInsets, bottom: kLabelHorizontalInsets, right: kLabelHorizontalInsets)
+        self.messageText.textColor = AppColors.primaryText
+        
+        self.loginLabel.textColor = AppColors.primaryLabel
+        self.whereLabel.textColor = AppColors.secondaryLabel
         
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
@@ -34,10 +41,12 @@ class BroadcastTableViewCell: UITableViewCell {
     }
 
     override func updateConstraints(){
-        let kLabelHorizontalInsets: CGFloat = 15.0
         
         self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
         self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: kLabelHorizontalInsets)
+        
+        self.loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: kLabelHorizontalInsets)
+        self.loginLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: profileImageView, withOffset: 0)
         
         self.messageText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.profileImageView, withOffset: kLabelHorizontalInsets)
         
