@@ -10,6 +10,35 @@ import SwiftyJSON
 import Alamofire
 
 class Hacker: NSObject {
+    
+    let stickerMap = [
+        "1": "\u{E097}",
+        "2": "\u{E091}",
+        "3": "\u{E098}",
+        "4": "\u{E090}",
+        "5": "\u{E09A}",
+        "6": "\u{E086}",
+        "7": "\u{E001}",
+        "8": "\u{E09E}",
+        "9": "\u{E003}",
+        "10": "\u{E08D}",
+        "11": "\u{E08D}",
+        "12": "\u{E08D}",
+        "13": "\u{E093}",
+        "14": "\u{E096}",
+        "15": "\u{E092}",
+        "16": "\u{E0B4}",
+        "17": "\u{E0B3}",
+        "18": "\u{E0B6}",
+        "19": "\u{E0B8}",
+        "20": "\u{E0A0}",
+        "21": "\u{E08B}",
+        "22": "\u{E061}",
+        "23": "\u{E08C}",
+        "24": "\u{E08A}",
+        "25": "\u{E0B7}"
+    ]
+    
     var authKey:String?
     var userDetails:JSON?
     var avatarImage:UIImage?
@@ -85,6 +114,17 @@ class Hacker: NSObject {
         }
 
         Hackinat.sharedInstance.updateHackerTwitterCredentials(login: login, authKey: authKey!, authToken: authToken, authSecret: authSecret, success: onUpdate, failure: onFailure)
+    }
+    
+    func stickerCodes() -> String{
+        let stickersJSON:JSON = userDetails!["stickers"]
+        
+        var unicodeString = ""
+        for (index: String, subJson: JSON) in stickersJSON {
+            var unicode = stickerMap[subJson["id"].stringValue]!
+            unicodeString = "\(unicodeString) \(unicode)"
+        }
+        return unicodeString
     }
     
     private func setUserDetails(userJSON:AnyObject!){
