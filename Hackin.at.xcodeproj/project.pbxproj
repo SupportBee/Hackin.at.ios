@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F09E98F1A81F3F400D0AEA7 /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */; };
+		0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A15371A8343BA00F00B74 /* pictonic.ttf */; };
 		0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350241A7F76FF00D58243 /* Hackinat.swift */; };
 		0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350261A7FABDD00D58243 /* Hacker.swift */; };
 		0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350281A80D1F000D58243 /* CurrentHacker.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
+		0F0A15371A8343BA00F00B74 /* pictonic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pictonic.ttf; sourceTree = "<group>"; };
 		0F4350241A7F76FF00D58243 /* Hackinat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hackinat.swift; sourceTree = "<group>"; };
 		0F4350261A7FABDD00D58243 /* Hacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacker.swift; sourceTree = "<group>"; };
 		0F4350281A80D1F000D58243 /* CurrentHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHacker.swift; sourceTree = "<group>"; };
@@ -136,6 +138,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0A15331A8342F400F00B74 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F0A15341A83430100F00B74 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0F0A15341A83430100F00B74 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0F0A15371A8343BA00F00B74 /* pictonic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		BFC0F59973AE4B42AD44039C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 		F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */ = {
 			isa = PBXGroup;
 			children = (
+				0F0A15331A8342F400F00B74 /* Resources */,
 				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
@@ -343,6 +362,7 @@
 				F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */,
 				F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
+				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
 			);

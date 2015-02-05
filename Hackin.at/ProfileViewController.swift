@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var followButtonLabel: UIButton!
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var stickersLabel: UILabel!
     
     var hacker:Hacker!
     
@@ -74,7 +75,10 @@ class ProfileViewController: UIViewController {
             .response{ (_, _, data, _) in
                 self.profileImage.image = UIImage(data: (data as NSData) )
         }
-        println(userDetails["name"])
+        
+        stickersLabel.font = UIFont(name: "pictonic", size: 32)
+        stickersLabel.text = hacker.stickerCodes()
+        
     }
     
     func populateBasicInfo(){
