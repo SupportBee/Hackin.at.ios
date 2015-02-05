@@ -11,15 +11,20 @@ import SwiftyJSON
 
 class Broadcast: NSObject {
 
-    let id: String
     let message:String
+    var id: String?
     var place:Place?
     var hacker:Hacker
+    var postToTwitter = "false"
     
-    init(json: JSON){
+    init(message: String, hacker: Hacker){
+        self.message = message
+        self.hacker = hacker
+    }
+
+    convenience init(json: JSON){
+        self.init(message: json["message"].stringValue, hacker: Hacker(json: json["logged_by"]))
         self.id = json["id"].stringValue
-        self.message = json["message"].stringValue
-        self.hacker = Hacker(json: json["logged_by"])
         if json["logged_at"]["place"]["id"] != nil {
             self.place = Place(json: json["logged_at"]["place"])
         }
@@ -39,5 +44,14 @@ class Broadcast: NSObject {
         }
         
         Hackinat.sharedInstance.fetchCurrentHackerBroadcasts(authKey: CurrentHacker.authKey!, success: onFetch)
+    }
+    
+    func create(#success: () -> (), failure: () -> () = {}){
+        
+        func onPost(result: AnyObject){
+            success()
+        }
+        
+        Hackinat.sharedInstance.broadcast(login: hacker.login, authKey: hacker.authKey!, message: message, placeID: place!.id, postToTwitter: postToTwitter, success: onPost)
     }
 }

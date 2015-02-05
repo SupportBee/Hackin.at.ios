@@ -75,11 +75,15 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBAction func postBroadcast(sender: AnyObject) {
         let postToTwitter = postToTwitterSwitch.on ? "true" : "false"
-        let placeID = self.place!.id 
-        Hackinat.sharedInstance.broadcast(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, message: broadcastMessageTextView.text, placeID: placeID, postToTwitter: postToTwitter, success: broadcastSuccessHandler)
+        let placeID = self.place!.id
+        
+        var broadcast = Broadcast(message: broadcastMessageTextView.text, hacker: CurrentHacker.hacker()!)
+        broadcast.place = self.place!
+        broadcast.postToTwitter = postToTwitter
+        broadcast.create(success: broadcastSuccessHandler)
     }
 
-    private func broadcastSuccessHandler(responseJSON:AnyObject!){
+    private func broadcastSuccessHandler(){
         dismissScreen()
     }
     

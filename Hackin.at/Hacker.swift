@@ -7,10 +7,12 @@
 //
 
 import SwiftyJSON
+import Alamofire
 
 class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
+    var avatarImage:UIImage?
     
     let login:String
     
@@ -35,6 +37,19 @@ class Hacker: NSObject {
         self.userDetails = json
     }
     
+    func fetchAvatarImage(#success: (UIImage) -> ()){
+        if(avatarImage != nil){ success(avatarImage!) }
+        if(avatarURL != nil){
+            Alamofire.request(.GET, avatarURL!)
+                .response{ (_, _, data, _) in
+                    self.avatarImage = UIImage(data: (data as NSData))
+                    if(self.avatarImage != nil){
+                        success(self.avatarImage!)
+                    }
+            }
+        }
+    }
+    
     func fetchFullProfile(#success: () -> ()){
         
         func onFetch(json: AnyObject!){
@@ -42,9 +57,21 @@ class Hacker: NSObject {
             success()
         }
         
-        Hackinat.sharedInstance.getHacker(login: login, success: onFetch)
+        if authKey == nil {
+            Hackinat.sharedInstance.getHacker(login: login, success: onFetch)
+        }else{
+            Hackinat.sharedInstance.getHacker(login: login, authKey: authKey!, success: onFetch)
+        }
     }
 
+    func checkTwitterAccess(#success: (Int) -> ()){
+        func onFetch(){
+            success(self.userDetails!["twitter_enabled"].int!)
+        }
+        
+        fetchFullProfile(success: onFetch)
+    }
+    
     func updateTwitterCredentials(#authToken:String, authSecret: String, success: () -> (), failure: () -> () = {}){
         
         func onUpdate(){

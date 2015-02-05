@@ -8,7 +8,6 @@
 
 
 import UIKit
-import Alamofire
 
 class BroadcastViewController: UIViewController {
     
@@ -36,24 +35,22 @@ class BroadcastViewController: UIViewController {
     
     func renderBroadcast() {
 
-        let hacker = broadcast.hacker.login
-        let avatarURL = broadcast.hacker.avatarURL!
-        println(avatarURL)
+        let hacker = broadcast.hacker
         let message = broadcast.message
         var placeName = ""
         if broadcast.place != nil {
             placeName = broadcast.place!.name
         }
         
-        loginLabel.text = hacker
+        loginLabel.text = hacker.login
         messageTextView.text = message
         println("At \(placeName)")
         placeLabelButton.setTitle(placeName, forState: UIControlState.Normal)
-        
-        Alamofire.request(.GET, avatarURL)
-            .response{ (_, _, data, _) in
-                self.profileImageView.image = UIImage(data: (data as NSData) )
-        }
+        hacker.fetchAvatarImage(success: {
+            (image: UIImage) in
+                self.profileImageView.image = image
+        })
+
     }
     
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {

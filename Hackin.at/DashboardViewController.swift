@@ -15,7 +15,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -84,9 +83,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(
             "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        let hacker = broadcast.hacker.login
-        let avatarURL = broadcast.hacker.avatarURL!
-        println(avatarURL)
+        let hacker = broadcast.hacker
         let message = broadcast.message
         
         var placeName:String = ""
@@ -94,14 +91,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             placeName = broadcast.place!.name
         }
         
-        cell.loginLabel.text = hacker
+        cell.loginLabel.text = hacker.login
         cell.messageText.text = message
         cell.whereLabel.text = placeName
-        
-        Alamofire.request(.GET, avatarURL)
-            .response{ (_, _, data, _) in
-                cell.profileImageView.image = UIImage(data: (data as NSData) )
-        }
+        hacker.fetchAvatarImage(success: {
+            (image: UIImage) in
+            cell.profileImageView.image = image
+        })
         return cell
     }
     

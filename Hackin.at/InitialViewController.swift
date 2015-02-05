@@ -52,24 +52,23 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     func hackerLoggedIn() {
         println("Hacker Logged In!")
         self.dismissViewControllerAnimated(true, completion: nil)
-        setupHackerAndKey()
         postLoginInit()
     }
     
     func setupHackerAndKey(){
         if CurrentHacker.doesExist() {
             if CurrentHacker.twitterEnabled == nil{
-                Hackinat.sharedInstance.getHacker(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, success: setupHackerDetails)
+                CurrentHacker.hacker()!.checkTwitterAccess(success: setupHackerDetails)
             }
         }
     }
     
-    func setupHackerDetails(userJSON:AnyObject!){
-        var userDetails = JSON(userJSON)["hacker"]
-        CurrentHacker.twitterEnabled = userDetails["twitter_enabled"].int!
+    func setupHackerDetails(twitterEnabled:Int){
+        CurrentHacker.twitterEnabled = twitterEnabled
     }
     
     func postLoginInit(){
+        setupHackerAndKey()
         setupLocationManager()
         launchApp()
     }
