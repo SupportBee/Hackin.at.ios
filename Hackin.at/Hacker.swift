@@ -57,7 +57,11 @@ class Hacker: NSObject {
             success()
         }
         
-        Hackinat.sharedInstance.getHacker(login: login, success: onFetch)
+        if authKey == nil {
+            Hackinat.sharedInstance.getHacker(login: login, success: onFetch)
+        }else{
+            Hackinat.sharedInstance.getHacker(login: login, authKey: authKey!, success: onFetch)
+        }
     }
 
     func checkTwitterAccess(#success: (Int) -> ()){
