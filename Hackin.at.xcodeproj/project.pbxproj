@@ -26,6 +26,7 @@
 		F04CB4561A572F3100379EBC /* NewBroadcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */; };
 		F04CB45D1A574D7600379EBC /* Broadcasts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */; };
 		F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */; };
+		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
 		F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */; };
 		F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546F1A4324E000133D25 /* PlacesViewController.swift */; };
@@ -94,6 +95,7 @@
 		F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewBroadcast.storyboard; sourceTree = "<group>"; };
 		F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Broadcasts.storyboard; sourceTree = "<group>"; };
 		F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
+		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBroadcastViewController.swift; sourceTree = "<group>"; };
 		F0AA546F1A4324E000133D25 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				0F4350281A80D1F000D58243 /* CurrentHacker.swift */,
 				0F714D5C1A81DF66006B089A /* Place.swift */,
 				0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */,
+				F05229DA1A823AD800E36E81 /* AppColors.swift */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
 				F03B33AE1A5DF24B00A3EBA0 /* ALView+PureLayout.m in Sources */,
+				F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
 				0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */,
 			);

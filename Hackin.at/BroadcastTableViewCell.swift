@@ -23,8 +23,13 @@ class BroadcastTableViewCell: UITableViewCell {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
         self.profileImageView.clipsToBounds = true;
         
+        self.messageText.scrollEnabled = false
+        self.messageText.backgroundColor = AppColors.textBackground
         
-        // Align the login and Image elements
+        // No inset for cell border
+        // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
+        self.preservesSuperviewLayoutMargins = false
+        self.layoutMargins = UIEdgeInsetsZero
         
     }
 
@@ -34,17 +39,10 @@ class BroadcastTableViewCell: UITableViewCell {
         self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
         self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: kLabelHorizontalInsets)
         
-        
         self.messageText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.profileImageView, withOffset: kLabelHorizontalInsets)
         
         self.messageText.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: self.contentView, withOffset: 0)
 
-        
-        // Width of message == Width of ContentView
-        let fixedWidth = self.contentView.frame.size.width;
-        let newSize = messageText.sizeThatFits(CGSizeMake(fixedWidth, 500));
-        self.messageText.autoSetDimensionsToSize(newSize)
-        
         self.whereLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.messageText, withOffset: kLabelHorizontalInsets)
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: kLabelHorizontalInsets)
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)

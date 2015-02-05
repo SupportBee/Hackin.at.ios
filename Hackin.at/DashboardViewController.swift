@@ -37,13 +37,21 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func setupNavigationBarStyle(){
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 242.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = AppColors.barTint
     }
     
     func setupTableViewStyle(){
         self.broadcastsTableView.estimatedRowHeight = 100
-        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension 
-        
+        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension
+        self.broadcastsTableView.separatorInset = UIEdgeInsetsZero
+    }
+    
+    override func updateViewConstraints() {
+        self.broadcastsTableView.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
+        self.broadcastsTableView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+        self.broadcastsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        self.broadcastsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        super.updateViewConstraints()
     }
     
     

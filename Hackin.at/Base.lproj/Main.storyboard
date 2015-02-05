@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ztF-2J-Qhp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -37,12 +38,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-bs-9HO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-bs-9HO">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="leading" secondItem="2Kb-jQ-Psb" secondAttribute="leadingMargin" constant="-16" placeholder="YES" id="9HJ-Zt-eoK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hFx-bs-9HO" secondAttribute="trailing" constant="-16" placeholder="YES" id="Omq-BB-swJ"/>
+                            <constraint firstItem="hFx-bs-9HO" firstAttribute="top" secondItem="zxs-VI-zdd" secondAttribute="bottom" placeholder="YES" id="c6Z-S6-qRK"/>
+                            <constraint firstItem="w0e-i3-0xa" firstAttribute="top" secondItem="hFx-bs-9HO" secondAttribute="bottom" placeholder="YES" id="d5v-N0-uZb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
                     <navigationItem key="navigationItem" id="Vxh-c3-hSI">
@@ -289,12 +296,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YPU-Ot-HfS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YPU-Ot-HfS">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YPU-Ot-HfS" secondAttribute="trailing" constant="-16" placeholder="YES" id="Fe3-w9-OB4"/>
+                            <constraint firstItem="YPU-Ot-HfS" firstAttribute="leading" secondItem="So0-ps-zct" secondAttribute="leadingMargin" constant="-16" placeholder="YES" id="WOY-9Q-Bab"/>
+                            <constraint firstItem="YPU-Ot-HfS" firstAttribute="top" secondItem="Evy-yD-Pja" secondAttribute="bottom" placeholder="YES" id="bqV-Ff-yAT"/>
+                            <constraint firstItem="2SS-Uj-tln" firstAttribute="top" secondItem="YPU-Ot-HfS" secondAttribute="bottom" placeholder="YES" id="zNc-eL-nL8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WbB-DF-rUV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
