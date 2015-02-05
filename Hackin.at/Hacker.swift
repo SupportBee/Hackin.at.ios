@@ -7,10 +7,12 @@
 //
 
 import SwiftyJSON
+import Alamofire
 
 class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
+    var avatarImage:UIImage?
     
     let login:String
     
@@ -33,6 +35,19 @@ class Hacker: NSObject {
     convenience init(json: JSON){
         self.init(login: json["login"].stringValue)
         self.userDetails = json
+    }
+    
+    func fetchAvatarImage(#success: (UIImage) -> ()){
+        if(avatarImage != nil){ success(avatarImage!) }
+        if(avatarURL != nil){
+            Alamofire.request(.GET, avatarURL!)
+                .response{ (_, _, data, _) in
+                    self.avatarImage = UIImage(data: (data as NSData))
+                    if(self.avatarImage != nil){
+                        success(self.avatarImage!)
+                    }
+            }
+        }
     }
     
     func fetchFullProfile(#success: () -> ()){
