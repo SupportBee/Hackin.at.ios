@@ -60,13 +60,18 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let hacker = self.hackers[indexPath.row]
         let login = hacker.login
-        let name = "Name"
-        let location = "Wherever"
+        
+        var name = ""
+        if(hacker.name != nil){ name = hacker.name! }
+        
+        var locationName = ""
+        if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
+        
         let stickers = hacker.stickerCodes()
         
         cell.loginLabel.text = login
         cell.nameLabel.text = name
-        cell.whereLabel.text = location
+        cell.whereLabel.text = locationName
         cell.stickersLabel.font = UIFont(name: "pictonic", size: 32)
         cell.stickersLabel.text = stickers
         

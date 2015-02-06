@@ -55,10 +55,34 @@ class Hacker: NSObject {
     }
     
     var avatarURL:String?{
-        if(userDetails == nil){
-            return nil
-        }
+        if(userDetails == nil){ return nil }
         return userDetails!["avatar_url"].stringValue
+    }
+    
+    var name:String?{
+        if(userDetails == nil){ return nil }
+        return userDetails!["name"].stringValue
+    }
+
+    var recentBroadcasts:[Broadcast]?{
+        if(userDetails == nil){ return nil }
+        let recentBroadcastsJSON = userDetails!["recent_broadcasts"].arrayValue
+        var broadcasts:[Broadcast] = recentBroadcastsJSON.map({
+            (broadcast) -> Broadcast in
+                return Broadcast(json: broadcast)
+        })
+        return broadcasts
+    }
+    
+    var lastBroadcast:Broadcast?{
+        if(recentBroadcasts == nil){ return nil }
+        if(recentBroadcasts!.count == 0){ return nil }
+        return recentBroadcasts![0]
+    }
+
+    var lastLocation:Place?{
+        if(lastBroadcast == nil){ return nil }
+        return lastBroadcast!.place!
     }
     
     convenience init(json: JSON){
