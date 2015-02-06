@@ -13,6 +13,7 @@
 		0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350261A7FABDD00D58243 /* Hacker.swift */; };
 		0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350281A80D1F000D58243 /* CurrentHacker.swift */; };
 		0F714D5D1A81DF66006B089A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F714D5C1A81DF66006B089A /* Place.swift */; };
+		0FA8221E1A84861700AB5E8D /* HackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8221D1A84861700AB5E8D /* HackersViewController.swift */; };
 		0FFFA0191A7786A3000A836F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0161A7786A3000A836F /* TwitterKit.framework */; };
 		0FFFA01A1A7786A3000A836F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */; };
 		0FFFA01B1A7786A3000A836F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFFA0181A7786A3000A836F /* Fabric.framework */; };
@@ -74,6 +75,7 @@
 		0F4350261A7FABDD00D58243 /* Hacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacker.swift; sourceTree = "<group>"; };
 		0F4350281A80D1F000D58243 /* CurrentHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHacker.swift; sourceTree = "<group>"; };
 		0F714D5C1A81DF66006B089A /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		0FA8221D1A84861700AB5E8D /* HackersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersViewController.swift; sourceTree = "<group>"; };
 		0FFFA0161A7786A3000A836F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FFFA0181A7786A3000A836F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				0F714D5C1A81DF66006B089A /* Place.swift */,
 				0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */,
 				F05229DA1A823AD800E36E81 /* AppColors.swift */,
+				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				F03B33B01A5DF24B00A3EBA0 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
 				F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */,
+				0FA8221E1A84861700AB5E8D /* HackersViewController.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
