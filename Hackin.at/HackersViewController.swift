@@ -17,6 +17,16 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell" )
+        fetchNearbyHackers()
+    }
+    
+    func fetchNearbyHackers(){
+        Hacker.fetchNearbyHackers(success: renderHackers)
+    }
+    
+    func renderHackers(hackers:[Hacker]){
+        self.hackers = hackers
+        self.hackersTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

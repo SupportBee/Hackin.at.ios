@@ -66,6 +66,22 @@ class Hacker: NSObject {
         self.userDetails = json
     }
     
+    class func fetchNearbyHackers(#success: ([Hacker]) -> ()){
+        
+        func onFetch(result: AnyObject){
+            var hackersJSON = JSON(result)["hackers"].arrayValue
+            var hackers: Array<Hacker> = []
+            
+            hackers = hackersJSON.map({
+                (hacker) -> Hacker in
+                return Hacker(json: hacker)
+            })
+            success(hackers)
+        }
+        
+        Hackinat.sharedInstance.fetchNearbyHackers(authKey: CurrentHacker.authKey!, location: currentLocation, success: onFetch)
+    }
+    
     func fetchAvatarImage(#success: (UIImage) -> ()){
         if(avatarImage != nil){ success(avatarImage!) }
         if(avatarURL != nil){

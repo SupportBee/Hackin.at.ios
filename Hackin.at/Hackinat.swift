@@ -44,6 +44,19 @@ class Hackinat: NSObject {
         }
     }
     
+    func fetchNearbyHackers(#authKey: String, location: CLLocationCoordinate2D, success: (AnyObject) -> (), failure: () -> () = {}){
+
+        let ll = "\(location.latitude),\(location.longitude)"
+        let url = "\(apiBaseDomain)/hackers/nearby?auth_key=\(authKey)&ll=\(ll)"
+        
+        Alamofire.request(.GET, url)
+            .responseJSON { (_, _, JSON, _) in
+                println("Nearby Hackers: \(JSON!)")
+                success(JSON!)
+        }
+
+    }
+    
     func updateHackerTwitterCredentials(#login:String, authKey: String, authToken: String, authSecret: String,  success: () -> (), failure: () -> ()){
         
         let parameters = [
