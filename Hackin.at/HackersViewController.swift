@@ -14,10 +14,26 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     var hackers: Array<Hacker> = []
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavigationBarStyle()
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell" )
         fetchNearbyHackers()
+    }
+    
+    func setupNavigationBarStyle(){
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.barTintColor = AppColors.barTint
+    }
+    
+    override func updateViewConstraints() {
+        self.hackersTableView.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
+        self.hackersTableView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+        self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        super.updateViewConstraints()
     }
     
     func fetchNearbyHackers(){
