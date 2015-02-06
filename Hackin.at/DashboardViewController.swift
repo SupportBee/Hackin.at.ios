@@ -22,16 +22,23 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var broadcastsTableView: UITableView!
     
     var broadcasts: Array<Broadcast> = []
+    var refreshControl:UIRefreshControl! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarStyle()
         setupTableViewStyle()
-       // Do any additional setup after loading the view.
+
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
         self.broadcastsTableView.registerNib(
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
+        self.refreshControl.addTarget(self, action: Selector("refreshBroadcasts"), forControlEvents: UIControlEvents.ValueChanged)
+        self.broadcastsTableView.addSubview(refreshControl)
+        
         fetchBroadcasts()
     }
     
@@ -55,6 +62,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.updateViewConstraints()
     }
     
+    func refreshBroadcasts(){
+        func onFetch(broadcasts:[Broadcast]){
+            renderBroadcasts(broadcasts)
+            self.refreshControl.endRefreshing()
+        }
+        Broadcast.fetchBroadcasts(success: onFetch)
+    }
     
     func fetchBroadcasts(){
         Broadcast.fetchBroadcasts(success: renderBroadcasts)
