@@ -18,7 +18,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         setupNavigationBarStyle()
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
-        self.hackersTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell" )
+        self.hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
         fetchNearbyHackers()
     }
     
@@ -26,6 +26,12 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = AppColors.barTint
+    }
+    
+    func setupTableViewStyle(){
+        self.hackersTableView.estimatedRowHeight = 100
+        self.hackersTableView.rowHeight = UITableViewAutomaticDimension
+        self.hackersTableView.separatorInset = UIEdgeInsetsZero
     }
     
     override func updateViewConstraints() {
@@ -50,8 +56,20 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = self.hackers[indexPath.row].login
+        let cell = tableView.dequeueReusableCellWithIdentifier("HackerCell", forIndexPath: indexPath) as HackerTableViewCell
+        
+        let hacker = self.hackers[indexPath.row]
+        let login = hacker.login
+        let name = "Name"
+        let location = "Wherever"
+        let stickers = hacker.stickerCodes()
+        
+        cell.loginLabel.text = login
+        cell.nameLabel.text = name
+        cell.whereLabel.text = location
+        cell.stickersLabel.font = UIFont(name: "pictonic", size: 32)
+        cell.stickersLabel.text = stickers
+        
         return cell
     }
     

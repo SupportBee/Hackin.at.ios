@@ -51,7 +51,6 @@ class Hackinat: NSObject {
         
         Alamofire.request(.GET, url)
             .responseJSON { (_, _, JSON, _) in
-                println("Nearby Hackers: \(JSON!)")
                 success(JSON!)
         }
 
