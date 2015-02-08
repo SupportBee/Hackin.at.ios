@@ -76,6 +76,11 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.whereLabel.text = locationName
         cell.stickersLabel.font = UIFont(name: "pictonic", size: 32)
         cell.stickersLabel.text = stickers
+
+        hacker.fetchAvatarImage(success: {
+            (image: UIImage) in
+                cell.profileImageView.image = image
+        })
         
         return cell
     }
