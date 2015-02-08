@@ -75,7 +75,7 @@
                 <outlet property="profileImageView" destination="xXQ-a4-HmP" id="Dq4-Yh-gIe"/>
                 <outlet property="whereLabel" destination="KcD-4w-Nh6" id="vCX-aL-T7m"/>
             </connections>
-            <point key="canvasLocation" x="464" y="138.5"/>
+            <point key="canvasLocation" x="343" y="136.5"/>
         </tableViewCell>
     </objects>
 </document>

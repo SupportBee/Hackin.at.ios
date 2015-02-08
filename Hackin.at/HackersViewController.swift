@@ -35,19 +35,20 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.hackersTableView.separatorInset = UIEdgeInsetsZero
     }
     
-    override func updateViewConstraints() {
-        self.hackersTableView.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
-        self.hackersTableView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
-        self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
-        self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
-        super.updateViewConstraints()
-    }
+    //override func updateViewConstraints() {
+    //    self.hackersTableView.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
+    //    self.hackersTableView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+    //    self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+    //    self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+    //    super.updateViewConstraints()
+    //}
     
     func fetchNearbyHackers(){
         Hacker.fetchNearbyHackers(success: renderHackers)
     }
     
     func renderHackers(hackers:[Hacker]){
+        println("Render \(hackers.count) Hackers")
         self.hackers = hackers
         self.hackersTableView.reloadData()
     }
