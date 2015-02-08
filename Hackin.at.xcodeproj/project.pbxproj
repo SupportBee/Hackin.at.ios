@@ -159,6 +159,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F0BDDBFC1A87410600C1C78D /* Hackers */ = {
+			isa = PBXGroup;
+			children = (
+				0F4350261A7FABDD00D58243 /* Hacker.swift */,
+				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
+				0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */,
+				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+			);
+			name = Hackers;
+			sourceTree = "<group>";
+		};
 		F0DB3BB31A41FABF00DC8C9B = {
 			isa = PBXGroup;
 			children = (
@@ -209,14 +220,11 @@
 				F043F0381A5C57BB00E337E5 /* Places.storyboard */,
 				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
 				0F4350241A7F76FF00D58243 /* Hackinat.swift */,
-				0F4350261A7FABDD00D58243 /* Hacker.swift */,
 				0F4350281A80D1F000D58243 /* CurrentHacker.swift */,
 				0F714D5C1A81DF66006B089A /* Place.swift */,
 				0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */,
 				F05229DA1A823AD800E36E81 /* AppColors.swift */,
-				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
-				0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */,
-				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+				F0BDDBFC1A87410600C1C78D /* Hackers */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -431,7 +439,6 @@
 				0F714D5D1A81DF66006B089A /* Place.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
-				F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */,
 				0FA8221E1A84861700AB5E8D /* HackersViewController.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
