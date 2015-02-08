@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 class HackerTableViewCell: UITableViewCell {
 
@@ -30,6 +31,17 @@ class HackerTableViewCell: UITableViewCell {
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
         self.preservesSuperviewLayoutMargins = false
         self.layoutMargins = UIEdgeInsetsZero
+    }
+    
+    override func updateConstraints(){
+        
+        self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: kLabelHorizontalInsets)
+        self.profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: kLabelHorizontalInsets)
+        self.loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: kLabelHorizontalInsets)
+
+        super.updateConstraints()
+
+        
     }
 
 }
