@@ -14,6 +14,7 @@ class BroadcastViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var stickersLabel: UILabel!
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var placeLabelButton: UIButton!
@@ -43,8 +44,11 @@ class BroadcastViewController: UIViewController {
         }
         
         loginLabel.text = hacker.login
+        nameLabel.text = hacker.name
         messageTextView.text = message
-        println("At \(placeName)")
+        stickersLabel.font = UIFont(name: "pictonic", size: 32)
+        stickersLabel.text = hacker.stickerCodes()
+        
         placeLabelButton.setTitle(placeName, forState: UIControlState.Normal)
         hacker.fetchAvatarImage(success: {
             (image: UIImage) in
