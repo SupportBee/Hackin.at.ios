@@ -47,7 +47,7 @@ class BroadcastViewController: UIViewController {
         loginLabel.text = "@\(hacker.login)"
         nameLabel.text = hacker.name
         messageTextView.text = message
-        stickersLabel.font = UIFont(name: "pictonic", size: 32)
+        stickersLabel.font = UIFont(name: "pictonic", size: 16)
         stickersLabel.text = hacker.stickerCodes()
         
         nameLabel.sizeToFit()

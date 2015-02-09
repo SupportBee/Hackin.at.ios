@@ -162,7 +162,7 @@ class Hacker: NSObject {
         var unicodeString = ""
         for (index: String, subJson: JSON) in stickersJSON {
             var unicode = stickerMap[subJson["id"].stringValue]!
-            unicodeString = "\(unicodeString) \(unicode)"
+            unicodeString = "\(unicode) \(unicodeString)"
         }
         return unicodeString
     }
