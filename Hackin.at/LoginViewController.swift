@@ -30,7 +30,17 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        webView = WKWebView()
+        webView?.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+        webView?.navigationDelegate = self
+        
+        self.view.addSubview(self.webView!)
+        
+        var url = NSURL(string: Hackinat.sharedInstance.githhubAuthURL)
+        var req = NSURLRequest(URL:url!)
+        self.webView!.loadRequest(req)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,12 +50,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     
     @IBAction func loginButtonPressed(sender: UIButton) {
         println("So you want to login with Github?")
-        webView = WKWebView()
-        webView?.navigationDelegate = self
-        view = self.webView!
-        var url = NSURL(string: Hackinat.sharedInstance.githhubAuthURL)
-        var req = NSURLRequest(URL:url!)
-        self.webView!.loadRequest(req)
+            self.view = self.webView!
     }
     
     
