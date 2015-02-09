@@ -19,6 +19,7 @@ class BroadcastViewController: UIViewController {
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var placeLabelButton: UIButton!
+    @IBOutlet weak var whenLabel: UILabel!
     
     var broadcast: Broadcast! = nil
     
@@ -89,6 +90,10 @@ class BroadcastViewController: UIViewController {
         
         placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
         placeLabelButton.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+            withInset: AppTheme.HackerListing.paddingLeft)
+        
+        whenLabel.autoAlignAxis(ALAxis.Baseline, toSameAxisOfView: placeLabelButton)
+        whenLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right,
             withInset: AppTheme.HackerListing.paddingLeft)
         
         super.updateViewConstraints()
