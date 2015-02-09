@@ -110,6 +110,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.loginLabel.text = hacker.login
         cell.messageText.text = message
         cell.whereLabel.text = placeName
+        cell.whenLabel.text = "some time ago"
         hacker.fetchAvatarImage(success: {
             (image: UIImage) in
             cell.profileImageView.image = image
