@@ -82,9 +82,10 @@ class BroadcastViewController: UIViewController {
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
         
-    //    messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
-       // messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
-       // messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
+        // messageTextView should be un-scrollable for this to work
+        messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
+        messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
+        messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
         
         super.updateViewConstraints()
         
