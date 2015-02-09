@@ -8,6 +8,7 @@
 
 
 import UIKit
+import PureLayout
 
 class BroadcastViewController: UIViewController {
     
@@ -43,11 +44,16 @@ class BroadcastViewController: UIViewController {
             placeName = broadcast.place!.name
         }
         
-        loginLabel.text = hacker.login
+        loginLabel.text = "@\(hacker.login)"
         nameLabel.text = hacker.name
         messageTextView.text = message
         stickersLabel.font = UIFont(name: "pictonic", size: 32)
         stickersLabel.text = hacker.stickerCodes()
+        
+        nameLabel.sizeToFit()
+        loginLabel.sizeToFit()
+        stickersLabel.sizeToFit()
+        
         
         placeLabelButton.setTitle(placeName, forState: UIControlState.Normal)
         hacker.fetchAvatarImage(success: {
@@ -55,6 +61,33 @@ class BroadcastViewController: UIViewController {
                 self.profileImageView.image = image
         })
 
+    }
+    
+    override func updateViewConstraints() {
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+            withInset: AppTheme.HackerListing.paddingLeft)
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+            withInset: AppTheme.HackerListing.paddingTop)
+        
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
+            withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+            withInset: AppTheme.HackerListing.paddingTop)
+        
+        
+        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        
+        loginLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: nameLabel)
+        
+        stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
+        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        
+    //    messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
+       // messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
+       // messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
+        
+        super.updateViewConstraints()
+        
     }
     
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {
