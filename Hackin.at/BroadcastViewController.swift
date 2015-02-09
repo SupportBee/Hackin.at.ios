@@ -87,6 +87,10 @@ class BroadcastViewController: UIViewController {
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
         
+        placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
+        placeLabelButton.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+            withInset: AppTheme.HackerListing.paddingLeft)
+        
         super.updateViewConstraints()
         
     }
