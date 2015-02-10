@@ -17,7 +17,7 @@
 import UIKit
 import PureLayout
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var broadcastsTableView: UITableView!
     
@@ -28,12 +28,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         setupNavigationBarStyle()
         setupTableViewStyle()
-        setupTableWiring()
+        setupTableViewWiring()
         setupAutoRefresh()
         fetchBroadcasts()
     }
     
-    func setupTableWiring(){
+    func setupTableViewWiring(){
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
         self.broadcastsTableView.registerNib(

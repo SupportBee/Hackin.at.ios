@@ -40,7 +40,7 @@
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
-		F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */; };
+		F0DB3BE21A41FB8700DC8C9B /* BroadcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */; };
 		F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */; };
 		F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E674151A4A129000DCA9F8 /* MainViewController.swift */; };
 		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
@@ -110,7 +110,7 @@
 		F0DB3BD11A41FABF00DC8C9B /* Hackin.atTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hackin.atTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BD61A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackin_atTests.swift; sourceTree = "<group>"; };
-		F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastsViewController.swift; sourceTree = "<group>"; };
 		F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
-				F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */,
+				F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -494,7 +494,7 @@
 				0F09E98F1A81F3F400D0AEA7 /* Broadcast.swift in Sources */,
 				F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */,
 				F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */,
-				F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */,
+				F0DB3BE21A41FB8700DC8C9B /* BroadcastsViewController.swift in Sources */,
 				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,

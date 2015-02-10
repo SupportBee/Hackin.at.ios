@@ -29,7 +29,7 @@
         <!--Home View Controller-->
         <scene sceneID="wXR-PA-Bc7">
             <objects>
-                <viewController storyboardIdentifier="DashboardViewController" title="Home View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d1r-VX-tIl" customClass="DashboardViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" title="Home View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d1r-VX-tIl" customClass="BroadcastsViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zxs-VI-zdd"/>
                         <viewControllerLayoutGuide type="bottom" id="w0e-i3-0xa"/>
