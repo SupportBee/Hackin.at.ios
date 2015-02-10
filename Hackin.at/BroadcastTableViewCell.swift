@@ -60,7 +60,7 @@ class BroadcastTableViewCell: UITableViewCell {
         super.updateConstraints()
     }
     
-    func setData(broadcast:Broadcast){
+    func setupViewData(broadcast:Broadcast){
         let hacker = broadcast.hacker
         let message = broadcast.message
         

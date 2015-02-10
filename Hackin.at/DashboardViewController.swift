@@ -99,7 +99,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(
             "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        cell.setData(broadcast)
+        cell.setupViewData(broadcast)
         return cell
     }
     
