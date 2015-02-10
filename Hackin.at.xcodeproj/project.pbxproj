@@ -44,6 +44,8 @@
 		F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */; };
 		F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E674151A4A129000DCA9F8 /* MainViewController.swift */; };
 		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
+		F0F045CE1A89FDD3005CC0C8 /* Hackers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */; };
+		F0F045D01A8A026B005CC0C8 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
+		F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hackers.storyboard; sourceTree = "<group>"; };
+		F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,9 +171,10 @@
 			isa = PBXGroup;
 			children = (
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
-				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
+				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
 				0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */,
 				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+				F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */,
 			);
 			name = Hackers;
 			sourceTree = "<group>";
@@ -210,8 +215,9 @@
 		F0BDDC001A8742BD00C1C78D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
+				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
 				F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */,
+				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
 				F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */,
+				F0F045CE1A89FDD3005CC0C8 /* Hackers.storyboard in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F045D01A8A026B005CC0C8 /* SelfViewController.swift in Sources */,
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				0F714D5D1A81DF66006B089A /* Place.swift in Sources */,
