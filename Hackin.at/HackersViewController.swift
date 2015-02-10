@@ -61,27 +61,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("HackerCell", forIndexPath: indexPath) as HackerTableViewCell
         
         let hacker = self.hackers[indexPath.row]
-        let login = hacker.login
-        
-        var name = ""
-        if(hacker.name != nil){ name = hacker.name! }
-        
-        var locationName = ""
-        if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
-        
-        let stickers = hacker.stickerCodes()
-        
-        cell.loginLabel.text = login
-        cell.nameLabel.text = name
-        cell.whereLabel.text = locationName
-        cell.stickersLabel.font = UIFont(name: "pictonic", size: 16)
-        cell.stickersLabel.text = stickers
-
-        hacker.fetchAvatarImage(success: {
-            (image: UIImage) in
-                cell.profileImageView.image = image
-        })
-        
+        cell.setupViewData(hacker)
         return cell
     }
     
