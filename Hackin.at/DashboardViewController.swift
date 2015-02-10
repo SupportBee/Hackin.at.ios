@@ -99,21 +99,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(
             "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        let hacker = broadcast.hacker
-        let message = broadcast.message
-        
-        var placeName:String = ""
-        if broadcast.place != nil{
-            placeName = broadcast.place!.name
-        }
-        
-        cell.loginLabel.text = hacker.login
-        cell.messageText.text = message
-        cell.whereLabel.text = placeName
-        hacker.fetchAvatarImage(success: {
-            (image: UIImage) in
-            cell.profileImageView.image = image
-        })
+        cell.setData(broadcast)
         return cell
     }
     
