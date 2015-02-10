@@ -72,7 +72,8 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let hacker = self.hackers[indexPath.row]
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
+        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
+        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
         vc.hacker = hacker
         self.navigationController?.pushViewController(vc, animated: true)
     }

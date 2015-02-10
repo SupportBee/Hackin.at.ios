@@ -224,107 +224,32 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vzt-cu-N6B" kind="relationship" relationship="rootViewController" id="hKP-tG-Ohb"/>
+                        <segue destination="T4h-1c-KzW" kind="relationship" relationship="rootViewController" id="Mjz-l0-pdV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxY-D2-FPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="504" y="1130"/>
         </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="uih-gq-rEx">
+        <!--Self View Controller-->
+        <scene sceneID="m5O-Il-ftv">
             <objects>
-                <viewController storyboardIdentifier="profileViewController" title="Profile View Controller" id="vzt-cu-N6B" customClass="ProfileViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T4h-1c-KzW" customClass="SelfViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VEE-CN-1FK"/>
-                        <viewControllerLayoutGuide type="bottom" id="rBz-5x-r9N"/>
+                        <viewControllerLayoutGuide type="top" id="s4L-hL-42B"/>
+                        <viewControllerLayoutGuide type="bottom" id="hyQ-Mh-0vr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g0z-Vj-8Il">
+                    <view key="view" contentMode="scaleToFill" id="zqX-Vf-4Tz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjV-CN-ndI">
-                                <rect key="frame" x="-6" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Profile View" id="6Yz-Dy-hUx">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Lw7-kM-QWC">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="S2y-qA-vos">
-                                                <rect key="frame" x="168" y="172" width="45" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Follow">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="followButtonPressed:" destination="vzt-cu-N6B" eventType="touchUpInside" id="Lvt-h8-BiW"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vm9-WI-OmI">
-                                <rect key="frame" x="16" y="75" width="128" height="127"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Foq-ow-yV2"/>
-                                    <constraint firstAttribute="width" constant="128" id="bp9-6R-Kd1"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I68-cv-GpM">
-                                <rect key="frame" x="164" y="75" width="113" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umR-9Q-avm">
-                                <rect key="frame" x="169" y="110" width="113" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozv-uC-4zq">
-                                <rect key="frame" x="164" y="142" width="134" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Repos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSj-CS-kvw">
-                                <rect key="frame" x="16" y="222" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXI-qf-ozs">
-                                <rect key="frame" x="158" y="221" width="140" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-o2-AXM">
-                                <rect key="frame" x="16" y="259" width="282" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="nfi-1Z-0Xg"/>
-                    <navigationItem key="navigationItem" id="MsT-ue-o0v"/>
+                    <navigationItem key="navigationItem" id="nyV-wy-2Na"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="companyLabel" destination="ozv-uC-4zq" id="ZbL-Ki-uAv"/>
-                        <outlet property="followButtonLabel" destination="S2y-qA-vos" id="wTe-3V-tHR"/>
-                        <outlet property="followersCountLabel" destination="ZXI-qf-ozs" id="1BU-mG-1h3"/>
-                        <outlet property="loginLabel" destination="I68-cv-GpM" id="Jgc-sa-0Kd"/>
-                        <outlet property="nameLabel" destination="umR-9Q-avm" id="FaV-Lo-g0G"/>
-                        <outlet property="profileImage" destination="Vm9-WI-OmI" id="r2j-rH-qx0"/>
-                        <outlet property="reposCountLabel" destination="DSj-CS-kvw" id="oKP-lh-SX6"/>
-                        <outlet property="stickersLabel" destination="WTo-o2-AXM" id="b6y-us-Y2Z"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BkQ-JZ-560" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Si-gU-riM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="1130"/>
+            <point key="canvasLocation" x="974" y="1123"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="V8A-mD-Cvr">
