@@ -30,9 +30,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>qTWvdxQFZ9YmvUG6x3tghhjg2</string>
+					<string>n7EsyjXQQi5hs4O12qacfOhLX</string>
 					<key>consumerSecret</key>
-					<string>3dfMDqWIcPUom7cqlEuXmdDfJf3OmWzvKGe1HnmVcW9lV8f9LD</string>
+					<string>uzM9Pa2Kyqi9xHYOXCyPry6ndI3eFZI3PYClFyEZGNcYw4RHB2</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
@@ -45,16 +45,16 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>pictonic.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>pictonic.ttf</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

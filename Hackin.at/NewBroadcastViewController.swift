@@ -13,6 +13,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     var place: Place?
     var twitterLinked: Int?
+    var loadingIndicator = LoadingActivityIndicator()
+    
     @IBOutlet weak var broadcastMessageTextView: UITextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
     
@@ -45,25 +47,40 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     
     @IBAction func twitterSwitchToggled(sender: AnyObject) {
-        if postToTwitterSwitch.on && twitterLinked == 0 {
-            Twitter.sharedInstance().logInWithCompletion {
-                (session, error) -> Void in
-                if (session != nil) {
-                    
-                    CurrentHacker.hacker()!.updateTwitterCredentials(authToken: session.authToken, authSecret: session.authTokenSecret, success: {
-                        self.twitterLinked = 1
-                        CurrentHacker.twitterEnabled = self.twitterLinked!
-                        }, failure: {
-                            self.postToTwitterSwitch.on = false
-                    })
-                    
-                } else {
-                    self.postToTwitterSwitch.on = false
-                }
+        if postToTwitterSwitch.on && twitterLinked == 0 { connectWithTwitter() }
+    }
+    
+    func connectWithTwitter(){
+        loadingIndicator.showActivityIndicator(self.view)
+        Twitter.sharedInstance().logInWithCompletion {
+            (session, error) -> Void in
+            if (session != nil) {
+                self.updateCurrentHackerTwitterCredentials(session.authToken, authSecret: session.authTokenSecret)
+            } else {
+                self.onTwitterAuthFailure(error.description)
             }
         }
     }
     
+    private func updateCurrentHackerTwitterCredentials(authToken: String, authSecret: String){
+        CurrentHacker.hacker()!.updateTwitterCredentials(authToken: authToken, authSecret: authSecret, success: {
+                self.loadingIndicator.hideActivityIndicator()
+                self.twitterLinked = 1
+                CurrentHacker.twitterEnabled = self.twitterLinked!
+            }, failure: {
+                self.postToTwitterSwitch.on = false
+                self.loadingIndicator.hideActivityIndicator()
+        })
+    }
+    
+    private func onTwitterAuthFailure(errorMessage:String){
+        let alertController = UIAlertController(title: "Cannot Connect to Twitter", message: "Please contact support@hackin.at. \n Error: \(errorMessage). ", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OKAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        self.postToTwitterSwitch.on = false
+    }
     
     func placeSelected(place: Place) {
         println("Hacker is at \(place)")
