@@ -1,0 +1,5 @@
+*.swp
+Hackin.at.xcworkspace/xcuserdata/
+Hackin.at.xcodeproj/xcuserdata/
+*.un~
+Pods/
