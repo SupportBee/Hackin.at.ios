@@ -63,4 +63,22 @@ class BroadcastTableViewCell: UITableViewCell {
         
         super.updateConstraints()
     }
+    
+    func setupViewData(broadcast:Broadcast){
+        let hacker = broadcast.hacker
+        let message = broadcast.message
+        
+        var placeName:String = ""
+        if broadcast.place != nil{
+            placeName = broadcast.place!.name
+        }
+        
+        self.loginLabel.text = hacker.login
+        self.messageText.text = message
+        self.whereLabel.text = placeName
+        hacker.fetchAvatarImage(success: {
+            (image: UIImage) in
+            self.profileImageView.image = image
+        })
+    }
 }
