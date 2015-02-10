@@ -52,7 +52,7 @@ class BroadcastViewController: UIViewController {
         stickersLabel.text = hacker.stickerCodes()
         
         let timeAgoDate = broadcast.created_at! 
-        whenLabel.text = timeAgoDate.timeAgoSinceNow()
+        whenLabel.text = timeAgoDate.formattedDateWithFormat("MM/DD/YY hh:mm a")
         
         nameLabel.sizeToFit()
         loginLabel.sizeToFit()
