@@ -28,18 +28,23 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         setupNavigationBarStyle()
         setupTableViewStyle()
-
+        setupTableWiring()
+        setupAutoRefresh()
+        fetchBroadcasts()
+    }
+    
+    func setupTableWiring(){
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
         self.broadcastsTableView.registerNib(
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
-        
+    }
+    
+    func setupAutoRefresh(){
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
         self.refreshControl.addTarget(self, action: Selector("refreshBroadcasts"), forControlEvents: UIControlEvents.ValueChanged)
         self.broadcastsTableView.addSubview(refreshControl)
-        
-        fetchBroadcasts()
     }
     
     func setupNavigationBarStyle(){
