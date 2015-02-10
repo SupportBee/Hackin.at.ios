@@ -112,6 +112,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="containerView" destination="dy6-Ls-WK2" id="SvG-oB-QWG"/>
+                        <outlet property="loginButton" destination="js7-tD-VEq" id="ZfH-aB-6pD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d3-pi-Vxs" sceneMemberID="firstResponder"/>
