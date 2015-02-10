@@ -28,9 +28,27 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView?
     var delegate: LoginViewDelegate?
     
+    @IBOutlet weak var loginButton: UIButton!
+    
+    var loginViewLoaded = false
+    var webViewDisplayed = false
+    var loginButtonPressed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupWebView()
+    }
+    
+    func setupWebView(){
+        webView = WKWebView()
+        webView?.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+        webView?.navigationDelegate = self
+        
+        self.view.addSubview(self.webView!)
+        
+        var url = NSURL(string: Hackinat.sharedInstance.githhubAuthURL)
+        var req = NSURLRequest(URL:url!)
+        self.webView!.loadRequest(req)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,13 +57,17 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func loginButtonPressed(sender: UIButton) {
-        println("So you want to login with Github?")
-        webView = WKWebView()
-        webView?.navigationDelegate = self
-        view = self.webView!
-        var url = NSURL(string: Hackinat.sharedInstance.githhubAuthURL)
-        var req = NSURLRequest(URL:url!)
-        self.webView!.loadRequest(req)
+        loginButtonPressed = true
+        if loginViewLoaded {
+            showWebView()
+        }else{
+            loginButton.setTitle("Contacting Mothership. Please stand by ...", forState: UIControlState.Normal)
+        }
+    }
+    
+    func showWebView(){
+        webViewDisplayed = true
+        self.view = self.webView!
     }
     
     
@@ -53,7 +75,11 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     func webView(webView: WKWebView!, didFinishNavigation navigation: WKNavigation!) {
         // If the URL has afterauth, extract auth_token and other info from it
         let url: NSURL = webView.URL!
-        println("Finished navigating to url \(url)")
+        loginViewLoaded = true
+        if (loginButtonPressed && !webViewDisplayed){
+            showWebView()
+            loginButton.setTitle("Login With Github", forState: UIControlState.Normal)
+        }
         if url.absoluteString?.rangeOfString("afterauth") != nil{
             let queryString = url.query
             
