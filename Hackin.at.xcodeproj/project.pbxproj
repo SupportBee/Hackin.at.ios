@@ -43,6 +43,7 @@
 		F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */; };
 		F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */; };
 		F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E674151A4A129000DCA9F8 /* MainViewController.swift */; };
+		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				F0DB3BBD1A41FABF00DC8C9B /* Products */,
 				0FFFA0161A7786A3000A836F /* TwitterKit.framework */,
 				0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */,
+				F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */,
 				0FFFA0181A7786A3000A836F /* Fabric.framework */,
 				BFC0F59973AE4B42AD44039C /* Pods */,
 				F4F0913888F877786F5CE72B /* Frameworks */,
@@ -399,6 +402,7 @@
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
 				0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
+				F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

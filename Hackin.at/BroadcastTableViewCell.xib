@@ -29,7 +29,7 @@
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="when" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubi-ab-p2G">
                         <rect key="frame" x="419" y="23" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -73,6 +73,7 @@
                 <outlet property="loginLabel" destination="X1V-Fs-qgn" id="sPW-dn-qqd"/>
                 <outlet property="messageText" destination="nCo-CR-5Vu" id="VvH-wR-EUi"/>
                 <outlet property="profileImageView" destination="xXQ-a4-HmP" id="Dq4-Yh-gIe"/>
+                <outlet property="whenLabel" destination="ubi-ab-p2G" id="BoP-vR-GpN"/>
                 <outlet property="whereLabel" destination="KcD-4w-Nh6" id="vCX-aL-T7m"/>
             </connections>
             <point key="canvasLocation" x="343" y="136.5"/>
