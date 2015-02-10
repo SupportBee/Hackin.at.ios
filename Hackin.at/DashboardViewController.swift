@@ -91,7 +91,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("Number of rows \(self.broadcasts.count)")
         return self.broadcasts.count;
     }
     

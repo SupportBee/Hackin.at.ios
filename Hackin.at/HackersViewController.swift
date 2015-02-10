@@ -17,6 +17,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarStyle()
+        setupTableViewStyle()
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
