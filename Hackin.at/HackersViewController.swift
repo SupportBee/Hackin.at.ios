@@ -18,10 +18,14 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         setupNavigationBarStyle()
         setupTableViewStyle()
+        setupTableViewWiring()
+        fetchNearbyHackers()
+    }
+    
+    func setupTableViewWiring(){
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
-        fetchNearbyHackers()
     }
     
     func setupNavigationBarStyle(){
