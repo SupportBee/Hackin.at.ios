@@ -45,25 +45,28 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     
     @IBAction func twitterSwitchToggled(sender: AnyObject) {
-        if postToTwitterSwitch.on && twitterLinked == 0 {
-            Twitter.sharedInstance().logInWithCompletion {
-                (session, error) -> Void in
-                if (session != nil) {
-                    
-                    CurrentHacker.hacker()!.updateTwitterCredentials(authToken: session.authToken, authSecret: session.authTokenSecret, success: {
-                        self.twitterLinked = 1
-                        CurrentHacker.twitterEnabled = self.twitterLinked!
-                        }, failure: {
-                            self.postToTwitterSwitch.on = false
-                    })
-                    
-                } else {
-                    self.postToTwitterSwitch.on = false
-                }
+        if postToTwitterSwitch.on && twitterLinked == 0 { connectWithTwitter() }
+    }
+    
+    func connectWithTwitter(){
+        Twitter.sharedInstance().logInWithCompletion {
+            (session, error) -> Void in
+            if (session != nil) {
+                self.updateCurrentHackerTwitterCredentials(session.authToken, authSecret: session.authTokenSecret)
+            } else {
+                self.postToTwitterSwitch.on = false
             }
         }
     }
     
+    func updateCurrentHackerTwitterCredentials(authToken: String, authSecret: String){
+        CurrentHacker.hacker()!.updateTwitterCredentials(authToken: authToken, authSecret: authSecret, success: {
+            self.twitterLinked = 1
+            CurrentHacker.twitterEnabled = self.twitterLinked!
+            }, failure: {
+                self.postToTwitterSwitch.on = false
+        })
+    }
     
     func placeSelected(place: Place) {
         println("Hacker is at \(place)")

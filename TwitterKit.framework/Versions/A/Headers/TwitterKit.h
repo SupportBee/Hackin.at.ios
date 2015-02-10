@@ -30,7 +30,6 @@
 #import "TWTRLogInButton.h"
 #import "TWTRTweet.h"
 #import "TWTRTweetTableViewCell.h"
-#import "TWTRTweetTableViewCell.h"
 #import "TWTRTweetView.h"
 #import "TWTRTweetViewDelegate.h"
 #import "TWTRUser.h"
