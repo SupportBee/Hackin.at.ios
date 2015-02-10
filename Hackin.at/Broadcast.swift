@@ -14,6 +14,7 @@ class Broadcast: NSObject {
     let message:String
     var id: String?
     var place:Place?
+    var broadcastJSON:JSON?
     var hacker:Hacker
     var postToTwitter = "false"
     
@@ -24,12 +25,25 @@ class Broadcast: NSObject {
 
     convenience init(json: JSON){
         self.init(message: json["message"].stringValue, hacker: Hacker(json: json["logged_by"]))
+        
         self.id = json["id"].stringValue
+        self.broadcastJSON = json
+
         if json["logged_at"]["place"]["id"] != nil {
             self.place = Place(json: json["logged_at"]["place"])
         }
     }
     
+    var created_at:NSDate? {
+        if(broadcastJSON != nil){
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
+            let date = dateFormatter.dateFromString(broadcastJSON!["created_at"].stringValue)
+            return date
+        }
+        return nil
+    }
+
     class func fetchBroadcasts(#success: ([Broadcast]) -> ()){
         
         func onFetch(result: AnyObject){

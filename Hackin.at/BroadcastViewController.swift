@@ -51,7 +51,7 @@ class BroadcastViewController: UIViewController {
         stickersLabel.font = UIFont(name: "pictonic", size: 16)
         stickersLabel.text = hacker.stickerCodes()
         
-        let timeAgoDate = NSDate(timeIntervalSince1970: 1000)
+        let timeAgoDate = broadcast.created_at! 
         whenLabel.text = timeAgoDate.timeAgoSinceNow()
         
         nameLabel.sizeToFit()
