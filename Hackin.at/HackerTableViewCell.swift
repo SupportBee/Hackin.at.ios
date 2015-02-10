@@ -58,5 +58,28 @@ class HackerTableViewCell: UITableViewCell {
 
         
     }
+    
+    func setupViewData(hacker: Hacker){
+        let login = hacker.login
+        
+        var name = ""
+        if(hacker.name != nil){ name = hacker.name! }
+        
+        var locationName = ""
+        if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
+        
+        let stickers = hacker.stickerCodes()
+        
+        self.loginLabel.text = login
+        self.nameLabel.text = name
+        self.whereLabel.text = locationName
+        self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
+        self.stickersLabel.text = stickers
+        
+        hacker.fetchAvatarImage(success: {
+            (image: UIImage) in
+            self.profileImageView.image = image
+        })
+    }
 
 }
