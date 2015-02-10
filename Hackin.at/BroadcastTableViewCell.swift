@@ -33,6 +33,7 @@ class BroadcastTableViewCell: UITableViewCell {
         
         self.loginLabel.textColor = AppColors.primaryLabel
         self.whereLabel.textColor = AppColors.secondaryLabel
+        self.whenLabel.textColor = AppColors.secondaryLabel
         
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
@@ -49,6 +50,9 @@ class BroadcastTableViewCell: UITableViewCell {
         self.loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: kLabelHorizontalInsets)
         self.loginLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: profileImageView, withOffset: 0)
         
+        self.whenLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginLabel)
+        self.whenLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
+        
         self.messageText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.profileImageView, withOffset: kLabelHorizontalInsets)
         
         self.messageText.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: self.contentView, withOffset: 0)
@@ -58,5 +62,23 @@ class BroadcastTableViewCell: UITableViewCell {
         self.whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: kLabelHorizontalInsets)
         
         super.updateConstraints()
+    }
+    
+    func setupViewData(broadcast:Broadcast){
+        let hacker = broadcast.hacker
+        let message = broadcast.message
+        
+        var placeName:String = ""
+        if broadcast.place != nil{
+            placeName = broadcast.place!.name
+        }
+        
+        self.loginLabel.text = hacker.login
+        self.messageText.text = message
+        self.whereLabel.text = placeName
+        hacker.fetchAvatarImage(success: {
+            (image: UIImage) in
+            self.profileImageView.image = image
+        })
     }
 }

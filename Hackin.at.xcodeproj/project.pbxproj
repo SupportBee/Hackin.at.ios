@@ -33,15 +33,17 @@
 		F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546F1A4324E000133D25 /* PlacesViewController.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
+		F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BDDC011A874C2200C1C78D /* AppTheme.swift */; };
 		F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */; };
 		F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */; };
 		F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
-		F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */; };
+		F0DB3BE21A41FB8700DC8C9B /* BroadcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */; };
 		F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */; };
 		F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E674151A4A129000DCA9F8 /* MainViewController.swift */; };
+		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +97,9 @@
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBroadcastViewController.swift; sourceTree = "<group>"; };
 		F0AA546F1A4324E000133D25 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
-		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_square.png; sourceTree = "<group>"; };
+		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F0BDDC011A874C2200C1C78D /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastTableViewCell.xib; sourceTree = "<group>"; };
 		F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,9 +110,10 @@
 		F0DB3BD11A41FABF00DC8C9B /* Hackin.atTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hackin.atTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BD61A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackin_atTests.swift; sourceTree = "<group>"; };
-		F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastsViewController.swift; sourceTree = "<group>"; };
 		F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,16 +163,80 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F0BDDBFC1A87410600C1C78D /* Hackers */ = {
+			isa = PBXGroup;
+			children = (
+				0F4350261A7FABDD00D58243 /* Hacker.swift */,
+				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
+				0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */,
+				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+			);
+			name = Hackers;
+			sourceTree = "<group>";
+		};
+		F0BDDBFD1A87426000C1C78D /* Broadcasts */ = {
+			isa = PBXGroup;
+			children = (
+				0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */,
+				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
+				F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */,
+				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
+				F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */,
+				F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */,
+				F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */,
+			);
+			name = Broadcasts;
+			sourceTree = "<group>";
+		};
+		F0BDDBFE1A87428F00C1C78D /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				F0AA546F1A4324E000133D25 /* PlacesViewController.swift */,
+				F043F0381A5C57BB00E337E5 /* Places.storyboard */,
+				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
+				0F714D5C1A81DF66006B089A /* Place.swift */,
+			);
+			name = Places;
+			sourceTree = "<group>";
+		};
+		F0BDDBFF1A87429F00C1C78D /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		F0BDDC001A8742BD00C1C78D /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
+				F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		F0BDDC041A874C3500C1C78D /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F0BDDC011A874C2200C1C78D /* AppTheme.swift */,
+				F05229DA1A823AD800E36E81 /* AppColors.swift */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
 		F0DB3BB31A41FABF00DC8C9B = {
 			isa = PBXGroup;
 			children = (
 				F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */,
 				F065B9171A420C6D00CF2A38 /* CoreLocation.framework */,
 				F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */,
+				F0AD153D1A49E94A00C1E456 /* logo_square.png */,
 				F0DB3BD41A41FABF00DC8C9B /* Hackin.atTests */,
 				F0DB3BBD1A41FABF00DC8C9B /* Products */,
 				0FFFA0161A7786A3000A836F /* TwitterKit.framework */,
 				0FFFA0171A7786A3000A836F /* TwitterKitResources.bundle */,
+				F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */,
 				0FFFA0181A7786A3000A836F /* Fabric.framework */,
 				BFC0F59973AE4B42AD44039C /* Pods */,
 				F4F0913888F877786F5CE72B /* Frameworks */,
@@ -191,32 +259,18 @@
 				F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */,
 				F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */,
 				F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */,
-				F04CB4551A572F3100379EBC /* NewBroadcast.storyboard */,
-				F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */,
-				F04CB45C1A574D7600379EBC /* Broadcasts.storyboard */,
-				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
-				F0DB3BE11A41FB8700DC8C9B /* DashboardViewController.swift */,
-				F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */,
-				F0AA546F1A4324E000133D25 /* PlacesViewController.swift */,
+				0F4350241A7F76FF00D58243 /* Hackinat.swift */,
+				0F4350281A80D1F000D58243 /* CurrentHacker.swift */,
 				F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */,
 				F0E674151A4A129000DCA9F8 /* MainViewController.swift */,
-				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
-				F0AD153D1A49E94A00C1E456 /* logo_square.png */,
+				F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */,
+				F0BDDC001A8742BD00C1C78D /* Tabbar */,
+				F0BDDBFE1A87428F00C1C78D /* Places */,
+				F0BDDBFF1A87429F00C1C78D /* Notifications */,
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
-				F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */,
-				F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */,
-				F04CB45F1A574F1D00379EBC /* BroadcastViewController.swift */,
-				F043F0381A5C57BB00E337E5 /* Places.storyboard */,
-				F043F03B1A5C590100E337E5 /* PlaceViewController.swift */,
-				0F4350241A7F76FF00D58243 /* Hackinat.swift */,
-				0F4350261A7FABDD00D58243 /* Hacker.swift */,
-				0F4350281A80D1F000D58243 /* CurrentHacker.swift */,
-				0F714D5C1A81DF66006B089A /* Place.swift */,
-				0F09E98E1A81F3F400D0AEA7 /* Broadcast.swift */,
-				F05229DA1A823AD800E36E81 /* AppColors.swift */,
-				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
-				0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */,
-				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+				F0BDDBFD1A87426000C1C78D /* Broadcasts */,
+				F0BDDBFC1A87410600C1C78D /* Hackers */,
+				F0BDDC041A874C3500C1C78D /* Styles */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -348,6 +402,7 @@
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
 				0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */,
 				F0D50DDE1A4DF56C00531C50 /* BroadcastTableViewCell.xib in Resources */,
+				F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,11 +482,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				0F714D5D1A81DF66006B089A /* Place.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
-				F03B33AF1A5DF24B00A3EBA0 /* NSArray+PureLayout.m in Sources */,
 				0FA8221E1A84861700AB5E8D /* HackersViewController.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
@@ -439,7 +494,7 @@
 				0F09E98F1A81F3F400D0AEA7 /* Broadcast.swift in Sources */,
 				F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */,
 				F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */,
-				F0DB3BE21A41FB8700DC8C9B /* DashboardViewController.swift in Sources */,
+				F0DB3BE21A41FB8700DC8C9B /* BroadcastsViewController.swift in Sources */,
 				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,

@@ -17,7 +17,7 @@
 import UIKit
 import PureLayout
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var broadcastsTableView: UITableView!
     
@@ -28,18 +28,23 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         setupNavigationBarStyle()
         setupTableViewStyle()
-
+        setupTableViewWiring()
+        setupAutoRefresh()
+        fetchBroadcasts()
+    }
+    
+    func setupTableViewWiring(){
         self.broadcastsTableView.delegate = self
         self.broadcastsTableView.dataSource = self
         self.broadcastsTableView.registerNib(
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
-        
+    }
+    
+    func setupAutoRefresh(){
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
         self.refreshControl.addTarget(self, action: Selector("refreshBroadcasts"), forControlEvents: UIControlEvents.ValueChanged)
         self.broadcastsTableView.addSubview(refreshControl)
-        
-        fetchBroadcasts()
     }
     
     func setupNavigationBarStyle(){
@@ -91,7 +96,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("Number of rows \(self.broadcasts.count)")
         return self.broadcasts.count;
     }
     
@@ -99,21 +103,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier(
             "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
         let broadcast = broadcasts[indexPath.row]
-        let hacker = broadcast.hacker
-        let message = broadcast.message
-        
-        var placeName:String = ""
-        if broadcast.place != nil{
-            placeName = broadcast.place!.name
-        }
-        
-        cell.loginLabel.text = hacker.login
-        cell.messageText.text = message
-        cell.whereLabel.text = placeName
-        hacker.fetchAvatarImage(success: {
-            (image: UIImage) in
-            cell.profileImageView.image = image
-        })
+        cell.setupViewData(broadcast)
         return cell
     }
     

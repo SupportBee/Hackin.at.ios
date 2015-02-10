@@ -17,10 +17,15 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBarStyle()
+        setupTableViewStyle()
+        setupTableViewWiring()
+        fetchNearbyHackers()
+    }
+    
+    func setupTableViewWiring(){
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
-        fetchNearbyHackers()
     }
     
     func setupNavigationBarStyle(){
@@ -48,6 +53,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func renderHackers(hackers:[Hacker]){
+        println("Render \(hackers.count) Hackers")
         self.hackers = hackers
         self.hackersTableView.reloadData()
     }
@@ -60,22 +66,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("HackerCell", forIndexPath: indexPath) as HackerTableViewCell
         
         let hacker = self.hackers[indexPath.row]
-        let login = hacker.login
-        
-        var name = ""
-        if(hacker.name != nil){ name = hacker.name! }
-        
-        var locationName = ""
-        if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
-        
-        let stickers = hacker.stickerCodes()
-        
-        cell.loginLabel.text = login
-        cell.nameLabel.text = name
-        cell.whereLabel.text = locationName
-        cell.stickersLabel.font = UIFont(name: "pictonic", size: 32)
-        cell.stickersLabel.text = stickers
-        
+        cell.setupViewData(hacker)
         return cell
     }
     

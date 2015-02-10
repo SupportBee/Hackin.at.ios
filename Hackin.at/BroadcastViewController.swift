@@ -8,15 +8,18 @@
 
 
 import UIKit
+import PureLayout
 
 class BroadcastViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var stickersLabel: UILabel!
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var placeLabelButton: UIButton!
+    @IBOutlet weak var whenLabel: UILabel!
     
     var broadcast: Broadcast! = nil
     
@@ -42,15 +45,62 @@ class BroadcastViewController: UIViewController {
             placeName = broadcast.place!.name
         }
         
-        loginLabel.text = hacker.login
+        loginLabel.text = "@\(hacker.login)"
+        nameLabel.text = hacker.name
         messageTextView.text = message
-        println("At \(placeName)")
+        stickersLabel.font = UIFont(name: "pictonic", size: 16)
+        stickersLabel.text = hacker.stickerCodes()
+        
+        let timeAgoDate = broadcast.created_at! 
+        whenLabel.text = timeAgoDate.formattedDateWithFormat("MM/DD/YY hh:mm a")
+        
+        nameLabel.sizeToFit()
+        loginLabel.sizeToFit()
+        stickersLabel.sizeToFit()
+        
+        
         placeLabelButton.setTitle(placeName, forState: UIControlState.Normal)
         hacker.fetchAvatarImage(success: {
             (image: UIImage) in
                 self.profileImageView.image = image
         })
 
+    }
+    
+    override func updateViewConstraints() {
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+            withInset: AppTheme.HackerListing.paddingLeft)
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+            withInset: AppTheme.HackerListing.paddingTop)
+        
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
+            withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+            withInset: AppTheme.HackerListing.paddingTop)
+        
+        
+        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        
+        loginLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: nameLabel)
+        
+        stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
+        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        
+        // messageTextView should be un-scrollable for this to work
+        messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
+        messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
+        messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
+        
+        placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
+        placeLabelButton.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+            withInset: AppTheme.HackerListing.paddingLeft)
+        
+        whenLabel.autoAlignAxis(ALAxis.Baseline, toSameAxisOfView: placeLabelButton)
+        whenLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right,
+            withInset: AppTheme.HackerListing.paddingLeft)
+        
+        super.updateViewConstraints()
+        
     }
     
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {
