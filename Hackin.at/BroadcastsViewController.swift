@@ -17,94 +17,53 @@
 import UIKit
 import PureLayout
 
-class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class BroadcastsViewController: UIViewController, UITableViewDelegate {
     
-    @IBOutlet weak var broadcastsTableView: UITableView!
-    
-    var broadcasts: Array<Broadcast> = []
-    var refreshControl:UIRefreshControl! 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableViewStyle()
-        setupTableViewWiring()
-        setupAutoRefresh()
-        fetchBroadcasts()
-    }
-    
-    func setupTableViewWiring(){
-        self.broadcastsTableView.delegate = self
-        self.broadcastsTableView.dataSource = self
-        self.broadcastsTableView.registerNib(
-            UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
-    }
-    
-    func setupAutoRefresh(){
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
-        self.refreshControl.addTarget(self, action: Selector("refreshBroadcasts"), forControlEvents: UIControlEvents.ValueChanged)
-        self.broadcastsTableView.addSubview(refreshControl)
-    }
-    
-    func setupTableViewStyle(){
-        self.broadcastsTableView.estimatedRowHeight = 100
-        self.broadcastsTableView.rowHeight = UITableViewAutomaticDimension
-        self.broadcastsTableView.separatorInset = UIEdgeInsetsZero
-    }
-    
-    override func updateViewConstraints() {
-        self.broadcastsTableView.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
-        self.broadcastsTableView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
-        self.broadcastsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
-        self.broadcastsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
-        super.updateViewConstraints()
-    }
-    
-    func refreshBroadcasts(){
-        func onFetch(broadcasts:[Broadcast]){
-            renderBroadcasts(broadcasts)
-            self.refreshControl.endRefreshing()
-        }
-        Broadcast.fetchBroadcasts(success: onFetch)
-    }
-    
-    func fetchBroadcasts(){
-        Broadcast.fetchBroadcasts(success: renderBroadcasts)
-    }
-    
-    func renderBroadcasts(broadcasts:[Broadcast]){
-        self.broadcasts = broadcasts
-        self.broadcastsTableView.reloadData()
-    }
- 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    var broadcastTableViewDataSource = BroadcastTableViewDataSource()
+    var broadcastListing: BroadcastListing!
+    var tableRefreshControl:TableRefreshControl!
     
     @IBAction func broadcastButtonPressed(sender: AnyObject) {
         var newBroadcastStoryBoard = UIStoryboard(name: "NewBroadcast", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("newBroadcastViewController") as UINavigationController;
         self.presentViewController(vc, animated: true, completion: nil)
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.broadcasts.count;
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupListing()
+        initListing()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(
-            "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
-        let broadcast = broadcasts[indexPath.row]
-        cell.setupViewData(broadcast)
-        return cell
+    override func updateViewConstraints() {
+        self.broadcastListing.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
+        self.broadcastListing.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+        self.broadcastListing.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        self.broadcastListing.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        super.updateViewConstraints()
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
-        vc.broadcast = broadcasts[indexPath.row]
+        vc.broadcast = broadcastTableViewDataSource.broadcasts[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    private func setupListing(){
+        broadcastListing = BroadcastListing(tableViewDataSource: broadcastTableViewDataSource, tableViewDelegate: self, pullToRefresh: true)
+        self.view.addSubview(broadcastListing)
+    }
+    
+    private func initListing(){
+        broadcastListing.refresh()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 }

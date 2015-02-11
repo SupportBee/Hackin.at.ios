@@ -37,19 +37,7 @@
                     <view key="view" contentMode="scaleToFill" id="2Kb-jQ-Psb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-bs-9HO">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hFx-bs-9HO" firstAttribute="leading" secondItem="2Kb-jQ-Psb" secondAttribute="leadingMargin" constant="-16" placeholder="YES" id="9HJ-Zt-eoK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hFx-bs-9HO" secondAttribute="trailing" constant="-16" placeholder="YES" id="Omq-BB-swJ"/>
-                            <constraint firstItem="hFx-bs-9HO" firstAttribute="top" secondItem="zxs-VI-zdd" secondAttribute="bottom" placeholder="YES" id="c6Z-S6-qRK"/>
-                            <constraint firstItem="w0e-i3-0xa" firstAttribute="top" secondItem="hFx-bs-9HO" secondAttribute="bottom" placeholder="YES" id="d5v-N0-uZb"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
                     <navigationItem key="navigationItem" id="Vxh-c3-hSI">
@@ -71,9 +59,6 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="broadcastsTableView" destination="hFx-bs-9HO" id="hXO-VS-mh5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-e1-XqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
