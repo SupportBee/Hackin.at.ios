@@ -28,10 +28,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        clearPlaceholderLabels()
         setupStyles()
         setupLoggedInUser()
         populateBasicInfo()
         fetchUserDetails()
+    }
+    
+    func clearPlaceholderLabels(){
+        stickersLabel.text = ""
     }
     
     @IBAction func followButtonPressed(sender: AnyObject) {
