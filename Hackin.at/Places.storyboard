@@ -52,23 +52,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1b-TQ-pGc">
-                                <rect key="frame" x="22" y="112" width="277" height="21"/>
+                                <rect key="frame" x="22" y="20" width="277" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lat,long" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x88-Dm-Jzg">
-                                <rect key="frame" x="22" y="150" width="268" height="21"/>
+                                <rect key="frame" x="22" y="240" width="268" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTq-ZP-zcz" customClass="GMSMapView">
+                                <rect key="frame" x="22" y="57" width="261" height="157"/>
+                                <color key="backgroundColor" red="0.94401041666666663" green="0.94401041666666663" blue="0.94401041666666663" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="latLongLabel" destination="x88-Dm-Jzg" id="SZK-e0-asN"/>
+                        <outlet property="mapView" destination="VTq-ZP-zcz" id="8nb-Ur-ww4"/>
                         <outlet property="nameLabel" destination="F1b-TQ-pGc" id="GCL-46-1K5"/>
                     </connections>
                 </viewController>

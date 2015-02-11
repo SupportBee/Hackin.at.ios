@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class PlaceViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var latLongLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var mapView: GMSMapView!
     
     override func viewDidLoad() {
         

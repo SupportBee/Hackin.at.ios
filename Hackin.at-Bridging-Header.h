@@ -4,3 +4,4 @@
 
 #import "Purelayout/PureLayout.h"
 #import "DateTools/DateTools.h"
+#import "GoogleMaps/GoogleMaps.h"
