@@ -34,7 +34,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableRefreshControl = TableRefreshControl.setupForTableViewWithAction(
             tableView: self.hackersTableView,
             target: self,
-            action: "refreshBroadcasts"
+            action: "refreshHackers"
         )
     }
     

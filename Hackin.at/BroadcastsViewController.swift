@@ -17,28 +17,6 @@
 import UIKit
 import PureLayout
 
-class TableRefreshControl {
-    var refreshControl = UIRefreshControl()
-    let tableView: UITableView
-    
-    class func setupForTableViewWithAction(#tableView: UITableView, target: AnyObject, action: String) -> TableRefreshControl{
-        return TableRefreshControl(tableView: tableView, target: target, action: action)
-    }
-    
-    init(tableView: UITableView, target: AnyObject, action: String){
-        self.tableView = tableView
-        
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.refreshControl.addTarget(target, action: Selector(action), forControlEvents: UIControlEvents.ValueChanged)
-        
-        tableView.addSubview(self.refreshControl)
-    }
-    
-    func endRefreshing(){
-        self.refreshControl.endRefreshing()
-    }
-}
-
 class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var broadcastsTableView: UITableView!
