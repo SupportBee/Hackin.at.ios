@@ -26,7 +26,6 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBarStyle()
         setupTableViewStyle()
         setupTableViewWiring()
         setupAutoRefresh()
@@ -45,12 +44,6 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
         self.refreshControl.addTarget(self, action: Selector("refreshBroadcasts"), forControlEvents: UIControlEvents.ValueChanged)
         self.broadcastsTableView.addSubview(refreshControl)
-    }
-    
-    func setupNavigationBarStyle(){
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.barTintColor = AppColors.barTint
     }
     
     func setupTableViewStyle(){
