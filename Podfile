@@ -4,4 +4,6 @@ pod 'Alamofire', '~> 1.1'
 pod 'SwiftyJSON', '2.1.3'
 pod 'PureLayout'
 pod 'DateTools'
+pod 'Google-Maps-iOS-SDK'
+
 
