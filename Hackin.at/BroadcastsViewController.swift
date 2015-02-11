@@ -22,7 +22,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var broadcastsTableView: UITableView!
     
     var broadcasts: Array<Broadcast> = []
-    var refreshControl:UIRefreshControl! 
+    var tableRefreshControl:TableRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +40,11 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func setupAutoRefresh(){
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
-        self.refreshControl.addTarget(self, action: Selector("refreshBroadcasts"), forControlEvents: UIControlEvents.ValueChanged)
-        self.broadcastsTableView.addSubview(refreshControl)
+        tableRefreshControl = TableRefreshControl.setupForTableViewWithAction(
+            tableView: self.broadcastsTableView,
+            target: self,
+            action: "refreshBroadcasts"
+        )
     }
     
     func setupTableViewStyle(){
@@ -63,7 +64,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
     func refreshBroadcasts(){
         func onFetch(broadcasts:[Broadcast]){
             renderBroadcasts(broadcasts)
-            self.refreshControl.endRefreshing()
+            self.tableRefreshControl.endRefreshing()
         }
         Broadcast.fetchBroadcasts(success: onFetch)
     }
