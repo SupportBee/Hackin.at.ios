@@ -13,11 +13,14 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var hackersTableView: UITableView!
     var hackers: Array<Hacker> = []
+    var tableRefreshControl:TableRefreshControl!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableViewStyle()
         setupTableViewWiring()
+        setupAutoRefresh()
         fetchNearbyHackers()
     }
     
@@ -25,6 +28,14 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
+    }
+    
+    func setupAutoRefresh(){
+        tableRefreshControl = TableRefreshControl.setupForTableViewWithAction(
+            tableView: self.hackersTableView,
+            target: self,
+            action: "refreshBroadcasts"
+        )
     }
     
     func setupTableViewStyle(){
@@ -39,6 +50,14 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
         self.hackersTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
         super.updateViewConstraints()
+    }
+    
+    func refreshHackers(){
+        func onFetch(hackers:[Hacker]){
+            renderHackers(hackers)
+            self.tableRefreshControl.endRefreshing()
+        }
+        Hacker.fetchNearbyHackers(success: onFetch)
     }
     
     func fetchNearbyHackers(){
