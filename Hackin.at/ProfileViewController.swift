@@ -77,8 +77,12 @@ class ProfileViewController: UIViewController {
         companyLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
         companyLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
         
-        stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
-        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: companyLabel, withOffset: AppTheme.Listing.elementsPadding)
+        metaInfoView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: basicInfoView, withOffset: AppTheme.Listing.elementsPadding)
+        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        
+        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         
         super.updateViewConstraints()
     }
@@ -98,7 +102,7 @@ class ProfileViewController: UIViewController {
         println(reposCount)
         println(reposCount)
         
-        reposCountLabel.text = "\(reposCount) Public Repos"
+        reposCountLabel.text = "\(reposCount) Repos"
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in

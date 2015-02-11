@@ -20,20 +20,30 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ng3-jR-nkU">
                                 <rect key="frame" x="16" y="176" width="288" height="35"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Repos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-W1-tMa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0 Repos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-W1-tMa">
                                         <rect key="frame" x="15" y="6" width="122" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="stickers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biB-sB-LOk">
-                                        <rect key="frame" x="201" y="-5" width="282" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="stickers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biB-sB-LOk">
+                                        <rect key="frame" x="210" y="1" width="70" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97200520833333337" green="0.97200520833333337" blue="0.97200520833333337" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="biB-sB-LOk" secondAttribute="bottom" placeholder="YES" id="4hN-Li-6LI"/>
+                                    <constraint firstItem="biB-sB-LOk" firstAttribute="top" secondItem="ng3-jR-nkU" secondAttribute="top" constant="1" placeholder="YES" id="Ctk-VN-P4n"/>
+                                    <constraint firstItem="jRb-W1-tMa" firstAttribute="top" secondItem="ng3-jR-nkU" secondAttribute="top" constant="6" placeholder="YES" id="Mlp-7n-TzQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="biB-sB-LOk" secondAttribute="trailing" constant="8" placeholder="YES" id="VY4-QR-T7z"/>
+                                    <constraint firstItem="jRb-W1-tMa" firstAttribute="leading" secondItem="ng3-jR-nkU" secondAttribute="leading" constant="15" placeholder="YES" id="WYo-SE-Nkz"/>
+                                    <constraint firstItem="biB-sB-LOk" firstAttribute="leading" secondItem="jRb-W1-tMa" secondAttribute="trailing" constant="73" placeholder="YES" id="jnY-Bk-BaZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="jRb-W1-tMa" secondAttribute="bottom" constant="8" placeholder="YES" id="lua-Ul-hn6"/>
+                                    <constraint firstItem="biB-sB-LOk" firstAttribute="leading" secondItem="jRb-W1-tMa" secondAttribute="trailing" constant="73" placeholder="YES" id="zz7-Ex-bLc"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97d-6N-X3r">
                                 <rect key="frame" x="16" y="14" width="287" height="141"/>
@@ -52,7 +62,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-SW-5Sx">
-                                        <rect key="frame" x="159" y="42.5" width="113" height="21"/>
+                                        <rect key="frame" x="159" y="42" width="113" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -71,14 +81,14 @@
                                     <constraint firstAttribute="trailing" secondItem="5fu-SW-5Sx" secondAttribute="trailing" constant="15" placeholder="YES" id="J2x-xc-Gzc"/>
                                     <constraint firstItem="5fu-SW-5Sx" firstAttribute="leading" secondItem="ohQ-2h-8rg" secondAttribute="trailing" constant="23" placeholder="YES" id="JAG-W3-ZNg"/>
                                     <constraint firstAttribute="trailing" secondItem="EVS-QK-1yq" secondAttribute="trailing" constant="15" placeholder="YES" id="Mx9-J3-r5e"/>
-                                    <constraint firstItem="xoj-aZ-PDS" firstAttribute="top" secondItem="5fu-SW-5Sx" secondAttribute="bottom" constant="15.5" id="Xmc-Lb-SwL"/>
-                                    <constraint firstItem="xoj-aZ-PDS" firstAttribute="leading" secondItem="ohQ-2h-8rg" secondAttribute="trailing" constant="23" id="axB-3c-zcu"/>
+                                    <constraint firstItem="xoj-aZ-PDS" firstAttribute="top" secondItem="5fu-SW-5Sx" secondAttribute="bottom" constant="15.5" placeholder="YES" id="Xmc-Lb-SwL"/>
+                                    <constraint firstItem="xoj-aZ-PDS" firstAttribute="leading" secondItem="ohQ-2h-8rg" secondAttribute="trailing" constant="23" placeholder="YES" id="axB-3c-zcu"/>
                                     <constraint firstItem="ohQ-2h-8rg" firstAttribute="top" secondItem="97d-6N-X3r" secondAttribute="top" constant="8" placeholder="YES" id="eJn-9R-0ia"/>
                                     <constraint firstItem="5fu-SW-5Sx" firstAttribute="leading" secondItem="ohQ-2h-8rg" secondAttribute="trailing" constant="23" placeholder="YES" id="gUL-RI-xGe"/>
                                     <constraint firstItem="EVS-QK-1yq" firstAttribute="leading" secondItem="ohQ-2h-8rg" secondAttribute="trailing" constant="23" placeholder="YES" id="hDy-BS-Kg5"/>
                                     <constraint firstItem="5fu-SW-5Sx" firstAttribute="top" secondItem="EVS-QK-1yq" secondAttribute="bottom" constant="14" placeholder="YES" id="hTQ-XY-fZq"/>
                                     <constraint firstItem="5fu-SW-5Sx" firstAttribute="top" secondItem="EVS-QK-1yq" secondAttribute="bottom" constant="14" placeholder="YES" id="lhX-IE-LdL"/>
-                                    <constraint firstAttribute="trailing" secondItem="xoj-aZ-PDS" secondAttribute="trailing" constant="-6" id="pqh-rv-Fay"/>
+                                    <constraint firstAttribute="trailing" secondItem="xoj-aZ-PDS" secondAttribute="trailing" constant="-6" placeholder="YES" id="pqh-rv-Fay"/>
                                     <constraint firstAttribute="bottom" secondItem="ohQ-2h-8rg" secondAttribute="bottom" constant="6" placeholder="YES" id="zHd-sE-371"/>
                                 </constraints>
                             </view>
