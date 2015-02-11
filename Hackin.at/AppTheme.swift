@@ -18,3 +18,11 @@ public struct AppTheme {
         static let paddingTop: CGFloat = 15.0;
     };
 }
+
+public func setupAppStyling(){
+    
+    // Navigation Bar
+    UINavigationBar.appearance().barTintColor = AppColors.barTint
+    UINavigationBar.appearance().translucent = false
+    UINavigationBar.appearance().barStyle = UIBarStyle.Black
+}

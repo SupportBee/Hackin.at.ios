@@ -13,16 +13,10 @@ import PureLayout
 class SelfViewController: UIViewController{
     
     override func viewDidLoad() {
-        setupNavigationBarStyle();
         self.edgesForExtendedLayout = UIRectEdge.None
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
         self.view.addSubview(vc.view)
     }
 
-    func setupNavigationBarStyle(){
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.barTintColor = AppColors.barTint
-    }
 }

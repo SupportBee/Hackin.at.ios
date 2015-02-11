@@ -16,7 +16,6 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBarStyle()
         setupTableViewStyle()
         setupTableViewWiring()
         fetchNearbyHackers()
@@ -26,12 +25,6 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.hackersTableView.delegate = self
         self.hackersTableView.dataSource = self
         self.hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
-    }
-    
-    func setupNavigationBarStyle(){
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.barTintColor = AppColors.barTint
     }
     
     func setupTableViewStyle(){
