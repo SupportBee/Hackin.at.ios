@@ -20,6 +20,14 @@ import PureLayout
 class BroadcastTableViewDataSource:NSObject, UITableViewDataSource{
     var broadcasts: Array<Broadcast> = []
     
+    func fetchBroadcasts(#success: () -> ()){
+        func onFetch(broadcasts: [Broadcast]){
+            self.broadcasts = broadcasts
+            success()
+        }
+        Broadcast.fetchBroadcasts(success: onFetch)
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.broadcasts.count;
     }
@@ -37,7 +45,6 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var broadcastsTableView: UITableView!
     
-    //var broadcasts: Array<Broadcast> = []
     var broadcastTableViewDataSource = BroadcastTableViewDataSource()
     var tableRefreshControl:TableRefreshControl!
     
@@ -79,25 +86,14 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     }
     
     func refreshBroadcasts(){
-        func onFetch(broadcasts:[Broadcast]){
-            renderBroadcasts(broadcasts)
-            self.tableRefreshControl.endRefreshing()
-        }
-        Broadcast.fetchBroadcasts(success: onFetch)
+        fetchBroadcasts(success: { self.tableRefreshControl.endRefreshing() })
     }
     
-    func fetchBroadcasts(){
-        Broadcast.fetchBroadcasts(success: renderBroadcasts)
-    }
-    
-    func renderBroadcasts(broadcasts:[Broadcast]){
-        self.broadcastTableViewDataSource.broadcasts = broadcasts
-        self.broadcastsTableView.reloadData()
-    }
- 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func fetchBroadcasts(success: () -> () = {}){
+        broadcastTableViewDataSource.fetchBroadcasts(success: {
+            self.broadcastsTableView.reloadData()
+            success()
+        })
     }
     
     @IBAction func broadcastButtonPressed(sender: AnyObject) {
@@ -111,6 +107,11 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
         vc.broadcast = broadcastTableViewDataSource.broadcasts[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 }
