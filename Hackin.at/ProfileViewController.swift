@@ -16,10 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     
-    @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var reposCountLabel: UILabel!
-    
-    @IBOutlet weak var followButtonLabel: UIButton!
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var stickersLabel: UILabel!
@@ -89,13 +86,11 @@ class ProfileViewController: UIViewController {
         
         // Counts
         var reposCount = userDetails["github_repos"].int!
-        var followersCount = userDetails["github_followers"].int!
         
         println(reposCount)
         println(reposCount)
         
         reposCountLabel.text = "\(reposCount) Repos"
-        followersCountLabel.text = "\(followersCount) Followers"
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in
