@@ -17,11 +17,28 @@
 import UIKit
 import PureLayout
 
-class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class BroadcastTableViewDataSource:NSObject, UITableViewDataSource{
+    var broadcasts: Array<Broadcast> = []
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.broadcasts.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
+        let broadcast = broadcasts[indexPath.row]
+        cell.setupViewData(broadcast)
+        return cell
+    }
+}
+
+class BroadcastsViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var broadcastsTableView: UITableView!
     
-    var broadcasts: Array<Broadcast> = []
+    //var broadcasts: Array<Broadcast> = []
+    var broadcastTableViewDataSource = BroadcastTableViewDataSource()
     var tableRefreshControl:TableRefreshControl!
     
     override func viewDidLoad() {
@@ -34,7 +51,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func setupTableViewWiring(){
         self.broadcastsTableView.delegate = self
-        self.broadcastsTableView.dataSource = self
+        self.broadcastsTableView.dataSource = broadcastTableViewDataSource
         self.broadcastsTableView.registerNib(
             UINib(nibName:"BroadcastTableViewCell", bundle:nil), forCellReuseIdentifier: "BroadcastCell")
     }
@@ -74,7 +91,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func renderBroadcasts(broadcasts:[Broadcast]){
-        self.broadcasts = broadcasts
+        self.broadcastTableViewDataSource.broadcasts = broadcasts
         self.broadcastsTableView.reloadData()
     }
  
@@ -89,22 +106,10 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.broadcasts.count;
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(
-            "BroadcastCell", forIndexPath:indexPath) as BroadcastTableViewCell
-        let broadcast = broadcasts[indexPath.row]
-        cell.setupViewData(broadcast)
-        return cell
-    }
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
-        vc.broadcast = broadcasts[indexPath.row]
+        vc.broadcast = broadcastTableViewDataSource.broadcasts[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
