@@ -16,6 +16,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     
+    @IBOutlet weak var basicInfoView: UIView!
+    @IBOutlet weak var metaInfoView: UIView!
+    
     @IBOutlet weak var reposCountLabel: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!
@@ -56,21 +59,26 @@ class ProfileViewController: UIViewController {
     }
     
     override func updateViewConstraints() {
-        profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Left,
-            withInset: AppTheme.HackerListing.paddingLeft)
-        profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Top,
-            withInset: AppTheme.HackerListing.paddingTop)
+        
+        let inset = AppTheme.Listing.elementsPadding
+        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
+        
+        
+        profileImage.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, inset, inset), excludingEdge: ALEdge.Right)
         
         loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right,
             ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
-        loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
-            withInset: AppTheme.HackerListing.paddingTop)
+        
+        loginLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Top, ofView: profileImage)
         
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
         nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
+
+        companyLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
+        companyLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
         
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
-        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: companyLabel, withOffset: AppTheme.Listing.elementsPadding)
         
         super.updateViewConstraints()
     }
@@ -90,7 +98,7 @@ class ProfileViewController: UIViewController {
         println(reposCount)
         println(reposCount)
         
-        reposCountLabel.text = "\(reposCount) Repos"
+        reposCountLabel.text = "\(reposCount) Public Repos"
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in
