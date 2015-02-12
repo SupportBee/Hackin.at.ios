@@ -12,6 +12,7 @@ import PureLayout
 class BroadcastListing: UIView {
 
     var tableView = UITableView()
+    
     var tableViewDataSource: BroadcastTableViewDataSource!
     var tableViewDelegate: UITableViewDelegate!
     var tableRefreshControl:TableRefreshControl!
@@ -39,21 +40,27 @@ class BroadcastListing: UIView {
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
-    
-    
-    func refresh(success: () -> () = {}){
+   
+    func fetchAndRefresh(success: () -> () = {}){
         func onFetch(){
-            self.tableView.reloadData()
+            refresh()
             success()
         }
         
         tableViewDataSource.fetchBroadcasts(success: onFetch)
     }
     
-    func onPullToRefresh(){
-        refresh(success: { self.tableRefreshControl.endRefreshing() })
+    func refresh(){
+        self.tableView.reloadData()
+    }
+   
+    func setBroadcasts(broadcasts: [Broadcast]){
+        tableViewDataSource.broadcasts = broadcasts
     }
     
+    func onPullToRefresh(){
+        fetchAndRefresh(success: { self.tableRefreshControl.endRefreshing() })
+    }
     
     private func setupPullToRefresh(){
         tableRefreshControl = TableRefreshControl.setupForTableViewWithAction(

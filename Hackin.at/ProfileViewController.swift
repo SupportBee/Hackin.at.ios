@@ -8,29 +8,39 @@
 
 import UIKit
 import Alamofire
+import PureLayout
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     
-    @IBOutlet weak var followersCountLabel: UILabel!
+    @IBOutlet weak var basicInfoView: UIView!
+    @IBOutlet weak var metaInfoView: UIView!
+    
     @IBOutlet weak var reposCountLabel: UILabel!
     
-    @IBOutlet weak var followButtonLabel: UIButton!
-    
+    var broadcastListing: BroadcastListing!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var stickersLabel: UILabel!
     
     var hacker:Hacker!
+    var broadcastDataSource: BroadcastTableViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("Profile viewDidLoad")
+        
+        setupBroadcastListing()
+        clearPlaceholderLabels()
+        setupStyles()
         setupLoggedInUser()
         populateBasicInfo()
         fetchUserDetails()
+    }
+    
+    func clearPlaceholderLabels(){
+        stickersLabel.text = ""
     }
     
     @IBAction func followButtonPressed(sender: AnyObject) {
@@ -52,7 +62,52 @@ class ProfileViewController: UIViewController {
         hacker.fetchFullProfile(success: renderFullProfile)
     }
     
+    func setupStyles(){
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
+        self.profileImage.clipsToBounds = true;
+    }
+    
+    override func updateViewConstraints() {
+        
+        let inset = AppTheme.Listing.elementsPadding
+        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
+        
+        
+        profileImage.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, inset, inset), excludingEdge: ALEdge.Right)
+        
+        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right,
+            ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
+        
+        loginLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Top, ofView: profileImage)
+        
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
+
+        companyLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
+        companyLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        
+        metaInfoView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: basicInfoView, withOffset: AppTheme.Listing.elementsPadding)
+        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        
+        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        
+        broadcastListing.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        broadcastListing.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        broadcastListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
+        broadcastListing.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+        
+        super.updateViewConstraints()
+    }
+    
     func renderFullProfile(){
+        
+        if(hacker.recentBroadcasts != nil){
+            self.broadcastListing.setBroadcasts(hacker.recentBroadcasts!)
+                self.broadcastListing.refresh()
+        }
+        
         var userDetails = hacker.userDetails!
 
         var avatarURL = userDetails["avatar_url"].string
@@ -63,26 +118,31 @@ class ProfileViewController: UIViewController {
         
         // Counts
         var reposCount = userDetails["github_repos"].int!
-        var followersCount = userDetails["github_followers"].int!
         
         println(reposCount)
         println(reposCount)
         
         reposCountLabel.text = "\(reposCount) Repos"
-        followersCountLabel.text = "\(followersCount) Followers"
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in
                 self.profileImage.image = UIImage(data: (data as NSData) )
         }
         
-        stickersLabel.font = UIFont(name: "pictonic", size: 32)
+        stickersLabel.font = UIFont(name: "pictonic", size: 20)
         stickersLabel.text = hacker.stickerCodes()
         
     }
     
     func populateBasicInfo(){
         loginLabel.text = hacker.login
+    }
+    
+    private func setupBroadcastListing(){
+        broadcastDataSource = BroadcastTableViewDataSource()
+        broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, tableViewDelegate: self)
+        self.view.addSubview(broadcastListing)
+        broadcastListing.refresh()
     }
     
 }

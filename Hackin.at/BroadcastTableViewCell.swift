@@ -72,10 +72,16 @@ class BroadcastTableViewCell: UITableViewCell {
         if broadcast.place != nil{
             placeName = broadcast.place!.name
         }
+        var when = ""
+        if broadcast.created_at != nil{
+            when = broadcast.created_at!.timeAgoSinceNow()
+        }
         
         self.loginLabel.text = hacker.login
         self.messageText.text = message
         self.whereLabel.text = placeName
+        self.whenLabel.text = when
+            
         hacker.fetchAvatarImage(success: {
             (image: UIImage) in
             self.profileImageView.image = image
