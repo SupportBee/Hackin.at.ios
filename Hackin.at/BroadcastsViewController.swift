@@ -58,7 +58,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     }
     
     private func initListing(){
-        broadcastListing.refresh()
+        broadcastListing.fetchAndRefresh()
     }
     
     override func didReceiveMemoryWarning() {

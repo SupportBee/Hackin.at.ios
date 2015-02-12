@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import PureLayout
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,13 +21,17 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var reposCountLabel: UILabel!
     
+    var broadcastListing: BroadcastListing!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var stickersLabel: UILabel!
     
     var hacker:Hacker!
+    var broadcastDataSource: BroadcastTableViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupBroadcastListing()
         clearPlaceholderLabels()
         setupStyles()
         setupLoggedInUser()
@@ -89,10 +93,21 @@ class ProfileViewController: UIViewController {
         stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         
+        broadcastListing.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        broadcastListing.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        broadcastListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
+        broadcastListing.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
+        
         super.updateViewConstraints()
     }
     
     func renderFullProfile(){
+        
+        if(hacker.recentBroadcasts != nil){
+            self.broadcastListing.setBroadcasts(hacker.recentBroadcasts!)
+                self.broadcastListing.refresh()
+        }
+        
         var userDetails = hacker.userDetails!
 
         var avatarURL = userDetails["avatar_url"].string
@@ -121,6 +136,13 @@ class ProfileViewController: UIViewController {
     
     func populateBasicInfo(){
         loginLabel.text = hacker.login
+    }
+    
+    private func setupBroadcastListing(){
+        broadcastDataSource = BroadcastTableViewDataSource()
+        broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, tableViewDelegate: self)
+        self.view.addSubview(broadcastListing)
+        broadcastListing.refresh()
     }
     
 }
