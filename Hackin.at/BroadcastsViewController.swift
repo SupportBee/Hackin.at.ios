@@ -32,8 +32,14 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Broadcasts"
+        setupButtons()
         setupListing()
         initListing()
+    }
+    
+    func setupButtons(){
+        let broadcastButton = UIBarButtonItem(title: "Broadcast", style: UIBarButtonItemStyle.Plain, target: self, action: "broadcastButtonPressed")
+        self.navigationItem.rightBarButtonItem = broadcastButton
     }
     
     override func updateViewConstraints() {
