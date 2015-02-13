@@ -37,6 +37,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         setupLoggedInUser()
         populateBasicInfo()
         fetchUserDetails()
+        setupTitle()
+    }
+    
+    func setupTitle(){
+        self.title = "@\(hacker.login)"
     }
     
     func clearPlaceholderLabels(){

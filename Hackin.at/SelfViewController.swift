@@ -14,6 +14,7 @@ class SelfViewController: UIViewController{
     
     override func viewDidLoad() {
         self.edgesForExtendedLayout = UIRectEdge.None
+        self.title = "Self"
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
         self.view.addSubview(vc.view)
