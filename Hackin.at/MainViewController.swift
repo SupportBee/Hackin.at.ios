@@ -22,7 +22,7 @@ class MainViewController: UITabBarController {
         let me = viewControllers[2]
         
         home.title = "Broadcasts"
-        home.tabBarItem.image = UIImage(named : "broadcast")
+        home.tabBarItem.image = UIImage(named : "broadcast_filled")
         
         hackers.title = "Hackers"
         hackers.tabBarItem.image = UIImage(named : "hackers")
