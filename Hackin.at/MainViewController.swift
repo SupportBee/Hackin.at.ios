@@ -23,9 +23,12 @@ class MainViewController: UITabBarController {
         
         home.title = "Broadcasts"
         home.tabBarItem.image = UIImage(named : "broadcast")
+        
         hackers.title = "Hackers"
         hackers.tabBarItem.image = UIImage(named : "hackers")
+
         me.title = "Me"
+        me.tabBarItem.image = UIImage(named : "self")
         
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
