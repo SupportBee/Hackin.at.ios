@@ -18,12 +18,13 @@ class MainViewController: UITabBarController {
     func setupTabBarTitles(){
         let viewControllers = self.viewControllers as Array<UINavigationController>
         let home = viewControllers[0]
-        let notifications = viewControllers[1]
+        let hackers = viewControllers[1]
         let me = viewControllers[2]
         
         home.title = "Broadcasts"
         home.tabBarItem.image = UIImage(named : "broadcast")
-        notifications.title = "Hackers"
+        hackers.title = "Hackers"
+        hackers.tabBarItem.image = UIImage(named : "hackers")
         me.title = "Me"
         
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
