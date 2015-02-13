@@ -8,13 +8,14 @@
 
 import UIKit
 import TwitterKit
+import SZTextView
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     var place: Place?
     var twitterLinked: Int?
     
-    @IBOutlet weak var broadcastMessageTextView: UITextView!
+    @IBOutlet weak var broadcastMessageTextView: SZTextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
     
     @IBOutlet weak var postBroadcastButton: UIButton!
@@ -23,6 +24,9 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        broadcastMessageTextView.placeholder = "What are you hackin.at?"
+        broadcastMessageTextView.backgroundColor = AppColors.textBackground
         
         postToTwitterSwitch.on = false
         twitterLinked = CurrentHacker.twitterEnabled!
