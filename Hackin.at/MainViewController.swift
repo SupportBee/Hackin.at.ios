@@ -22,6 +22,7 @@ class MainViewController: UITabBarController {
         let me = viewControllers[2]
         
         home.title = "Broadcasts"
+        home.tabBarItem.image = UIImage(named : "broadcast")
         notifications.title = "Hackers"
         me.title = "Me"
         
