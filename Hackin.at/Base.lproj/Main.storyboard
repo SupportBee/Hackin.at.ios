@@ -4,6 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="streamline.ttf">
+            <string>streamline</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="q2g-lW-nup">
@@ -45,9 +50,8 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="juL-yO-pGx">
                                 <rect key="frame" x="106" y="397" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Broadcast">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" name="streamline" family="streamline" pointSize="24"/>
+                                <state key="normal" title="c"/>
                                 <connections>
                                     <action selector="broadcastButtonPressed:" destination="d1r-VX-tIl" eventType="touchUpInside" id="IUV-4C-9G0"/>
                                 </connections>

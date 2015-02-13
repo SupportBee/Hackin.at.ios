@@ -31,6 +31,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Broadcasts"
         setupListing()
         initListing()
     }

@@ -25,4 +25,8 @@ public func setupAppStyling(){
     UINavigationBar.appearance().barTintColor = AppColors.barTint
     UINavigationBar.appearance().translucent = false
     UINavigationBar.appearance().barStyle = UIBarStyle.Black
+    UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
+    UITabBar.appearance().tintColor = AppColors.barTint
+    UITabBar.appearance().barTintColor = UIColor.whiteColor()
 }

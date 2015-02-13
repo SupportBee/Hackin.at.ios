@@ -18,6 +18,7 @@ class HackersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Hackers"
         setupTableViewStyle()
         setupTableViewWiring()
         setupAutoRefresh()
