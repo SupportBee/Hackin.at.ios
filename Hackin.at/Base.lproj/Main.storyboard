@@ -208,33 +208,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="T4h-1c-KzW" kind="relationship" relationship="rootViewController" id="Mjz-l0-pdV"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxY-D2-FPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="504" y="1130"/>
-        </scene>
-        <!--Self View Controller-->
-        <scene sceneID="m5O-Il-ftv">
-            <objects>
-                <viewController id="T4h-1c-KzW" customClass="SelfViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="s4L-hL-42B"/>
-                        <viewControllerLayoutGuide type="bottom" id="hyQ-Mh-0vr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zqX-Vf-4Tz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nyV-wy-2Na"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Si-gU-riM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="1123"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="V8A-mD-Cvr">

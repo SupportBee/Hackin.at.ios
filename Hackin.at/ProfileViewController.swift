@@ -138,6 +138,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         loginLabel.text = hacker.login
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
+        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
+        vc.broadcast = broadcastDataSource.broadcasts[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     private func setupBroadcastListing(){
         broadcastDataSource = BroadcastTableViewDataSource()
         broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, tableViewDelegate: self)

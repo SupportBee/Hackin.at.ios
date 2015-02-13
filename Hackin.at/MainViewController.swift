@@ -24,6 +24,11 @@ class MainViewController: UITabBarController {
         home.title = "Broadcasts"
         notifications.title = "Hackers"
         me.title = "Me"
+        
+        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
+        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
+        me.setViewControllers([vc], animated: false)
+        
     }
 
 }
