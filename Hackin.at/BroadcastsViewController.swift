@@ -23,7 +23,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     var broadcastListing: BroadcastListing!
     var tableRefreshControl:TableRefreshControl!
     
-    @IBAction func broadcastButtonPressed(sender: AnyObject) {
+    func broadcastButtonPressed() {
         var newBroadcastStoryBoard = UIStoryboard(name: "NewBroadcast", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("newBroadcastViewController") as UINavigationController;
         self.presentViewController(vc, animated: true, completion: nil)
@@ -38,7 +38,6 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     }
     
     func setupButtons(){
-//        let broadcastButton = UIIconBarButtonItem(title: "c", style: UIBarButtonItemStyle.Plain, target: self, action: "broadcastButtonPressed")
         let broadcastButton = UIIconBarButtonItem(title: "c", style: UIBarButtonItemStyle.Plain, target: self, action: "broadcastButtonPressed")
         self.navigationItem.rightBarButtonItem = broadcastButton
     }
