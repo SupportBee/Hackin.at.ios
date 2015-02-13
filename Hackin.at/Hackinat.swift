@@ -77,11 +77,12 @@ class Hackinat: NSObject {
     }
     
     func broadcast(#login:String, authKey:String, message:String, placeID:String, postToTwitter:String, clientID:Int = 1, success: (AnyObject) -> (), failure: () -> () = {}){
-        
+        let location = "\(currentLocation.latitude),\(currentLocation.longitude)"
         let parameters = [
             "log": [
                 "message": message,
                 "place_id": placeID,
+                "ll": location,
                 "client_id": clientID,
                 "twitter_cross_post": postToTwitter
             ]
