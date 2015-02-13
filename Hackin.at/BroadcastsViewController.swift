@@ -38,7 +38,8 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     }
     
     func setupButtons(){
-        let broadcastButton = UIBarButtonItem(title: "Broadcast", style: UIBarButtonItemStyle.Plain, target: self, action: "broadcastButtonPressed")
+//        let broadcastButton = UIIconBarButtonItem(title: "c", style: UIBarButtonItemStyle.Plain, target: self, action: "broadcastButtonPressed")
+        let broadcastButton = UIIconBarButtonItem(title: "c", style: UIBarButtonItemStyle.Plain, target: self, action: "broadcastButtonPressed")
         self.navigationItem.rightBarButtonItem = broadcastButton
     }
     
