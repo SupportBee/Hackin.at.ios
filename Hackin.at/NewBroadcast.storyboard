@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-fH-UXW" customClass="SZTextView">
-                                <rect key="frame" x="16" y="101" width="274" height="166"/>
-                                <color key="backgroundColor" red="0.81885258838383834" green="0.81885258838383834" blue="0.81885258838383834" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-BU-m9D">
                                 <rect key="frame" x="16" y="305" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -40,6 +34,16 @@
                                     <action selector="twitterSwitchToggled:" destination="5Xu-GC-Ecs" eventType="valueChanged" id="nO9-oZ-Vez"/>
                                 </connections>
                             </switch>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-fH-UXW" customClass="SZTextView">
+                                <rect key="frame" x="16" y="131" width="274" height="166"/>
+                                <color key="backgroundColor" red="0.81885258838383834" green="0.81885258838383834" blue="0.81885258838383834" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lA-Aj-icx" customClass="HackerSummaryView" customModule="Hackin_at" customModuleProvider="target">
+                                <rect key="frame" x="16" y="72" width="173" height="31"/>
+                                <color key="backgroundColor" red="0.7712081755050505" green="0.7712081755050505" blue="0.7712081755050505" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -73,6 +77,7 @@
                     <connections>
                         <outlet property="broadcastMessageTextView" destination="d6g-fH-UXW" id="kKq-Hq-4fi"/>
                         <outlet property="currentPlaceLabel" destination="KX0-BU-m9D" id="aNS-Nc-Jwp"/>
+                        <outlet property="hackerSummaryView" destination="2lA-Aj-icx" id="U8C-bR-2S6"/>
                         <outlet property="postBroadcastButton" destination="pRR-Dd-zpk" id="60X-BV-feS"/>
                         <outlet property="postToTwitterSwitch" destination="XCL-JD-vse" id="LJS-SZ-9TB"/>
                     </connections>
