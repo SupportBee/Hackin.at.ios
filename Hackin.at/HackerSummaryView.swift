@@ -15,35 +15,31 @@ class HackerSummaryView: UIView {
     var imageView:UIImageView!
     var loginLabelView:UILabel!
     
-    
-    override init(frame: CGRect) {
-        println("Init")
-        super.init(frame: frame)
-    }
-    
     required init(coder aDecoder: NSCoder) {
-        println("decoder Init")
-        super.init(coder: aDecoder)
         imageView = UIImageView(frame: CGRectMake(0, 0, 36.0, 36.0))
         loginLabelView = UILabel()
+        
+        super.init(coder: aDecoder)
+        
         addSubview(imageView)
         addSubview(loginLabelView)
     }
     
     func renderView(){
-        loginLabelView.text = "@prateekdayal"
-        imageView.image = UIImage(named: "broadcast")
-        
-        //hacker.fetchAvatarImage(success: {
-        //    (image: UIImage) in
-        //    self.imageView.image = image
-        //})
+        loginLabelView.text = "@\(hacker.login)"
+        loginLabelView.sizeToFit()
+        hacker.fetchAvatarImage(success: {
+           (image: UIImage) in
+            println(image)
+            self.imageView.image = image
+        })
         
     }
     
     override func updateConstraints() {
         imageView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
         imageView.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+        super.updateConstraints()
     }
     
 }
