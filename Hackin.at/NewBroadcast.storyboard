@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--New Broadcast View Controller-->
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-BU-m9D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-BU-m9D">
                                 <rect key="frame" x="16" y="305" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -34,18 +35,28 @@
                                     <action selector="twitterSwitchToggled:" destination="5Xu-GC-Ecs" eventType="valueChanged" id="nO9-oZ-Vez"/>
                                 </connections>
                             </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-fH-UXW" customClass="SZTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-fH-UXW" customClass="SZTextView">
                                 <rect key="frame" x="16" y="131" width="274" height="166"/>
                                 <color key="backgroundColor" red="0.81885258838383834" green="0.81885258838383834" blue="0.81885258838383834" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lA-Aj-icx" customClass="HackerSummaryView" customModule="Hackin_at" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lA-Aj-icx" customClass="HackerSummaryView" customModule="Hackin_at" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="173" height="31"/>
                                 <color key="backgroundColor" red="0.7712081755050505" green="0.7712081755050505" blue="0.7712081755050505" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KX0-BU-m9D" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="8" placeholder="YES" id="548-IG-QyI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d6g-fH-UXW" secondAttribute="trailing" constant="14" placeholder="YES" id="7WG-UM-oey"/>
+                            <constraint firstItem="d6g-fH-UXW" firstAttribute="top" secondItem="2lA-Aj-icx" secondAttribute="bottom" constant="28" placeholder="YES" id="8Ah-Nm-3jT"/>
+                            <constraint firstItem="2lA-Aj-icx" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="EkA-wH-p1i"/>
+                            <constraint firstItem="d6g-fH-UXW" firstAttribute="top" secondItem="2lA-Aj-icx" secondAttribute="bottom" constant="28" placeholder="YES" id="Nri-cx-CWp"/>
+                            <constraint firstItem="d6g-fH-UXW" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="hr6-zL-fcD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2lA-Aj-icx" secondAttribute="trailing" constant="115" placeholder="YES" id="m7X-dt-4Do"/>
+                            <constraint firstItem="2lA-Aj-icx" firstAttribute="top" secondItem="6Eg-Ue-wAh" secondAttribute="bottom" constant="8" placeholder="YES" id="xeb-RQ-LzN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Ph-W1-65e">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="I4o-3A-PSN">

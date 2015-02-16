@@ -9,6 +9,7 @@
 import UIKit
 import TwitterKit
 import SZTextView
+import PureLayout
 
 class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
@@ -119,5 +120,15 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         dismissScreen()
+    }
+    
+    override func updateViewConstraints() {
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: AppTheme.Listing.elementsPadding)
+        
+        broadcastMessageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: hackerSummaryView, withOffset: AppTheme.Listing.elementsPadding)
+        broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        super.updateViewConstraints()
     }
 }
