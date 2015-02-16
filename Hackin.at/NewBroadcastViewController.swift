@@ -34,7 +34,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPlacesView()
+        loadCity()
+        setupPlaceGestureRecognizer()
         renderHackerSummary()
         
         broadcastMessageTextView.placeholder = "What are you hackin.at?"
@@ -51,10 +52,20 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         
     }
     
+    func loadCity(){
+        Place.fetchPlacesAround(success: placesLoaded)
+    }
+    
+    func setupPlaceGestureRecognizer(){
+        currentPlaceLabel.userInteractionEnabled = true
+        currentPlaceLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "loadPlacesView"))
+    }
+    
     func loadPlacesView(){
         var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
         placesViewController = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
         placesViewController.delegate = self
+        self.navigationController?.pushViewController(placesViewController, animated: true)
     }
 
     func textViewDidChange(textView: UITextView) {
@@ -102,8 +113,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         self.postToTwitterSwitch.on = false
     }
     
-    func cityLoaded(place:Place){
-       self.place = place
+    func placesLoaded(places:[Place]){
+       self.place = places[0]
         afterPlaceSelected()
     }
     
