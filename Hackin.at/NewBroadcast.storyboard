@@ -57,6 +57,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFW-Vo-zMq">
+                                <rect key="frame" x="261" y="77" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -115,11 +121,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="broadcastMessageTextView" destination="d6g-fH-UXW" id="kKq-Hq-4fi"/>
+                        <outlet property="charCounter" destination="LFW-Vo-zMq" id="aRB-0o-xYc"/>
                         <outlet property="currentPlaceLabel" destination="KX0-BU-m9D" id="aNS-Nc-Jwp"/>
                         <outlet property="hackerSummaryView" destination="2lA-Aj-icx" id="U8C-bR-2S6"/>
                         <outlet property="mapIcon" destination="u2L-8O-arT" id="zID-tP-Lba"/>
                         <outlet property="postBroadcastButton" destination="pRR-Dd-zpk" id="60X-BV-feS"/>
                         <outlet property="postToTwitterSwitch" destination="XCL-JD-vse" id="LJS-SZ-9TB"/>
+                        <outlet property="twitterIcon" destination="Gfv-ge-JLR" id="XSM-gC-Jc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OmU-k2-j0V" userLabel="First Responder" sceneMemberID="firstResponder"/>

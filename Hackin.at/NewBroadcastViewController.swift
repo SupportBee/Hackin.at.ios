@@ -11,10 +11,11 @@ import TwitterKit
 import SZTextView
 import PureLayout
 
-class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
+class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextViewDelegate {
     
     var place: Place?
     var twitterLinked: Int?
+    let maxCharCount = 140
     
     @IBOutlet weak var broadcastMessageTextView: SZTextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
@@ -26,6 +27,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBOutlet weak var mapIcon: UIIconLabel!
     @IBOutlet weak var twitterIcon: UIIconLabel!
+
+    @IBOutlet weak var charCounter: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         
         broadcastMessageTextView.placeholder = "What are you hackin.at?"
         broadcastMessageTextView.backgroundColor = AppColors.textBackground
+        broadcastMessageTextView.delegate = self
         
         postToTwitterSwitch.on = false
         twitterLinked = CurrentHacker.twitterEnabled!
@@ -41,6 +45,12 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             postToTwitterSwitch.on = true
         }
         
+    }
+
+    func textViewDidChange(textView: UITextView) {
+       let charCount = countElements(broadcastMessageTextView.text!)
+       let charsRemaining = maxCharCount - charCount
+       charCounter.text = "\(charsRemaining)"
     }
     
     func renderHackerSummary(){
@@ -128,7 +138,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     override func updateViewConstraints() {
         hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: AppTheme.Listing.elementsPadding)
-        
+
         broadcastMessageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: hackerSummaryView, withOffset: AppTheme.Listing.elementsPadding)
         broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
