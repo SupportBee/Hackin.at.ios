@@ -20,4 +20,6 @@ public struct AppColors {
     static let barTint = UIColor(red: 242.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1)
     static let tabBarTint = UIColor(red: 204/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
     
+    static let tableCellSelectedColor = AppColors.textBackground
+    
 }

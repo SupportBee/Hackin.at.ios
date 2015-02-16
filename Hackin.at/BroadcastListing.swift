@@ -43,6 +43,8 @@ class BroadcastListing: UIView, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = AppColors.tableCellSelectedColor
         var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
         vc.broadcast = tableViewDataSource.broadcasts[indexPath.row]
