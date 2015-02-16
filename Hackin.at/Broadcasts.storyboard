@@ -4,6 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="streamline.ttf">
+            <string>streamline</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Broadcast View Controller-->
         <scene sceneID="gP0-u0-XCn">
@@ -31,16 +36,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmG-Qf-BWz">
-                                <rect key="frame" x="25" y="302" width="65" height="30"/>
-                                <state key="normal" title="Place">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="placeLabelButtonClicked:" destination="aa8-dX-YJK" eventType="touchUpInside" id="q1G-Qi-3Sq"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDc-lV-1Xg">
                                 <rect key="frame" x="89" y="20" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -65,6 +60,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o68-Od-uNw" customClass="UIIconLabel" customModule="Hackin_at" customModuleProvider="target">
+                                <rect key="frame" x="16" y="306" width="28" height="21"/>
+                                <fontDescription key="fontDescription" name="streamline" family="streamline" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmG-Qf-BWz">
+                                <rect key="frame" x="45" y="302" width="65" height="30"/>
+                                <state key="normal" title="Place">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="placeLabelButtonClicked:" destination="aa8-dX-YJK" eventType="touchUpInside" id="q1G-Qi-3Sq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -80,12 +91,15 @@
                             <constraint firstItem="XmG-vQ-FJK" firstAttribute="top" secondItem="4eu-ib-q9O" secondAttribute="bottom" constant="27" placeholder="YES" id="DsM-Gq-R2G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jG7-ky-gqj" secondAttribute="trailing" constant="55" placeholder="YES" id="FL9-sN-V5p"/>
                             <constraint firstItem="4eu-ib-q9O" firstAttribute="top" secondItem="rL4-cL-PMf" secondAttribute="bottom" constant="58" placeholder="YES" id="IhJ-E3-46Y"/>
+                            <constraint firstItem="HmG-Qf-BWz" firstAttribute="leading" secondItem="o68-Od-uNw" secondAttribute="trailing" constant="1" placeholder="YES" id="J5B-OT-Gg9"/>
                             <constraint firstItem="KOk-2Z-8ij" firstAttribute="top" secondItem="XmG-vQ-FJK" secondAttribute="bottom" constant="241" placeholder="YES" id="KIg-YH-txb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4eu-ib-q9O" secondAttribute="trailing" constant="21" placeholder="YES" id="Npm-Fb-DT2"/>
+                            <constraint firstItem="o68-Od-uNw" firstAttribute="top" secondItem="4eu-ib-q9O" secondAttribute="bottom" constant="27" placeholder="YES" id="OLS-Je-Aln"/>
                             <constraint firstItem="rDc-lV-1Xg" firstAttribute="leading" secondItem="9uK-iV-Dyd" secondAttribute="trailing" constant="16" placeholder="YES" id="Oll-fa-dad"/>
                             <constraint firstItem="HmG-Qf-BWz" firstAttribute="top" secondItem="4eu-ib-q9O" secondAttribute="bottom" constant="23" placeholder="YES" id="RGq-X7-y2u"/>
                             <constraint firstItem="4eu-ib-q9O" firstAttribute="top" secondItem="rL4-cL-PMf" secondAttribute="bottom" constant="58" placeholder="YES" id="Utd-1K-lML"/>
                             <constraint firstItem="4eu-ib-q9O" firstAttribute="leading" secondItem="2Wm-KS-9ya" secondAttribute="leadingMargin" constant="9" placeholder="YES" id="V4g-5C-LTn"/>
+                            <constraint firstItem="o68-Od-uNw" firstAttribute="leading" secondItem="2Wm-KS-9ya" secondAttribute="leadingMargin" placeholder="YES" id="WNB-cf-POj"/>
                             <constraint firstItem="jG7-ky-gqj" firstAttribute="leading" secondItem="rL4-cL-PMf" secondAttribute="trailing" constant="8" placeholder="YES" id="eix-VB-MAq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XmG-vQ-FJK" secondAttribute="trailing" constant="21" placeholder="YES" id="f3a-Dt-54T"/>
                             <constraint firstItem="jG7-ky-gqj" firstAttribute="top" secondItem="2Wm-KS-9ya" secondAttribute="topMargin" constant="7" placeholder="YES" id="hZh-2A-t2i"/>
@@ -94,11 +108,13 @@
                             <constraint firstItem="rDc-lV-1Xg" firstAttribute="top" secondItem="BLT-PQ-WOW" secondAttribute="bottom" placeholder="YES" id="w4K-zo-l2L"/>
                             <constraint firstItem="9uK-iV-Dyd" firstAttribute="leading" secondItem="2Wm-KS-9ya" secondAttribute="leadingMargin" constant="9" placeholder="YES" id="xRx-4V-LHf"/>
                             <constraint firstItem="rDc-lV-1Xg" firstAttribute="top" secondItem="BLT-PQ-WOW" secondAttribute="bottom" placeholder="YES" id="yFg-Ge-CiD"/>
+                            <constraint firstItem="KOk-2Z-8ij" firstAttribute="top" secondItem="o68-Od-uNw" secondAttribute="bottom" constant="241" placeholder="YES" id="ycu-wf-c9S"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="loginLabel" destination="jG7-ky-gqj" id="lw2-bz-vtu"/>
+                        <outlet property="mapIcon" destination="o68-Od-uNw" id="Eyb-fh-uA9"/>
                         <outlet property="messageTextView" destination="4eu-ib-q9O" id="bL9-PS-cdK"/>
                         <outlet property="nameLabel" destination="rDc-lV-1Xg" id="DrP-rg-saT"/>
                         <outlet property="placeLabelButton" destination="HmG-Qf-BWz" id="btg-QD-V5S"/>

@@ -21,6 +21,8 @@ class BroadcastViewController: UIViewController {
     @IBOutlet weak var placeLabelButton: UIButton!
     @IBOutlet weak var whenLabel: UILabel!
     
+    @IBOutlet weak var mapIcon: UIIconLabel!
+    
     var broadcast: Broadcast! = nil
     
     override func viewDidLoad() {
@@ -91,9 +93,12 @@ class BroadcastViewController: UIViewController {
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
         
-        placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
-        placeLabelButton.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+        mapIcon.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
+        placeLabelButton.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: mapIcon, withOffset: AppTheme.IconLabel.paddingRight)
+        mapIcon.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: placeLabelButton)
+        placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
+        
         
         whenLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: placeLabelButton, withOffset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
         
