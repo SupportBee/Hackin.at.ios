@@ -19,14 +19,16 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
     var placesViewController: PlacesViewController!
     
     @IBOutlet weak var broadcastMessageTextView: SZTextView!
+    
+    // TODO: Make this a component and re-use it in Broadcast View
     @IBOutlet weak var currentPlaceLabel: UILabel!
+    @IBOutlet weak var mapIcon: UIIconLabel!
     
     @IBOutlet weak var hackerSummaryView: HackerSummaryView!
     @IBOutlet weak var postBroadcastButton: UIButton!
     
     @IBOutlet weak var postToTwitterSwitch: UISwitch!
     
-    @IBOutlet weak var mapIcon: UIIconLabel!
     @IBOutlet weak var twitterIcon: UIIconLabel!
 
     @IBOutlet weak var charCounter: UILabel!

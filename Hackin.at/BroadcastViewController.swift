@@ -120,6 +120,7 @@ class BroadcastViewController: UIViewController {
     
     @IBAction func hackerSummaryClicked(sender: AnyObject) {
         let hacker = broadcast.hacker
+        // TODO: The navigation code is also used in Hackers Screen. Refactor it
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
         vc.hacker = hacker
