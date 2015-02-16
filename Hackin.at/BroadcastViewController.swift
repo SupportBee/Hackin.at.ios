@@ -60,11 +60,11 @@ class BroadcastViewController: UIViewController {
         
         
         placeLabelButton.setTitle(placeName, forState: UIControlState.Normal)
-        hacker.fetchAvatarImage(success: {
-            (image: UIImage) in
-                self.profileImageView.image = image
+        
+        hacker.fetchAvatarURL({
+            (url: String) in
+            self.profileImageView.sd_setImageWithURL(NSURL(string: url))
         })
-
     }
     
     override func updateViewConstraints() {
