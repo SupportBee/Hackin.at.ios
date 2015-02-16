@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCL-JD-vse">
-                                <rect key="frame" x="241" y="310" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCL-JD-vse">
+                                <rect key="frame" x="241" y="312" width="51" height="31"/>
                                 <connections>
                                     <action selector="twitterSwitchToggled:" destination="5Xu-GC-Ecs" eventType="valueChanged" id="nO9-oZ-Vez"/>
                                 </connections>
@@ -39,35 +39,51 @@
                                 <rect key="frame" x="16" y="72" width="173" height="31"/>
                                 <color key="backgroundColor" red="0.7712081755050505" green="0.7712081755050505" blue="0.7712081755050505" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-ge-JLR" customClass="UIIconLabel" customModule="Hackin_at" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-ge-JLR" customClass="UIIconLabel" customModule="Hackin_at" customModuleProvider="target">
                                 <rect key="frame" x="197" y="315" width="30" height="26"/>
                                 <fontDescription key="fontDescription" name="streamline" family="streamline" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2L-8O-arT" customClass="UIIconLabel" customModule="Hackin_at" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2L-8O-arT" customClass="UIIconLabel" customModule="Hackin_at" customModuleProvider="target">
                                 <rect key="frame" x="16" y="315" width="30" height="26"/>
                                 <fontDescription key="fontDescription" name="streamline" family="streamline" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-BU-m9D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-BU-m9D">
                                 <rect key="frame" x="44" y="318" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XFL-gp-Ta8" firstAttribute="top" secondItem="XCL-JD-vse" secondAttribute="bottom" constant="225" placeholder="YES" id="4k3-rQ-Cvw"/>
                             <constraint firstItem="KX0-BU-m9D" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="8" placeholder="YES" id="548-IG-QyI"/>
+                            <constraint firstItem="Gfv-ge-JLR" firstAttribute="leading" secondItem="KX0-BU-m9D" secondAttribute="trailing" constant="24" placeholder="YES" id="5wE-8R-JGe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d6g-fH-UXW" secondAttribute="trailing" constant="14" placeholder="YES" id="7WG-UM-oey"/>
                             <constraint firstItem="d6g-fH-UXW" firstAttribute="top" secondItem="2lA-Aj-icx" secondAttribute="bottom" constant="28" placeholder="YES" id="8Ah-Nm-3jT"/>
+                            <constraint firstItem="KX0-BU-m9D" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="21" placeholder="YES" id="C4W-cM-VKD"/>
                             <constraint firstItem="2lA-Aj-icx" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="EkA-wH-p1i"/>
+                            <constraint firstItem="Gfv-ge-JLR" firstAttribute="leading" secondItem="KX0-BU-m9D" secondAttribute="trailing" constant="24" placeholder="YES" id="HeW-yQ-Xqb"/>
+                            <constraint firstItem="XFL-gp-Ta8" firstAttribute="top" secondItem="Gfv-ge-JLR" secondAttribute="bottom" constant="227" placeholder="YES" id="Iho-A6-Igz"/>
                             <constraint firstItem="d6g-fH-UXW" firstAttribute="top" secondItem="2lA-Aj-icx" secondAttribute="bottom" constant="28" placeholder="YES" id="Nri-cx-CWp"/>
+                            <constraint firstItem="u2L-8O-arT" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="OcI-Q8-W17"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XCL-JD-vse" secondAttribute="trailing" constant="14" placeholder="YES" id="QPI-Rh-MPd"/>
+                            <constraint firstItem="XCL-JD-vse" firstAttribute="leading" secondItem="Gfv-ge-JLR" secondAttribute="trailing" constant="14" placeholder="YES" id="Wqj-0u-cch"/>
+                            <constraint firstItem="Gfv-ge-JLR" firstAttribute="leading" secondItem="u2L-8O-arT" secondAttribute="trailing" constant="151" placeholder="YES" id="alD-aM-lf8"/>
+                            <constraint firstItem="XCL-JD-vse" firstAttribute="leading" secondItem="Gfv-ge-JLR" secondAttribute="trailing" constant="14" placeholder="YES" id="dDz-ZK-ZV6"/>
+                            <constraint firstItem="u2L-8O-arT" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="18" placeholder="YES" id="h9U-g7-KY5"/>
                             <constraint firstItem="d6g-fH-UXW" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="hr6-zL-fcD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2lA-Aj-icx" secondAttribute="trailing" constant="115" placeholder="YES" id="m7X-dt-4Do"/>
+                            <constraint firstItem="XCL-JD-vse" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="15" placeholder="YES" id="mKa-Ub-1fy"/>
+                            <constraint firstItem="Gfv-ge-JLR" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="18" placeholder="YES" id="mvu-lz-POs"/>
+                            <constraint firstItem="XFL-gp-Ta8" firstAttribute="top" secondItem="KX0-BU-m9D" secondAttribute="bottom" constant="229" placeholder="YES" id="qQG-Xz-1Rr"/>
+                            <constraint firstItem="KX0-BU-m9D" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" constant="28" placeholder="YES" id="vJO-V9-kR2"/>
                             <constraint firstItem="2lA-Aj-icx" firstAttribute="top" secondItem="6Eg-Ue-wAh" secondAttribute="bottom" constant="8" placeholder="YES" id="xeb-RQ-LzN"/>
+                            <constraint firstItem="XFL-gp-Ta8" firstAttribute="top" secondItem="u2L-8O-arT" secondAttribute="bottom" constant="227" placeholder="YES" id="yfc-n7-7HH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Ph-W1-65e">
@@ -101,8 +117,10 @@
                         <outlet property="broadcastMessageTextView" destination="d6g-fH-UXW" id="kKq-Hq-4fi"/>
                         <outlet property="currentPlaceLabel" destination="KX0-BU-m9D" id="aNS-Nc-Jwp"/>
                         <outlet property="hackerSummaryView" destination="2lA-Aj-icx" id="U8C-bR-2S6"/>
+                        <outlet property="mapIcon" destination="u2L-8O-arT" id="zID-tP-Lba"/>
                         <outlet property="postBroadcastButton" destination="pRR-Dd-zpk" id="60X-BV-feS"/>
                         <outlet property="postToTwitterSwitch" destination="XCL-JD-vse" id="LJS-SZ-9TB"/>
+                        <outlet property="twitterIcon" destination="Gfv-ge-JLR" id="Ecw-Az-6oJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OmU-k2-j0V" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,6 +24,9 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBOutlet weak var postToTwitterSwitch: UISwitch!
     
+    @IBOutlet weak var mapIcon: UIIconLabel!
+    @IBOutlet weak var twitterIcon: UIIconLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -130,5 +133,11 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         super.updateViewConstraints()
+        
+        mapIcon.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        mapIcon.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: broadcastMessageTextView, withOffset: AppTheme.Listing.elementsPadding)
+        currentPlaceLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: mapIcon, withOffset: AppTheme.IconLabel.paddingRight)
+        currentPlaceLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: mapIcon)
+        
     }
 }

@@ -22,6 +22,10 @@ public struct AppTheme {
         static let imageSize: CGFloat = 36.0;
         static let imageLoginSpace: CGFloat = 15.0;
     }
+    
+    struct IconLabel {
+        static let paddingRight: CGFloat = 5.0;
+    }
 }
 
 public func setupAppStyling(){
