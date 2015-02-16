@@ -12,6 +12,7 @@ import PureLayout
 
 class BroadcastViewController: UIViewController {
     
+    @IBOutlet weak var hackerSummaryView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
@@ -32,9 +33,9 @@ class BroadcastViewController: UIViewController {
     
     
     func setupStyles(){
+        hackerSummaryView.backgroundColor = UIColor.whiteColor()
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         self.profileImageView.clipsToBounds = true;
-        
         self.messageTextView.backgroundColor = AppColors.textBackground
     }
     
@@ -70,26 +71,27 @@ class BroadcastViewController: UIViewController {
     }
     
     override func updateViewConstraints() {
-        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
-        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
+        
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top)
         
         loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
             withOffset: AppTheme.Listing.elementsPadding)
-        loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
-            withInset: AppTheme.HackerListing.paddingTop)
-        
+        loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
         
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
-        
         nameLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginLabel)
         
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
+   //     stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0);
         
         // messageTextView should be un-scrollable for this to work
-        messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
+        messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: hackerSummaryView, withOffset: 2*AppTheme.Listing.elementsPadding)
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
         
