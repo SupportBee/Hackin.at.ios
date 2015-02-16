@@ -37,6 +37,7 @@
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
 		F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */; };
 		F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA546F1A4324E000133D25 /* PlacesViewController.swift */; };
+		F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA8A041A91A543008E382D /* UIIconLabel.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
 		F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BDDC011A874C2200C1C78D /* AppTheme.swift */; };
@@ -111,6 +112,7 @@
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F0AA546C1A42196300133D25 /* NewBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBroadcastViewController.swift; sourceTree = "<group>"; };
 		F0AA546F1A4324E000133D25 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		F0AA8A041A91A543008E382D /* UIIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconLabel.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F0BDDC011A874C2200C1C78D /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
@@ -185,6 +187,15 @@
 				6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0AA8A061A91A553008E382D /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */,
+				F0AA8A041A91A543008E382D /* UIIconLabel.swift */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 		F0BDDBFC1A87410600C1C78D /* Hackers */ = {
@@ -302,7 +313,7 @@
 				F0BDDBFD1A87426000C1C78D /* Broadcasts */,
 				F0BDDBFC1A87410600C1C78D /* Hackers */,
 				F0BDDC041A874C3500C1C78D /* Styles */,
-				F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */,
+				F0AA8A061A91A553008E382D /* CustomViews */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -529,6 +540,7 @@
 				F04AAE081A8E1D3C007243B7 /* UIIconBarButtonItem.swift in Sources */,
 				0F6758871A849E2200A320C6 /* HackerTableViewCell.swift in Sources */,
 				0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */,
+				F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

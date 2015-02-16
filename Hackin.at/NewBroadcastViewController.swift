@@ -96,7 +96,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         println("Hacker is at \(place)")
         self.place = place
         var placeName = place.name
-        currentPlaceLabel.text = "You are at \(placeName)"
+        currentPlaceLabel.text = placeName
         self.navigationController?.popViewControllerAnimated(true)
     }
     
