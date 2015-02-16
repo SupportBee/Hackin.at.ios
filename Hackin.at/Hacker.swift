@@ -58,6 +58,18 @@ class Hacker: NSObject {
         if(userDetails == nil){ return nil }
         return userDetails!["avatar_url"].stringValue
     }
+
+    func fetchAvatarURL(success: (String)->()){
+        if(avatarURL != nil){
+            success(avatarURL!)
+        }else{
+            func onFetch(){
+                success(avatarURL!)
+            }
+
+            fetchFullProfile(success: onFetch)
+        }
+    }
     
     var name:String?{
         if(userDetails == nil){ return nil }

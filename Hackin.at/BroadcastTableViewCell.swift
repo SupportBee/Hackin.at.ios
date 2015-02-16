@@ -81,10 +81,10 @@ class BroadcastTableViewCell: UITableViewCell {
         self.messageText.text = message
         self.whereLabel.text = placeName
         self.whenLabel.text = when
-            
-        hacker.fetchAvatarImage(success: {
-            (image: UIImage) in
-            self.profileImageView.image = image
+        
+        hacker.fetchAvatarURL({
+            (url: String) in
+            self.profileImageView.sd_setImageWithURL(NSURL(string: url))
         })
     }
 }
