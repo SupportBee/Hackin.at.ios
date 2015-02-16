@@ -9,26 +9,27 @@
 import UIKit
 import PureLayout
 
-class BroadcastListing: UIView {
+class BroadcastListing: UIView, UITableViewDelegate {
 
     var tableView = UITableView()
     
     var tableViewDataSource: BroadcastTableViewDataSource!
     var tableViewDelegate: UITableViewDelegate!
     var tableRefreshControl:TableRefreshControl!
+    var parentViewController: UIViewController!
 
     
     override init (frame : CGRect) {
         super.init(frame : frame)
     }
-
     
-    convenience init(tableViewDataSource: BroadcastTableViewDataSource, tableViewDelegate: UITableViewDelegate, pullToRefresh:Bool = false){
+    convenience init(tableViewDataSource: BroadcastTableViewDataSource, parentViewController: UIViewController, pullToRefresh:Bool = false){
 
         self.init(frame:CGRectZero)
         
         self.tableViewDataSource = tableViewDataSource
-        self.tableViewDelegate = tableViewDelegate
+        self.parentViewController = parentViewController
+        self.tableViewDelegate = self
         
         setupTableViewWiring()
         setupTableViewStyle()
@@ -40,7 +41,17 @@ class BroadcastListing: UIView {
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
-   
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = AppColors.tableCellSelectedColor
+        var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
+        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
+        vc.broadcast = tableViewDataSource.broadcasts[indexPath.row]
+        parentViewController.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     func fetchAndRefresh(success: () -> () = {}){
         func onFetch(){
             refresh()

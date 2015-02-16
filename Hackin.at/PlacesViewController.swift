@@ -12,7 +12,6 @@ import UIKit
 protocol PlacesViewProtocol {
     
     func placeSelected(place:Place)
-    
 }
 
 class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -32,7 +31,11 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func fetchPlaces() {
-        Place.fetchPlacesAround(success: renderPlaces)
+        Place.fetchPlacesAround(success: placesLoaded)
+    }
+    
+    func placesLoaded(places: [Place]){
+        renderPlaces(places)
     }
     
     func renderPlaces(places: [Place]) {

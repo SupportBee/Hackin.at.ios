@@ -9,12 +9,14 @@
 import UIKit
 import CoreLocation
 import SwiftyJSON
+import PureLayout
 
 // All Globals here for now
 var currentLocation: CLLocationCoordinate2D!
 
 class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginViewDelegate {
     
+    @IBOutlet weak var logoImageView: UIImageView!
     // Location setup
     var locationManager = CLLocationManager()
     
@@ -83,6 +85,12 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    override func updateViewConstraints() {
+        logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
+        logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        super.updateViewConstraints()
     }
  
     

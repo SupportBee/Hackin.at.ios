@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import PureLayout
 
-class ProfileViewController: UIViewController, UITableViewDelegate {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -72,13 +72,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
     
     func setupStyles(){
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
-        self.profileImage.clipsToBounds = true;
+        profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
+        profileImage.clipsToBounds = true;
+        
+        basicInfoView.backgroundColor = AppColors.profileBgColor
+        metaInfoView.backgroundColor = AppColors.profileBgColor
     }
     
     override func updateViewConstraints() {
         
-        let inset = AppTheme.Listing.elementsPadding
+        let inset = AppTheme.Listing.elementsPadding/2.0
         basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
         
         
@@ -142,19 +145,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
     
     func populateBasicInfo(){
-        loginLabel.text = hacker.login
+        loginLabel.text = "@\(hacker.login)"
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
-        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
-        vc.broadcast = broadcastDataSource.broadcasts[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
     private func setupBroadcastListing(){
         broadcastDataSource = BroadcastTableViewDataSource()
-        broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, tableViewDelegate: self)
+        broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, parentViewController: self)
         self.view.addSubview(broadcastListing)
         broadcastListing.refresh()
     }

@@ -23,6 +23,7 @@ class PlaceViewController: UIViewController {
     
     override func viewDidLoad() {
         name = place!.name
+        self.title = name
         nameLabel.text = name
         mapView.layer
     }

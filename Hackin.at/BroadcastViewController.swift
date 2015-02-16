@@ -12,6 +12,7 @@ import PureLayout
 
 class BroadcastViewController: UIViewController {
     
+    @IBOutlet weak var hackerSummaryView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
@@ -21,18 +22,26 @@ class BroadcastViewController: UIViewController {
     @IBOutlet weak var placeLabelButton: UIButton!
     @IBOutlet weak var whenLabel: UILabel!
     
+    @IBOutlet weak var mapIcon: UIIconLabel!
+    
     var broadcast: Broadcast! = nil
     
     override func viewDidLoad() {
         setupStyles()
         renderBroadcast()
+        setupHackerSummaryGestureRecognizer()
+    }
+
+    func setupHackerSummaryGestureRecognizer(){
+        hackerSummaryView.userInteractionEnabled = true
+        hackerSummaryView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hackerSummaryClicked:"))
     }
     
     
     func setupStyles(){
+        hackerSummaryView.backgroundColor = UIColor.whiteColor()
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         self.profileImageView.clipsToBounds = true;
-        
         self.messageTextView.backgroundColor = AppColors.textBackground
     }
     
@@ -68,32 +77,38 @@ class BroadcastViewController: UIViewController {
     }
     
     override func updateViewConstraints() {
-        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
-        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
         
-        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+        
+        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
             withOffset: AppTheme.Listing.elementsPadding)
-        nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
-            withInset: AppTheme.HackerListing.paddingTop)
+        loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
         
-        
-        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
-        
-        loginLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: nameLabel)
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginLabel)
         
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
+   //     stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0);
         
         // messageTextView should be un-scrollable for this to work
-        messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
+        messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: hackerSummaryView, withOffset: 2*AppTheme.Listing.elementsPadding)
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.HackerListing.paddingLeft)
         messageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
         
-        placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
-        placeLabelButton.autoPinEdgeToSuperviewEdge(ALEdge.Left,
+        mapIcon.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
+        placeLabelButton.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: mapIcon, withOffset: AppTheme.IconLabel.paddingRight)
+        mapIcon.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: placeLabelButton)
+        placeLabelButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: messageTextView, withOffset: AppTheme.Listing.elementsPadding)
+        
+        
+        whenLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: placeLabelButton, withOffset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
         
         whenLabel.autoAlignAxis(ALAxis.Baseline, toSameAxisOfView: placeLabelButton)
         whenLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right,
@@ -101,6 +116,15 @@ class BroadcastViewController: UIViewController {
         
         super.updateViewConstraints()
         
+    }
+    
+    @IBAction func hackerSummaryClicked(sender: AnyObject) {
+        let hacker = broadcast.hacker
+        // TODO: The navigation code is also used in Hackers Screen. Refactor it
+        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
+        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
+        vc.hacker = hacker
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {
