@@ -29,6 +29,12 @@ class BroadcastViewController: UIViewController {
     override func viewDidLoad() {
         setupStyles()
         renderBroadcast()
+        setupHackerSummaryGestureRecognizer()
+    }
+
+    func setupHackerSummaryGestureRecognizer(){
+        hackerSummaryView.userInteractionEnabled = true
+        hackerSummaryView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hackerSummaryClicked:"))
     }
     
     
@@ -110,6 +116,14 @@ class BroadcastViewController: UIViewController {
         
         super.updateViewConstraints()
         
+    }
+    
+    @IBAction func hackerSummaryClicked(sender: AnyObject) {
+        let hacker = broadcast.hacker
+        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
+        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
+        vc.hacker = hacker
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func placeLabelButtonClicked(sender: AnyObject) {
