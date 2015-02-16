@@ -73,18 +73,18 @@ class BroadcastViewController: UIViewController {
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
         
-        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
+        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
             withOffset: AppTheme.Listing.elementsPadding)
-        nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
+        loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
         
         
-        loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
         
-        loginLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: nameLabel)
+        nameLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginLabel)
         
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
         
         // messageTextView should be un-scrollable for this to work
         messageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: 2*AppTheme.Listing.elementsPadding)
