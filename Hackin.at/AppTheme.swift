@@ -17,6 +17,11 @@ public struct AppTheme {
         static let paddingRight: CGFloat = 20.0;
         static let paddingTop: CGFloat = 15.0;
     };
+    
+    struct HackerSummary {
+        static let imageSize: CGFloat = 36.0;
+        static let imageLoginSpace: CGFloat = 15.0;
+    }
 }
 
 public func setupAppStyling(){
