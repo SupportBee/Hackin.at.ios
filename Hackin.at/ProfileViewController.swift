@@ -64,7 +64,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
     
     func fetchUserDetails(){
-        hacker.fetchFullProfile(success: renderFullProfile)
+        if(hacker.userDetails == nil){
+            hacker.fetchFullProfile(success: renderFullProfile)
+        }else{
+            renderFullProfile()
+        }
     }
     
     func setupStyles(){

@@ -58,7 +58,7 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
         if CurrentHacker.doesExist() {
             if CurrentHacker.twitterEnabled == nil{
                 CurrentHacker.hacker()!.checkTwitterAccess(success: setupHackerDetails)
-            }
+             }
         }
     }
     

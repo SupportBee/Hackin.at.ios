@@ -57,7 +57,6 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
     
     func renderHackerSummary(){
         hackerSummaryView.hacker = CurrentHacker.hacker()
-        println(CurrentHacker.hacker())
         hackerSummaryView.renderView()
     }
     

@@ -8,6 +8,8 @@
 
 class CurrentHacker:NSObject {
     
+    private struct CurrentHackerStruct{ static var hacker:Hacker = Hacker(login: "") }
+    
     class var login:String?{
         get{
         return NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
@@ -52,15 +54,28 @@ class CurrentHacker:NSObject {
     
     class func hacker() -> Hacker?{
         if doesExist(){
-            var _hacker = Hacker(login: login!, authKey: authKey!)
+            let _hacker = CurrentHackerStruct.hacker
+            
+            if _hacker.login == "" {
+                let _new_hacker = Hacker(login: login!, authKey: authKey!)
+                
+                CurrentHackerStruct.hacker = _new_hacker
+                CurrentHackerStruct.hacker.fetchFullProfile(success: {})
+                
+                return _new_hacker
+            }
+    
             return _hacker
         }
+        
         return nil
     }
     
     class func clear(){
         NSUserDefaults.standardUserDefaults().removeObjectForKey("login")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("auth_key")
+        
+            CurrentHackerStruct.hacker = Hacker(login: "")
     }
     
     
