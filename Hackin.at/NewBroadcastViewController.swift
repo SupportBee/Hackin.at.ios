@@ -138,6 +138,12 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         mapIcon.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: broadcastMessageTextView, withOffset: AppTheme.Listing.elementsPadding)
         currentPlaceLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: mapIcon, withOffset: AppTheme.IconLabel.paddingRight)
         currentPlaceLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: mapIcon)
+
+        twitterIcon.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: currentPlaceLabel, withOffset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
+        twitterIcon.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: currentPlaceLabel)
         
+        postToTwitterSwitch.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        postToTwitterSwitch.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: twitterIcon, withOffset: AppTheme.IconLabel.paddingRight)
+        postToTwitterSwitch.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: twitterIcon)
     }
 }

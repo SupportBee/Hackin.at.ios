@@ -120,7 +120,6 @@
                         <outlet property="mapIcon" destination="u2L-8O-arT" id="zID-tP-Lba"/>
                         <outlet property="postBroadcastButton" destination="pRR-Dd-zpk" id="60X-BV-feS"/>
                         <outlet property="postToTwitterSwitch" destination="XCL-JD-vse" id="LJS-SZ-9TB"/>
-                        <outlet property="twitterIcon" destination="Gfv-ge-JLR" id="Ecw-Az-6oJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OmU-k2-j0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
