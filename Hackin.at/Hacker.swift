@@ -81,6 +81,15 @@ class Hacker: NSObject {
         if(userDetails == nil){ return nil }
         return userDetails!["name"].stringValue
     }
+    
+    var distance:String{
+        let distance = userDetails!["distance"].floatValue
+        if (distance > 1000){
+            return "\(Int(distance/1000)) km"
+        }else{
+            return "\(Int(distance)) m"
+        }
+    }
 
     var lastBroadcast:Broadcast?{
         if(recentBroadcasts.count == 0){ return nil }

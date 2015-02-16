@@ -23,7 +23,8 @@ class HackerTableViewCell: UITableViewCell {
         self.profileImageView.clipsToBounds = true;
         
         self.loginLabel.textColor = AppColors.primaryLabel
-        self.nameLabel.textColor = AppColors.secondaryLabel
+        self.nameLabel.textColor = AppColors.primaryLabel
+        self.whereLabel.textColor = AppColors.secondaryLabel
         
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
@@ -50,7 +51,7 @@ class HackerTableViewCell: UITableViewCell {
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
 
-        whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.HackerListing.paddingRight)
+        whereLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         whereLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: AppTheme.Listing.elementsPadding)
         whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.HackerListing.paddingRight)
 
@@ -68,7 +69,7 @@ class HackerTableViewCell: UITableViewCell {
         var locationName = ""
         if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
         
-        self.loginLabel.text = login
+        self.loginLabel.text = "@\(login)"
         self.nameLabel.text = name
         self.whereLabel.text = locationName
 
