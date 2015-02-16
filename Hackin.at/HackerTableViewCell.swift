@@ -68,18 +68,17 @@ class HackerTableViewCell: UITableViewCell {
         var locationName = ""
         if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
         
-        let stickers = hacker.stickerCodes()
-        
         self.loginLabel.text = login
         self.nameLabel.text = name
         self.whereLabel.text = locationName
+
+        let stickers = hacker.stickerCodes()
         self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
         self.stickersLabel.text = stickers
-        
-        hacker.fetchAvatarImage(success: {
-            (image: UIImage) in
-            self.profileImageView.image = image
+       
+        hacker.fetchAvatarURL({
+            (url: String) in
+                self.profileImageView.sd_setImageWithURL(NSURL(string: url))
         })
     }
-
 }

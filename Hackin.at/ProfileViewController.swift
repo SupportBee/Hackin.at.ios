@@ -111,10 +111,8 @@ class ProfileViewController: UIViewController {
     
     func renderFullProfile(){
         
-        if(hacker.recentBroadcasts != nil){
-            self.broadcastListing.setBroadcasts(hacker.recentBroadcasts!)
-                self.broadcastListing.refresh()
-        }
+        self.broadcastListing.setBroadcasts(hacker.recentBroadcasts)
+        self.broadcastListing.refresh()
         
         var userDetails = hacker.userDetails!
 

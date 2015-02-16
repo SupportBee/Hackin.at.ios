@@ -42,6 +42,7 @@ class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
     var avatarImage:UIImage?
+    var recentBroadcasts:[Broadcast] = []
     
     let login:String
     
@@ -53,10 +54,27 @@ class Hacker: NSObject {
         self.init(login: login)
         self.authKey = authKey
     }
+
+    convenience init(json: JSON){
+        self.init(login: json["login"].stringValue)
+        setUserDetailsFromJSON(json)
+    }
     
     var avatarURL:String?{
         if(userDetails == nil){ return nil }
         return userDetails!["avatar_url"].stringValue
+    }
+
+    func fetchAvatarURL(success: (String)->()){
+        if(avatarURL != nil){
+            success(avatarURL!)
+        }else{
+            func onFetch(){
+                success(avatarURL!)
+            }
+
+            fetchFullProfile(success: onFetch)
+        }
     }
     
     var name:String?{
@@ -64,30 +82,14 @@ class Hacker: NSObject {
         return userDetails!["name"].stringValue
     }
 
-    var recentBroadcasts:[Broadcast]?{
-        if(userDetails == nil){ return nil }
-        let recentBroadcastsJSON = userDetails!["recent_broadcasts"].arrayValue
-        var broadcasts:[Broadcast] = recentBroadcastsJSON.map({
-            (broadcast) -> Broadcast in
-                return Broadcast(json: broadcast)
-        })
-        return broadcasts
-    }
-    
     var lastBroadcast:Broadcast?{
-        if(recentBroadcasts == nil){ return nil }
-        if(recentBroadcasts!.count == 0){ return nil }
-        return recentBroadcasts![0]
+        if(recentBroadcasts.count == 0){ return nil }
+        return recentBroadcasts[0]
     }
 
     var lastLocation:Place?{
         if(lastBroadcast == nil){ return nil }
         return lastBroadcast!.place!
-    }
-    
-    convenience init(json: JSON){
-        self.init(login: json["login"].stringValue)
-        self.userDetails = json
     }
     
     class func fetchNearbyHackers(#success: ([Hacker]) -> ()){
@@ -171,7 +173,16 @@ class Hacker: NSObject {
     }
     
     private func setUserDetails(userJSON:AnyObject!){
-        self.userDetails = JSON(userJSON)["hacker"]
+        setUserDetailsFromJSON(JSON(userJSON)["hacker"])
+    }
+    
+    private func setUserDetailsFromJSON(json: JSON){
+        self.userDetails = json
+        let recentBroadcastsJSON = userDetails!["recent_broadcasts"].arrayValue
+        self.recentBroadcasts = recentBroadcastsJSON.map({
+            (broadcast) -> Broadcast in
+                return Broadcast(json: broadcast)
+        })
     }
 
 }
