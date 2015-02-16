@@ -172,6 +172,11 @@ class Hacker: NSObject {
         return unicodeString
     }
     
+    func hasFullProfile() -> Bool{
+        if(userDetails == nil){ return false}
+        return true
+    }
+    
     private func setUserDetails(userJSON:AnyObject!){
         setUserDetailsFromJSON(JSON(userJSON)["hacker"])
     }
