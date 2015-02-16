@@ -16,6 +16,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
     var place: Place?
     var twitterLinked: Int?
     let maxCharCount = 140
+    var placesViewController: PlacesViewController!
     
     @IBOutlet weak var broadcastMessageTextView: SZTextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
@@ -33,6 +34,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadPlacesView()
         renderHackerSummary()
         
         broadcastMessageTextView.placeholder = "What are you hackin.at?"
@@ -48,6 +50,12 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         }
         
     }
+    
+    func loadPlacesView(){
+        var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
+        placesViewController = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
+        placesViewController.delegate = self
+    }
 
     func textViewDidChange(textView: UITextView) {
        let charCount = countElements(broadcastMessageTextView.text!)
@@ -60,19 +68,6 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         println(CurrentHacker.hacker())
         hackerSummaryView.renderView()
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        if place == nil {
-            println("There is no place!")
-            var placesStoryboard = UIStoryboard(name: "Places", bundle: nil)
-            let vc = placesStoryboard.instantiateViewControllerWithIdentifier("placesViewController") as PlacesViewController;
-            vc.delegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-    }
-    
     
     @IBAction func twitterSwitchToggled(sender: AnyObject) {
         if postToTwitterSwitch.on && twitterLinked == 0 { connectWithTwitter() }
