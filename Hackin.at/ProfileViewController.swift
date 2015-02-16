@@ -140,7 +140,7 @@ class ProfileViewController: UIViewController {
     }
     
     func populateBasicInfo(){
-        loginLabel.text = hacker.login
+        loginLabel.text = "@\(hacker.login)"
     }
     
     private func setupBroadcastListing(){
