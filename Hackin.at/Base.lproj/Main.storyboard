@@ -100,13 +100,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_square.png" translatesAutoresizingMaskIntoConstraints="NO" id="NqM-yh-qkJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_square.png" translatesAutoresizingMaskIntoConstraints="NO" id="NqM-yh-qkJ">
                                 <rect key="frame" x="91" y="-62" width="138" height="602"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="602" id="gke-ve-RxL"/>
+                                    <constraint firstAttribute="width" constant="138" id="ueQ-iB-l9M"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NqM-yh-qkJ" secondAttribute="trailing" constant="75" placeholder="YES" id="1V3-vj-2GV"/>
+                            <constraint firstItem="5Pe-T1-KFT" firstAttribute="top" secondItem="NqM-yh-qkJ" secondAttribute="bottom" constant="28" placeholder="YES" id="TRb-Fd-4cZ"/>
+                            <constraint firstItem="NqM-yh-qkJ" firstAttribute="leading" secondItem="5VC-l4-AWW" secondAttribute="leadingMargin" constant="75" placeholder="YES" id="pv9-95-asY"/>
+                            <constraint firstItem="NqM-yh-qkJ" firstAttribute="top" secondItem="5VC-l4-AWW" secondAttribute="topMargin" constant="-62" placeholder="YES" id="wOF-yR-lG2"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logoImageView" destination="NqM-yh-qkJ" id="b0x-kA-mp9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROE-98-FSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
