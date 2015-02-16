@@ -47,8 +47,9 @@ class BroadcastListing: UIView, UITableViewDelegate {
         let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
         vc.broadcast = tableViewDataSource.broadcasts[indexPath.row]
         parentViewController.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
+    
     func fetchAndRefresh(success: () -> () = {}){
         func onFetch(){
             refresh()
