@@ -60,7 +60,7 @@ class BroadcastsViewController: UIViewController, UITableViewDelegate {
     
     
     private func setupListing(){
-        broadcastListing = BroadcastListing(tableViewDataSource: broadcastTableViewDataSource, tableViewDelegate: self, pullToRefresh: true)
+        broadcastListing = BroadcastListing(tableViewDataSource: broadcastTableViewDataSource, parentViewController: self, pullToRefresh: true)
         self.view.addSubview(broadcastListing)
     }
     

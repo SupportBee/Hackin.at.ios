@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import PureLayout
 
-class ProfileViewController: UIViewController, UITableViewDelegate {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -143,16 +143,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         loginLabel.text = hacker.login
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var newBroadcastStoryBoard = UIStoryboard(name: "Broadcasts", bundle: nil)
-        let vc = newBroadcastStoryBoard.instantiateViewControllerWithIdentifier("broadcastViewController") as BroadcastViewController;
-        vc.broadcast = broadcastDataSource.broadcasts[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
     private func setupBroadcastListing(){
         broadcastDataSource = BroadcastTableViewDataSource()
-        broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, tableViewDelegate: self)
+        broadcastListing = BroadcastListing(tableViewDataSource: broadcastDataSource, parentViewController: self)
         self.view.addSubview(broadcastListing)
         broadcastListing.refresh()
     }
