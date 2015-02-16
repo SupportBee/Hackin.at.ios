@@ -95,6 +95,8 @@ class BroadcastViewController: UIViewController {
         placeLabelButton.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
         
+        whenLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: placeLabelButton, withOffset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
+        
         whenLabel.autoAlignAxis(ALAxis.Baseline, toSameAxisOfView: placeLabelButton)
         whenLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right,
             withInset: AppTheme.HackerListing.paddingLeft)
