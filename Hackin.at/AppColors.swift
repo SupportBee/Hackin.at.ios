@@ -22,4 +22,6 @@ public struct AppColors {
     
     static let tableCellSelectedColor = AppColors.textBackground
     
+    static let profileBgColor = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 246/255.0)
+    
 }

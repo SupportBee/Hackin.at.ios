@@ -68,13 +68,16 @@ class ProfileViewController: UIViewController {
     }
     
     func setupStyles(){
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
-        self.profileImage.clipsToBounds = true;
+        profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
+        profileImage.clipsToBounds = true;
+        
+        basicInfoView.backgroundColor = AppColors.profileBgColor
+        metaInfoView.backgroundColor = AppColors.profileBgColor
     }
     
     override func updateViewConstraints() {
         
-        let inset = AppTheme.Listing.elementsPadding
+        let inset = AppTheme.Listing.elementsPadding/2.0
         basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
         
         
