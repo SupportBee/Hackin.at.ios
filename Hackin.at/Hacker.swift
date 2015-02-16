@@ -120,7 +120,8 @@ class Hacker: NSObject {
     
     func fetchAvatarImage(#success: (UIImage) -> ()){
         if(avatarImage != nil){ success(avatarImage!) }
-        if(avatarURL != nil){
+        
+        func fetchImage(){
             Alamofire.request(.GET, avatarURL!)
                 .response{ (_, _, data, _) in
                     self.avatarImage = UIImage(data: (data as NSData))
@@ -129,6 +130,8 @@ class Hacker: NSObject {
                     }
             }
         }
+        
+        if(avatarURL != nil){ fetchImage() } else{ fetchFullProfile(success: fetchImage)}
     }
     
     func fetchFullProfile(#success: () -> ()){

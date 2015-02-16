@@ -5,3 +5,4 @@
 #import "Purelayout/PureLayout.h"
 #import "DateTools/DateTools.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "SZTextView/SZTextView.h"

@@ -5,4 +5,5 @@ pod 'SwiftyJSON', '2.1.3'
 pod 'PureLayout'
 pod 'DateTools'
 pod 'SDWebImage', '~>3.6'
+pod 'SZTextView'
 
