@@ -20,13 +20,13 @@
                             <constraint firstAttribute="width" constant="72" id="uLi-ga-340"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quh-VS-WfR">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quh-VS-WfR">
                         <rect key="frame" x="165" y="20" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aj-FU-aJD">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aj-FU-aJD">
                         <rect key="frame" x="165" y="49" width="62" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -40,6 +40,12 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="where" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eim-55-l0N">
                         <rect key="frame" x="165" y="107" width="113" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG0-VP-0fy">
+                        <rect key="frame" x="463" y="20" width="66" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -58,17 +64,22 @@
                     <constraint firstAttribute="trailingMargin" secondItem="Eim-55-l0N" secondAttribute="trailing" constant="290" placeholder="YES" id="Bv2-3e-YKb"/>
                     <constraint firstItem="Eim-55-l0N" firstAttribute="top" secondItem="2oE-8M-xho" secondAttribute="bottom" constant="8" placeholder="YES" id="D6G-HU-Zrk"/>
                     <constraint firstItem="Eim-55-l0N" firstAttribute="leading" secondItem="b15-Us-u2n" secondAttribute="trailing" constant="37" placeholder="YES" id="DSH-pB-0CL"/>
+                    <constraint firstItem="yG0-VP-0fy" firstAttribute="top" secondItem="aKX-dS-9y6" secondAttribute="topMargin" constant="12" placeholder="YES" id="EgN-eZ-3bh"/>
                     <constraint firstItem="2oE-8M-xho" firstAttribute="top" secondItem="2aj-FU-aJD" secondAttribute="bottom" constant="8" placeholder="YES" id="Hdv-GT-IoF"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2aj-FU-aJD" secondAttribute="trailing" constant="341" placeholder="YES" id="QmE-Ur-vmT"/>
                     <constraint firstItem="2aj-FU-aJD" firstAttribute="top" secondItem="Quh-VS-WfR" secondAttribute="bottom" constant="8" placeholder="YES" id="ZP2-9l-bjF"/>
+                    <constraint firstItem="2oE-8M-xho" firstAttribute="top" secondItem="yG0-VP-0fy" secondAttribute="bottom" constant="37" placeholder="YES" id="ZWt-am-rae"/>
                     <constraint firstItem="2aj-FU-aJD" firstAttribute="top" secondItem="Quh-VS-WfR" secondAttribute="bottom" constant="8" placeholder="YES" id="eka-oX-Zc3"/>
                     <constraint firstItem="2oE-8M-xho" firstAttribute="top" secondItem="2aj-FU-aJD" secondAttribute="bottom" constant="8" placeholder="YES" id="fVC-bM-sHl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="yG0-VP-0fy" secondAttribute="trailing" constant="39" placeholder="YES" id="gOg-qf-HTA"/>
+                    <constraint firstItem="yG0-VP-0fy" firstAttribute="leading" secondItem="Quh-VS-WfR" secondAttribute="trailing" constant="256" placeholder="YES" id="kFJ-3g-QVE"/>
                     <constraint firstItem="Quh-VS-WfR" firstAttribute="leading" secondItem="b15-Us-u2n" secondAttribute="trailing" constant="37" placeholder="YES" id="l9P-f0-WgU"/>
                     <constraint firstItem="b15-Us-u2n" firstAttribute="top" secondItem="aKX-dS-9y6" secondAttribute="topMargin" constant="12" placeholder="YES" id="oyo-w1-Ker"/>
                     <constraint firstItem="Eim-55-l0N" firstAttribute="leading" secondItem="b15-Us-u2n" secondAttribute="trailing" constant="37" placeholder="YES" id="pnp-05-36R"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="distanceLabel" destination="yG0-VP-0fy" id="9cf-UQ-h0S"/>
                 <outlet property="loginLabel" destination="Quh-VS-WfR" id="knC-86-zls"/>
                 <outlet property="nameLabel" destination="2aj-FU-aJD" id="Ql6-gK-oU8"/>
                 <outlet property="profileImageView" destination="b15-Us-u2n" id="MP9-B3-1Re"/>
