@@ -39,6 +39,8 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         broadcastMessageTextView.backgroundColor = AppColors.textBackground
         broadcastMessageTextView.delegate = self
         
+        charCounter.textColor = AppColors.secondaryLabel
+        
         postToTwitterSwitch.on = false
         twitterLinked = CurrentHacker.twitterEnabled!
         if twitterLinked == 1 {
@@ -142,7 +144,10 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         broadcastMessageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: hackerSummaryView, withOffset: AppTheme.Listing.elementsPadding)
         broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-        super.updateViewConstraints()
+        
+    
+        charCounter.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: broadcastMessageTextView, withOffset: -1 * AppTheme.Listing.elementsPadding)
+        charCounter.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: broadcastMessageTextView, withOffset: -1 * AppTheme.Listing.elementsPadding)
         
         mapIcon.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         mapIcon.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: broadcastMessageTextView, withOffset: AppTheme.Listing.elementsPadding)
@@ -155,5 +160,6 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         postToTwitterSwitch.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         postToTwitterSwitch.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: twitterIcon, withOffset: AppTheme.IconLabel.paddingRight)
         postToTwitterSwitch.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: twitterIcon)
+        super.updateViewConstraints()
     }
 }

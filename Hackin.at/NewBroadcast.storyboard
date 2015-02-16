@@ -57,8 +57,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFW-Vo-zMq">
-                                <rect key="frame" x="261" y="77" width="29" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFW-Vo-zMq">
+                                <rect key="frame" x="246" y="262" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,13 +79,17 @@
                             <constraint firstItem="u2L-8O-arT" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="OcI-Q8-W17"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XCL-JD-vse" secondAttribute="trailing" constant="14" placeholder="YES" id="QPI-Rh-MPd"/>
                             <constraint firstItem="XCL-JD-vse" firstAttribute="leading" secondItem="Gfv-ge-JLR" secondAttribute="trailing" constant="14" placeholder="YES" id="Wqj-0u-cch"/>
+                            <constraint firstItem="XCL-JD-vse" firstAttribute="top" secondItem="LFW-Vo-zMq" secondAttribute="bottom" constant="29" placeholder="YES" id="Y44-LA-B13"/>
                             <constraint firstItem="Gfv-ge-JLR" firstAttribute="leading" secondItem="u2L-8O-arT" secondAttribute="trailing" constant="151" placeholder="YES" id="alD-aM-lf8"/>
                             <constraint firstItem="XCL-JD-vse" firstAttribute="leading" secondItem="Gfv-ge-JLR" secondAttribute="trailing" constant="14" placeholder="YES" id="dDz-ZK-ZV6"/>
+                            <constraint firstItem="LFW-Vo-zMq" firstAttribute="top" secondItem="6Eg-Ue-wAh" secondAttribute="bottom" constant="198" placeholder="YES" id="e0q-4H-NXS"/>
+                            <constraint firstItem="LFW-Vo-zMq" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" constant="230" placeholder="YES" id="fNL-w6-4bj"/>
                             <constraint firstItem="u2L-8O-arT" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="18" placeholder="YES" id="h9U-g7-KY5"/>
                             <constraint firstItem="d6g-fH-UXW" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" placeholder="YES" id="hr6-zL-fcD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2lA-Aj-icx" secondAttribute="trailing" constant="115" placeholder="YES" id="m7X-dt-4Do"/>
                             <constraint firstItem="XCL-JD-vse" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="15" placeholder="YES" id="mKa-Ub-1fy"/>
                             <constraint firstItem="Gfv-ge-JLR" firstAttribute="top" secondItem="d6g-fH-UXW" secondAttribute="bottom" constant="18" placeholder="YES" id="mvu-lz-POs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LFW-Vo-zMq" secondAttribute="trailing" constant="29" placeholder="YES" id="oow-wW-YOh"/>
                             <constraint firstItem="XFL-gp-Ta8" firstAttribute="top" secondItem="KX0-BU-m9D" secondAttribute="bottom" constant="229" placeholder="YES" id="qQG-Xz-1Rr"/>
                             <constraint firstItem="KX0-BU-m9D" firstAttribute="leading" secondItem="0mj-fu-Ksw" secondAttribute="leadingMargin" constant="28" placeholder="YES" id="vJO-V9-kR2"/>
                             <constraint firstItem="2lA-Aj-icx" firstAttribute="top" secondItem="6Eg-Ue-wAh" secondAttribute="bottom" constant="8" placeholder="YES" id="xeb-RQ-LzN"/>
