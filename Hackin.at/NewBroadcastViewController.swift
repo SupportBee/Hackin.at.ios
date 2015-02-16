@@ -107,12 +107,21 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextVi
         self.postToTwitterSwitch.on = false
     }
     
+    func cityLoaded(place:Place){
+       self.place = place
+        afterPlaceSelected()
+    }
+    
     func placeSelected(place: Place) {
         println("Hacker is at \(place)")
         self.place = place
-        var placeName = place.name
-        currentPlaceLabel.text = placeName
+        afterPlaceSelected()
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func afterPlaceSelected(){
+        var placeName = self.place!.name
+        currentPlaceLabel.text = placeName
     }
     
     @IBAction func postBroadcast(sender: AnyObject) {
