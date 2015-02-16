@@ -8,21 +8,38 @@
 
 import UIKit
 import TwitterKit
+import SZTextView
+import PureLayout
 
-class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
+class NewBroadcastViewController: UIViewController, PlacesViewProtocol, UITextViewDelegate {
     
     var place: Place?
     var twitterLinked: Int?
+    let maxCharCount = 140
     
-    @IBOutlet weak var broadcastMessageTextView: UITextView!
+    @IBOutlet weak var broadcastMessageTextView: SZTextView!
     @IBOutlet weak var currentPlaceLabel: UILabel!
     
+    @IBOutlet weak var hackerSummaryView: HackerSummaryView!
     @IBOutlet weak var postBroadcastButton: UIButton!
     
     @IBOutlet weak var postToTwitterSwitch: UISwitch!
     
+    @IBOutlet weak var mapIcon: UIIconLabel!
+    @IBOutlet weak var twitterIcon: UIIconLabel!
+
+    @IBOutlet weak var charCounter: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        renderHackerSummary()
+        
+        broadcastMessageTextView.placeholder = "What are you hackin.at?"
+        broadcastMessageTextView.backgroundColor = AppColors.textBackground
+        broadcastMessageTextView.delegate = self
+        
+        charCounter.textColor = AppColors.secondaryLabel
         
         postToTwitterSwitch.on = false
         twitterLinked = CurrentHacker.twitterEnabled!
@@ -30,6 +47,18 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
             postToTwitterSwitch.on = true
         }
         
+    }
+
+    func textViewDidChange(textView: UITextView) {
+       let charCount = countElements(broadcastMessageTextView.text!)
+       let charsRemaining = maxCharCount - charCount
+       charCounter.text = "\(charsRemaining)"
+    }
+    
+    func renderHackerSummary(){
+        hackerSummaryView.hacker = CurrentHacker.hacker()
+        println(CurrentHacker.hacker())
+        hackerSummaryView.renderView()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -82,7 +111,7 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
         println("Hacker is at \(place)")
         self.place = place
         var placeName = place.name
-        currentPlaceLabel.text = "You are at \(placeName)"
+        currentPlaceLabel.text = placeName
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -106,5 +135,31 @@ class NewBroadcastViewController: UIViewController, PlacesViewProtocol {
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         dismissScreen()
+    }
+    
+    override func updateViewConstraints() {
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        hackerSummaryView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: AppTheme.Listing.elementsPadding)
+
+        broadcastMessageTextView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: hackerSummaryView, withOffset: AppTheme.Listing.elementsPadding)
+        broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        broadcastMessageTextView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        
+    
+        charCounter.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: broadcastMessageTextView, withOffset: -1 * AppTheme.Listing.elementsPadding)
+        charCounter.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: broadcastMessageTextView, withOffset: -1 * AppTheme.Listing.elementsPadding)
+        
+        mapIcon.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        mapIcon.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: broadcastMessageTextView, withOffset: AppTheme.Listing.elementsPadding)
+        currentPlaceLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: mapIcon, withOffset: AppTheme.IconLabel.paddingRight)
+        currentPlaceLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: mapIcon)
+
+        twitterIcon.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: currentPlaceLabel, withOffset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
+        twitterIcon.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: currentPlaceLabel)
+        
+        postToTwitterSwitch.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+        postToTwitterSwitch.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: twitterIcon, withOffset: AppTheme.IconLabel.paddingRight)
+        postToTwitterSwitch.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: twitterIcon)
+        super.updateViewConstraints()
     }
 }
