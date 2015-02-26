@@ -119,7 +119,7 @@
 		F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		F0D50DDD1A4DF56C00531C50 /* BroadcastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BroadcastTableViewCell.xib; sourceTree = "<group>"; };
 		F0D50DE01A4E021A00531C50 /* BroadcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastTableViewCell.swift; sourceTree = "<group>"; };
-		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackin.at Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0DB3BC61A41FABF00DC8C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 		F0DB3BBD1A41FABF00DC8C9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */,
+				F0DB3BBC1A41FABF00DC8C9B /* Hackin.at Debug.app */,
 				F0DB3BD11A41FABF00DC8C9B /* Hackin.atTests.xctest */,
 			);
 			name = Products;
@@ -372,7 +372,7 @@
 			);
 			name = Hackin.at;
 			productName = Hackin.at;
-			productReference = F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */;
+			productReference = F0DB3BBC1A41FABF00DC8C9B /* Hackin.at Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F0DB3BD01A41FABF00DC8C9B /* Hackin.atTests */ = {
@@ -656,6 +656,7 @@
 			baseConfigurationReference = 3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_ID = at.hackin.debug;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,7 +666,7 @@
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Hackin.at Debug";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -676,6 +677,7 @@
 			baseConfigurationReference = 6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_ID = at.hackin;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
