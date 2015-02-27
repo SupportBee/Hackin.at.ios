@@ -6,13 +6,19 @@
 //  Copyright (c) 2015 Prateek Dayal. All rights reserved.
 //
 
+import Locksmith
+
 class CurrentHacker:NSObject {
+    
+    class var userAccount:String{
+        return "HackinAt"
+    }
     
     private struct CurrentHackerStruct{ static var hacker:Hacker = Hacker(login: "") }
     
     class var login:String?{
         get{
-        return NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
+            return NSUserDefaults.standardUserDefaults().objectForKey("login") as? String
         }
         
         set{
@@ -22,17 +28,26 @@ class CurrentHacker:NSObject {
     
     class var authKey:String?{
         get{
-        return NSUserDefaults.standardUserDefaults().objectForKey("auth_key") as? String
+            if(login != nil){
+                let (dictionary, error) = Locksmith.loadDataForUserAccount(userAccount)
+                if(dictionary == nil){
+                    return nil
+                }else{
+                    return dictionary!.objectForKey("auth_key") as String?
+                }
+            }else{
+                return nil
+            }
         }
         
         set{
-            NSUserDefaults.standardUserDefaults().setObject(newValue!, forKey: "auth_key")
+            Locksmith.saveData(["auth_key": newValue!], forUserAccount: userAccount)
         }
     }
     
     class var twitterEnabled:Int?{
         get{
-        return NSUserDefaults.standardUserDefaults().objectForKey("twitter_enabled") as? Int
+            return NSUserDefaults.standardUserDefaults().objectForKey("twitter_enabled") as? Int
         }
         
         set{
@@ -46,7 +61,7 @@ class CurrentHacker:NSObject {
     }
     
     class func doesExist() -> Bool{
-        if login == nil{
+        if authKey == nil{
             return false
         }
         return true
@@ -72,10 +87,12 @@ class CurrentHacker:NSObject {
     }
     
     class func clear(){
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("login")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("auth_key")
+        Locksmith.deleteDataForUserAccount(userAccount)
         
-            CurrentHackerStruct.hacker = Hacker(login: "")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("login")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("twitter_enabled")
+        
+        CurrentHackerStruct.hacker = Hacker(login: "")
     }
     
     
