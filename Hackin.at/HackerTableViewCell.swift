@@ -72,7 +72,6 @@ class HackerTableViewCell: UITableViewCell {
         if(hacker.name != nil){ name = hacker.name! }
         
         var locationName = ""
-        if(hacker.lastLocation != nil){ locationName = hacker.lastLocation!.name }
         
         self.loginLabel.text = "@\(login)"
         self.nameLabel.text = name

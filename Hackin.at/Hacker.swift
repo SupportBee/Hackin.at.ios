@@ -42,7 +42,6 @@ class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
     var avatarImage:UIImage?
-    var recentBroadcasts:[Broadcast] = []
     
     let login:String
     
@@ -91,16 +90,6 @@ class Hacker: NSObject {
         }
     }
 
-    var lastBroadcast:Broadcast?{
-        if(recentBroadcasts.count == 0){ return nil }
-        return recentBroadcasts[0]
-    }
-
-    var lastLocation:Place?{
-        if(lastBroadcast == nil){ return nil }
-        return lastBroadcast!.place!
-    }
-    
     class func fetchNearbyHackers(#success: ([Hacker]) -> ()){
         
         func onFetch(result: AnyObject){
@@ -192,11 +181,6 @@ class Hacker: NSObject {
     
     private func setUserDetailsFromJSON(json: JSON){
         self.userDetails = json
-        let recentBroadcastsJSON = userDetails!["recent_broadcasts"].arrayValue
-        self.recentBroadcasts = recentBroadcastsJSON.map({
-            (broadcast) -> Broadcast in
-                return Broadcast(json: broadcast)
-        })
     }
 
 }
