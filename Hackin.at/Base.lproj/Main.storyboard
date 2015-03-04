@@ -17,36 +17,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Rdo-Nt-RTk" kind="relationship" relationship="viewControllers" id="gqx-17-4fR"/>
-                        <segue destination="eji-4g-Ztd" kind="relationship" relationship="viewControllers" id="q6Q-JS-qi3"/>
                         <segue destination="REs-17-wew" kind="relationship" relationship="viewControllers" id="2hg-Ku-Zrw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-m2-g37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-216" y="348"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="wXR-PA-Bc7">
-            <objects>
-                <viewController storyboardIdentifier="DashboardViewController" title="Home View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d1r-VX-tIl" customClass="BroadcastsViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zxs-VI-zdd"/>
-                        <viewControllerLayoutGuide type="bottom" id="w0e-i3-0xa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Kb-jQ-Psb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bJn-hB-Ulf"/>
-                    <navigationItem key="navigationItem" id="Vxh-c3-hSI"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v7f-e1-XqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="-343"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IJz-OQ-mPX">
@@ -124,76 +100,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROE-98-FSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-612" y="348"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="djU-KO-EGV">
-            <objects>
-                <navigationController id="Rdo-Nt-RTk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dtz-YO-RGP"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GSY-1V-vCs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="d1r-VX-tIl" kind="relationship" relationship="rootViewController" id="PGf-pg-HIW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r2W-oP-8UE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="497" y="-343"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="JH5-o4-ULf">
-            <objects>
-                <navigationController id="eji-4g-Ztd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Jlz-YL-Tch"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0oO-Zt-KuZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="eUa-2j-HyT" kind="relationship" relationship="rootViewController" id="ej2-cB-4MM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6W0-Ok-f5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="497" y="348"/>
-        </scene>
-        <!--Hackers View Controller-->
-        <scene sceneID="I2u-sr-DXJ">
-            <objects>
-                <viewController id="eUa-2j-HyT" customClass="HackersViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xos-EH-bFK"/>
-                        <viewControllerLayoutGuide type="bottom" id="GdP-yq-boL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5Dv-kD-3qc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vms-Zz-EY7">
-                                <rect key="frame" x="0.0" y="84" width="320" height="400"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vms-Zz-EY7" secondAttribute="trailing" constant="-16" placeholder="YES" id="FAg-Y7-Vp7"/>
-                            <constraint firstItem="GdP-yq-boL" firstAttribute="top" secondItem="Vms-Zz-EY7" secondAttribute="bottom" constant="35" placeholder="YES" id="Lyd-vM-DPT"/>
-                            <constraint firstItem="Vms-Zz-EY7" firstAttribute="leading" secondItem="5Dv-kD-3qc" secondAttribute="leadingMargin" constant="-16" placeholder="YES" id="bLr-L0-N2h"/>
-                            <constraint firstItem="Vms-Zz-EY7" firstAttribute="top" secondItem="xos-EH-bFK" secondAttribute="bottom" constant="20" placeholder="YES" id="x8x-xO-6ut"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Llf-uE-QCA"/>
-                    <connections>
-                        <outlet property="hackersTableView" destination="Vms-Zz-EY7" id="QqU-1H-QID"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0CZ-rG-jmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="348"/>
         </scene>
         <!--Item-->
         <scene sceneID="pKL-Bt-39t">

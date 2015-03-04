@@ -15,7 +15,6 @@
 		0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */; };
 		0F6758871A849E2200A320C6 /* HackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */; };
 		0F714D5D1A81DF66006B089A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F714D5C1A81DF66006B089A /* Place.swift */; };
-		0FA8221E1A84861700AB5E8D /* HackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8221D1A84861700AB5E8D /* HackersViewController.swift */; };
 		0FE0224D1A89C70F00E17699 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224A1A89C70F00E17699 /* TwitterKit.framework */; };
 		0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */; };
 		0FE0224F1A89C70F00E17699 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224C1A89C70F00E17699 /* Fabric.framework */; };
@@ -48,7 +47,6 @@
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
-		F0DB3BE21A41FB8700DC8C9B /* BroadcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */; };
 		F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */; };
 		F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E674151A4A129000DCA9F8 /* MainViewController.swift */; };
 		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
@@ -88,7 +86,6 @@
 		0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HackerTableViewCell.xib; sourceTree = "<group>"; };
 		0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableViewCell.swift; sourceTree = "<group>"; };
 		0F714D5C1A81DF66006B089A /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		0FA8221D1A84861700AB5E8D /* HackersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersViewController.swift; sourceTree = "<group>"; };
 		0FE0224A1A89C70F00E17699 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FE0224C1A89C70F00E17699 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 		F0DB3BD11A41FABF00DC8C9B /* Hackin.atTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hackin.atTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BD61A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackin_atTests.swift; sourceTree = "<group>"; };
-		F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastsViewController.swift; sourceTree = "<group>"; };
 		F0DB3BE31A41FBAA00DC8C9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
@@ -252,8 +248,6 @@
 		F0BDDC001A8742BD00C1C78D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				0FA8221D1A84861700AB5E8D /* HackersViewController.swift */,
-				F0DB3BE11A41FB8700DC8C9B /* BroadcastsViewController.swift */,
 				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
 			);
 			name = Tabbar;
@@ -526,14 +520,12 @@
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,
 				0FE022921A8B861600E17699 /* BroadcastListing.swift in Sources */,
 				F04CB4601A574F1D00379EBC /* BroadcastViewController.swift in Sources */,
-				0FA8221E1A84861700AB5E8D /* HackersViewController.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F09E98F1A81F3F400D0AEA7 /* Broadcast.swift in Sources */,
 				F0AA546D1A42196300133D25 /* NewBroadcastViewController.swift in Sources */,
 				F0AA54701A4324E000133D25 /* PlacesViewController.swift in Sources */,
-				F0DB3BE21A41FB8700DC8C9B /* BroadcastsViewController.swift in Sources */,
 				F043F03C1A5C590100E337E5 /* PlaceViewController.swift in Sources */,
 				F0D50DE11A4E021A00531C50 /* BroadcastTableViewCell.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,

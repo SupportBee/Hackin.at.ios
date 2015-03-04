@@ -17,18 +17,7 @@ class MainViewController: UITabBarController {
     
     func setupTabBarTitles(){
         let viewControllers = self.viewControllers as Array<UINavigationController>
-        let home = viewControllers[0]
-        let hackers = viewControllers[1]
-        let me = viewControllers[2]
-        
-        home.title = "Broadcasts"
-        home.tabBarItem.image = UIImage(named : "broadcast_filled")
-        
-        hackers.title = "Hackers"
-        hackers.tabBarItem.image = UIImage(named : "hackers")
-
-        me.title = "Me"
-        me.tabBarItem.image = UIImage(named : "self")
+        let me = viewControllers[0]
         
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
