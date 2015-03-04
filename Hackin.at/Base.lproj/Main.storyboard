@@ -17,12 +17,51 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="REs-17-wew" kind="relationship" relationship="viewControllers" id="2hg-Ku-Zrw"/>
+                        <segue destination="Jsn-wU-w30" kind="relationship" relationship="viewControllers" id="S8m-iM-GdX"/>
+                        <segue destination="REs-17-wew" kind="relationship" relationship="viewControllers" id="XoW-dd-fFt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-m2-g37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-216" y="348"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="IXm-4g-rtt">
+            <objects>
+                <navigationController id="Jsn-wU-w30" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="t4X-wv-cDR"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MZS-ju-Fs2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X3K-J8-2G2" kind="relationship" relationship="rootViewController" id="sJn-Yl-ydp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIq-h0-2II" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="348"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="PX6-p6-tpq">
+            <objects>
+                <viewController id="X3K-J8-2G2" customClass="FriendsViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ssa-j3-vL5"/>
+                        <viewControllerLayoutGuide type="bottom" id="HcU-mG-XtF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QuB-Tf-P5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OhN-hz-vvq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="09y-x0-zZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="348"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IJz-OQ-mPX">
@@ -114,7 +153,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxY-D2-FPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="504" y="1130"/>
+            <point key="canvasLocation" x="234" y="1062"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="V8A-mD-Cvr">
