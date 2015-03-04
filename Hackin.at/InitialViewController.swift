@@ -14,7 +14,7 @@ import PureLayout
 // All Globals here for now
 var currentLocation: CLLocationCoordinate2D!
 
-class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginViewDelegate {
+class InitialViewController: UIViewController, LoginViewDelegate {
     
     @IBOutlet weak var logoImageView: UIImageView!
     // Location setup
@@ -70,21 +70,12 @@ class InitialViewController: UIViewController, CLLocationManagerDelegate, LoginV
     
     func postLoginInit(){
         setupHackerPrefs()
-        setupLocationManager()
         launchApp()
     }
     
     func launchApp() {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as MainViewController;
         self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    func setupLocationManager(){
-        // Location Setup
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
     }
     
     override func updateViewConstraints() {
