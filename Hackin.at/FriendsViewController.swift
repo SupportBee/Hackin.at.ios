@@ -13,7 +13,8 @@ import PureLayout
 class FriendsViewController: UINavigationController {
     
     override func viewDidLoad() {
-        println("Friends View Controller")
+        let searchBar = UISearchBar()
+        self.navigationItem.titleView = searchBar
     }
     
 }

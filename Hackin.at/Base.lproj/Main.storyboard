@@ -47,21 +47,25 @@
         <scene sceneID="PX6-p6-tpq">
             <objects>
                 <viewController id="X3K-J8-2G2" customClass="FriendsViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ssa-j3-vL5"/>
-                        <viewControllerLayoutGuide type="bottom" id="HcU-mG-XtF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QuB-Tf-P5Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="OhN-hz-vvq"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="eMo-Pw-Qjz">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="n9q-3C-Heq">
+                                <rect key="frame" x="0.0" y="-30" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="OhN-hz-vvq">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09y-x0-zZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="348"/>
+            <point key="canvasLocation" x="655" y="348"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IJz-OQ-mPX">
