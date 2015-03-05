@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="X3K-J8-2G2" kind="relationship" relationship="rootViewController" id="sJn-Yl-ydp"/>
+                        <segue destination="JuT-mD-7Bl" kind="relationship" relationship="rootViewController" id="8BW-Cq-Bzf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIq-h0-2II" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,36 +44,24 @@
             <point key="canvasLocation" x="221" y="348"/>
         </scene>
         <!--Friends View Controller-->
-        <scene sceneID="PX6-p6-tpq">
+        <scene sceneID="HE6-Gn-trg">
             <objects>
-                <viewController id="X3K-J8-2G2" customClass="FriendsViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jT2-bq-mgK">
+                <viewController id="JuT-mD-7Bl" customClass="FriendsViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6W-wv-Hp9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cka-4X-H3q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Q2-GM-tTR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tableView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" id="eMo-Pw-Qjz">
-                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="n9q-3C-Heq">
-                                <rect key="frame" x="0.0" y="-30" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="OhN-hz-vvq">
-                        <nil key="title"/>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yBw-7X-cuc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="hackersTableView" destination="jT2-bq-mgK" id="XuE-1y-aWD"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="09y-x0-zZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GhD-2C-Lbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="655" y="348"/>
+            <point key="canvasLocation" x="685" y="348"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IJz-OQ-mPX">
