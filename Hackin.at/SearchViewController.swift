@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.showsCancelButton = true
+        searchBar.placeholder = "Search Github Hackers"
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
     }

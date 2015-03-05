@@ -15,6 +15,7 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         let searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.placeholder = "Search Github Hackers"
         self.navigationItem.titleView = searchBar
     }
     
