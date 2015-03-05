@@ -7,6 +7,7 @@
 //
 
 import Locksmith
+import SwiftyJSON
 
 class CurrentHacker:NSObject {
     
@@ -66,6 +67,22 @@ class CurrentHacker:NSObject {
         }
         return true
     }
+    
+    func friends(#success: ([Hacker]) -> ()) -> () {
+        func onFetch(result: AnyObject){
+            var hackersJSON = JSON(result)["friends"].arrayValue
+            var hackers: Array<Hacker> = []
+            
+            hackers = hackersJSON.map({
+                (hacker) -> Hacker in
+                return Hacker(json: hacker)
+            })
+            success(hackers)
+        }
+        
+        Hackinat.sharedInstance.fetchFriends(authKey: CurrentHacker.authKey!, success: onFetch)
+    }
+    
     
     class func hacker() -> Hacker?{
         if doesExist(){
