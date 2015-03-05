@@ -17,11 +17,17 @@ class FriendsViewController: UIViewController, UISearchBarDelegate, UITableViewD
     var tableRefreshControl:TableRefreshControl!
     
     override func viewDidLoad() {
-        //setupSearchBar()
-        setupTableViewStyle()
-        setupTableViewWiring()
-        setupAutoRefresh()
-        fetchFriends()
+        setupSearchBar()
+        setupFriendsListing()
+  //      setupTableViewStyle()
+  //      setupTableViewWiring()
+  //      setupAutoRefresh()
+  //      fetchFriends()
+    }
+    
+    func setupFriendsListing(){
+        let friendsListing = HackersListingView()
+        view.addSubview(friendsListing)
     }
     
     func setupSearchBar(){
