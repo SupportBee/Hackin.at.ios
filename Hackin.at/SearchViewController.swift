@@ -8,6 +8,18 @@
 
 import UIKit
 
-class SearchViewController: UINavigationController {
+class SearchViewController: UIViewController, UISearchBarDelegate {
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    
+    override func viewDidLoad() {
+        println("Search view controller")
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        println("Entered \(searchText)")
+    }
 }
