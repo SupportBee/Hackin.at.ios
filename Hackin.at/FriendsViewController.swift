@@ -20,8 +20,8 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         var searchStoryboard = UIStoryboard(name: "Search", bundle: nil);
-        let vc = searchStoryboard.instantiateViewControllerWithIdentifier("searchViewController") as SearchViewController;
-        self.navigationController?.pushViewController(vc, animated: false)
+        let vc = searchStoryboard.instantiateViewControllerWithIdentifier("searchNavigationController") as UINavigationController;
+        self.presentViewController(vc, animated: false, completion: nil)
         
     }
 
