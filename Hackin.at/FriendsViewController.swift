@@ -24,5 +24,5 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
         self.presentViewController(vc, animated: false, completion: nil)
         
     }
-
+    
 }

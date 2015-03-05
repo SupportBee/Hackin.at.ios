@@ -38,4 +38,5 @@ public func setupAppStyling(){
 
     UITabBar.appearance().tintColor = AppColors.barTint
     UITabBar.appearance().barTintColor = UIColor.whiteColor()
+    
 }

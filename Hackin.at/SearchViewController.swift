@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let searchBar = UISearchBar()
         searchBar.delegate = self
         navigationItem.titleView = searchBar
+        searchBar.becomeFirstResponder()
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
