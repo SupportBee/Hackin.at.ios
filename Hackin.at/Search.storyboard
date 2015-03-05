@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="lqG-bW-d63">
+            <objects>
+                <viewController storyboardIdentifier="searchViewController" id="cW9-Ay-djc" customClass="SearchViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nqD-tJ-HVI"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddP-5e-lHd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZHF-6Q-Nac">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSc-cC-9wV">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="OOy-yH-3Fj"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="tr3-j3-NtO" id="InG-dQ-eJk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEh-ac-0xH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="SO5-Uz-1jw">
+                    <connections>
+                        <outlet property="delegate" destination="cW9-Ay-djc" id="P1r-UN-yqt"/>
+                        <outlet property="searchContentsController" destination="cW9-Ay-djc" id="GKU-3s-s0e"/>
+                        <outlet property="searchResultsDataSource" destination="cW9-Ay-djc" id="vRS-dN-HkP"/>
+                        <outlet property="searchResultsDelegate" destination="cW9-Ay-djc" id="0uw-YW-1xl"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="tr3-j3-NtO">
+                    <connections>
+                        <outlet property="delegate" destination="cW9-Ay-djc" id="aOg-Oc-g7N"/>
+                        <outlet property="searchContentsController" destination="cW9-Ay-djc" id="QMd-4c-ByN"/>
+                        <outlet property="searchResultsDataSource" destination="cW9-Ay-djc" id="rxB-JP-O15"/>
+                        <outlet property="searchResultsDelegate" destination="cW9-Ay-djc" id="mlk-p7-MSK"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="238" y="272"/>
+        </scene>
+    </scenes>
+</document>

@@ -10,11 +10,18 @@
 import UIKit
 import PureLayout
 
-class FriendsViewController: UINavigationController {
+class FriendsViewController: UINavigationController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         let searchBar = UISearchBar()
+        searchBar.delegate = self
         self.navigationItem.titleView = searchBar
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        var searchStoryboard = UIStoryboard(name: "Search", bundle: nil);
+        let vc = searchStoryboard.instantiateViewControllerWithIdentifier("searchViewController") as SearchViewController;
+        presentViewController(vc, animated: false, completion: nil)
     }
     
 }
