@@ -14,11 +14,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         println("Search view controller")
         let searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.showsCancelButton = true
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         println("Entered \(searchText)")
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
 }
