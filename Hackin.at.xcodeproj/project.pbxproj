@@ -19,6 +19,7 @@
 		0FF759B11A9F120A0090B835 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF759B01A9F120A0090B835 /* Crashlytics.framework */; };
 		A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C58A03B72B5875578D89A0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */; };
 		F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */; };
 		F04AAE021A8E0AFC007243B7 /* streamline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04AAE011A8E0AFC007243B7 /* streamline.ttf */; };
 		F04AAE081A8E1D3C007243B7 /* UIIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */; };
@@ -83,6 +84,7 @@
 		6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.ContactView.swift; sourceTree = "<group>"; };
 		F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
 		F04AAE011A8E0AFC007243B7 /* streamline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = streamline.ttf; sourceTree = "<group>"; };
 		F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconBarButtonItem.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				0F6758861A849E2200A320C6 /* HackerTableCell.swift */,
+				F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */,
 			);
 			name = HackerTableCells;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
+				F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */,
 				F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */,
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
