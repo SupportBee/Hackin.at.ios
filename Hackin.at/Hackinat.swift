@@ -24,7 +24,8 @@ class Hackinat: NSObject {
     }
   
     //private let httpClient: HttpClient
-    let apiBaseDomain = "https://hackin.at"
+    //let apiBaseDomain = "https://hackin.at"
+    let apiBaseDomain = "http://10.1.200.5.xip.io:3000"
     
     override init() {
         //httpClient = HttpClient()
@@ -54,6 +55,16 @@ class Hackinat: NSObject {
                 success(JSON!)
         }
 
+    }
+    
+    func fetchFriends(#authKey: String, success: (AnyObject) -> (), failure: () -> () = {}){
+        
+        let url = "\(apiBaseDomain)/friends?auth_key=\(authKey)"
+        Alamofire.request(.GET, url)
+            .responseJSON { (_, _, JSON, _) in
+                println("JSON IS \(JSON)")
+                success(JSON!)
+        }
     }
     
     func updateHackerTwitterCredentials(#login:String, authKey: String, authToken: String, authSecret: String,  success: () -> (), failure: () -> ()){

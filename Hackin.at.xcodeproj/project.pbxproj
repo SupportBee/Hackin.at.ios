@@ -26,10 +26,14 @@
 		F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */; };
 		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
+		F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09325CA1AA822F9008A94CB /* HackersListingView.swift */; };
 		F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA8A041A91A543008E382D /* UIIconLabel.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
 		F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BDDC011A874C2200C1C78D /* AppTheme.swift */; };
+		F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */; };
+		F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */; };
+		F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */; };
 		F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
@@ -87,10 +91,14 @@
 		F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerSummaryView.swift; sourceTree = "<group>"; };
 		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F09325CA1AA822F9008A94CB /* HackersListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersListingView.swift; sourceTree = "<group>"; };
 		F0AA8A041A91A543008E382D /* UIIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconLabel.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F0BDDC011A874C2200C1C78D /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +188,7 @@
 				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
 				F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */,
 				F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */,
+				F09325CA1AA822F9008A94CB /* HackersListingView.swift */,
 			);
 			name = Hackers;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
+				F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -207,6 +217,15 @@
 				F05229DA1A823AD800E36E81 /* AppColors.swift */,
 			);
 			name = Styles;
+			sourceTree = "<group>";
+		};
+		F0C8FB3E1AA7D8AD00DEBE90 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */,
+				F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		F0DB3BB31A41FABF00DC8C9B = {
@@ -257,6 +276,7 @@
 				F0BDDBFC1A87410600C1C78D /* Hackers */,
 				F0BDDC041A874C3500C1C78D /* Styles */,
 				F0AA8A061A91A553008E382D /* CustomViews */,
+				F0C8FB3E1AA7D8AD00DEBE90 /* Search */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -382,6 +402,7 @@
 				0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */,
 				F04AAE021A8E0AFC007243B7 /* streamline.ttf in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
+				F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */,
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
 				0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */,
 				F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */,
@@ -456,12 +477,15 @@
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
+				F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */,
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
+				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
+				F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */,
 				F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
 				F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */,

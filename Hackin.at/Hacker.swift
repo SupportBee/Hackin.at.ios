@@ -106,6 +106,7 @@ class Hacker: NSObject {
         Hackinat.sharedInstance.fetchNearbyHackers(authKey: CurrentHacker.authKey!, location: currentLocation, success: onFetch)
     }
     
+    
     func fetchAvatarImage(#success: (UIImage) -> ()){
         if(avatarImage != nil){ success(avatarImage!) }
         

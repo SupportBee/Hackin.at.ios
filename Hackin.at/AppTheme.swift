@@ -26,6 +26,7 @@ public struct AppTheme {
     struct IconLabel {
         static let paddingRight: CGFloat = 5.0;
     }
+    
 }
 
 public func setupAppStyling(){
@@ -38,4 +39,8 @@ public func setupAppStyling(){
 
     UITabBar.appearance().tintColor = AppColors.barTint
     UITabBar.appearance().barTintColor = UIColor.whiteColor()
+    
+    UISearchBar.appearance().barTintColor = AppColors.searchBarColor
+    UISearchBar.appearance().tintColor = AppColors.searchTextColor
+    
 }
