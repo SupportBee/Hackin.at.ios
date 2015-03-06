@@ -58,9 +58,8 @@ class HackerTableCell: UITableViewCell {
         nameLabel.textColor = AppColors.primaryLabel
         contentView.addSubview(nameLabel)
     }
-    
-    override func updateConstraints(){
-        
+
+    override func updateConstraints() {
         profileImageView.autoSetDimensionsToSize(CGSizeMake(48.0, 48.0))
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
@@ -71,18 +70,12 @@ class HackerTableCell: UITableViewCell {
             withOffset: AppTheme.Listing.elementsPadding)
         loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
-
-        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
-
-//        stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-//        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
-
-        super.updateConstraints()
-
         
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
+        super.updateConstraints()
     }
-    
+   
     func setupViewData(hacker: Hacker){
         let login = hacker.login
         
