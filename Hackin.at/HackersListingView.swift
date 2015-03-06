@@ -34,7 +34,8 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     func setupTableViewWiring(){
         hackersTableView.delegate = self
         hackersTableView.dataSource = self
-        hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
+        //hackersTableView.registerNib(UINib(nibName: "HackerTableViewCell", bundle: nil), forCellReuseIdentifier: "HackerCell")
+        //hackersTableView.registerClass(HackerTableViewCell.self, forCellReuseIdentifier: "HackerCell")
     }
     
     func setupAutoRefresh(){
@@ -82,7 +83,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         println("rendering hacker ")
-        let cell = tableView.dequeueReusableCellWithIdentifier("HackerCell", forIndexPath: indexPath) as HackerTableViewCell
+        let cell = HackerTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "HackerCell")
         
         let hacker = self.hackers[indexPath.row]
         cell.setupViewData(hacker)

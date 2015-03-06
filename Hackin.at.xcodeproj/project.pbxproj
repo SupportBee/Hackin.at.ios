@@ -11,7 +11,6 @@
 		0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350241A7F76FF00D58243 /* Hackinat.swift */; };
 		0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350261A7FABDD00D58243 /* Hacker.swift */; };
 		0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350281A80D1F000D58243 /* CurrentHacker.swift */; };
-		0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */; };
 		0F6758871A849E2200A320C6 /* HackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */; };
 		0FE0224D1A89C70F00E17699 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224A1A89C70F00E17699 /* TwitterKit.framework */; };
 		0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */; };
@@ -73,7 +72,6 @@
 		0F4350241A7F76FF00D58243 /* Hackinat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hackinat.swift; sourceTree = "<group>"; };
 		0F4350261A7FABDD00D58243 /* Hacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacker.swift; sourceTree = "<group>"; };
 		0F4350281A80D1F000D58243 /* CurrentHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHacker.swift; sourceTree = "<group>"; };
-		0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HackerTableViewCell.xib; sourceTree = "<group>"; };
 		0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableViewCell.swift; sourceTree = "<group>"; };
 		0FE0224A1A89C70F00E17699 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
 				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
-				0F6758841A849D2100A320C6 /* HackerTableViewCell.xib */,
 				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
 				F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */,
 				F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */,
@@ -404,7 +401,6 @@
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */,
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
-				0F6758851A849D2100A320C6 /* HackerTableViewCell.xib in Resources */,
 				F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */,
 				F0F045CE1A89FDD3005CC0C8 /* Hackers.storyboard in Resources */,
 				F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */,

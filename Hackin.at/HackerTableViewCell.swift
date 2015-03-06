@@ -11,27 +11,43 @@ import PureLayout
 
 class HackerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var stickersLabel: UILabel!
-    @IBOutlet weak var whereLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    let profileImageView = UIImageView()
+    let loginLabel = UILabel()
+    let nameLabel = UILabel()
+    let stickersLabel = UILabel()
+    let whereLabel = UILabel()
+    let distanceLabel = UILabel()
     
-    override func awakeFromNib() {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         // Circular image
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
-        self.profileImageView.clipsToBounds = true;
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(profileImageView)
+        addSubview(loginLabel)
+        addSubview(nameLabel)
+        addSubview(stickersLabel)
+        addSubview(whereLabel)
+        addSubview(distanceLabel)
         
-        self.loginLabel.textColor = AppColors.primaryLabel
-        self.nameLabel.textColor = AppColors.primaryLabel
-        self.whereLabel.textColor = AppColors.primaryLabel
-        self.distanceLabel.textColor = AppColors.secondaryLabel
+        // http://stackoverflow.com/questions/15894415/where-to-create-autolayout-constraints-for-subclassed-uitableviewcell
+        setNeedsUpdateConstraints()
+        
+        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+        profileImageView.clipsToBounds = true;
+        
+        loginLabel.textColor = AppColors.primaryLabel
+        nameLabel.textColor = AppColors.primaryLabel
+        whereLabel.textColor = AppColors.primaryLabel
+        distanceLabel.textColor = AppColors.secondaryLabel
         
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
-        self.preservesSuperviewLayoutMargins = false
-        self.layoutMargins = UIEdgeInsetsZero
+        preservesSuperviewLayoutMargins = false
+        layoutMargins = UIEdgeInsetsZero
+   }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
     }
     
     override func updateConstraints(){
@@ -60,6 +76,7 @@ class HackerTableViewCell: UITableViewCell {
         whereLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: AppTheme.Listing.elementsPadding)
         whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.HackerListing.paddingRight)
 
+        println("Updating constraints")
         super.updateConstraints()
 
         
