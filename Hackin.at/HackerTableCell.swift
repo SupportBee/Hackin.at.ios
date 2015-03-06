@@ -15,8 +15,6 @@ class HackerTableCell: UITableViewCell {
     let loginLabel = UILabel()
     let nameLabel = UILabel()
     let stickersLabel = UILabel()
-    let whereLabel = UILabel()
-    let distanceLabel = UILabel()
     
     // http://stackoverflow.com/questions/25049121/calling-an-initializer-having-only-the-class-name-in-swift
     required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -29,8 +27,6 @@ class HackerTableCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(nameLabel)
         contentView.addSubview(stickersLabel)
-        contentView.addSubview(whereLabel)
-        contentView.addSubview(distanceLabel)
         
         // http://stackoverflow.com/questions/15894415/where-to-create-autolayout-constraints-for-subclassed-uitableviewcell
         setNeedsUpdateConstraints()
@@ -40,8 +36,6 @@ class HackerTableCell: UITableViewCell {
         
         loginLabel.textColor = AppColors.primaryLabel
         nameLabel.textColor = AppColors.primaryLabel
-        whereLabel.textColor = AppColors.primaryLabel
-        distanceLabel.textColor = AppColors.secondaryLabel
         
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
@@ -67,19 +61,11 @@ class HackerTableCell: UITableViewCell {
         loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
 
-        distanceLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right,
-            withInset: AppTheme.HackerListing.paddingLeft)
-        distanceLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginLabel)
-        
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
 
         stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
-
-        whereLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        whereLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: AppTheme.Listing.elementsPadding)
-        whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.HackerListing.paddingRight)
 
         super.updateConstraints()
 
@@ -96,8 +82,6 @@ class HackerTableCell: UITableViewCell {
         
         self.loginLabel.text = "@\(login)"
         self.nameLabel.text = name
-        self.whereLabel.text = locationName
-        self.distanceLabel.text = hacker.distance
 
         let stickers = hacker.stickerCodes()
         self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
