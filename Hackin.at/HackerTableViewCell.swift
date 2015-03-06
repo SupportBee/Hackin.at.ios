@@ -21,7 +21,10 @@ class HackerTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         // Circular image
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setTranslatesAutoresizingMaskIntoConstraints(false)
+
         addSubview(profileImageView)
+        
         addSubview(loginLabel)
         addSubview(nameLabel)
         addSubview(stickersLabel)
@@ -52,6 +55,7 @@ class HackerTableViewCell: UITableViewCell {
     
     override func updateConstraints(){
         
+        profileImageView.autoSetDimensionsToSize(CGSizeMake(48.0, 48.0))
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
@@ -76,7 +80,6 @@ class HackerTableViewCell: UITableViewCell {
         whereLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: stickersLabel, withOffset: AppTheme.Listing.elementsPadding)
         whereLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.HackerListing.paddingRight)
 
-        println("Updating constraints")
         super.updateConstraints()
 
         
