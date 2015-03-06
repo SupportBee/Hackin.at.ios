@@ -11,7 +11,7 @@ import PureLayout
 
 class HackerTableViewCell: UITableViewCell {
 
-    let profileImageView = UIImageView()
+    let profileImageView = UIImageView(frame: CGRectMake(0, 0, 48.0, 48.0))
     let loginLabel = UILabel()
     let nameLabel = UILabel()
     let stickersLabel = UILabel()
@@ -21,15 +21,15 @@ class HackerTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         // Circular image
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setTranslatesAutoresizingMaskIntoConstraints(false)
+        contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
-        addSubview(profileImageView)
-        
-        addSubview(loginLabel)
-        addSubview(nameLabel)
-        addSubview(stickersLabel)
-        addSubview(whereLabel)
-        addSubview(distanceLabel)
+        contentView.addSubview(profileImageView)
+        contentView.addSubview(loginLabel)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(stickersLabel)
+        contentView.addSubview(whereLabel)
+        contentView.addSubview(distanceLabel)
         
         // http://stackoverflow.com/questions/15894415/where-to-create-autolayout-constraints-for-subclassed-uitableviewcell
         setNeedsUpdateConstraints()
