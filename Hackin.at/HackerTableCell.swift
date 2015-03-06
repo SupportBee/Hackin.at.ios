@@ -11,9 +11,9 @@ import PureLayout
 
 class HackerTableCell: UITableViewCell {
 
-    let profileImageView = UIImageView(frame: CGRectMake(0, 0, 48.0, 48.0))
-    let loginLabel = UILabel()
-    let nameLabel = UILabel()
+    var profileImageView: UIImageView!
+    var loginLabel: UILabel!
+    var nameLabel: UILabel!
     let stickersLabel = UILabel()
     
     // http://stackoverflow.com/questions/25049121/calling-an-initializer-having-only-the-class-name-in-swift
@@ -22,20 +22,13 @@ class HackerTableCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
-        contentView.addSubview(profileImageView)
-        contentView.addSubview(loginLabel)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(stickersLabel)
+        setupProfileImage()
+        setupLoginLabel()
+        setupNameLabel()
+        //contentView.addSubview(stickersLabel)
         
         // http://stackoverflow.com/questions/15894415/where-to-create-autolayout-constraints-for-subclassed-uitableviewcell
         setNeedsUpdateConstraints()
-        
-        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
-        profileImageView.clipsToBounds = true;
-        
-        loginLabel.textColor = AppColors.primaryLabel
-        nameLabel.textColor = AppColors.primaryLabel
         
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
@@ -45,7 +38,25 @@ class HackerTableCell: UITableViewCell {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
 
+    func setupProfileImage(){
+        profileImageView = UIImageView(frame: CGRectMake(0, 0, 48.0, 48.0))
+        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+        profileImageView.clipsToBounds = true;
+        contentView.addSubview(profileImageView)
+    }
+
+    func setupLoginLabel(){
+        loginLabel = UILabel()
+        loginLabel.textColor = AppColors.primaryLabel
+        contentView.addSubview(loginLabel)
+    }
+
+    func setupNameLabel(){
+        nameLabel = UILabel()
+        nameLabel.textColor = AppColors.primaryLabel
+        contentView.addSubview(nameLabel)
     }
     
     override func updateConstraints(){
@@ -64,8 +75,8 @@ class HackerTableCell: UITableViewCell {
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
         nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
 
-        stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+//        stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
+//        stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
 
         super.updateConstraints()
 
