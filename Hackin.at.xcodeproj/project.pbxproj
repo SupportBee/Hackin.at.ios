@@ -11,7 +11,7 @@
 		0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350241A7F76FF00D58243 /* Hackinat.swift */; };
 		0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350261A7FABDD00D58243 /* Hacker.swift */; };
 		0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350281A80D1F000D58243 /* CurrentHacker.swift */; };
-		0F6758871A849E2200A320C6 /* HackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */; };
+		0F6758871A849E2200A320C6 /* HackerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6758861A849E2200A320C6 /* HackerTableCell.swift */; };
 		0FE0224D1A89C70F00E17699 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224A1A89C70F00E17699 /* TwitterKit.framework */; };
 		0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */; };
 		0FE0224F1A89C70F00E17699 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224C1A89C70F00E17699 /* Fabric.framework */; };
@@ -72,7 +72,7 @@
 		0F4350241A7F76FF00D58243 /* Hackinat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hackinat.swift; sourceTree = "<group>"; };
 		0F4350261A7FABDD00D58243 /* Hacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacker.swift; sourceTree = "<group>"; };
 		0F4350281A80D1F000D58243 /* CurrentHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHacker.swift; sourceTree = "<group>"; };
-		0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableViewCell.swift; sourceTree = "<group>"; };
+		0F6758861A849E2200A320C6 /* HackerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.swift; sourceTree = "<group>"; };
 		0FE0224A1A89C70F00E17699 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FE0224C1A89C70F00E17699 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		F0E1D1BA1AA990E300733856 /* HackerTableCells */ = {
 			isa = PBXGroup;
 			children = (
-				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+				0F6758861A849E2200A320C6 /* HackerTableCell.swift */,
 			);
 			name = HackerTableCells;
 			sourceTree = "<group>";
@@ -494,7 +494,7 @@
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
 				F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */,
 				F04AAE081A8E1D3C007243B7 /* UIIconBarButtonItem.swift in Sources */,
-				0F6758871A849E2200A320C6 /* HackerTableViewCell.swift in Sources */,
+				0F6758871A849E2200A320C6 /* HackerTableCell.swift in Sources */,
 				0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */,
 				F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */,
 			);

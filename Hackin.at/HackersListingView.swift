@@ -14,14 +14,14 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var hackersTableView = UITableView()
     var hackers: Array<Hacker> = []
     var tableRefreshControl:TableRefreshControl!
-    var cellStyle: HackerTableViewCell.Type!
+    var cellStyle: HackerTableCell.Type!
     
     override init (frame : CGRect) {
         super.init(frame : frame)
     }
     
     convenience init(
-        cellStyle: HackerTableViewCell.Type = HackerTableViewCell.self,
+        cellStyle: HackerTableCell.Type = HackerTableCell.self,
         pullToRefresh:Bool = true){
         self.init(frame:CGRectZero)
         self.cellStyle = cellStyle

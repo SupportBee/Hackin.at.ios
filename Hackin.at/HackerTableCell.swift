@@ -1,5 +1,5 @@
 //
-//  HackerTableViewCell.swift
+//  HackerTableCell.swift
 //  Hackin.at
 //
 //  Created by Avinasha Shastry on 06/02/15.
@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class HackerTableViewCell: UITableViewCell {
+class HackerTableCell: UITableViewCell {
 
     let profileImageView = UIImageView(frame: CGRectMake(0, 0, 48.0, 48.0))
     let loginLabel = UILabel()
