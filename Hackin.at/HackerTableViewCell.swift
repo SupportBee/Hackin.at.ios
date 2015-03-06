@@ -18,7 +18,8 @@ class HackerTableViewCell: UITableViewCell {
     let whereLabel = UILabel()
     let distanceLabel = UILabel()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    // http://stackoverflow.com/questions/25049121/calling-an-initializer-having-only-the-class-name-in-swift
+    required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         // Circular image
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.setTranslatesAutoresizingMaskIntoConstraints(false)

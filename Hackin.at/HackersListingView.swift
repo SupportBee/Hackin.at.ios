@@ -14,13 +14,17 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var hackersTableView = UITableView()
     var hackers: Array<Hacker> = []
     var tableRefreshControl:TableRefreshControl!
+    var cellStyle: HackerTableViewCell.Type!
     
     override init (frame : CGRect) {
         super.init(frame : frame)
     }
     
-    convenience init(pullToRefresh:Bool = true){
+    convenience init(
+        cellStyle: HackerTableViewCell.Type = HackerTableViewCell.self,
+        pullToRefresh:Bool = true){
         self.init(frame:CGRectZero)
+        self.cellStyle = cellStyle
         setupTableViewWiring()
         addSubview(hackersTableView)
         setupTableViewStyle()
@@ -34,7 +38,6 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     func setupTableViewWiring(){
         hackersTableView.delegate = self
         hackersTableView.dataSource = self
-        hackersTableView.registerClass(HackerTableViewCell.self, forCellReuseIdentifier: "HackerCell")
     }
     
     func setupAutoRefresh(){
@@ -80,7 +83,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HackerCell", forIndexPath: indexPath) as HackerTableViewCell
+        let cell = self.cellStyle(style: UITableViewCellStyle.Default, reuseIdentifier: "HackerCell")
         
         let hacker = self.hackers[indexPath.row]
         cell.setupViewData(hacker)

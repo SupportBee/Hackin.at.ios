@@ -182,7 +182,7 @@
 			children = (
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
 				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
-				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+				F0E1D1BA1AA990E300733856 /* HackerTableCells */,
 				F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */,
 				F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */,
 				F09325CA1AA822F9008A94CB /* HackersListingView.swift */,
@@ -301,6 +301,14 @@
 				F0DB3BD61A41FABF00DC8C9B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0E1D1BA1AA990E300733856 /* HackerTableCells */ = {
+			isa = PBXGroup;
+			children = (
+				0F6758861A849E2200A320C6 /* HackerTableViewCell.swift */,
+			);
+			name = HackerTableCells;
 			sourceTree = "<group>";
 		};
 		F4F0913888F877786F5CE72B /* Frameworks */ = {
