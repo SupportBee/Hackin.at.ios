@@ -14,7 +14,6 @@ class HackerTableCell: UITableViewCell {
     var profileImageView: UIImageView!
     var loginLabel: UILabel!
     var nameLabel: UILabel!
-    let stickersLabel = UILabel()
     
     // http://stackoverflow.com/questions/25049121/calling-an-initializer-having-only-the-class-name-in-swift
     required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -72,7 +71,7 @@ class HackerTableCell: UITableViewCell {
             withInset: AppTheme.HackerListing.paddingTop)
         
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
         super.updateConstraints()
     }
    
@@ -87,9 +86,6 @@ class HackerTableCell: UITableViewCell {
         self.loginLabel.text = "@\(login)"
         self.nameLabel.text = name
 
-        let stickers = hacker.stickerCodes()
-        self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
-        self.stickersLabel.text = stickers
        
         hacker.fetchAvatarURL({
             (url: String) in
