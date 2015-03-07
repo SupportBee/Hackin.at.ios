@@ -20,7 +20,7 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
     }
     
     func setupFriendsListing(){
-        friendsListing = HackersListingView()
+        friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self, pullToRefresh: true)
         view.addSubview(friendsListing)
         friendsListing.fetchFriends()
     }
