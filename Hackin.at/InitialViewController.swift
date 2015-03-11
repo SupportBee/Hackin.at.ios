@@ -51,7 +51,8 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     }
     
     func hackerLoggedIn() {
-        println("Hacker Logged In!")
+        MixpanelHelper().identifyCurrentUser()
+        MixpanelHelper().trackLogin()
         self.dismissViewControllerAnimated(true, completion: nil)
         postLoginInit()
     }
@@ -70,7 +71,12 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     
     func postLoginInit(){
         setupHackerPrefs()
+        trackLogin()
         launchApp()
+    }
+    
+    func trackLogin(){
+        
     }
     
     func launchApp() {

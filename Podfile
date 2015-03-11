@@ -7,4 +7,5 @@ pod 'DateTools'
 pod 'SDWebImage', '~>3.6'
 pod 'SZTextView'
 pod 'Locksmith'
+pod 'Mixpanel'
 

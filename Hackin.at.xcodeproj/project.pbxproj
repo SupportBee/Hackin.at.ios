@@ -18,6 +18,7 @@
 		0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0228F1A8B68F000E17699 /* TableRefreshControl.swift */; };
 		0FF759B11A9F120A0090B835 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF759B01A9F120A0090B835 /* Crashlytics.framework */; };
 		A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C58A03B72B5875578D89A0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F004E6171AB0318800FBC6D0 /* MixpanelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
 		F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */; };
 		F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */; };
@@ -83,6 +84,7 @@
 		20C58A03B72B5875578D89A0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelHelper.swift; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.ContactView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				0FE0228F1A8B68F000E17699 /* TableRefreshControl.swift */,
+				F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
 				F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */,
+				F004E6171AB0318800FBC6D0 /* MixpanelHelper.swift in Sources */,
 				F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
 				F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */,
