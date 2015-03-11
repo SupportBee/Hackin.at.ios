@@ -70,7 +70,12 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     
     func postLoginInit(){
         setupHackerPrefs()
+        trackLogin()
         launchApp()
+    }
+    
+    func trackLogin(){
+        
     }
     
     func launchApp() {

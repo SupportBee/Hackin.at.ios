@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import TwitterKit
 import Crashlytics
+import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Twitter(), Crashlytics()])
+        Mixpanel.sharedInstanceWithToken("6642e6642c98e47da5d2a327f73440d2")
         // Override point for customization after application launch.
         setupAppStyling()
         return true
