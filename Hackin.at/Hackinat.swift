@@ -25,7 +25,7 @@ class Hackinat: NSObject {
   
     //private let httpClient: HttpClient
     //let apiBaseDomain = "https://hackin.at"
-    let apiBaseDomain = "http://10.1.200.5.xip.io:3000"
+    let apiBaseDomain = "http://lvh.me:3000"
     
     override init() {
         //httpClient = HttpClient()

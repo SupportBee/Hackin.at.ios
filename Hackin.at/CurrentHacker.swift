@@ -83,7 +83,6 @@ class CurrentHacker:NSObject {
         Hackinat.sharedInstance.fetchFriends(authKey: CurrentHacker.authKey!, success: onFetch)
     }
     
-    
     class func hacker() -> Hacker?{
         if doesExist(){
             let _hacker = CurrentHackerStruct.hacker
@@ -102,6 +101,7 @@ class CurrentHacker:NSObject {
         
         return nil
     }
+    
     
     class func clear(){
         Locksmith.deleteDataForUserAccount(userAccount)
