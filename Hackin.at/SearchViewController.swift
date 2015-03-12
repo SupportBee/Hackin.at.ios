@@ -8,10 +8,12 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var hackersFound: [Hacker]!
-    var hackersListing: HackersListingView!
+    var hackersListing: UITableView!
+    
+    var hackers: [Hacker] = []
     
     override func viewDidLoad(){
         println("Search view controller")
@@ -34,8 +36,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
     
     func setupHackerListingView(){
-        hackersListing = HackersListingView(cellStyle: HackerTableCell.FullView.self,
-            pullToRefresh: false)
+        hackersListing = UITableView()
+        hackersListing.dataSource = self
+        hackersListing.delegate = self
+        hackersListing.registerClass(UITableViewCell.self, forCellReuseIdentifier: "HackerCell")
         view.addSubview(hackersListing)
     }
     
@@ -44,8 +48,22 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         Hacker.search(searchText, success: foundHackers)
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("total \(hackers.count)")
+        return hackers.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as UITableViewCell
+        let hacker = self.hackers[indexPath.row]
+        println("Rendering \(hacker.login)")
+        cell.textLabel?.text  = "@\(hacker.login)"
+        return cell;
+    }
+    
     func foundHackers(hackers: [Hacker]){
-        hackersListing.renderHackers(hackers)
+        self.hackers = hackers
+        hackersListing.reloadData()
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
