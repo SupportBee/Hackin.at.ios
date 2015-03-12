@@ -110,7 +110,7 @@ class Hacker: NSObject {
         Hackinat.sharedInstance.fetchNearbyHackers(authKey: CurrentHacker.authKey!, location: currentLocation, success: onFetch)
     }
     
-    class func search(searchTerm: String, success: ([Hacker]?) -> ()) -> [Hacker]? {
+    class func search(searchTerm: String, success: ([Hacker]) -> ()) -> [Hacker]? {
         
         func onFetch(result: AnyObject){
             var hackersJSON = JSON(result)["results"]["hackers"].arrayValue
