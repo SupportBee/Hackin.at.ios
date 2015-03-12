@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
     
+    var hackersFound: [Hacker]!
+    
     override func viewDidLoad() {
         println("Search view controller")
         let searchBar = UISearchBar()
@@ -21,7 +23,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        println("Entered \(searchText)")
+        println("Searching for \(searchText)")
+        Hacker.search(searchText, success: foundHackers)
+    }
+    
+    func foundHackers(hackers: [Hacker]?){
+        println("Found \(hackers!.count)")
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {

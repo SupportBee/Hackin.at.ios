@@ -110,6 +110,23 @@ class Hacker: NSObject {
         Hackinat.sharedInstance.fetchNearbyHackers(authKey: CurrentHacker.authKey!, location: currentLocation, success: onFetch)
     }
     
+    class func search(searchTerm: String, success: ([Hacker]?) -> ()) -> [Hacker]? {
+        
+        func onFetch(result: AnyObject){
+            var hackersJSON = JSON(result)["results"]["hackers"].arrayValue
+            var hackers: Array<Hacker> = []
+            
+            hackers = hackersJSON.map({
+                (hacker) -> Hacker in
+                return Hacker(json: hacker)
+            }) 
+            success(hackers)
+        }
+        
+        Hackinat.sharedInstance.searchHackers(authKey: CurrentHacker.authKey!, searchTerm: searchTerm, success: onFetch)
+        return []
+    }
+    
     
     func fetchAvatarImage(#success: (UIImage) -> ()){
         if(avatarImage != nil){ success(avatarImage!) }

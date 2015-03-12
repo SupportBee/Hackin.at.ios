@@ -25,7 +25,8 @@ class Hackinat: NSObject {
   
     //private let httpClient: HttpClient
     //let apiBaseDomain = "https://hackin.at"
-    let apiBaseDomain = "http://lvh.me:3000"
+    //let apiBaseDomain = "http://lvh.me:3000"
+    let apiBaseDomain = "http://staging.hackin.at"
     
     override init() {
         //httpClient = HttpClient()
@@ -40,6 +41,14 @@ class Hackinat: NSObject {
         }
         
         Alamofire.request(.GET, profileURL)
+            .responseJSON { (_, _, JSON, _) in
+                success(JSON!)
+        }
+    }
+    
+    func searchHackers(#authKey: String, searchTerm: String, success: (AnyObject) -> ()){
+        var searchURL = "\(apiBaseDomain)/search?auth_key=\(authKey)&query=\(searchTerm)"
+        Alamofire.request(.GET, searchURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
