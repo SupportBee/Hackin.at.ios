@@ -7,18 +7,13 @@
 //
 
 import UIKit
-import CoreLocation
-import SwiftyJSON
 import PureLayout
 
 // All Globals here for now
-var currentLocation: CLLocationCoordinate2D!
-
 class InitialViewController: UIViewController, LoginViewDelegate {
     
     @IBOutlet weak var logoImageView: UIImageView!
     // Location setup
-    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,37 +33,12 @@ class InitialViewController: UIViewController, LoginViewDelegate {
         self.presentViewController(vc, animated: true, completion: nil)
     }
  
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
-        var locationArray = locations as NSArray
-        var locationObj = locationArray[0] as CLLocation
-        currentLocation = locationObj.coordinate
-        println("acquired location \(currentLocation)")
-        locationManager.stopUpdatingLocation()
-    }
-    
-    func locationManager(manager:CLLocationManager, didFailWithError error:NSError!) {
-        println("failed \(error)")
-    }
-    
     func hackerLoggedIn() {
         self.dismissViewControllerAnimated(true, completion: nil)
         postLoginInit()
     }
     
-    func setupHackerPrefs(){
-        if CurrentHacker.doesExist() {
-            if CurrentHacker.twitterEnabled == nil{
-                CurrentHacker.hacker()!.checkTwitterAccess(success: setupHackerDetails)
-             }
-        }
-    }
-    
-    func setupHackerDetails(twitterEnabled:Int){
-        CurrentHacker.twitterEnabled = twitterEnabled
-    }
-    
     func postLoginInit(){
-        setupHackerPrefs()
         trackLogin()
         launchApp()
     }
