@@ -25,7 +25,8 @@ class Hackinat: NSObject {
   
     //private let httpClient: HttpClient
     //let apiBaseDomain = "https://hackin.at"
-    let apiBaseDomain = "http://lvh.me:3000"
+    //let apiBaseDomain = "http://lvh.me:3000"
+    let apiBaseDomain = "http://staging.hackin.at"
     
     override init() {
         //httpClient = HttpClient()
@@ -40,6 +41,14 @@ class Hackinat: NSObject {
         }
         
         Alamofire.request(.GET, profileURL)
+            .responseJSON { (_, _, JSON, _) in
+                success(JSON!)
+        }
+    }
+    
+    func searchHackers(#authKey: String, searchTerm: String, success: (AnyObject) -> ()){
+        var searchURL = "\(apiBaseDomain)/search?auth_key=\(authKey)&query=\(searchTerm)"
+        Alamofire.request(.GET, searchURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
@@ -85,27 +94,6 @@ class Hackinat: NSObject {
                     failure()
                 }
             })
-    }
-    
-    func broadcast(#login:String, authKey:String, message:String, placeID:String, postToTwitter:String, clientID:Int = 1, success: (AnyObject) -> (), failure: () -> () = {}){
-        let location = "\(currentLocation.latitude),\(currentLocation.longitude)"
-        let parameters = [
-            "log": [
-                "message": message,
-                "place_id": placeID,
-                "ll": location,
-                "client_id": clientID,
-                "twitter_cross_post": postToTwitter
-            ]
-        ]
-        
-        Alamofire.request(.POST, "\(apiBaseDomain)/logs?auth_key=\(authKey)", parameters: parameters)
-            .validate()
-            .responseJSON({ (_, _, JSON, _) in
-                println("Posted \(JSON)")
-                success(JSON!)
-            })
-        
     }
     
     func fetchCurrentHackerBroadcasts(#authKey:String, success: (AnyObject) -> ()){

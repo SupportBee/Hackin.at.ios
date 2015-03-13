@@ -8,10 +8,20 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    override func viewDidLoad() {
+    var hackersFound: [Hacker]!
+    var hackersListing: UITableView!
+    
+    var hackers: [Hacker] = []
+    
+    override func viewDidLoad(){
         println("Search view controller")
+        setupHackerListingView()
+        setupSearchBar()
+    }
+    
+    func setupSearchBar(){
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.showsCancelButton = true
@@ -20,8 +30,42 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         searchBar.becomeFirstResponder()
     }
     
+    override func updateViewConstraints() {
+        hackersListing.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
+        super.updateViewConstraints()
+    }
+    
+    func setupHackerListingView(){
+        hackersListing = UITableView()
+        hackersListing.dataSource = self
+        hackersListing.delegate = self
+        hackersListing.registerClass(UITableViewCell.self, forCellReuseIdentifier: "HackerCell")
+        view.addSubview(hackersListing)
+    }
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        println("Entered \(searchText)")
+        println("Searching for \(searchText)")
+        Hacker.search(searchText, success: foundHackers)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("total \(hackers.count)")
+        return hackers.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as UITableViewCell
+        let hacker = self.hackers[indexPath.row]
+        println("Rendering \(hacker.login)")
+        cell.textLabel?.text  = "@\(hacker.login)"
+        cell.imageView!.sd_setImageWithURL(NSURL(string: hacker.avatarURL!),
+            placeholderImage: UIImage(named: "logo_square.png"))
+        return cell;
+    }
+    
+    func foundHackers(hackers: [Hacker]){
+        self.hackers = hackers
+        hackersListing.reloadData()
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
