@@ -96,27 +96,6 @@ class Hackinat: NSObject {
             })
     }
     
-    func broadcast(#login:String, authKey:String, message:String, placeID:String, postToTwitter:String, clientID:Int = 1, success: (AnyObject) -> (), failure: () -> () = {}){
-        let location = "\(currentLocation.latitude),\(currentLocation.longitude)"
-        let parameters = [
-            "log": [
-                "message": message,
-                "place_id": placeID,
-                "ll": location,
-                "client_id": clientID,
-                "twitter_cross_post": postToTwitter
-            ]
-        ]
-        
-        Alamofire.request(.POST, "\(apiBaseDomain)/logs?auth_key=\(authKey)", parameters: parameters)
-            .validate()
-            .responseJSON({ (_, _, JSON, _) in
-                println("Posted \(JSON)")
-                success(JSON!)
-            })
-        
-    }
-    
     func fetchCurrentHackerBroadcasts(#authKey:String, success: (AnyObject) -> ()){
         var broadcastsURL = "\(apiBaseDomain)/logs?auth_key=\(authKey)"
         

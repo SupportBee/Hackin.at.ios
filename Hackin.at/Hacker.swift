@@ -94,22 +94,6 @@ class Hacker: NSObject {
         }
     }
 
-    class func fetchNearbyHackers(#success: ([Hacker]) -> ()){
-        
-        func onFetch(result: AnyObject){
-            var hackersJSON = JSON(result)["hackers"].arrayValue
-            var hackers: Array<Hacker> = []
-            
-            hackers = hackersJSON.map({
-                (hacker) -> Hacker in
-                return Hacker(json: hacker)
-            })
-            success(hackers)
-        }
-        
-        Hackinat.sharedInstance.fetchNearbyHackers(authKey: CurrentHacker.authKey!, location: currentLocation, success: onFetch)
-    }
-    
     class func search(searchTerm: String, success: ([Hacker]) -> ()) -> [Hacker]? {
         
         func onFetch(result: AnyObject){
