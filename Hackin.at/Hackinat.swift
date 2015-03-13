@@ -27,9 +27,16 @@ class Hackinat: NSObject {
     //let apiBaseDomain = "https://hackin.at"
     //let apiBaseDomain = "http://lvh.me:3000"
     let apiBaseDomain = "http://staging.hackin.at"
+    let manager: Alamofire.Manager!
     
     override init() {
-        //httpClient = HttpClient()
+        var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
+        defaultHeaders["X-TOKEN"] = CurrentHacker.authKey
+       
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPAdditionalHeaders = defaultHeaders
+        
+        manager = Alamofire.Manager(configuration: configuration)
     }
     
     var githhubAuthURL:String { return "\(apiBaseDomain)/auth/github?api=true" }
@@ -46,30 +53,17 @@ class Hackinat: NSObject {
         }
     }
     
-    func searchHackers(#authKey: String, searchTerm: String, success: (AnyObject) -> ()){
-        var searchURL = "\(apiBaseDomain)/search?auth_key=\(authKey)&query=\(searchTerm)"
-        Alamofire.request(.GET, searchURL)
+    func searchHackers(searchTerm: String, success: (AnyObject) -> ()){
+        var searchURL = "\(apiBaseDomain)/search?query=\(searchTerm)"
+        manager.request(.GET, searchURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
     }
     
-    func fetchNearbyHackers(#authKey: String, location: CLLocationCoordinate2D, success: (AnyObject) -> (), failure: () -> () = {}){
-
-        let ll = "\(location.latitude),\(location.longitude)"
-        let url = "\(apiBaseDomain)/hackers/nearby?auth_key=\(authKey)&ll=\(ll)"
-        
-        Alamofire.request(.GET, url)
-            .responseJSON { (_, _, JSON, _) in
-                success(JSON!)
-        }
-
-    }
-    
-    func fetchFriends(#authKey: String, success: (AnyObject) -> (), failure: () -> () = {}){
-        
-        let url = "\(apiBaseDomain)/friends?auth_key=\(authKey)"
-        Alamofire.request(.GET, url)
+    func fetchFriends(success: (AnyObject) -> (), failure: () -> () = {}){
+        let url = "\(apiBaseDomain)/friends"
+        manager.request(.GET, url)
             .responseJSON { (_, _, JSON, _) in
                 println("JSON IS \(JSON)")
                 success(JSON!)

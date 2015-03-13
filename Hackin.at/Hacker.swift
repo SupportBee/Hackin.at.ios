@@ -107,7 +107,7 @@ class Hacker: NSObject {
             success(hackers)
         }
         
-        Hackinat.sharedInstance.searchHackers(authKey: CurrentHacker.authKey!, searchTerm: searchTerm, success: onFetch)
+        Hackinat.sharedInstance.searchHackers(searchTerm, success: onFetch)
         return []
     }
     
