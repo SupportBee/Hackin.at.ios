@@ -49,14 +49,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("total \(hackers.count)")
         return hackers.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as UITableViewCell
         let hacker = self.hackers[indexPath.row]
-        println("Rendering \(hacker.login)")
         cell.textLabel?.text  = "@\(hacker.login)"
         cell.imageView!.sd_setImageWithURL(NSURL(string: hacker.avatarURL!),
             placeholderImage: UIImage(named: "logo_square.png"))

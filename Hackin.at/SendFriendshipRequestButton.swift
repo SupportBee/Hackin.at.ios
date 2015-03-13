@@ -16,6 +16,7 @@ class SendFriendshipRequestButton: UIButton {
         self.init()
         self.toBeFriend = toBeFriend
         renderButton()
+        setupTargetAction()
         sizeToFit()
     }
     
@@ -24,4 +25,11 @@ class SendFriendshipRequestButton: UIButton {
         setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
     }
     
+    func setupTargetAction(){
+       addTarget(self, action: "buttonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func buttonPressed(){
+        println("You need friendshipz with \(toBeFriend.login)?")
+    }
 }
