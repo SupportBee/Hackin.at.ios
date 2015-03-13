@@ -42,6 +42,7 @@ class CurrentHacker:NSObject {
         }
         
         set{
+            Locksmith.deleteDataForUserAccount(userAccount)
             Locksmith.saveData(["auth_key": newValue!], forUserAccount: userAccount)
         }
     }
@@ -62,9 +63,8 @@ class CurrentHacker:NSObject {
     }
     
     class func doesExist() -> Bool{
-        if authKey == nil{
-            return false
-        }
+        if login == nil{ return false }
+        if authKey == nil{ return false }
         return true
     }
     
