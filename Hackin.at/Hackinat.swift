@@ -9,10 +9,37 @@
 import Alamofire
 import CoreLocation
 
+enum Router: URLRequestConvertible {
+    static let baseURLString = "http://staging.hackin.at"
+    
+    case SearchHackers(String)
+    
+    var method: Alamofire.Method {
+        switch self {
+        case .SearchHackers:
+                return .GET
+        }
+    }
+    
+    var path: String {
+        switch self {
+        case .SearchHackers:
+            return "/search"
+        }
+    }
+    
+    var URLRequest: NSURLRequest {
+        let URL = NSURL(string: Router.baseURLString)!
+        let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
+        mutableURLRequest.HTTPMethod = method.rawValue
+        
+        switch self {
+        case .SearchHackers(let query):
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["query": query]).0
+        }
+    }
 
-//class HttpClient {
-//
-//}
+}
 
 class Hackinat: NSObject {
     class var sharedInstance: Hackinat {
@@ -23,7 +50,6 @@ class Hackinat: NSObject {
         return Singleton.instance
     }
   
-    //private let httpClient: HttpClient
     //let apiBaseDomain = "https://hackin.at"
     //let apiBaseDomain = "http://lvh.me:3000"
     let apiBaseDomain = "http://staging.hackin.at"
@@ -54,8 +80,7 @@ class Hackinat: NSObject {
     }
     
     func searchHackers(searchTerm: String, success: (AnyObject) -> ()){
-        var searchURL = "\(apiBaseDomain)/search?query=\(searchTerm)"
-        manager.request(.GET, searchURL)
+        manager.request(Router.SearchHackers(searchTerm))
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
