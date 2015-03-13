@@ -14,11 +14,14 @@ enum Router: URLRequestConvertible {
     
     case SearchHackers(String)
     case GetFriends
+    case CreateFriendship(String)
     
     var method: Alamofire.Method {
         switch self {
         case .SearchHackers, .GetFriends:
-                return .GET
+            return .GET
+        case .CreateFriendship:
+            return .POST
         }
     }
     
@@ -28,6 +31,8 @@ enum Router: URLRequestConvertible {
             return "/search"
         case .GetFriends:
             return "/friends"
+        case .CreateFriendship(let login):
+            return "/\(login)/friend_request"
         }
     }
     
@@ -97,6 +102,14 @@ class Hackinat: NSObject {
                 println("JSON IS \(JSON)")
                 success(JSON!)
         }
+    }
+    
+    func sendFriendshipRequest(friendsLogin: String,
+        success: () -> ()){
+            manager.request(Router.CreateFriendship(friendsLogin))
+                .response {(_) in
+                    success()
+                    }
     }
     
     func updateHackerTwitterCredentials(#login:String, authKey: String, authToken: String, authSecret: String,  success: () -> (), failure: () -> ()){

@@ -83,6 +83,11 @@ class CurrentHacker:NSObject {
         Hackinat.sharedInstance.fetchFriends(onFetch)
     }
     
+    func sendFriendshipRequest(toBeFriend: Hacker,
+        onsuccess: ()->()){
+        Hackinat.sharedInstance.sendFriendshipRequest(toBeFriend.login, onsuccess)
+    }
+    
     class func hacker() -> Hacker?{
         if doesExist(){
             let _hacker = CurrentHackerStruct.hacker
