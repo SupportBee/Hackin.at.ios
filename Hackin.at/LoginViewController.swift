@@ -90,7 +90,10 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
                 let value = keyValue[1]
                 
                 if(key == "login"){ CurrentHacker.login = value }
-                if(key == "auth_key"){ CurrentHacker.authKey = value }
+                if(key == "auth_key"){
+                    println("Setting Auth Key")
+                    CurrentHacker.authKey = value
+                }
                 
                 self.delegate?.hackerLoggedIn()
             }
