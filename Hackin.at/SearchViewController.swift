@@ -60,6 +60,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         cell.textLabel?.text  = "@\(hacker.login)"
         cell.imageView!.sd_setImageWithURL(NSURL(string: hacker.avatarURL!),
             placeholderImage: UIImage(named: "logo_square.png"))
+        cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
         return cell;
     }
     

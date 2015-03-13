@@ -36,7 +36,6 @@ extension HackerTableCell {
             super.updateConstraints()
         }
         
-        
         override func setupViewData(hacker: Hacker) {
             let stickers = hacker.stickerCodes()
             self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
