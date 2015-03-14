@@ -11,6 +11,15 @@ import UIKit
 class RequestsViewController: UIViewController {
     
     override func viewDidLoad() {
-        println("Requests View Controller")
+        fetchMyFriendshipRequests()
+    }
+    
+    func fetchMyFriendshipRequests(){
+        
+        func onFetch(requests: [FriendshipRequest]){
+            println("Found \(requests.count) requests")
+        }
+        
+        FriendshipRequest.all(onFetch)
     }
 }

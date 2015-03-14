@@ -34,6 +34,7 @@
 		F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA8A041A91A543008E382D /* UIIconLabel.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
+		F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */; };
 		F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BDDC011A874C2200C1C78D /* AppTheme.swift */; };
 		F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */; };
 		F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */; };
@@ -103,6 +104,7 @@
 		F0AA8A041A91A543008E382D /* UIIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconLabel.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipRequest.swift; sourceTree = "<group>"; };
 		F0BDDC011A874C2200C1C78D /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 			name = CustomViews;
 			sourceTree = "<group>";
 		};
-		F0BDDBFC1A87410600C1C78D /* Hackers */ = {
+		F0BDDBFC1A87410600C1C78D /* Hacker */ = {
 			isa = PBXGroup;
 			children = (
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
@@ -198,7 +200,7 @@
 				F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */,
 				F09325CA1AA822F9008A94CB /* HackersListingView.swift */,
 			);
-			name = Hackers;
+			name = Hacker;
 			sourceTree = "<group>";
 		};
 		F0BDDBFF1A87429F00C1C78D /* Notifications */ = {
@@ -282,11 +284,12 @@
 				F0BDDC001A8742BD00C1C78D /* Tabbar */,
 				F0BDDBFF1A87429F00C1C78D /* Notifications */,
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
-				F0BDDBFC1A87410600C1C78D /* Hackers */,
+				F0BDDBFC1A87410600C1C78D /* Hacker */,
 				F0BDDC041A874C3500C1C78D /* Styles */,
 				F0AA8A061A91A553008E382D /* CustomViews */,
 				F0C8FB3E1AA7D8AD00DEBE90 /* Search */,
 				F04803331AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift */,
+				F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
 				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,
+				F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
 				F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */,
 				F004E6171AB0318800FBC6D0 /* MixpanelHelper.swift in Sources */,
