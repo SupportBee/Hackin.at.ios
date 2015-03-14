@@ -29,6 +29,7 @@
 		F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */; };
 		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
+		F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08DCC851AB3F77700C0509B /* RequestsViewController.swift */; };
 		F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09325CA1AA822F9008A94CB /* HackersListingView.swift */; };
 		F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA8A041A91A543008E382D /* UIIconLabel.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
@@ -97,6 +98,7 @@
 		F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerSummaryView.swift; sourceTree = "<group>"; };
 		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F08DCC851AB3F77700C0509B /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		F09325CA1AA822F9008A94CB /* HackersListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersListingView.swift; sourceTree = "<group>"; };
 		F0AA8A041A91A543008E382D /* UIIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconLabel.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
+				F08DCC851AB3F77700C0509B /* RequestsViewController.swift */,
 				F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */,
 			);
 			name = Tabbar;
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */,
 				F0F045D01A8A026B005CC0C8 /* SelfViewController.swift in Sources */,
 				F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */,
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
