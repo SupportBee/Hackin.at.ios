@@ -63,6 +63,11 @@ class Hacker: NSObject {
         if(userDetails == nil){ return nil }
         return userDetails!["avatar_url"].stringValue
     }
+
+    var avatarData:String?{
+        if(userDetails == nil){ return nil }
+        return userDetails!["avatar_data"].stringValue
+    }
     
     var externalIdentity:String?{
         return login
