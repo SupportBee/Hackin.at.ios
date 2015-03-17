@@ -8,10 +8,11 @@
 
 import UIKit
 
-class RequestsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RequestsViewController: UIViewController{
     
     var requests: [FriendshipRequest] = []
-    var requestsTable: UITableView!
+    var requestsTable: HackersListingView!
+    var toBeFriends: [Hacker] = []
     
     override func viewDidLoad() {
         setupRequestsTable()
@@ -19,10 +20,7 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func setupRequestsTable(){
-        self.requestsTable = UITableView()
-        requestsTable.dataSource = self
-        requestsTable.delegate = self
-        requestsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "RequestCell")
+        requestsTable = HackersListingView(cellStyle: HackerTableCell.FriendshipRequestView.self)
         view.addSubview(requestsTable)
      
     }
@@ -31,6 +29,10 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
         
         func onFetch(requests: [FriendshipRequest]){
             self.requests = requests
+            toBeFriends = requests.map({(request) -> Hacker in
+                //request.sender.friendshipRequest = request
+                return request.sender
+            })
             renderRequests()
         }
         
@@ -38,32 +40,12 @@ class RequestsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func renderRequests(){
-        println("render requests")
-       requestsTable.reloadData()
+        requestsTable.renderHackers(toBeFriends)
     }
 
     override func updateViewConstraints() {
         requestsTable.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
         super.updateViewConstraints()
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("render requests \(requests.count)")
-        return requests.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = requestsTable.dequeueReusableCellWithIdentifier("RequestCell") as UITableViewCell
-        let hacker = self.requests[indexPath.row].sender
-        cell.textLabel?.text  = "@\(hacker.login)"
-        
-        hacker.fetchAvatarURL(size: CGFloat(48.0), success: {
-            (url: String) in
-            cell.imageView!.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "logo_square.png"))
-        })
-        
-        
-        cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
-        return cell;
-    }
+
 }

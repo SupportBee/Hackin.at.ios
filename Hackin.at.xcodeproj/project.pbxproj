@@ -20,6 +20,7 @@
 		A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C58A03B72B5875578D89A0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F004E6171AB0318800FBC6D0 /* MixpanelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F0279F641AB8647E00E48921 /* HackerFriendshipRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0279F631AB8647E00E48921 /* HackerFriendshipRequestView.swift */; };
 		F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */; };
 		F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */; };
 		F04803341AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04803331AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift */; };
@@ -89,6 +90,7 @@
 		6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelHelper.swift; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F0279F631AB8647E00E48921 /* HackerFriendshipRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerFriendshipRequestView.swift; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.ContactView.swift; sourceTree = "<group>"; };
 		F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.FullView.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				0F6758861A849E2200A320C6 /* HackerTableCell.swift */,
 				F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */,
 				F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */,
+				F0279F631AB8647E00E48921 /* HackerFriendshipRequestView.swift */,
 			);
 			name = HackerTableCells;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
+				F0279F641AB8647E00E48921 /* HackerFriendshipRequestView.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
 				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,

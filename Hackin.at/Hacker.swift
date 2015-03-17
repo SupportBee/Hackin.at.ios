@@ -43,6 +43,8 @@ class Hacker: NSObject {
     var userDetails:JSON?
     var avatarImage:UIImage?
     
+    var friendshipReqest: FriendshipRequest?
+    
     let login:String
     
     init(login: String) {
