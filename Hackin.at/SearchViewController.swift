@@ -56,8 +56,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as UITableViewCell
         let hacker = self.hackers[indexPath.row]
         cell.textLabel?.text  = "@\(hacker.login)"
-        cell.imageView!.sd_setImageWithURL(NSURL(string: hacker.avatarURL!),
-            placeholderImage: UIImage(named: "logo_square.png"))
+        
+        hacker.fetchAvatarURL(size: CGFloat(48.0), success: {
+            (url: String) in
+            cell.imageView!.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "logo_square.png"))
+        })
+        
+        
         cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
         return cell;
     }

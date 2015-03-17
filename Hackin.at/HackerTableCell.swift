@@ -87,7 +87,9 @@ class HackerTableCell: UITableViewCell {
         self.nameLabel.text = name
 
        
-        hacker.fetchAvatarURL({
+        let imageSize = CGFloat(48.0)
+        
+        hacker.fetchAvatarURL(size: imageSize, success: {
             (url: String) in
                 self.profileImageView.sd_setImageWithURL(NSURL(string: url))
         })
