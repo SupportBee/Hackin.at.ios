@@ -66,8 +66,6 @@ class Hackinat: NSObject {
         return Singleton.instance
     }
   
-    //let apiBaseDomain = "https://hackin.at"
-    //let apiBaseDomain = "http://lvh.me:3000"
     let apiBaseDomain = "http://staging.hackin.at"
     let manager: Alamofire.Manager!
     
@@ -110,8 +108,7 @@ class Hackinat: NSObject {
                 
                 requests = requestsJSON.map({
                     (request) -> FriendshipRequest in
-                    println("Request \(request)")
-                    return FriendshipRequest()
+                    return FriendshipRequest(json: request)
                 })
                 success(requests)
         }
