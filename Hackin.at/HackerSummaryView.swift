@@ -32,7 +32,7 @@ class HackerSummaryView: UIView {
         loginLabelView.sizeToFit()
         backgroundColor = UIColor.whiteColor()
         
-        hacker.fetchAvatarURL({
+        hacker.fetchAvatarURL(size: AppTheme.HackerSummary.imageSize, success: {
             (url: String) in
             self.imageView.sd_setImageWithURL(NSURL(string: url))
         })

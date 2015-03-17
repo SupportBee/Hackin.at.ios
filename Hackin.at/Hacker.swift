@@ -58,22 +58,26 @@ class Hacker: NSObject {
         self.init(login: json["login"].stringValue)
         setUserDetailsFromJSON(json)
     }
-    
-    var avatarURL:String?{
+   
+    // Returns the base URL if size = 0.0
+    func avatarURL(size: CGFloat = 0.0) -> String?{
+        let intSize = Int(size)
         if(userDetails == nil){ return nil }
-        return userDetails!["avatar_url"].stringValue
+        let _url = userDetails!["avatar_url"].stringValue
+        if(intSize == 0){ return _url }
+        return "\(_url)&s=\(intSize)"
     }
     
     var externalIdentity:String?{
         return login
     }
 
-    func fetchAvatarURL(success: (String)->()){
-        if(avatarURL != nil){
-            success(avatarURL!)
+    func fetchAvatarURL(size: CGFloat = 0.0, success: (String)->()){
+        if(avatarURL(size: size) != nil){
+            success(self.avatarURL(size: size)!)
         }else{
             func onFetch(){
-                success(avatarURL!)
+                success(avatarURL(size: size)!)
             }
 
             fetchFullProfile(success: onFetch)
@@ -116,7 +120,7 @@ class Hacker: NSObject {
         if(avatarImage != nil){ success(avatarImage!) }
         
         func fetchImage(){
-            Alamofire.request(.GET, avatarURL!)
+            Alamofire.request(.GET, avatarURL()!)
                 .response{ (_, _, data, _) in
                     self.avatarImage = UIImage(data: (data as NSData))
                     if(self.avatarImage != nil){
@@ -125,7 +129,7 @@ class Hacker: NSObject {
             }
         }
         
-        if(avatarURL != nil){ fetchImage() } else{ fetchFullProfile(success: fetchImage)}
+        if(avatarURL() != nil){ fetchImage() } else{ fetchFullProfile(success: fetchImage)}
     }
     
     func fetchFullProfile(#success: () -> ()){
