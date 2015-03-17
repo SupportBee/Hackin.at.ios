@@ -18,6 +18,7 @@ class HackerTableCell: UITableViewCell {
     // http://stackoverflow.com/questions/25049121/calling-an-initializer-having-only-the-class-name-in-swift
     required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         // Circular image
+        println("init cell")
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
@@ -34,7 +35,7 @@ class HackerTableCell: UITableViewCell {
         preservesSuperviewLayoutMargins = false
         layoutMargins = UIEdgeInsetsZero
    }
-    
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -59,6 +60,7 @@ class HackerTableCell: UITableViewCell {
     }
 
     override func updateConstraints() {
+        println("Update Constraints")
         profileImageView.autoSetDimensionsToSize(CGSizeMake(48.0, 48.0))
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
             withInset: AppTheme.HackerListing.paddingLeft)
@@ -76,22 +78,19 @@ class HackerTableCell: UITableViewCell {
     }
    
     func setupViewData(hacker: Hacker){
+        println("setupView Data")
         let login = hacker.login
         
         var name = ""
         if(hacker.name != nil){ name = hacker.name! }
         
-        var locationName = ""
-        
         self.loginLabel.text = "@\(login)"
         self.nameLabel.text = name
 
-       
-        let imageSize = CGFloat(48.0)
-        
-        hacker.fetchAvatarURL(size: imageSize, success: {
+        hacker.fetchAvatarURL(size: CGFloat(48.0), success: {
             (url: String) in
-                self.profileImageView.sd_setImageWithURL(NSURL(string: url))
+            self.profileImageView.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "logo_square.png"))
         })
+        
     }
 }
