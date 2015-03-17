@@ -14,14 +14,14 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var hackersTableView = UITableView()
     var hackers: Array<Hacker> = []
     var tableRefreshControl:TableRefreshControl!
-    var cellStyle: HackerTableCell.Type!
+    var cellStyle: HackerTableCellStyle!
     
     override init (frame : CGRect) {
         super.init(frame : frame)
     }
     
     convenience init(
-        cellStyle: HackerTableCell.Type = HackerTableCell.self,
+        cellStyle: HackerTableCellStyle = HackerTableCellStyle.FullView,
         pullToRefresh:Bool = true){
         self.init(frame:CGRectZero)
         self.cellStyle = cellStyle
@@ -38,6 +38,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     func setupTableViewWiring(){
         hackersTableView.delegate = self
         hackersTableView.dataSource = self
+        cellStyle.registerCell(hackersTableView)
     }
     
     func setupAutoRefresh(){
@@ -83,10 +84,9 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.cellStyle(style: UITableViewCellStyle.Default, reuseIdentifier: "HackerCell")
         let hacker = self.hackers[indexPath.row]
         println("Rendering \(hacker.login)")
-        cell.setupViewData(hacker)
+        let cell = cellStyle.dequeReusableCell(hackersTableView, hacker: hacker)
         return cell
     }
     
