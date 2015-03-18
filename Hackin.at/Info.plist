@@ -60,6 +60,8 @@
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array/>
+	<key>Pushwoosh_APPID</key>
+	<string>623F0-4D537</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

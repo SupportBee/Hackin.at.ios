@@ -6,6 +6,7 @@ PODS:
     - Mixpanel/MPCategoryHelpers (= 2.7.2)
   - Mixpanel/MPCategoryHelpers (2.7.2)
   - PureLayout (2.0.5)
+  - Pushwoosh (2.9.4)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Locksmith
   - Mixpanel
   - PureLayout
+  - Pushwoosh
   - SDWebImage (~> 3.6)
   - SwiftyJSON (= 2.1.3)
   - SZTextView
@@ -28,6 +30,7 @@ SPEC CHECKSUMS:
   Locksmith: 15a873e266beceb1b81476e0f50a1e1cba103a6f
   Mixpanel: def38b9e600f101686b8d647e05660a72c089c65
   PureLayout: 63a3257320223e8edddcd3afb407445f85a6bf74
+  Pushwoosh: 2148b7450b1287c7c1be798d619562e84e47d0d0
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SwiftyJSON: 48be7490a3989a58a3f511cd54167f0a2b466e76
   SZTextView: 8f1126696c6d54e5f0d672bbecf259ef65b04aeb
