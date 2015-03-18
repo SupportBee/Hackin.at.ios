@@ -15,6 +15,7 @@ extension HackerTableCell {
         
         let acceptButton = UIButton()
         let rejectButton = UIButton()
+        var friendshipRequest: FriendshipRequest!
         
         required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,10 +29,33 @@ extension HackerTableCell {
         func setupButtons(){
             acceptButton.setTitle("Accept", forState: UIControlState.Normal)
             acceptButton.backgroundColor = UIColor.greenColor()
+            acceptButton.addTarget(self, action: "acceptRequest", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            
             rejectButton.setTitle("Reject", forState: UIControlState.Normal)
             rejectButton.backgroundColor = UIColor.grayColor()
+            rejectButton.addTarget(self, action: "rejectRequest", forControlEvents: UIControlEvents.TouchUpInside)
+            
             contentView.addSubview(acceptButton)
             contentView.addSubview(rejectButton)
+        }
+        
+        func acceptRequest(){
+            
+            func onSuccess(){
+                println("Friendship Request Accepted")
+                self.friendshipRequest.sender.friendshipRequest = nil
+            }
+            Hackinat.sharedInstance.acceptFriendshipRequest(friendshipRequest.id, success: onSuccess)
+        }
+
+        func rejectRequest(){
+            println("Reject Request")
+        }
+        
+        override func setupViewData(hacker: Hacker) {
+            self.friendshipRequest = hacker.friendshipRequest!
+            super.setupViewData(hacker)
         }
         
         override func updateConstraints(){
