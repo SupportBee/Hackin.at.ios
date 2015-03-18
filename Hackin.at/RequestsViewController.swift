@@ -20,7 +20,7 @@ class RequestsViewController: UIViewController{
     }
     
     func setupRequestsTable(){
-        requestsTable = HackersListingView(cellStyle: HackerTableCell.FriendshipRequestView.self)
+        requestsTable = HackersListingView(cellStyle: HackerTableCell.FriendshipRequestView.self, pullToRefresh: false)
         view.addSubview(requestsTable)
      
     }
