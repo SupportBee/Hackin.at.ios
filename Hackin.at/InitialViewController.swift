@@ -34,7 +34,7 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     }
  
     func hackerLoggedIn() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)        
         postLoginInit()
     }
     
