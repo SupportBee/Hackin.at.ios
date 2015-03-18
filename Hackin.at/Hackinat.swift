@@ -8,6 +8,7 @@
 
 import Alamofire
 import CoreLocation
+import SwiftyJSON
 
 enum Router: URLRequestConvertible {
     static let baseURLString = "http://staging.hackin.at"
@@ -15,13 +16,22 @@ enum Router: URLRequestConvertible {
     case SearchHackers(String)
     case GetFriends
     case CreateFriendship(String)
+    case GetFriendshipRequests
+    case AcceptFriendship(Int)
+    case RejectFriendship(Int)
     
     var method: Alamofire.Method {
         switch self {
-        case .SearchHackers, .GetFriends:
+        case .SearchHackers,
+        .GetFriends,
+        .GetFriendshipRequests:
             return .GET
         case .CreateFriendship:
             return .POST
+        case .AcceptFriendship:
+            return .POST
+        case .RejectFriendship:
+            return .DELETE
         }
     }
     
@@ -33,6 +43,12 @@ enum Router: URLRequestConvertible {
             return "/friends"
         case .CreateFriendship(let login):
             return "/\(login)/friend_request"
+        case .GetFriendshipRequests:
+            return "/friend_requests"
+        case .AcceptFriendship(let requestID):
+            return "/friend_requests/\(requestID)/accept"
+        case .RejectFriendship(let requestID):
+            return "/friend_requests/\(requestID)"
         }
     }
     
@@ -60,8 +76,6 @@ class Hackinat: NSObject {
         return Singleton.instance
     }
   
-    //let apiBaseDomain = "https://hackin.at"
-    //let apiBaseDomain = "http://lvh.me:3000"
     let apiBaseDomain = "http://staging.hackin.at"
     let manager: Alamofire.Manager!
     
@@ -96,6 +110,20 @@ class Hackinat: NSObject {
         }
     }
     
+    func fetchFriendshipRequests(success: ([FriendshipRequest]) -> ()){
+        manager.request(Router.GetFriendshipRequests)
+            .responseJSON { (_, _, json, _) in
+                var requestsJSON = JSON(json!)["friend_requests"].arrayValue
+                var requests: Array<FriendshipRequest> = []
+                
+                requests = requestsJSON.map({
+                    (request) -> FriendshipRequest in
+                    return FriendshipRequest(json: request)
+                })
+                success(requests)
+        }
+    }
+    
     func fetchFriends(success: (AnyObject) -> (), failure: () -> () = {}){
         manager.request(Router.GetFriends)
             .responseJSON { (_, _, JSON, _) in
@@ -107,6 +135,20 @@ class Hackinat: NSObject {
     func sendFriendshipRequest(friendsLogin: String,
         success: () -> ()){
             manager.request(Router.CreateFriendship(friendsLogin))
+                .response {(_) in
+                    success()
+                    }
+    }
+    
+    func acceptFriendshipRequest(requestID: Int, success: () -> ()){
+            manager.request(Router.AcceptFriendship(requestID))
+                .response {(_) in
+                    success()
+                    }
+    }
+
+    func rejectFriendshipRequest(requestID: Int, success: () -> ()){
+            manager.request(Router.RejectFriendship(requestID))
                 .response {(_) in
                     success()
                     }

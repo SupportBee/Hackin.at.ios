@@ -95,6 +95,5 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
         vc.hacker = hacker
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
