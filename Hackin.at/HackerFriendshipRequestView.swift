@@ -50,7 +50,11 @@ extension HackerTableCell {
         }
 
         func rejectRequest(){
-            println("Reject Request")
+            func onSuccess(){
+                println("Friendship Request Rejected")
+                self.friendshipRequest.sender.friendshipRequest = nil
+            }
+            Hackinat.sharedInstance.rejectFriendshipRequest(friendshipRequest.id, success: onSuccess)
         }
         
         override func setupViewData(hacker: Hacker) {
