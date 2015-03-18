@@ -8,7 +8,6 @@
 
 import PureLayout
 
-
 extension HackerTableCell {
     
     class FriendshipRequestView: FullView {
@@ -16,14 +15,21 @@ extension HackerTableCell {
         let acceptButton = UIButton()
         let rejectButton = UIButton()
         var friendshipRequest: FriendshipRequest!
+        var buttonsContainer: UIView!
         
         required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
+            setupButtonsContainer()
             setupButtons()
         }
         
         required init(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
+        }
+        
+        func setupButtonsContainer(){
+            buttonsContainer = UIView()
+            contentView.addSubview(buttonsContainer)
         }
         
         func setupButtons(){
@@ -36,8 +42,8 @@ extension HackerTableCell {
             rejectButton.backgroundColor = UIColor.grayColor()
             rejectButton.addTarget(self, action: "rejectRequest", forControlEvents: UIControlEvents.TouchUpInside)
             
-            contentView.addSubview(acceptButton)
-            contentView.addSubview(rejectButton)
+            buttonsContainer.addSubview(acceptButton)
+            buttonsContainer.addSubview(rejectButton)
         }
         
         func acceptRequest(){
@@ -65,12 +71,18 @@ extension HackerTableCell {
         override func updateConstraints(){
             
             super.updateConstraints()
+
+            buttonsContainer.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+            buttonsContainer.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
+            buttonsContainer.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
             
-            acceptButton.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-            acceptButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+            acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+            acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+            acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+            
             rejectButton.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: acceptButton, withOffset: AppTheme.Listing.elementsPadding)
-            rejectButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
-            acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
+            rejectButton.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+            rejectButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
         }
 
     }
