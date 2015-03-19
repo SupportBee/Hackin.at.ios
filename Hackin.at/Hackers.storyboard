@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ng3-jR-nkU">
-                                <rect key="frame" x="-15" y="149" width="219.5" height="34.5"/>
+                                <rect key="frame" x="20" y="149" width="219.5" height="34.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0 Repos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-W1-tMa">
                                         <rect key="frame" x="15" y="6" width="64" height="20.5"/>
@@ -68,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoj-aZ-PDS">
-                                        <rect key="frame" x="131" y="78.5" width="162" height="20.5"/>
+                                        <rect key="frame" x="131" y="78" width="162" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -92,12 +92,22 @@
                                     <constraint firstAttribute="bottom" secondItem="ohQ-2h-8rg" secondAttribute="bottom" constant="6" placeholder="YES" id="zHd-sE-371"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mju-li-aNV">
+                                <rect key="frame" x="25" y="203" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="97d-6N-X3r" firstAttribute="top" secondItem="FKx-Ad-NWq" secondAttribute="topMargin" constant="14" placeholder="YES" id="9Z9-D8-grG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mju-li-aNV" secondAttribute="trailing" constant="175" placeholder="YES" id="DAk-Z6-Ejx"/>
+                            <constraint firstItem="vfB-O0-1e1" firstAttribute="top" secondItem="mju-li-aNV" secondAttribute="bottom" constant="344" placeholder="YES" id="EVY-8O-kd0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="97d-6N-X3r" secondAttribute="trailing" constant="1" placeholder="YES" id="Hwa-xq-v7p"/>
+                            <constraint firstItem="mju-li-aNV" firstAttribute="leading" secondItem="FKx-Ad-NWq" secondAttribute="leadingMargin" constant="9" placeholder="YES" id="Kk0-HY-naU"/>
                             <constraint firstItem="97d-6N-X3r" firstAttribute="leading" secondItem="FKx-Ad-NWq" secondAttribute="leadingMargin" placeholder="YES" id="S0m-PR-Yle"/>
+                            <constraint firstItem="mju-li-aNV" firstAttribute="top" secondItem="ng3-jR-nkU" secondAttribute="bottom" constant="19.5" placeholder="YES" id="rTE-dm-lTT"/>
                             <constraint firstItem="ng3-jR-nkU" firstAttribute="top" secondItem="97d-6N-X3r" secondAttribute="bottom" constant="21" placeholder="YES" id="san-L2-wg3"/>
                         </constraints>
                     </view>
@@ -105,6 +115,7 @@
                     <connections>
                         <outlet property="basicInfoView" destination="97d-6N-X3r" id="3es-kR-aYW"/>
                         <outlet property="companyLabel" destination="xoj-aZ-PDS" id="FUQ-Gp-szU"/>
+                        <outlet property="friendsLabel" destination="mju-li-aNV" id="drW-pT-svv"/>
                         <outlet property="loginLabel" destination="EVS-QK-1yq" id="Z9C-8r-yp9"/>
                         <outlet property="metaInfoView" destination="ng3-jR-nkU" id="q9i-hY-F1a"/>
                         <outlet property="nameLabel" destination="5fu-SW-5Sx" id="p7E-Wx-YCM"/>
