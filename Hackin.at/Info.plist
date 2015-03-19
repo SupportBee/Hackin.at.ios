@@ -16,6 +16,8 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.2</string>
+	<key>Pushwoosh_APPID</key>
+	<string>$(PUSH_WOOSH_APPID)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>

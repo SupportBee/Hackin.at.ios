@@ -18,47 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         MixpanelHelper.setup()
+        
         Fabric.with([Twitter(), Crashlytics()])
         Crashlytics.sharedInstance().debugMode = true
+        
         setupAppStyling()
         
-        
-        println("About to define User Notification Settings")
-        let acceptAction = UIMutableUserNotificationAction()
-        acceptAction.identifier = "ACCEPT"
-        acceptAction.title = "Accept"
-        acceptAction.destructive = false
-        acceptAction.activationMode = UIUserNotificationActivationMode.Background
-        acceptAction.authenticationRequired = true
-        
-        let ignoreAction = UIMutableUserNotificationAction()
-        ignoreAction.identifier = "IGNORE"
-        ignoreAction.title = "Ignore"
-        ignoreAction.destructive = true
-        ignoreAction.activationMode = UIUserNotificationActivationMode.Background
-        ignoreAction.authenticationRequired = true
-        
-        let friendRequestCategory = UIMutableUserNotificationCategory()
-        friendRequestCategory.identifier = "FRIEND_REQUEST_CATEGORY"
-        friendRequestCategory.setActions([acceptAction, ignoreAction], forContext: UIUserNotificationActionContext.Default)
-        
-        let types = UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge
-        let settings = UIUserNotificationSettings(forTypes: types, categories: NSSet(object: friendRequestCategory))
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-        
+        println("About to register for Remote Notifications")
+        PushNotificationManager.pushManager().registerForPushNotifications()
         
         return true
     }
     
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        println("Current User Notification Settings \(UIApplication.sharedApplication().currentUserNotificationSettings())")
-        println("About to register for Remote Notifications")
-        UIApplication.sharedApplication().registerForRemoteNotifications()
-    }
-    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         println("In didRegisterForRemoteNotificationsWithDeviceToken \(deviceToken)")
+        PushNotificationManager.pushManager().handlePushRegistration(deviceToken)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
