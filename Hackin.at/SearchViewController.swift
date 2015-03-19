@@ -57,11 +57,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let hacker = self.hackers[indexPath.row]
         cell.textLabel?.text  = "@\(hacker.login)"
         
-        hacker.fetchAvatarURL(size: CGFloat(48.0), success: {
-            (url: String) in
-            cell.imageView!.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "logo_square.png"))
-        })
-        
+        Helpers.showProfileImage(hacker, imageView: cell.imageView!)
         
         cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
         return cell;

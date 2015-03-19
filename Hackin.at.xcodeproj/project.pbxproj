@@ -41,6 +41,7 @@
 		F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */; };
 		F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */; };
 		F0D50DD91A4B3C6800531C50 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */; };
+		F0D6BD011ABA9AE10077DC75 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D6BD001ABA9AE10077DC75 /* Helpers.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
@@ -112,6 +113,7 @@
 		F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		F0D6BD001ABA9AE10077DC75 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				0FE0228F1A8B68F000E17699 /* TableRefreshControl.swift */,
 				F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */,
+				F0D6BD001ABA9AE10077DC75 /* Helpers.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				F0279F641AB8647E00E48921 /* HackerFriendshipRequestView.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
+				F0D6BD011ABA9AE10077DC75 /* Helpers.swift in Sources */,
 				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,
 				F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,

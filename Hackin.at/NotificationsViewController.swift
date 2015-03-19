@@ -39,7 +39,10 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = self.notifications[indexPath.row]["message"].stringValue
+        let notification = self.notifications[indexPath.row]
+        let actor = Hacker(json: notification["actor"])
+        Helpers.showProfileImage(actor, imageView: cell.imageView!)
+        cell.textLabel?.text = notification["message"].stringValue
         return cell
     }
     
