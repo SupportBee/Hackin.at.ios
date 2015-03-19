@@ -7,11 +7,11 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>at.hackin</string>
+	<string>at.hackin$(BUNDLE_ID_SUFFIX)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>$(BUNDLE_DISPLAY_NAME_PREFIX)$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -23,7 +23,7 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>b404d9c9ff53f280b1730a3647feff3523fd5a16</string>
+		<string>$(FABRIC_API_KEY)</string>
 		<key>Kits</key>
 		<array>
 			<dict>
