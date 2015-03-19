@@ -8,9 +8,10 @@
 
 import UIKit
 import SwiftyJSON
+import PureLayout
 
 
-class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var notificationsTableView: UITableView!
     var notifications: Array<JSON> = []
@@ -37,9 +38,17 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         return notifications.count
     }
     
+    override func updateViewConstraints() {
+        notificationsTableView.autoPinEdgesToSuperviewMargins()
+        super.updateViewConstraints()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = self.notifications[indexPath.row]["message"].stringValue
+        let notification = self.notifications[indexPath.row]
+        let actor = Hacker(json: notification["actor"])
+        Helpers.showProfileImage(actor, imageView: cell.imageView!)
+        cell.textLabel?.text = notification["message"].stringValue
         return cell
     }
     
