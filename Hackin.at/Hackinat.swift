@@ -15,6 +15,7 @@ enum Router: URLRequestConvertible {
     
     case SearchHackers(String)
     case GetMyFriends
+    case GetFriends(String)
     case CreateFriendship(String)
     case GetFriendshipRequests
     case AcceptFriendship(Int)
@@ -24,6 +25,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .SearchHackers,
         .GetMyFriends,
+        .GetFriends,
         .GetFriendshipRequests:
             return .GET
         case .CreateFriendship:
@@ -41,6 +43,8 @@ enum Router: URLRequestConvertible {
             return "/search"
         case .GetMyFriends:
             return "/friends"
+        case .GetFriends(let login):
+            return "/\(login)/friends"
         case .CreateFriendship(let login):
             return "/\(login)/friend_request"
         case .GetFriendshipRequests:
@@ -129,6 +133,20 @@ class Hackinat: NSObject {
             .responseJSON { (_, _, JSON, _) in
                 println("JSON IS \(JSON)")
                 success(JSON!)
+        }
+    }
+    
+    func fetchFriends(login: String, success: ([Hacker]) -> ()){
+         manager.request(Router.GetFriends(login))
+            .responseJSON { (_, _, json, _) in
+                var friendsJSON = JSON(json!)["friends"].arrayValue
+                var friends: Array<Hacker> = []
+                
+                friends = friendsJSON.map({
+                    (friend) -> Hacker in
+                    return Hacker(json: friend)
+                })
+                success(friends)
         }
     }
     
