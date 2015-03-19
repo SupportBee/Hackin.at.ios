@@ -40,7 +40,7 @@
 		F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */; };
 		F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */; };
 		F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */; };
-		F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */; };
+		F0D50DD91A4B3C6800531C50 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
@@ -111,7 +111,7 @@
 		F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 		F0BDDBFF1A87429F00C1C78D /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -228,6 +227,7 @@
 				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
 				F08DCC851AB3F77700C0509B /* RequestsViewController.swift */,
 				F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */,
+				F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -512,7 +512,7 @@
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F04803341AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift in Sources */,
-				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
+				F0D50DD91A4B3C6800531C50 /* NotificationsViewController.swift in Sources */,
 				F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */,
 				F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */,
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,

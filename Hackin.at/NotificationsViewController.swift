@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 
-class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var notificationsTableView: UITableView!
     var notifications: Array<JSON> = []
