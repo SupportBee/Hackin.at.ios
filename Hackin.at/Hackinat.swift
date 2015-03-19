@@ -14,7 +14,7 @@ enum Router: URLRequestConvertible {
     static let baseURLString = "http://staging.hackin.at"
     
     case SearchHackers(String)
-    case GetFriends
+    case GetMyFriends
     case CreateFriendship(String)
     case GetFriendshipRequests
     case AcceptFriendship(Int)
@@ -23,7 +23,7 @@ enum Router: URLRequestConvertible {
     var method: Alamofire.Method {
         switch self {
         case .SearchHackers,
-        .GetFriends,
+        .GetMyFriends,
         .GetFriendshipRequests:
             return .GET
         case .CreateFriendship:
@@ -39,7 +39,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .SearchHackers:
             return "/search"
-        case .GetFriends:
+        case .GetMyFriends:
             return "/friends"
         case .CreateFriendship(let login):
             return "/\(login)/friend_request"
@@ -124,8 +124,8 @@ class Hackinat: NSObject {
         }
     }
     
-    func fetchFriends(success: (AnyObject) -> (), failure: () -> () = {}){
-        manager.request(Router.GetFriends)
+    func fetchMyFriends(success: (AnyObject) -> (), failure: () -> () = {}){
+        manager.request(Router.GetMyFriends)
             .responseJSON { (_, _, JSON, _) in
                 println("JSON IS \(JSON)")
                 success(JSON!)

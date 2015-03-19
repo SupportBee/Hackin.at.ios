@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var stickersLabel: UILabel!
+
+    @IBOutlet weak var friendsLabel: UILabel!
     
     var hacker:Hacker!
     
@@ -34,6 +36,7 @@ class ProfileViewController: UIViewController {
         setupLoggedInUser()
         populateBasicInfo()
         fetchUserDetails()
+        //fetchFriendsList()
         setupTitle()
     }
     

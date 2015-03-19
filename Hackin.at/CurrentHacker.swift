@@ -80,7 +80,7 @@ class CurrentHacker:NSObject {
             success(hackers)
         }
         
-        Hackinat.sharedInstance.fetchFriends(onFetch)
+        Hackinat.sharedInstance.fetchMyFriends(onFetch)
     }
     
     func sendFriendshipRequest(toBeFriend: Hacker,
