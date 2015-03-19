@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         println("In didRegisterForRemoteNotificationsWithDeviceToken \(deviceToken)")
         PushNotificationManager.pushManager().handlePushRegistration(deviceToken)
+        NSUserDefaults.standardUserDefaults().setObject(PushNotificationManager.pushManager().getPushToken(), forKey: "apns_device_token")
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
