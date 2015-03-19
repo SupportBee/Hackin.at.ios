@@ -86,7 +86,6 @@ class HackerTableCell: UITableViewCell {
         self.loginLabel.text = "@\(login)"
         self.nameLabel.text = name
 
-       
         let imageSize = CGFloat(48.0)
         
         Helpers.showProfileImage(hacker, imageView: profileImageView)

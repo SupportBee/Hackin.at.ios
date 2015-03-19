@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import PureLayout
 
 
 class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -35,6 +36,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications.count
+    }
+    
+    override func updateViewConstraints() {
+        notificationsTableView.autoPinEdgesToSuperviewMargins()
+        super.updateViewConstraints()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
