@@ -37,28 +37,34 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var loginBg: UIImageView!
     
+    let accessNotice = "We request read-only access to your public information"
+    let loadingNotice = "Contacting Mothership. Please stand by ..."
+    
     @IBOutlet weak var noticeText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStyles()
+        setupAccessNotice()
         setupWebView()
     }
     
     
-    func setupStyles(){
+    func setupAccessNotice(){
+        noticeText.text = accessNotice
         noticeText.backgroundColor = UIColor.clearColor()
         noticeText.textColor = AppColors.loginNotice
         
         //http://stackoverflow.com/questions/16868117/uitextview-that-expands-to-text-using-auto-layout
         noticeText.scrollEnabled = false
+        
+        //http://stackoverflow.com/questions/19049917/uitextview-font-is-being-reset-after-settext
+        noticeText.selectable = true
     }
     
     override func updateViewConstraints() {
         loginBg.autoPinEdgesToSuperviewMargins()
         loginButton.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginBg)
         loginButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: loginBg)
-        noticeText.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: loginButton)
-        noticeText.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: loginButton)
+        noticeText.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: loginButton)
         noticeText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginButton, withOffset: AppTheme.Listing.elementsPadding)
         super.updateViewConstraints()
     }
@@ -85,7 +91,8 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         if loginViewLoaded {
             showWebView()
         }else{
-            loginButton.setTitle("Contacting Mothership. Please stand by ...", forState: UIControlState.Normal)
+            loginButton.hidden = true
+            noticeText.text = loadingNotice
         }
     }
     
@@ -102,7 +109,8 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         loginViewLoaded = true
         if (loginButtonPressed && !webViewDisplayed){
             showWebView()
-            loginButton.setTitle("Login With Github", forState: UIControlState.Normal)
+            loginButton.hidden = false
+            noticeText.text = accessNotice
         }
         if url.absoluteString?.rangeOfString("afterauth") != nil{
             let queryString = url.query
