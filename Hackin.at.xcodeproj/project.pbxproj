@@ -28,6 +28,7 @@
 		F04AAE021A8E0AFC007243B7 /* streamline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04AAE011A8E0AFC007243B7 /* streamline.ttf */; };
 		F04AAE081A8E1D3C007243B7 /* UIIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */; };
 		F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */; };
+		F05137381ABFBEC800EF6542 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05137371ABFBEC800EF6542 /* Images.xcassets */; };
 		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
 		F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08DCC851AB3F77700C0509B /* RequestsViewController.swift */; };
@@ -100,6 +101,7 @@
 		F04AAE011A8E0AFC007243B7 /* streamline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = streamline.ttf; sourceTree = "<group>"; };
 		F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconBarButtonItem.swift; sourceTree = "<group>"; };
 		F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerSummaryView.swift; sourceTree = "<group>"; };
+		F05137371ABFBEC800EF6542 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F08DCC851AB3F77700C0509B /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */,
 				0FE0224C1A89C70F00E17699 /* Fabric.framework */,
 				F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */,
+				F05137371ABFBEC800EF6542 /* Images.xcassets */,
 				F065B9171A420C6D00CF2A38 /* CoreLocation.framework */,
 				F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */,
 				F0AD153D1A49E94A00C1E456 /* logo_square.png */,
@@ -436,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
+				F05137381ABFBEC800EF6542 /* Images.xcassets in Resources */,
 				0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */,
 				F04AAE021A8E0AFC007243B7 /* streamline.ttf in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,

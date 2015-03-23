@@ -7,6 +7,9 @@
 //
 
 public struct AppColors {
+    
+    static let loginNotice = UIColor(red: 199/255.0, green: 197/255.0, blue: 197/255.0, alpha: 1)
+    
     static let textBackground = UIColor(red: 249.0/255.0, green: 248.0/255.0, blue: 248.0/255.0, alpha: 1);
     
     static let primaryText = UIColor(red: 65/255.0, green: 64/255.0, blue:
