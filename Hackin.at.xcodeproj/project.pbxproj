@@ -20,6 +20,7 @@
 		A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C58A03B72B5875578D89A0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F004E6171AB0318800FBC6D0 /* MixpanelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */; };
 		F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01688601A41FFBA00566C8D /* ProfileViewController.swift */; };
+		F0279F641AB8647E00E48921 /* HackerFriendshipRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0279F631AB8647E00E48921 /* HackerFriendshipRequestView.swift */; };
 		F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */; };
 		F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */; };
 		F04803341AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04803331AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift */; };
@@ -29,15 +30,18 @@
 		F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */; };
 		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
+		F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08DCC851AB3F77700C0509B /* RequestsViewController.swift */; };
 		F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09325CA1AA822F9008A94CB /* HackersListingView.swift */; };
 		F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA8A041A91A543008E382D /* UIIconLabel.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
+		F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */; };
 		F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BDDC011A874C2200C1C78D /* AppTheme.swift */; };
 		F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */; };
 		F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */; };
 		F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */; };
-		F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */; };
+		F0D50DD91A4B3C6800531C50 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */; };
+		F0D6BD011ABA9AE10077DC75 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D6BD001ABA9AE10077DC75 /* Helpers.swift */; };
 		F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */; };
 		F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB3BC51A41FABF00DC8C9B /* Main.storyboard */; };
 		F0DB3BD81A41FABF00DC8C9B /* Hackin_atTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB3BD71A41FABF00DC8C9B /* Hackin_atTests.swift */; };
@@ -87,6 +91,7 @@
 		6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixpanelHelper.swift; sourceTree = "<group>"; };
 		F01688601A41FFBA00566C8D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F0279F631AB8647E00E48921 /* HackerFriendshipRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerFriendshipRequestView.swift; sourceTree = "<group>"; };
 		F03B33A41A5DF24A00A3EBA0 /* Hackin.at-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackin.at-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.ContactView.swift; sourceTree = "<group>"; };
 		F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.FullView.swift; sourceTree = "<group>"; };
@@ -97,15 +102,18 @@
 		F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerSummaryView.swift; sourceTree = "<group>"; };
 		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F08DCC851AB3F77700C0509B /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		F09325CA1AA822F9008A94CB /* HackersListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersListingView.swift; sourceTree = "<group>"; };
 		F0AA8A041A91A543008E382D /* UIIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconLabel.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipRequest.swift; sourceTree = "<group>"; };
 		F0BDDC011A874C2200C1C78D /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		F0D6BD001ABA9AE10077DC75 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F0DB3BBC1A41FABF00DC8C9B /* Hackin.at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackin.at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB3BC01A41FABF00DC8C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB3BC11A41FABF00DC8C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 			children = (
 				0FE0228F1A8B68F000E17699 /* TableRefreshControl.swift */,
 				F004E6161AB0318800FBC6D0 /* MixpanelHelper.swift */,
+				F0D6BD001ABA9AE10077DC75 /* Helpers.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -177,6 +186,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F0279F651AB9262A00E48921 /* FriendshipRequest */ = {
+			isa = PBXGroup;
+			children = (
+				F04803331AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift */,
+				F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */,
+			);
+			name = FriendshipRequest;
+			sourceTree = "<group>";
+		};
 		F0AA8A061A91A553008E382D /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +204,7 @@
 			name = CustomViews;
 			sourceTree = "<group>";
 		};
-		F0BDDBFC1A87410600C1C78D /* Hackers */ = {
+		F0BDDBFC1A87410600C1C78D /* Hacker */ = {
 			isa = PBXGroup;
 			children = (
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
@@ -196,13 +214,12 @@
 				F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */,
 				F09325CA1AA822F9008A94CB /* HackersListingView.swift */,
 			);
-			name = Hackers;
+			name = Hacker;
 			sourceTree = "<group>";
 		};
 		F0BDDBFF1A87429F00C1C78D /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				F0D50DD81A4B3C6800531C50 /* NotificationViewController.swift */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -211,7 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
+				F08DCC851AB3F77700C0509B /* RequestsViewController.swift */,
 				F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */,
+				F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */,
 			);
 			name = Tabbar;
 			sourceTree = "<group>";
@@ -279,11 +298,11 @@
 				F0BDDC001A8742BD00C1C78D /* Tabbar */,
 				F0BDDBFF1A87429F00C1C78D /* Notifications */,
 				F0DB3BBF1A41FABF00DC8C9B /* Supporting Files */,
-				F0BDDBFC1A87410600C1C78D /* Hackers */,
+				F0BDDBFC1A87410600C1C78D /* Hacker */,
 				F0BDDC041A874C3500C1C78D /* Styles */,
 				F0AA8A061A91A553008E382D /* CustomViews */,
 				F0C8FB3E1AA7D8AD00DEBE90 /* Search */,
-				F04803331AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift */,
+				F0279F651AB9262A00E48921 /* FriendshipRequest */,
 			);
 			path = Hackin.at;
 			sourceTree = "<group>";
@@ -319,6 +338,7 @@
 				0F6758861A849E2200A320C6 /* HackerTableCell.swift */,
 				F044A6961AA9B11E009FDE1F /* HackerTableCell.ContactView.swift */,
 				F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */,
+				F0279F631AB8647E00E48921 /* HackerFriendshipRequestView.swift */,
 			);
 			name = HackerTableCells;
 			sourceTree = "<group>";
@@ -489,20 +509,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */,
 				F0F045D01A8A026B005CC0C8 /* SelfViewController.swift in Sources */,
 				F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */,
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F04803341AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift in Sources */,
-				F0D50DD91A4B3C6800531C50 /* NotificationViewController.swift in Sources */,
+				F0D50DD91A4B3C6800531C50 /* NotificationsViewController.swift in Sources */,
 				F044A6971AA9B11E009FDE1F /* HackerTableCell.ContactView.swift in Sources */,
 				F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */,
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
+				F0279F641AB8647E00E48921 /* HackerFriendshipRequestView.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
+				F0D6BD011ABA9AE10077DC75 /* Helpers.swift in Sources */,
 				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,
+				F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
 				F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */,
 				F004E6171AB0318800FBC6D0 /* MixpanelHelper.swift in Sources */,

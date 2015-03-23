@@ -24,21 +24,21 @@ extension HackerTableCell {
         }
         
         func setupStickersLabel(){
+            self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
             contentView.addSubview(stickersLabel)
         }
         
         override func updateConstraints(){
             
+            super.updateConstraints()
+            
             stickersLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
             stickersLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
             stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
-            
-            super.updateConstraints()
         }
         
         override func setupViewData(hacker: Hacker) {
             let stickers = hacker.stickerCodes()
-            self.stickersLabel.font = UIFont(name: "pictonic", size: 16)
             self.stickersLabel.text = stickers
             super.setupViewData(hacker)
         }

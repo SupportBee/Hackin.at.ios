@@ -23,8 +23,12 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var stickersLabel: UILabel!
+
+    @IBOutlet weak var friendsLabel: UILabel!
     
     var hacker:Hacker!
+    var friends: [Hacker]!
+    var friendsListing: HackersListingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,8 @@ class ProfileViewController: UIViewController {
         setupStyles()
         setupLoggedInUser()
         populateBasicInfo()
-        fetchUserDetails()
+        renderUserDetails()
+        fetchFriends()
         setupTitle()
     }
     
@@ -60,12 +65,31 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func fetchUserDetails(){
+    func renderUserDetails(){
         if(hacker.hasFullProfile()){
             renderFullProfile()
         }else{
             hacker.fetchFullProfile(success: renderFullProfile)
         }
+    }
+
+    func fetchFriends(){
+        
+        func onFetch(friends: [Hacker]){
+            self.friends = friends
+            renderFriends()
+        }
+        
+        hacker.fetchFriends(success: onFetch)
+        
+    }
+    
+    func renderFriends(){
+        friendsLabel.text = "Friends (\(friends.count))"
+        friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
+        friendsListing.renderHackers(friends)
+        view.addSubview(friendsListing)
+        updateViewConstraints()
     }
     
     func setupStyles(){
@@ -101,6 +125,16 @@ class ProfileViewController: UIViewController {
         
         stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+
+        friendsLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: metaInfoView)
+        friendsLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
+        
+        if (friendsListing != nil) {
+            friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
+            friendsListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: friendsLabel, withOffset: AppTheme.Listing.elementsPadding)
+            friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+            friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+        }
         
         super.updateViewConstraints()
     }

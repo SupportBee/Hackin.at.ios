@@ -44,6 +44,8 @@ class Hacker: NSObject {
     var avatarImage:UIImage?
     var deviceToken:String?
     
+    var friendshipRequest: FriendshipRequest?
+    
     let login:String
     
     init(login: String) {
@@ -164,6 +166,10 @@ class Hacker: NSObject {
         }else{
             Hackinat.sharedInstance.getHacker(login: login, authKey: authKey!, success: onFetch)
         }
+    }
+    
+    func fetchFriends(#success: ([Hacker]) -> ()){
+        Hackinat.sharedInstance.fetchFriends(login, success: success)
     }
 
     func checkTwitterAccess(#success: (Int) -> ()){
