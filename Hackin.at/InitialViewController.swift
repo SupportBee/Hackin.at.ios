@@ -34,12 +34,16 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     }
  
     func hackerLoggedIn() {
-        self.dismissViewControllerAnimated(true, completion: nil)        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        trackLogin()
+        Hackinat.sharedInstance.resetAlamofireManager()
+        setHackerDeviceToken()
+        
         postLoginInit()
     }
     
     func postLoginInit(){
-        trackLogin()
         launchApp()
     }
     
@@ -59,5 +63,13 @@ class InitialViewController: UIViewController, LoginViewDelegate {
         super.updateViewConstraints()
     }
  
+    private func setHackerDeviceToken(){
+        let deviceAPNSToken = NSUserDefaults.standardUserDefaults().objectForKey("apns_device_token") as? String
+        if(deviceAPNSToken == nil){ return }
+        
+        if(CurrentHacker.apnsDeviceToken == nil){
+            CurrentHacker.hacker()?.setDeviceToken(deviceAPNSToken!)
+        }
+    }
     
 }

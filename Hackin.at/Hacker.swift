@@ -42,6 +42,7 @@ class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
     var avatarImage:UIImage?
+    var deviceToken:String?
     
     let login:String
     
@@ -98,6 +99,25 @@ class Hacker: NSObject {
         }
     }
 
+    func setDeviceToken(token: String){
+        self.deviceToken = token
+        syncDeivceToken()
+    }
+    
+    func syncDeivceToken(){
+        if(authKey == nil){ return }
+        
+        func onSuccess(){}
+        func onFailure(error: NSError?){
+            self.deviceToken = nil
+            println("syncDeviceToken Error: \(error)")
+        }
+        
+        println("Syncing device token: \(self.deviceToken)")
+        
+        Hackinat.sharedInstance.syncDeviceToken(token: self.deviceToken, success: onSuccess, failure: onFailure)
+    }
+    
     class func search(searchTerm: String, success: ([Hacker]) -> ()) -> [Hacker]? {
         
         func onFetch(result: AnyObject){

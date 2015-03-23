@@ -15,13 +15,17 @@ enum Router: URLRequestConvertible {
     case SearchHackers(String)
     case GetFriends
     case CreateFriendship(String)
+    case CreateDeviceToken(String)
+    case DestroyDeviceToken
     
     var method: Alamofire.Method {
         switch self {
         case .SearchHackers, .GetFriends:
             return .GET
-        case .CreateFriendship:
+        case .CreateFriendship, .CreateDeviceToken(_):
             return .POST
+        case .DestroyDeviceToken:
+            return .DELETE
         }
     }
     
@@ -33,6 +37,8 @@ enum Router: URLRequestConvertible {
             return "/friends"
         case .CreateFriendship(let login):
             return "/\(login)/friend_request"
+        case .CreateDeviceToken(_), .DestroyDeviceToken:
+            return "/iphone_device"
         }
     }
     
@@ -44,6 +50,10 @@ enum Router: URLRequestConvertible {
         switch self {
         case .SearchHackers(let query):
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["query": query]).0
+        case .CreateDeviceToken(let token):
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["iphone_device": [ "token": token]] ).0
+        case .DestroyDeviceToken:
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0
         default:
             return mutableURLRequest
         }
@@ -52,6 +62,7 @@ enum Router: URLRequestConvertible {
 }
 
 class Hackinat: NSObject {
+    
     class var sharedInstance: Hackinat {
         struct Singleton {
             static let instance = Hackinat()
@@ -63,12 +74,19 @@ class Hackinat: NSObject {
     //let apiBaseDomain = "https://hackin.at"
     //let apiBaseDomain = "http://lvh.me:3000"
     let apiBaseDomain = "http://staging.hackin.at"
-    let manager: Alamofire.Manager!
+    var manager: Alamofire.Manager!
     
     override init() {
+        super.init()
+        resetAlamofireManager()
+    }
+    
+    func resetAlamofireManager(){
         var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
+        
+        println("In Alamofire manager init authKey: \(CurrentHacker.authKey)")
         defaultHeaders["X-TOKEN"] = CurrentHacker.authKey
-       
+        
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.HTTPAdditionalHeaders = defaultHeaders
         
@@ -131,6 +149,37 @@ class Hackinat: NSObject {
                 }
             })
     }
+    
+    func syncDeviceToken(
+        #token: String?,
+        success: () -> (),
+        failure: (NSError?) -> () = {
+            (error) -> () in
+        }
+        ){
+            if(token == nil){
+                println("In DestoryDeviceToken")
+                manager.request(Router.DestroyDeviceToken)
+                    .response{ (req, res, data, error) in
+                        if(res?.statusCode == 204){
+                            success()
+                        }else{
+                            failure(error)
+                        }
+                }
+            }else{
+                println("In CreateDeviceToken")
+                manager.request(Router.CreateDeviceToken(token!))
+                    .response{ (req, res, data, error) in
+                        if(res?.statusCode == 204){
+                            success()
+                        }else{
+                            failure(error)
+                        }
+                    }
+            }
+    }
+    
     
     func fetchCurrentHackerBroadcasts(#authKey:String, success: (AnyObject) -> ()){
         var broadcastsURL = "\(apiBaseDomain)/logs?auth_key=\(authKey)"
