@@ -15,6 +15,7 @@
 
 import UIKit
 import WebKit
+import PureLayout
 
 protocol LoginViewDelegate {
     
@@ -33,10 +34,24 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     var loginViewLoaded = false
     var webViewDisplayed = false
     var loginButtonPressed = false
+
+    @IBOutlet weak var loginBg: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStyles()
         setupWebView()
+    }
+    
+    
+    func setupStyles(){
+    }
+    
+    override func updateViewConstraints() {
+        loginBg.autoPinEdgesToSuperviewMargins()
+        loginButton.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginBg)
+        loginButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: loginBg)
+        super.updateViewConstraints()
     }
     
     func setupWebView(){
