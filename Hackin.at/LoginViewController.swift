@@ -37,6 +37,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var loginBg: UIImageView!
     
+    @IBOutlet weak var noticeText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStyles()
@@ -45,12 +46,20 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     
     
     func setupStyles(){
+        noticeText.backgroundColor = UIColor.clearColor()
+        noticeText.textColor = AppColors.loginNotice
+        
+        //http://stackoverflow.com/questions/16868117/uitextview-that-expands-to-text-using-auto-layout
+        noticeText.scrollEnabled = false
     }
     
     override func updateViewConstraints() {
         loginBg.autoPinEdgesToSuperviewMargins()
         loginButton.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: loginBg)
         loginButton.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: loginBg)
+        noticeText.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: loginButton)
+        noticeText.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: loginButton)
+        noticeText.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginButton, withOffset: AppTheme.Listing.elementsPadding)
         super.updateViewConstraints()
     }
     

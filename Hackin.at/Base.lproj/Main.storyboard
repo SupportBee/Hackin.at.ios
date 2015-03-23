@@ -80,6 +80,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="K4J-HY-aZK">
                                 <rect key="frame" x="16" y="0.0" width="288" height="568"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-ie-WU3">
+                                <rect key="frame" x="40" y="329" width="240" height="69"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">We request read-only access to 
+your public information</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js7-tD-VEq">
                                 <rect key="frame" x="-51" y="227" width="422" height="94"/>
                                 <state key="normal" image="login-github">
@@ -92,10 +100,14 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="js7-tD-VEq" secondAttribute="trailing" constant="-67" placeholder="YES" id="2XG-UU-1Zr"/>
+                            <constraint firstItem="zmR-ie-WU3" firstAttribute="leading" secondItem="dy6-Ls-WK2" secondAttribute="leadingMargin" constant="24" placeholder="YES" id="3IJ-NF-dSA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zmR-ie-WU3" secondAttribute="trailing" constant="24" placeholder="YES" id="A77-JN-f86"/>
                             <constraint firstItem="1N8-vz-fIY" firstAttribute="top" secondItem="js7-tD-VEq" secondAttribute="bottom" constant="247" placeholder="YES" id="GtO-5G-8qx"/>
                             <constraint firstItem="js7-tD-VEq" firstAttribute="top" secondItem="EOH-eA-M4f" secondAttribute="bottom" constant="207" placeholder="YES" id="Mkh-Qa-0bV"/>
+                            <constraint firstItem="zmR-ie-WU3" firstAttribute="top" secondItem="js7-tD-VEq" secondAttribute="bottom" constant="8" placeholder="YES" id="Qna-QN-OXR"/>
                             <constraint firstItem="K4J-HY-aZK" firstAttribute="trailing" secondItem="dy6-Ls-WK2" secondAttribute="trailingMargin" placeholder="YES" id="T9m-vr-jPV"/>
                             <constraint firstItem="K4J-HY-aZK" firstAttribute="top" secondItem="dy6-Ls-WK2" secondAttribute="topMargin" placeholder="YES" id="YgX-JT-t8J"/>
+                            <constraint firstItem="1N8-vz-fIY" firstAttribute="top" secondItem="zmR-ie-WU3" secondAttribute="bottom" constant="186" placeholder="YES" id="dcL-g4-e10"/>
                             <constraint firstItem="js7-tD-VEq" firstAttribute="leading" secondItem="dy6-Ls-WK2" secondAttribute="leadingMargin" constant="-67" placeholder="YES" id="hFl-n2-sDc"/>
                             <constraint firstItem="K4J-HY-aZK" firstAttribute="leading" secondItem="dy6-Ls-WK2" secondAttribute="leadingMargin" placeholder="YES" id="tjs-oQ-WMh"/>
                             <constraint firstItem="1N8-vz-fIY" firstAttribute="top" secondItem="K4J-HY-aZK" secondAttribute="bottom" placeholder="YES" id="zdx-Ek-Zs2"/>
@@ -106,6 +118,7 @@
                         <outlet property="containerView" destination="dy6-Ls-WK2" id="SvG-oB-QWG"/>
                         <outlet property="loginBg" destination="K4J-HY-aZK" id="SOT-58-wkW"/>
                         <outlet property="loginButton" destination="js7-tD-VEq" id="ZfH-aB-6pD"/>
+                        <outlet property="noticeText" destination="zmR-ie-WU3" id="glw-8E-Agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d3-pi-Vxs" sceneMemberID="firstResponder"/>
