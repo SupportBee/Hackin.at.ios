@@ -34,15 +34,39 @@ class HackerTableCell: UITableViewCell {
         preservesSuperviewLayoutMargins = false
 //        layoutMargins = UIEdgeInsetsZero
 //        let point = self.convertPoint(imageView!.center, fromView: self)
-        layoutMargins = UIEdgeInsetsMake(0, AppTheme.Listing.elementsPadding + AppTheme.HackerListing.paddingLeft + 48.0, 0, 0)
+        layoutMargins = UIEdgeInsetsMake(0, paddingLeft + profileImageSize + imageLabelSpacing, 0, 0)
    }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
+    var profileImageSize: CGFloat {
+        get {
+            return AppTheme.HackerContactView.profileImageSize
+        }
+    }
+    
+    var paddingLeft: CGFloat {
+        get {
+            return AppTheme.HackerContactView.paddingLeft
+        }
+    }
+    
+    var paddingTop: CGFloat {
+        get {
+            return AppTheme.HackerContactView.paddingTop
+        }
+    }
+    
+    var imageLabelSpacing: CGFloat {
+        get {
+            return AppTheme.HackerContactView.imageLabelSpacing
+        }
+    }
+    
     func setupProfileImage(){
-        profileImageView = UIImageView(frame: CGRectMake(0, 0, 48.0, 48.0))
+        profileImageView = UIImageView(frame: CGRectMake(0, 0, profileImageSize, profileImageSize))
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
         profileImageView.clipsToBounds = true;
         contentView.addSubview(profileImageView)
@@ -50,30 +74,30 @@ class HackerTableCell: UITableViewCell {
 
     func setupLoginLabel(){
         loginLabel = UILabel()
-        loginLabel.textColor = AppColors.primaryLabel
+        loginLabel.textColor = AppTheme.HackerContactView.loginLabelColor
         contentView.addSubview(loginLabel)
     }
 
     func setupNameLabel(){
         nameLabel = UILabel()
-        nameLabel.textColor = AppColors.primaryLabel
+        nameLabel.textColor = AppTheme.HackerContactView.nameLabelColor
         contentView.addSubview(nameLabel)
     }
 
     override func updateConstraints() {
-        profileImageView.autoSetDimensionsToSize(CGSizeMake(48.0, 48.0))
+        profileImageView.autoSetDimensionsToSize(CGSizeMake(profileImageSize, profileImageSize))
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Left,
-            withInset: AppTheme.HackerListing.paddingLeft)
+            withInset: paddingLeft)
         profileImageView.autoPinEdgeToSuperviewEdge(ALEdge.Top,
-            withInset: AppTheme.HackerListing.paddingTop)
+            withInset: paddingTop)
         
         loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView,
-            withOffset: AppTheme.Listing.elementsPadding)
+            withOffset: imageLabelSpacing)
         loginLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top,
             withInset: AppTheme.HackerListing.paddingTop)
         
-        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
-        nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.Listing.elementsPadding)
+        nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.HackerContactView.imageLabelSpacing)
+        nameLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: loginLabel, withOffset: AppTheme.HackerContactView.loginNameSpacing)
         super.updateConstraints()
     }
    
@@ -85,8 +109,9 @@ class HackerTableCell: UITableViewCell {
         
         var locationName = ""
         
-        self.loginLabel.text = "@\(login)"
-        self.nameLabel.text = name
+        loginLabel.text = "@\(login)"
+        
+        nameLabel.text = name
 
         let imageSize = CGFloat(48.0)
         
