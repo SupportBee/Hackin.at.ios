@@ -11,6 +11,7 @@ import Fabric
 import TwitterKit
 import Crashlytics
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,21 +27,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupAppStyling()
         
-        println("About to register for Remote Notifications")
         PushNotificationManager.pushManager().registerForPushNotifications()
         
         return true
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("In didRegisterForRemoteNotificationsWithDeviceToken \(deviceToken)")
         PushNotificationManager.pushManager().handlePushRegistration(deviceToken)
         NSUserDefaults.standardUserDefaults().setObject(PushNotificationManager.pushManager().getPushToken(), forKey: "apns_device_token")
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println("In didFailToRegisterForRemoteNotificationsWithError \(error)")
+        PushNotificationManager.pushManager().handlePushRegistrationFailure(error)
     }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PushNotificationManager.pushManager().handlePushReceived(userInfo)
+        
+        let pushNotificationData = Helpers.Transformers.userInfoToPushData(userInfo)
+        PushNotificationHandler.handle(pushNotificationData)
+    }    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -64,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

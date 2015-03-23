@@ -14,4 +14,32 @@ class Helpers {
             imageView.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "logo_square.png"))
         })
     }
+    
+    class Transformers {
+        class func userInfoToPushData(userInfo: [NSObject: AnyObject]) -> PushNotificationData{
+            let userStr = PushNotificationManager.pushManager().getCustomPushData(userInfo)
+            let userData = userStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
+            var userLocalError: NSError?
+            var userJSON: AnyObject! = NSJSONSerialization.JSONObjectWithData(userData!, options: NSJSONReadingOptions.MutableContainers, error: &userLocalError)
+            
+            var pushNotification: PushNotificationData
+            
+            var login: String?
+            var type: String?
+            var actor: Hacker? = nil
+            
+            
+            if let dict = userJSON as? [String: AnyObject]{
+                login = dict["login"] as String?
+                type = dict["type"] as String?
+                
+                if let actorDict = dict["actor"] as? [String: AnyObject] {
+                    var actorLogin = actorDict["login"] as String?
+                    actor = Hacker(login: actorLogin!)
+                }
+            }
+            
+            return PushNotificationData(login: login!, type: type!, actor: actor, friendRequestID: nil)
+        }
+    }
 }
