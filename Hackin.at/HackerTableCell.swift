@@ -32,7 +32,9 @@ class HackerTableCell: UITableViewCell {
         // No inset for cell border
         // http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working
         preservesSuperviewLayoutMargins = false
-        layoutMargins = UIEdgeInsetsZero
+//        layoutMargins = UIEdgeInsetsZero
+//        let point = self.convertPoint(imageView!.center, fromView: self)
+        layoutMargins = UIEdgeInsetsMake(0, AppTheme.Listing.elementsPadding + AppTheme.HackerListing.paddingLeft + 48.0, 0, 0)
    }
     
     required init(coder aDecoder: NSCoder) {
