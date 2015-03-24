@@ -13,6 +13,7 @@
 		0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4350281A80D1F000D58243 /* CurrentHacker.swift */; };
 		0F65B0D21AC084D700BB0E9F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F65B0D11AC084D700BB0E9F /* PushNotificationData.swift */; };
 		0F65B0D51AC0876800BB0E9F /* PushNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F65B0D41AC0876800BB0E9F /* PushNotificationHandler.swift */; };
+		0F65B0D71AC08ECA00BB0E9F /* PushNotificationActionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F65B0D61AC08ECA00BB0E9F /* PushNotificationActionsHandler.swift */; };
 		0F6758871A849E2200A320C6 /* HackerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6758861A849E2200A320C6 /* HackerTableCell.swift */; };
 		0FE0224D1A89C70F00E17699 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224A1A89C70F00E17699 /* TwitterKit.framework */; };
 		0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */; };
@@ -84,6 +85,7 @@
 		0F4350281A80D1F000D58243 /* CurrentHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentHacker.swift; sourceTree = "<group>"; };
 		0F65B0D11AC084D700BB0E9F /* PushNotificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
 		0F65B0D41AC0876800BB0E9F /* PushNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationHandler.swift; sourceTree = "<group>"; };
+		0F65B0D61AC08ECA00BB0E9F /* PushNotificationActionsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationActionsHandler.swift; sourceTree = "<group>"; };
 		0F6758861A849E2200A320C6 /* HackerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.swift; sourceTree = "<group>"; };
 		0FE0224A1A89C70F00E17699 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				0F65B0D11AC084D700BB0E9F /* PushNotificationData.swift */,
 				0F65B0D41AC0876800BB0E9F /* PushNotificationHandler.swift */,
+				0F65B0D61AC08ECA00BB0E9F /* PushNotificationActionsHandler.swift */,
 			);
 			name = PushNotification;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */,
 				0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */,
 				F01688611A41FFBA00566C8D /* ProfileViewController.swift in Sources */,
+				0F65B0D71AC08ECA00BB0E9F /* PushNotificationActionsHandler.swift in Sources */,
 				F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */,
 				F0279F641AB8647E00E48921 /* HackerFriendshipRequestView.swift in Sources */,
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,

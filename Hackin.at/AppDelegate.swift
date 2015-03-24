@@ -46,7 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let pushNotificationData = Helpers.Transformers.userInfoToPushData(userInfo)
         PushNotificationHandler.handle(pushNotificationData)
-    }    
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+
+        let pushNotificationData = Helpers.Transformers.userInfoToPushData(userInfo)
+        let apnsData = PushNotificationManager.pushManager().getApnPayload(userInfo)
+        var apnsCategory = apnsData["category"] as String?
+        
+        PushNotificationActionsHandler.handle(identifier, category: apnsCategory, data: pushNotificationData)
+        
+        completionHandler()
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
