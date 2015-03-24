@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var basicInfoView: UIView!
     @IBOutlet weak var metaInfoView: UIView!
+    @IBOutlet weak var tableHeaderView: UIView!
     
     @IBOutlet weak var reposCountLabel: UILabel!
     
@@ -33,6 +34,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTable()
         clearPlaceholderLabels()
         setupStyles()
         setupLoggedInUser()
@@ -40,6 +42,12 @@ class ProfileViewController: UIViewController {
         renderUserDetails()
         fetchFriends()
         setupTitle()
+    }
+    
+    func setupTable(){
+        friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
+        friendsListing.hackersTableView.tableHeaderView = tableHeaderView
+        view.addSubview(friendsListing)
     }
     
     func setupTitle(){
@@ -86,9 +94,7 @@ class ProfileViewController: UIViewController {
     
     func renderFriends(){
         friendsLabel.text = "Friends (\(friends.count))"
-        friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
         friendsListing.renderHackers(friends)
-        view.addSubview(friendsListing)
         updateViewConstraints()
     }
     
@@ -103,8 +109,9 @@ class ProfileViewController: UIViewController {
     override func updateViewConstraints() {
         
         let inset = AppTheme.Listing.elementsPadding/2.0
-        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
+        friendsListing.autoPinEdgesToSuperviewMargins()
         
+        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
         
         profileImage.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, inset, inset), excludingEdge: ALEdge.Right)
         
@@ -129,12 +136,11 @@ class ProfileViewController: UIViewController {
         friendsLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: metaInfoView)
         friendsLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
         
-        if (friendsListing != nil) {
-            friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
-            friendsListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: friendsLabel, withOffset: AppTheme.Listing.elementsPadding)
-            friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-            friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
-        }
+        
+     //   friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
+     //   friendsListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: friendsLabel, withOffset: AppTheme.Listing.elementsPadding)
+     //   friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+     //   friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
         
         super.updateViewConstraints()
     }
