@@ -16,8 +16,10 @@ class Helpers {
     }
     
     class Transformers {
-        class func userInfoToPushData(userInfo: [NSObject: AnyObject]) -> PushNotificationData{
+        class func userInfoToPushData(userInfo: [NSObject: AnyObject]) -> PushNotificationData? {
             let userStr = PushNotificationManager.pushManager().getCustomPushData(userInfo)
+            if( userStr == nil ){ return nil }
+            
             let userData = userStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
             var userLocalError: NSError?
             var userJSON: AnyObject! = NSJSONSerialization.JSONObjectWithData(userData!, options: NSJSONReadingOptions.MutableContainers, error: &userLocalError)
@@ -38,6 +40,8 @@ class Helpers {
                     actor = Hacker(login: actorLogin!)
                 }
             }
+            
+            if(login == nil || type == nil){ return nil }
             
             return PushNotificationData(login: login!, type: type!, actor: actor, friendRequestID: nil)
         }

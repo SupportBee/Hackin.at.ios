@@ -45,7 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PushNotificationManager.pushManager().handlePushReceived(userInfo)
         
         let pushNotificationData = Helpers.Transformers.userInfoToPushData(userInfo)
-        PushNotificationHandler.handle(pushNotificationData)
+        if(pushNotificationData != nil){
+            PushNotificationHandler.handle(pushNotificationData!)
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {
