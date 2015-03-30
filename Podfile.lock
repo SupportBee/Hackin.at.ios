@@ -25,14 +25,14 @@ DEPENDENCIES:
   - SZTextView
 
 SPEC CHECKSUMS:
-  Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
-  DateTools: 7df78f0c4719eb28cfd2d58a90fafd036e73156c
-  Locksmith: 15a873e266beceb1b81476e0f50a1e1cba103a6f
-  Mixpanel: def38b9e600f101686b8d647e05660a72c089c65
-  PureLayout: 63a3257320223e8edddcd3afb407445f85a6bf74
-  Pushwoosh: 2148b7450b1287c7c1be798d619562e84e47d0d0
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  SwiftyJSON: 48be7490a3989a58a3f511cd54167f0a2b466e76
-  SZTextView: 8f1126696c6d54e5f0d672bbecf259ef65b04aeb
+  Alamofire: 6a2cbaebe78a6d469bc55ee37f0a24ba22af76ac
+  DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
+  Locksmith: 97fa742bf69a5b9b9bb855dd31c7a9355b952ae5
+  Mixpanel: e9bcb16eb0e2a98fc330ceeb0d8b7f4aec4182ab
+  PureLayout: a0fe75f1cf485801e7e00b723b8a3c32dca558e2
+  Pushwoosh: 493b4bdec9b28814d314d0e73076398f6545fbd9
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
+  SwiftyJSON: a561c2a840121085bec8a2dfeac97a360fc66901
+  SZTextView: c814e6dcb2303e3e79feb0fd27cf44d74e3c59a6
 
 COCOAPODS: 0.36.0.beta.2

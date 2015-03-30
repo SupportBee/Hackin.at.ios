@@ -117,7 +117,6 @@ class ProfileViewController: UIViewController {
         
         loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right,
             ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
-        
         loginLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Top, ofView: profileImage)
         
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
@@ -125,16 +124,24 @@ class ProfileViewController: UIViewController {
 
         companyLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
         companyLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        companyLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
         
         metaInfoView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: basicInfoView, withOffset: AppTheme.Listing.elementsPadding)
         metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         
+        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
         stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
 
         friendsLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: metaInfoView)
         friendsLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
+        
+        // Without this the header height will be 0
+        friendsLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
         
         
      //   friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
