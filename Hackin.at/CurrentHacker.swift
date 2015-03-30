@@ -47,6 +47,19 @@ class CurrentHacker:NSObject {
         }
     }
     
+    class var apnsDeviceToken: String?{
+        get{
+            if (hacker() == nil){ return nil }
+            return hacker()?.deviceToken
+        }
+        
+        set{
+            if (hacker() != nil){
+                hacker()?.deviceToken = newValue!
+            }
+        }
+    }
+    
     class var twitterEnabled:Int?{
         get{
             return NSUserDefaults.standardUserDefaults().objectForKey("twitter_enabled") as? Int

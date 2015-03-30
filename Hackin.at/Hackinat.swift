@@ -17,6 +17,8 @@ enum Router: URLRequestConvertible {
     case GetMyFriends
     case GetFriends(String)
     case CreateFriendship(String)
+    case CreateDeviceToken(String)
+    case DestroyDeviceToken
     case GetFriendshipRequests
     case AcceptFriendship(Int)
     case RejectFriendship(Int)
@@ -28,11 +30,11 @@ enum Router: URLRequestConvertible {
         .GetFriends,
         .GetFriendshipRequests:
             return .GET
-        case .CreateFriendship:
+        case .CreateFriendship, .CreateDeviceToken(_):
             return .POST
         case .AcceptFriendship:
             return .POST
-        case .RejectFriendship:
+        case .RejectFriendship, .DestroyDeviceToken:
             return .DELETE
         }
     }
@@ -47,6 +49,8 @@ enum Router: URLRequestConvertible {
             return "/\(login)/friends"
         case .CreateFriendship(let login):
             return "/\(login)/friend_request"
+        case .CreateDeviceToken(_), .DestroyDeviceToken:
+            return "/iphone_device"
         case .GetFriendshipRequests:
             return "/friend_requests"
         case .AcceptFriendship(let requestID):
@@ -64,6 +68,10 @@ enum Router: URLRequestConvertible {
         switch self {
         case .SearchHackers(let query):
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["query": query]).0
+        case .CreateDeviceToken(let token):
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["iphone_device": [ "token": token]] ).0
+        case .DestroyDeviceToken:
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0
         default:
             return mutableURLRequest
         }
@@ -72,7 +80,9 @@ enum Router: URLRequestConvertible {
 }
 
 class Hackinat: NSObject {
+    
     class var sharedInstance: Hackinat {
+        
         struct Singleton {
             static let instance = Hackinat()
         }
@@ -81,12 +91,17 @@ class Hackinat: NSObject {
     }
   
     let apiBaseDomain = "http://staging.hackin.at"
-    let manager: Alamofire.Manager!
+    var manager: Alamofire.Manager!
     
     override init() {
+        super.init()
+        resetAlamofireManager()
+    }
+    
+    func resetAlamofireManager(){
         var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
         defaultHeaders["X-TOKEN"] = CurrentHacker.authKey
-       
+        
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.HTTPAdditionalHeaders = defaultHeaders
         
@@ -94,6 +109,9 @@ class Hackinat: NSObject {
     }
     
     var githhubAuthURL:String { return "\(apiBaseDomain)/auth/github?api=true" }
+    
+    
+    
     
     func getHacker(#login:String, authKey:String = "", success: (AnyObject) -> ()){
         var profileURL = "\(apiBaseDomain)/\(login)"
@@ -172,6 +190,47 @@ class Hackinat: NSObject {
                     }
     }
     
+    func syncDeviceToken(
+        #token: String?,
+        success: () -> (),
+        failure: (NSError?) -> () = {
+            (error) -> () in
+        }
+        ){
+            if(token == nil){
+                manager.request(Router.DestroyDeviceToken)
+                    .response{ (req, res, data, error) in
+                        if(res?.statusCode == 204){
+                            success()
+                        }else{
+                            failure(error)
+                        }
+                }
+            }else{
+                manager.request(Router.CreateDeviceToken(token!))
+                    .response{ (req, res, data, error) in
+                        if(res?.statusCode == 204){
+                            success()
+                        }else{
+                            failure(error)
+                        }
+                    }
+            }
+    }
+    
+    func fetchCurrentHackerNotifications(#login:String, authKey:String, success: (AnyObject) -> (), failure: () -> () = {}){
+        var notificationsURL = "\(apiBaseDomain)/\(login)/notifications?auth_key=\(authKey)"        
+        Alamofire.request(.GET, notificationsURL)
+            .responseJSON { (_, _, JSON, _) in
+                success(JSON!)
+        }
+    }
+    
+    
+    
+    
+    // Legacy API methods
+    
     func updateHackerTwitterCredentials(#login:String, authKey: String, authToken: String, authSecret: String,  success: () -> (), failure: () -> ()){
         
         let parameters = [
@@ -209,16 +268,4 @@ class Hackinat: NSObject {
                 success(JSON!)
         }
     }
-    
-    func fetchCurrentHackerNotifications(#login:String, authKey:String, success: (AnyObject) -> (), failure: () -> () = {}){
-        var notificationsURL = "\(apiBaseDomain)/\(login)/notifications?auth_key=\(authKey)"
-        println("Let's get the notifications")
-        
-        Alamofire.request(.GET, notificationsURL)
-            .responseJSON { (_, _, JSON, _) in
-                success(JSON!)
-        }
-    }
-    
-    
 }
