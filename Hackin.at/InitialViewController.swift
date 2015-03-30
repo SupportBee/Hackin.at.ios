@@ -9,12 +9,11 @@
 import UIKit
 import PureLayout
 
-// All Globals here for now
 class InitialViewController: UIViewController, LoginViewDelegate {
     
     @IBOutlet weak var logoImageView: UIImageView!
-    // Location setup
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,6 +26,15 @@ class InitialViewController: UIViewController, LoginViewDelegate {
         }
     }
     
+    override func updateViewConstraints() {
+        logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
+        logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        super.updateViewConstraints()
+    }
+    
+    
+    
+    
     func showLoginView(){
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as LoginViewController;
         vc.delegate = self
@@ -35,12 +43,23 @@ class InitialViewController: UIViewController, LoginViewDelegate {
  
     func hackerLoggedIn() {
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        onLogin()
         postLoginInit()
     }
     
     func postLoginInit(){
-        trackLogin()
         launchApp()
+    }
+    
+    func onLogin(){
+        resetAPIWrapper()
+        trackLogin()
+        setHackerDeviceToken()
+    }
+    
+    func resetAPIWrapper(){
+        Hackinat.sharedInstance.resetAlamofireManager()
     }
     
     func trackLogin(){
@@ -52,12 +71,14 @@ class InitialViewController: UIViewController, LoginViewDelegate {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as MainViewController;
         self.presentViewController(vc, animated: true, completion: nil)
     }
-    
-    override func updateViewConstraints() {
-        logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
-        logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
-        super.updateViewConstraints()
-    }
  
+    func setHackerDeviceToken(){
+        let deviceAPNSToken = NSUserDefaults.standardUserDefaults().objectForKey("apns_device_token") as? String
+        if(deviceAPNSToken == nil){ return }
+        
+        if(CurrentHacker.apnsDeviceToken == nil){
+            CurrentHacker.hacker()?.setDeviceToken(deviceAPNSToken!)
+        }
+    }
     
 }

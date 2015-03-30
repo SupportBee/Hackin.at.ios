@@ -8,4 +8,4 @@ pod 'SDWebImage', '~>3.6'
 pod 'SZTextView'
 pod 'Locksmith'
 pod 'Mixpanel'
-
+pod 'Pushwoosh'
