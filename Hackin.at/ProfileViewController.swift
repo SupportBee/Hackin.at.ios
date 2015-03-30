@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var basicInfoView: UIView!
     @IBOutlet weak var metaInfoView: UIView!
+    @IBOutlet weak var tableHeaderView: UIView!
     
     @IBOutlet weak var reposCountLabel: UILabel!
     
@@ -33,6 +34,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTable()
         clearPlaceholderLabels()
         setupStyles()
         setupLoggedInUser()
@@ -40,6 +42,12 @@ class ProfileViewController: UIViewController {
         renderUserDetails()
         fetchFriends()
         setupTitle()
+    }
+    
+    func setupTable(){
+        friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
+        friendsListing.hackersTableView.tableHeaderView = tableHeaderView
+        view.addSubview(friendsListing)
     }
     
     func setupTitle(){
@@ -86,9 +94,7 @@ class ProfileViewController: UIViewController {
     
     func renderFriends(){
         friendsLabel.text = "Friends (\(friends.count))"
-        friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
         friendsListing.renderHackers(friends)
-        view.addSubview(friendsListing)
         updateViewConstraints()
     }
     
@@ -103,14 +109,14 @@ class ProfileViewController: UIViewController {
     override func updateViewConstraints() {
         
         let inset = AppTheme.Listing.elementsPadding/2.0
-        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
+        friendsListing.autoPinEdgesToSuperviewMargins()
         
+        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
         
         profileImage.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, inset, inset), excludingEdge: ALEdge.Right)
         
         loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right,
             ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
-        
         loginLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Top, ofView: profileImage)
         
         nameLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
@@ -118,23 +124,30 @@ class ProfileViewController: UIViewController {
 
         companyLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
         companyLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
+        companyLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
         
         metaInfoView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: basicInfoView, withOffset: AppTheme.Listing.elementsPadding)
         metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
         metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         
+        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
         stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
+        
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
 
         friendsLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: metaInfoView)
         friendsLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
         
-        if (friendsListing != nil) {
-            friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
-            friendsListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: friendsLabel, withOffset: AppTheme.Listing.elementsPadding)
-            friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-            friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
-        }
+        // Without this the header height will be 0
+        friendsLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+        
+        
+     //   friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
+     //   friendsListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: friendsLabel, withOffset: AppTheme.Listing.elementsPadding)
+     //   friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
+     //   friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
         
         super.updateViewConstraints()
     }
