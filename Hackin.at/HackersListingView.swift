@@ -93,9 +93,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let hacker = self.hackers[indexPath.row]
-        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
-        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
-        vc.hacker = hacker
+        let vc = AppScreens.Profile(hacker).vc
         currentNavigationController?.pushViewController(vc, animated: true)
     }
 }
