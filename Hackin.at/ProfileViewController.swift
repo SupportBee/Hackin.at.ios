@@ -47,6 +47,7 @@ class ProfileViewController: UIViewController {
     func setupTable(){
         friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
         friendsListing.hackersTableView.tableHeaderView = tableHeaderView
+        friendsListing.currentNavigationController = navigationController
         view.addSubview(friendsListing)
     }
     
@@ -163,7 +164,7 @@ class ProfileViewController: UIViewController {
         companyLabel.text = userDetails["company"].string
         
         // Counts
-        var reposCount = userDetails["github_repos"].int!
+        var reposCount = userDetails["github_repos"].int
         
         println(reposCount)
         println(reposCount)

@@ -15,6 +15,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var hackers: Array<Hacker> = []
     var tableRefreshControl:TableRefreshControl!
     var cellStyle: HackerTableCell.Type!
+    var currentNavigationController: UINavigationController?
     
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -95,5 +96,6 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController
         vc.hacker = hacker
+        currentNavigationController?.pushViewController(vc, animated: true)
     }
 }
