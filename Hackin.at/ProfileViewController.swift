@@ -52,7 +52,13 @@ class ProfileViewController: UIViewController {
     }
     
     func setupTitle(){
-        self.title = "@\(hacker.login)"
+        var title = ""
+        if (hacker.login == CurrentHacker.hacker()?.login) {
+            title = "Me"
+        }else{
+            title = "@\(hacker.login)"
+        }
+        self.title = title
     }
     
     func clearPlaceholderLabels(){

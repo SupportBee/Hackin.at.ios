@@ -21,6 +21,9 @@ class MainViewController: UITabBarController {
         let friends = viewControllers[0]
         let me = viewControllers[1]
         
+        friends.title = "Friends"
+        friends.tabBarItem.image = UIImage(named: "hackers")
+        
         me.title = "Me"
         me.tabBarItem.image = UIImage(named : "self")
         
