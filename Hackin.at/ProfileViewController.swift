@@ -66,7 +66,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func followButtonPressed(sender: AnyObject) {
-        println("so you want to follow huh!")
     }
     
     func setupLoggedInUser(){
@@ -108,6 +107,7 @@ class ProfileViewController: UIViewController {
     func setupStyles(){
         profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
         profileImage.clipsToBounds = true;
+        friendsListing.hackersTableView.tableHeaderView?.backgroundColor = UIColor.redColor()
         
         basicInfoView.backgroundColor = AppColors.profileBgColor
         metaInfoView.backgroundColor = AppColors.profileBgColor
@@ -117,10 +117,19 @@ class ProfileViewController: UIViewController {
         
         let inset = AppTheme.Listing.elementsPadding/2.0
         friendsListing.autoPinEdgesToSuperviewMargins()
+        tableHeaderView.autoPinEdgesToSuperviewMarginsExcludingEdge(ALEdge.Bottom)
+        basicInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+        basicInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
         
-        basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
+        // IMP: Pinning the right edge would make the superview shrink 
+        // if basicInfoView is not wide enough
+        //basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
         
-        profileImage.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, inset, inset), excludingEdge: ALEdge.Right)
+        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: inset)
+        
+        profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 0)
+        profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: 0)
+        profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0, relation: NSLayoutRelation.GreaterThanOrEqual)
         
         loginLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right,
             ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
@@ -131,36 +140,29 @@ class ProfileViewController: UIViewController {
 
         companyLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImage, withOffset: AppTheme.Listing.elementsPadding)
         companyLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
-        companyLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+        companyLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0, relation: NSLayoutRelation.GreaterThanOrEqual)
+        companyLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: 0, relation: NSLayoutRelation.GreaterThanOrEqual)
         
         metaInfoView.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: basicInfoView, withOffset: AppTheme.Listing.elementsPadding)
-        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: AppTheme.Listing.elementsPadding)
-        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-        
-        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
-        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
         
         reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top)
         reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Left)
-        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+        reposCountLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0, relation: NSLayoutRelation.GreaterThanOrEqual)
 
+        stickersLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: reposCountLabel)
+        stickersLabel.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: friendsListing)
+        stickersLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0, relation: NSLayoutRelation.GreaterThanOrEqual)
+        
         friendsLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: metaInfoView)
         friendsLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
         
         // Without this the header height will be 0
-        friendsLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
-        
-        
-     //   friendsListing.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: friendsLabel)
-     //   friendsListing.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: friendsLabel, withOffset: AppTheme.Listing.elementsPadding)
-     //   friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: AppTheme.Listing.elementsPadding)
-     //   friendsListing.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+        friendsLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: inset)
         
         super.updateViewConstraints()
     }
     
     func renderFullProfile(){
-        
         var userDetails = hacker.userDetails!
 
         var avatarURL = userDetails["avatar_url"].string
@@ -172,8 +174,6 @@ class ProfileViewController: UIViewController {
         // Counts
         var reposCount = userDetails["github_repos"].int
         
-        println(reposCount)
-        println(reposCount)
         
         reposCountLabel.text = "\(reposCount!) Repos"
         
@@ -182,9 +182,8 @@ class ProfileViewController: UIViewController {
                 self.profileImage.image = UIImage(data: (data as NSData) )
         }
         
-        stickersLabel.font = UIFont(name: "pictonic", size: 20)
+        stickersLabel.font = UIFont(name: "pictonic", size: 18)
         stickersLabel.text = hacker.stickerCodes()
-        
     }
     
     func populateBasicInfo(){
