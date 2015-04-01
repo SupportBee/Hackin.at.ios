@@ -107,8 +107,6 @@ class ProfileViewController: UIViewController {
     func setupStyles(){
         profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
         profileImage.clipsToBounds = true;
-        friendsListing.hackersTableView.tableHeaderView?.backgroundColor = UIColor.redColor()
-        
         basicInfoView.backgroundColor = AppColors.profileBgColor
         metaInfoView.backgroundColor = AppColors.profileBgColor
     }
@@ -125,7 +123,7 @@ class ProfileViewController: UIViewController {
         // if basicInfoView is not wide enough
         //basicInfoView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(inset, inset, 0, inset), excludingEdge: ALEdge.Bottom)
         
-        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: inset)
+        metaInfoView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
         
         profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 0)
         profileImage.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: 0)
@@ -157,7 +155,7 @@ class ProfileViewController: UIViewController {
         friendsLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: metaInfoView, withOffset: AppTheme.Listing.elementsPadding)
         
         // Without this the header height will be 0
-        friendsLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: inset)
+        friendsLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
         
         super.updateViewConstraints()
     }
