@@ -175,7 +175,7 @@ class ProfileViewController: UIViewController {
         var reposCount = userDetails["github_repos"].int
         
         
-        reposCountLabel.text = "\(reposCount!) Repos"
+        reposCountLabel.text = "\(reposCount!) Public Repos"
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in
