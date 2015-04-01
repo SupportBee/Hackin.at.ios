@@ -175,7 +175,7 @@ class ProfileViewController: UIViewController {
         println(reposCount)
         println(reposCount)
         
-        reposCountLabel.text = "\(reposCount) Repos"
+        reposCountLabel.text = "\(reposCount!) Repos"
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in
