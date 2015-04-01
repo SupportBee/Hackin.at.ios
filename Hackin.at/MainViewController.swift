@@ -20,12 +20,20 @@ class MainViewController: UITabBarController {
         
         let friends = viewControllers[0]
         let me = viewControllers[1]
+        let requests = viewControllers[2]
+        let notifications = viewControllers[3]
         
         friends.title = "Friends"
-        friends.tabBarItem.image = UIImage(named: "hackers")
+        friends.tabBarItem.image = UIImage(named: "friends")
         
         me.title = "Me"
-        me.tabBarItem.image = UIImage(named : "self")
+        me.tabBarItem.image = UIImage(named : "me")
+        
+        requests.title = "Requests"
+        requests.tabBarItem.image = UIImage(named : "requests")
+        
+        notifications.title = "Notifications"
+        notifications.tabBarItem.image = UIImage(named : "notifications")
         
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;

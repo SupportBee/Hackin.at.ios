@@ -17,7 +17,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     var notifications: Array<JSON> = []
     
     override func viewDidLoad() {
-        println("Going to fetch your notifications")
         self.notificationsTableView.delegate = self
         self.notificationsTableView.dataSource = self
         self.notificationsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
