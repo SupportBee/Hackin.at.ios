@@ -13,6 +13,7 @@ import SwiftyJSON
 enum Router: URLRequestConvertible {
     static let baseURLString = "http://staging.hackin.at"
     
+    case GetHacker(String)
     case SearchHackers(String)
     case GetMyFriends
     case GetFriends(String)
@@ -25,7 +26,8 @@ enum Router: URLRequestConvertible {
     
     var method: Alamofire.Method {
         switch self {
-        case .SearchHackers,
+        case .GetHacker,
+        .SearchHackers,
         .GetMyFriends,
         .GetFriends,
         .GetFriendshipRequests:
@@ -41,6 +43,8 @@ enum Router: URLRequestConvertible {
     
     var path: String {
         switch self {
+        case .GetHacker(let login):
+            return "/\(login)"
         case .SearchHackers:
             return "/search"
         case .GetMyFriends:
@@ -68,6 +72,8 @@ enum Router: URLRequestConvertible {
         switch self {
         case .SearchHackers(let query):
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["query": query]).0
+        case .GetHacker(let login):
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["fetch_gh": true]).0
         case .CreateDeviceToken(let token):
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: ["iphone_device": [ "token": token]] ).0
         case .DestroyDeviceToken:
@@ -80,6 +86,8 @@ enum Router: URLRequestConvertible {
 }
 
 class Hackinat: NSObject {
+
+    var githhubAuthURL:String { return "\(apiBaseDomain)/auth/github?api=true" }
     
     class var sharedInstance: Hackinat {
         
@@ -108,18 +116,10 @@ class Hackinat: NSObject {
         manager = Alamofire.Manager(configuration: configuration)
     }
     
-    var githhubAuthURL:String { return "\(apiBaseDomain)/auth/github?api=true" }
-    
-    
     
     
     func getHacker(#login:String, authKey:String = "", success: (AnyObject) -> ()){
-        var profileURL = "\(apiBaseDomain)/\(login)"
-        if authKey != "" {
-            profileURL = "\(profileURL)?auth_key=\(authKey)"
-        }
-        
-        Alamofire.request(.GET, profileURL)
+        manager.request(Router.GetHacker(login))
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
