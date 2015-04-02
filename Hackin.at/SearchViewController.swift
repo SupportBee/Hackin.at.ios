@@ -58,6 +58,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         cell.textLabel?.text  = "@\(hacker.login)"
         
         Helpers.showProfileImage(hacker, imageView: cell.imageView!)
+        Helpers.roundImageView(cell.imageView!)
         
         cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
         return cell;
@@ -70,5 +71,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let hacker = self.hackers[indexPath.row]
+        let vc = AppScreens.Profile(hacker).vc
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

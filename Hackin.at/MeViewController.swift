@@ -10,14 +10,12 @@
 import UIKit
 import PureLayout
 
-class SelfViewController: UIViewController{
+class MeViewController: UINavigationController{
     
     override func viewDidLoad() {
-        self.edgesForExtendedLayout = UIRectEdge.None
-        self.title = "Self"
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
         let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
-        self.view.addSubview(vc.view)
+        setViewControllers([vc], animated: false)
     }
 
 }

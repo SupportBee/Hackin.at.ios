@@ -13,14 +13,15 @@ import PureLayout
 
 class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var notificationsTableView: UITableView!
+    var notificationsTableView: UITableView!
     var notifications: Array<JSON> = []
     
     override func viewDidLoad() {
-        println("Going to fetch your notifications")
-        self.notificationsTableView.delegate = self
-        self.notificationsTableView.dataSource = self
-        self.notificationsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        notificationsTableView = UITableView()
+        view.addSubview(notificationsTableView)
+        notificationsTableView.delegate = self
+        notificationsTableView.dataSource = self
+        notificationsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         fetchNotifications()
     }
     
@@ -39,7 +40,10 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func updateViewConstraints() {
-        notificationsTableView.autoPinEdgesToSuperviewMargins()
+        notificationsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Top)
+        notificationsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+        notificationsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+        notificationsTableView.autoPinEdgeToSuperviewEdge(ALEdge.Left)
         super.updateViewConstraints()
     }
     
@@ -47,18 +51,20 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         let notification = self.notifications[indexPath.row]
         let actor = Hacker(json: notification["actor"])
-        Helpers.showProfileImage(actor, imageView: cell.imageView!)
         cell.textLabel?.text = notification["message"].stringValue
+        
+        Helpers.showProfileImage(actor, imageView: cell.imageView!)
+        // TODO: Not working: Rounded Images
+        // Helpers.roundImageView(cell.imageView!)
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected \(indexPath.row)")
-        let hacker = self.notifications[indexPath.row]["actor"]["login"].stringValue
-        println("Should show you profile of \(hacker)")
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
-        vc.hacker = Hacker(login: hacker)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let hacker = Hacker(json: self.notifications[indexPath.row]["actor"])
+        let vc = AppScreens.Profile(hacker).vc
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 
