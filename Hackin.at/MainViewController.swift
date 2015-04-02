@@ -19,9 +19,9 @@ class MainViewController: UITabBarController {
         let viewControllers = self.viewControllers as Array<UINavigationController>
         
         let friends = viewControllers[0]
-        let me = viewControllers[1]
-        let requests = viewControllers[2]
-        let notifications = viewControllers[3]
+        let requests = viewControllers[1]
+        let notifications = viewControllers[2]
+        let me = viewControllers[3]
         
         friends.title = "Friends"
         friends.tabBarItem.image = UIImage(named: "friends")
