@@ -58,6 +58,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         cell.textLabel?.text  = "@\(hacker.login)"
         
         Helpers.showProfileImage(hacker, imageView: cell.imageView!)
+        Helpers.roundImageView(cell.imageView!)
         
         cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
         return cell;

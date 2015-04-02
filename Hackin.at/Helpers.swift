@@ -15,6 +15,12 @@ class Helpers {
         })
     }
     
+    class func roundImageView(imageView: UIImageView){
+        imageView.layer.cornerRadius = imageView.frame.size.width/2;
+        imageView.clipsToBounds = true;
+        imageView.layer.masksToBounds = true;
+    }
+    
     class Transformers {
         class func userInfoToPushData(userInfo: [NSObject: AnyObject]) -> PushNotificationData? {
             let userStr = PushNotificationManager.pushManager().getCustomPushData(userInfo)

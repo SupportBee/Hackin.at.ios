@@ -67,8 +67,7 @@ class HackerTableCell: UITableViewCell {
     
     func setupProfileImage(){
         profileImageView = UIImageView(frame: CGRectMake(0, 0, profileImageSize, profileImageSize))
-        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
-        profileImageView.clipsToBounds = true;
+        Helpers.roundImageView(profileImageView)
         contentView.addSubview(profileImageView)
     }
 
