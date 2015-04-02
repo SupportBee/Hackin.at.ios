@@ -62,11 +62,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected \(indexPath.row)")
-        let hacker = self.notifications[indexPath.row]["actor"]["login"].stringValue
-        println("Should show you profile of \(hacker)")
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
-        vc.hacker = Hacker(login: hacker)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let hacker = Hacker(json: self.notifications[indexPath.row]["actor"])
+        let vc = AppScreens.Profile(hacker).vc
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 
