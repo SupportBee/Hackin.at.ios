@@ -223,25 +223,10 @@
                     <view key="view" contentMode="scaleToFill" id="JiS-el-4kO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Pl-GE-AKj">
-                                <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7Pl-GE-AKj" firstAttribute="top" secondItem="OVb-yG-cZv" secondAttribute="bottom" placeholder="YES" id="jg4-Qw-l31"/>
-                            <constraint firstItem="7Pl-GE-AKj" firstAttribute="leading" secondItem="JiS-el-4kO" secondAttribute="leadingMargin" constant="-16" placeholder="YES" id="ku3-jh-geL"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="7Pl-GE-AKj" secondAttribute="bottom" constant="-64" placeholder="YES" id="rqO-d1-GOc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Pl-GE-AKj" secondAttribute="trailing" constant="-16" placeholder="YES" id="uVt-eG-UCD"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ht0-kp-pBs"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="notificationsTableView" destination="7Pl-GE-AKj" id="Fhr-9M-Gho"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fff-DT-GxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
