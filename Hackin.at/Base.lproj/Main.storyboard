@@ -164,7 +164,7 @@
         <!--Item-->
         <scene sceneID="pKL-Bt-39t">
             <objects>
-                <navigationController id="REs-17-wew" sceneMemberID="viewController">
+                <navigationController id="REs-17-wew" customClass="MeViewController" customModule="Hackin_at" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Iqq-pn-Fo2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2UN-lg-eIe">

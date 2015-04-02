@@ -35,10 +35,6 @@ class MainViewController: UITabBarController {
         notifications.title = "Notifications"
         notifications.tabBarItem.image = UIImage(named : "notifications")
         
-        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
-        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
-        me.setViewControllers([vc], animated: false)
-        
     }
 
 }

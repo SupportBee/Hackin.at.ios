@@ -53,7 +53,7 @@
 		F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E674151A4A129000DCA9F8 /* MainViewController.swift */; };
 		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
 		F0F045CE1A89FDD3005CC0C8 /* Hackers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */; };
-		F0F045D01A8A026B005CC0C8 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */; };
+		F0F045D01A8A026B005CC0C8 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F045CF1A8A026B005CC0C8 /* MeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,7 +133,7 @@
 		F0E674151A4A129000DCA9F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
 		F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hackers.storyboard; sourceTree = "<group>"; };
-		F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfViewController.swift; sourceTree = "<group>"; };
+		F0F045CF1A8A026B005CC0C8 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +245,7 @@
 		F0BDDC001A8742BD00C1C78D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				F0F045CF1A8A026B005CC0C8 /* SelfViewController.swift */,
+				F0F045CF1A8A026B005CC0C8 /* MeViewController.swift */,
 				F08DCC851AB3F77700C0509B /* RequestsViewController.swift */,
 				F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */,
 				F0D50DD81A4B3C6800531C50 /* NotificationsViewController.swift */,
@@ -531,7 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */,
-				F0F045D01A8A026B005CC0C8 /* SelfViewController.swift in Sources */,
+				F0F045D01A8A026B005CC0C8 /* MeViewController.swift in Sources */,
 				F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */,
 				0F65B0D51AC0876800BB0E9F /* PushNotificationHandler.swift in Sources */,
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
