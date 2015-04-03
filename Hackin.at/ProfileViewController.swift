@@ -33,7 +33,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTable()
         clearPlaceholderLabels()
         setupStyles()
@@ -80,9 +79,12 @@ class ProfileViewController: UIViewController {
     }
     
     func renderUserDetails(){
+        println("renderUserDetails")
         if(hacker.hasFullProfile()){
+            println("hasFullProfile")
             renderFullProfile()
         }else{
+            println("no hasFullProfile")
             hacker.fetchFullProfile(success: renderFullProfile)
         }
     }
