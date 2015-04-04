@@ -208,6 +208,10 @@ class Hacker: NSObject {
     
     func hasFullProfile() -> Bool{
         if(userDetails == nil){ return false}
+        // TODO: This is a hack. There should be an 
+        // attribute to check for this in the API response
+        // Something like last_synced_at
+        if(userDetails!["github_followers"] == nil){ return false}
         return true
     }
     
