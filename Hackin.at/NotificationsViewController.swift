@@ -22,6 +22,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         notificationsTableView.delegate = self
         notificationsTableView.dataSource = self
         notificationsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        notificationsTableView.tableFooterView = UIView(frame: CGRectZero)
         fetchNotifications()
     }
     
