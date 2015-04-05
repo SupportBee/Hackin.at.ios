@@ -50,9 +50,10 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func setupTableViewStyle(){
-        self.hackersTableView.estimatedRowHeight = 100
-        self.hackersTableView.rowHeight = UITableViewAutomaticDimension
-        self.hackersTableView.separatorInset = UIEdgeInsetsZero
+        hackersTableView.estimatedRowHeight = 100
+        hackersTableView.rowHeight = UITableViewAutomaticDimension
+        hackersTableView.separatorInset = UIEdgeInsetsZero
+        hackersTableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
     
