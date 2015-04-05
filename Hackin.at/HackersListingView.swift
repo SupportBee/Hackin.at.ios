@@ -16,6 +16,9 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var tableRefreshControl:TableRefreshControl!
     var cellStyle: HackerTableCell.Type!
     var currentNavigationController: UINavigationController?
+    var backgroundLabel = UILabel()
+    var backgroundLabelActive = false
+    var emptyTableMessage:String?
     
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -23,9 +26,11 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     convenience init(
         cellStyle: HackerTableCell.Type = HackerTableCell.self,
-        pullToRefresh:Bool = true){
+        pullToRefresh:Bool = true,
+        emptyTableMessage: String? = nil){
         self.init(frame:CGRectZero)
         self.cellStyle = cellStyle
+        self.emptyTableMessage = emptyTableMessage
         setupTableViewWiring()
         addSubview(hackersTableView)
         setupTableViewStyle()
@@ -54,11 +59,17 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
         hackersTableView.rowHeight = UITableViewAutomaticDimension
         hackersTableView.separatorInset = UIEdgeInsetsZero
         hackersTableView.tableFooterView = UIView(frame: CGRectZero)
+        backgroundLabel.numberOfLines = 0
+        backgroundLabel.textAlignment = NSTextAlignment.Center
     }
     
     
     override func updateConstraints() {
         hackersTableView.autoPinEdgesToSuperviewEdgesWithInsets( UIEdgeInsetsZero)
+        if(backgroundLabelActive){
+            backgroundLabel.autoAlignAxis(ALAxis.Vertical, toSameAxisOfView: hackersTableView)
+            backgroundLabel.autoAlignAxis(ALAxis.Horizontal, toSameAxisOfView: hackersTableView)
+        }
         super.updateConstraints()
     }
     
@@ -75,6 +86,17 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func renderHackers(hackers:[Hacker]){
+        if (emptyTableMessage != nil){
+            if(hackers.count == 0){
+                backgroundLabel.text = emptyTableMessage
+                hackersTableView.backgroundView = backgroundLabel
+                backgroundLabelActive = true
+                updateConstraints()
+            }else{
+                hackersTableView.backgroundView = nil
+                updateConstraints()
+            }
+        }
         self.hackers = hackers
         self.hackersTableView.reloadData()
     }
