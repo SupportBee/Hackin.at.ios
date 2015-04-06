@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButtons()
         setupTable()
         clearPlaceholderLabels()
         setupStyles()
@@ -41,6 +42,12 @@ class ProfileViewController: UIViewController {
         renderUserDetails()
         fetchFriends()
         setupTitle()
+    }
+    
+    func setupButtons(){
+        if (hacker.login != CurrentHacker.hacker()?.login) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: SendFriendshipRequestButton(toBeFriend: hacker))
+        }
     }
     
     func setupTable(){
