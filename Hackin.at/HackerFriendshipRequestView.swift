@@ -80,7 +80,7 @@ extension HackerTableCell {
         
         func afterAcceptReject(){
             removeButtons()
-            self.friendshipRequest.sender.friendshipRequest = nil
+            //self.friendshipRequest.sender.friendshipRequest = nil
         }
         
         override func setupViewData(hacker: Hacker) {

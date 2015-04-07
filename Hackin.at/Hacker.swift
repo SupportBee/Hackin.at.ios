@@ -44,7 +44,7 @@ class Hacker: NSObject {
     var avatarImage:UIImage?
     var deviceToken:String?
     
-    var friendshipRequest: FriendshipRequest?
+    //var friendshipRequest: FriendshipRequest?
     
     let login:String
     
@@ -90,6 +90,17 @@ class Hacker: NSObject {
     var name:String?{
         if(userDetails == nil){ return nil }
         return userDetails!["name"].stringValue
+    }
+    
+    var isFriends:Bool{
+        if(userDetails == nil){ return false}
+        return userDetails!["is_friends"].boolValue
+    }
+    
+    var friendshipRequest:FriendshipRequest?{
+        if (userDetails == nil) {return nil}
+        if (isFriends) {return nil}
+        return FriendshipRequest(json: userDetails!["friend_request"])
     }
     
     var distance:String{

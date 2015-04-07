@@ -86,7 +86,6 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.cellStyle(style: UITableViewCellStyle.Default, reuseIdentifier: "HackerCell")
         let hacker = self.hackers[indexPath.row]
-        println("Rendering \(hacker.login)")
         cell.setupViewData(hacker)
         return cell
     }

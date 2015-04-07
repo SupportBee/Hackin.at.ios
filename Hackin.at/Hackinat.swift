@@ -10,8 +10,9 @@ import Alamofire
 import CoreLocation
 import SwiftyJSON
 
+let apiBaseDomain = "http://staging.hackin.at"
+
 enum Router: URLRequestConvertible {
-    static let baseURLString = "http://staging.hackin.at"
     
     case GetHacker(String)
     case SearchHackers(String)
@@ -65,7 +66,7 @@ enum Router: URLRequestConvertible {
     }
     
     var URLRequest: NSURLRequest {
-        let URL = NSURL(string: Router.baseURLString)!
+        let URL = NSURL(string: apiBaseDomain)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
@@ -98,7 +99,6 @@ class Hackinat: NSObject {
         return Singleton.instance
     }
   
-    let apiBaseDomain = "http://staging.hackin.at"
     var manager: Alamofire.Manager!
     
     override init() {
