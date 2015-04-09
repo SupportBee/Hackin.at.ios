@@ -58,6 +58,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
         hackersTableView.estimatedRowHeight = 100
         hackersTableView.rowHeight = UITableViewAutomaticDimension
         hackersTableView.separatorInset = UIEdgeInsetsZero
+        hackersTableView.tableFooterView = UIView(frame: CGRectZero)
         backgroundLabel.numberOfLines = 0
         backgroundLabel.textAlignment = NSTextAlignment.Center
     }
@@ -101,14 +102,12 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("total \(hackers.count)")
         return hackers.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.cellStyle(style: UITableViewCellStyle.Default, reuseIdentifier: "HackerCell")
         let hacker = self.hackers[indexPath.row]
-        println("Rendering \(hacker.login)")
         cell.setupViewData(hacker)
         return cell
     }

@@ -20,6 +20,7 @@ enum Router: URLRequestConvertible {
     case CreateFriendship(String)
     case CreateDeviceToken(String)
     case DestroyDeviceToken
+    case GetNotifications
     case GetFriendshipRequests
     case AcceptFriendship(Int)
     case RejectFriendship(Int)
@@ -30,7 +31,8 @@ enum Router: URLRequestConvertible {
         .SearchHackers,
         .GetMyFriends,
         .GetFriends,
-        .GetFriendshipRequests:
+        .GetFriendshipRequests,
+        .GetNotifications:
             return .GET
         case .CreateFriendship, .CreateDeviceToken(_):
             return .POST
@@ -55,6 +57,8 @@ enum Router: URLRequestConvertible {
             return "/\(login)/friend_request"
         case .CreateDeviceToken(_), .DestroyDeviceToken:
             return "/iphone_device"
+        case .GetNotifications:
+            return "/notifications"
         case .GetFriendshipRequests:
             return "/friend_requests"
         case .AcceptFriendship(let requestID):
@@ -219,8 +223,7 @@ class Hackinat: NSObject {
     }
     
     func fetchCurrentHackerNotifications(#login:String, authKey:String, success: (AnyObject) -> (), failure: () -> () = {}){
-        var notificationsURL = "\(apiBaseDomain)/\(login)/notifications?auth_key=\(authKey)"        
-        Alamofire.request(.GET, notificationsURL)
+        manager.request(Router.GetNotifications)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
         }
