@@ -18,6 +18,20 @@ public struct AppTheme {
         static let paddingTop: CGFloat = 15.0;
     };
     
+    struct HackerContactView {
+        static let profileImageSize:CGFloat = 48.0;
+        static let paddingLeft:CGFloat = 10.0;
+        static let paddingRight:CGFloat = 0.0;
+        static let paddingTop:CGFloat = 10.0;
+        static let paddingBottom:CGFloat = 10.0;
+        static let imageLabelSpacing: CGFloat = 10.0
+        static let loginNameSpacing: CGFloat = 10.0
+        
+        static let loginLabelColor = UIColor.blackColor()
+        static let nameLabelColor = UIColor(red: 142/255.0, green: 142/255.0, blue: 147/255.0, alpha: 1)
+        
+    }
+    
     struct HackerSummary {
         static let imageSize: CGFloat = 36.0;
         static let imageLoginSpace: CGFloat = 15.0;
@@ -26,6 +40,7 @@ public struct AppTheme {
     struct IconLabel {
         static let paddingRight: CGFloat = 5.0;
     }
+    
 }
 
 public func setupAppStyling(){
@@ -38,4 +53,8 @@ public func setupAppStyling(){
 
     UITabBar.appearance().tintColor = AppColors.barTint
     UITabBar.appearance().barTintColor = UIColor.whiteColor()
+    
+    UISearchBar.appearance().barTintColor = AppColors.searchBarColor
+    UISearchBar.appearance().tintColor = AppColors.searchTextColor
+    
 }

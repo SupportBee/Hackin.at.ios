@@ -42,6 +42,9 @@ class Hacker: NSObject {
     var authKey:String?
     var userDetails:JSON?
     var avatarImage:UIImage?
+    var deviceToken:String?
+    
+    var friendshipRequest: FriendshipRequest?
     
     let login:String
     
@@ -58,18 +61,26 @@ class Hacker: NSObject {
         self.init(login: json["login"].stringValue)
         setUserDetailsFromJSON(json)
     }
-    
-    var avatarURL:String?{
+   
+    // Returns the base URL if size = 0.0
+    func avatarURL(size: CGFloat = 0.0) -> String?{
+        let intSize = Int(size)
         if(userDetails == nil){ return nil }
-        return userDetails!["avatar_url"].stringValue
+        let _url = userDetails!["avatar_url"].stringValue
+        if(intSize == 0){ return _url }
+        return "\(_url)&s=\(intSize)"
+    }
+    
+    var externalIdentity:String?{
+        return login
     }
 
-    func fetchAvatarURL(success: (String)->()){
-        if(avatarURL != nil){
-            success(avatarURL!)
+    func fetchAvatarURL(size: CGFloat = 0.0, success: (String)->()){
+        if(avatarURL(size: size) != nil){
+            success(self.avatarURL(size: size)!)
         }else{
             func onFetch(){
-                success(avatarURL!)
+                success(avatarURL(size: size)!)
             }
 
             fetchFullProfile(success: onFetch)
@@ -90,36 +101,57 @@ class Hacker: NSObject {
         }
     }
 
-    class func fetchNearbyHackers(#success: ([Hacker]) -> ()){
+    func setAndSyncDeviceToken(token: String){
+        self.deviceToken = token
+        syncDeivceToken()
+    }
+    
+    func syncDeivceToken(){
+        if(authKey == nil){ return }
+        
+        func onSuccess(){}
+        func onFailure(error: NSError?){
+            self.deviceToken = nil
+            println("syncDeviceToken Error: \(error)")
+        }
+        
+        println("Syncing device token: \(self.deviceToken)")
+        
+        Hackinat.sharedInstance.syncDeviceToken(token: self.deviceToken, success: onSuccess, failure: onFailure)
+    }
+    
+    class func search(searchTerm: String, success: ([Hacker]) -> ()) -> [Hacker]? {
         
         func onFetch(result: AnyObject){
-            var hackersJSON = JSON(result)["hackers"].arrayValue
+            var hackersJSON = JSON(result)["results"]["hackers"].arrayValue
             var hackers: Array<Hacker> = []
             
             hackers = hackersJSON.map({
                 (hacker) -> Hacker in
                 return Hacker(json: hacker)
-            })
+            }) 
             success(hackers)
         }
         
-        Hackinat.sharedInstance.fetchNearbyHackers(authKey: CurrentHacker.authKey!, location: currentLocation, success: onFetch)
+        Hackinat.sharedInstance.searchHackers(searchTerm, success: onFetch)
+        return []
     }
+    
     
     func fetchAvatarImage(#success: (UIImage) -> ()){
         if(avatarImage != nil){ success(avatarImage!) }
         
         func fetchImage(){
-            Alamofire.request(.GET, avatarURL!)
+            Alamofire.request(.GET, avatarURL()!)
                 .response{ (_, _, data, _) in
-                    self.avatarImage = UIImage(data: (data as NSData))
+                    self.avatarImage = UIImage(data: (data as! NSData))
                     if(self.avatarImage != nil){
                         success(self.avatarImage!)
                     }
             }
         }
         
-        if(avatarURL != nil){ fetchImage() } else{ fetchFullProfile(success: fetchImage)}
+        if(avatarURL() != nil){ fetchImage() } else{ fetchFullProfile(success: fetchImage)}
     }
     
     func fetchFullProfile(#success: () -> ()){
@@ -134,6 +166,10 @@ class Hacker: NSObject {
         }else{
             Hackinat.sharedInstance.getHacker(login: login, authKey: authKey!, success: onFetch)
         }
+    }
+    
+    func fetchFriends(#success: ([Hacker]) -> ()){
+        Hackinat.sharedInstance.fetchFriends(login, success: success)
     }
 
     func checkTwitterAccess(#success: (Int) -> ()){
@@ -172,6 +208,10 @@ class Hacker: NSObject {
     
     func hasFullProfile() -> Bool{
         if(userDetails == nil){ return false}
+        // TODO: This is a hack. There should be an 
+        // attribute to check for this in the API response
+        // Something like last_synced_at
+        if(userDetails!["github_followers"] == nil){ return false}
         return true
     }
     

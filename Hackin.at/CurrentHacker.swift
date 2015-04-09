@@ -7,6 +7,7 @@
 //
 
 import Locksmith
+import SwiftyJSON
 
 class CurrentHacker:NSObject {
     
@@ -33,7 +34,7 @@ class CurrentHacker:NSObject {
                 if(dictionary == nil){
                     return nil
                 }else{
-                    return dictionary!.objectForKey("auth_key") as String?
+                    return dictionary!.objectForKey("auth_key") as! String?
                 }
             }else{
                 return nil
@@ -41,7 +42,21 @@ class CurrentHacker:NSObject {
         }
         
         set{
+            Locksmith.deleteDataForUserAccount(userAccount)
             Locksmith.saveData(["auth_key": newValue!], forUserAccount: userAccount)
+        }
+    }
+    
+    class var apnsDeviceToken: String?{
+        get{
+            if (hacker() == nil){ return nil }
+            return hacker()?.deviceToken
+        }
+        
+        set{
+            if (hacker() != nil){
+                hacker()?.deviceToken = newValue!
+            }
         }
     }
     
@@ -61,10 +76,29 @@ class CurrentHacker:NSObject {
     }
     
     class func doesExist() -> Bool{
-        if authKey == nil{
-            return false
-        }
+        if login == nil{ return false }
+        if authKey == nil{ return false }
         return true
+    }
+    
+    func friends(#success: ([Hacker]) -> ()) -> () {
+        func onFetch(result: AnyObject){
+            var hackersJSON = JSON(result)["friends"].arrayValue
+            var hackers: Array<Hacker> = []
+            
+            hackers = hackersJSON.map({
+                (hacker) -> Hacker in
+                return Hacker(json: hacker)
+            })
+            success(hackers)
+        }
+        
+        Hackinat.sharedInstance.fetchMyFriends(onFetch)
+    }
+    
+    func sendFriendshipRequest(toBeFriend: Hacker,
+        onsuccess: ()->()){
+        Hackinat.sharedInstance.sendFriendshipRequest(toBeFriend.login, success: onsuccess)
     }
     
     class func hacker() -> Hacker?{
@@ -85,6 +119,7 @@ class CurrentHacker:NSObject {
         
         return nil
     }
+    
     
     class func clear(){
         Locksmith.deleteDataForUserAccount(userAccount)

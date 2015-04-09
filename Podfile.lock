@@ -1,8 +1,12 @@
 PODS:
-  - Alamofire (1.1.4)
+  - Alamofire (1.2.0)
   - DateTools (1.5.0)
   - Locksmith (1.2.0)
+  - Mixpanel (2.7.3):
+    - Mixpanel/MPCategoryHelpers (= 2.7.3)
+  - Mixpanel/MPCategoryHelpers (2.7.3)
   - PureLayout (2.0.5)
+  - Pushwoosh (2.13.2)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
@@ -10,37 +14,45 @@ PODS:
   - SZTextView (1.1.10)
 
 DEPENDENCIES:
-  - Alamofire (from `git@github.com:Alamofire/Alamofire.git`, branch `xcode-6.3`)
+  - Alamofire (from `git@github.com:Alamofire/Alamofire.git`)
   - DateTools
-  - Locksmith
+  - Locksmith (from `git@github.com:ChaosCoder/Locksmith.git`)
+  - Mixpanel
   - PureLayout
+  - Pushwoosh
   - SDWebImage (~> 3.6)
   - SwiftyJSON (from `git@github.com:SwiftyJSON/SwiftyJSON.git`, branch `xcode6.3`)
   - SZTextView
 
 EXTERNAL SOURCES:
   Alamofire:
-    :branch: xcode-6.3
     :git: git@github.com:Alamofire/Alamofire.git
+  Locksmith:
+    :git: git@github.com:ChaosCoder/Locksmith.git
   SwiftyJSON:
     :branch: xcode6.3
     :git: git@github.com:SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: 2f39b8634ab85cd6b3a55bbcfdec8cbb6463a6ee
+    :commit: a19035b1b2a72748ee838a2340ffbf11cbbf2fa0
     :git: git@github.com:Alamofire/Alamofire.git
+  Locksmith:
+    :commit: fb4030034d91e0ae1958835ec34cab8cf7c30429
+    :git: git@github.com:ChaosCoder/Locksmith.git
   SwiftyJSON:
-    :commit: 0691445da4c4a94484621919c347d7b69f9598fe
+    :commit: 008a09d7ea8b13c03fb59b35c01aad339584a5e1
     :git: git@github.com:SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 6a2cbaebe78a6d469bc55ee37f0a24ba22af76ac
-  DateTools: 7df78f0c4719eb28cfd2d58a90fafd036e73156c
-  Locksmith: 15a873e266beceb1b81476e0f50a1e1cba103a6f
-  PureLayout: 63a3257320223e8edddcd3afb407445f85a6bf74
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  Alamofire: d765c5c1713aa64106b0228aaa600a1e6851f68d
+  DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
+  Locksmith: 97fa742bf69a5b9b9bb855dd31c7a9355b952ae5
+  Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
+  PureLayout: a0fe75f1cf485801e7e00b723b8a3c32dca558e2
+  Pushwoosh: 86459e1e892308b93ec3e4a52a34d78c8dbb6f39
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
   SwiftyJSON: a561c2a840121085bec8a2dfeac97a360fc66901
-  SZTextView: 8f1126696c6d54e5f0d672bbecf259ef65b04aeb
+  SZTextView: c814e6dcb2303e3e79feb0fd27cf44d74e3c59a6
 
-COCOAPODS: 0.36.0.beta.2
+COCOAPODS: 0.36.3

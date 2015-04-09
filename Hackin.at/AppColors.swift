@@ -7,6 +7,9 @@
 //
 
 public struct AppColors {
+    
+    static let loginNotice = UIColor(red: 199/255.0, green: 197/255.0, blue: 197/255.0, alpha: 1)
+    
     static let textBackground = UIColor(red: 249.0/255.0, green: 248.0/255.0, blue: 248.0/255.0, alpha: 1);
     
     static let primaryText = UIColor(red: 65/255.0, green: 64/255.0, blue:
@@ -22,6 +25,11 @@ public struct AppColors {
     
     static let tableCellSelectedColor = AppColors.textBackground
     
-    static let profileBgColor = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 246/255.0)
+    static let profileBgColor = UIColor.clearColor()
+    
+    
+    static let searchBarColor = UIColor(red: 172/255.0, green: 71/255.0, blue: 71/255.0, alpha: 1)
+    
+    static let searchTextColor = UIColor(red: 242/255.0, green: 99/255.0, blue: 99/255.0, alpha: 1)
     
 }

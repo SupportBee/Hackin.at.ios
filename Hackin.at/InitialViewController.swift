@@ -7,19 +7,13 @@
 //
 
 import UIKit
-import CoreLocation
-import SwiftyJSON
 import PureLayout
-
-// All Globals here for now
-var currentLocation: CLLocationCoordinate2D!
 
 class InitialViewController: UIViewController, LoginViewDelegate {
     
     @IBOutlet weak var logoImageView: UIImageView!
-    // Location setup
-    var locationManager = CLLocationManager()
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,57 +26,59 @@ class InitialViewController: UIViewController, LoginViewDelegate {
         }
     }
     
-    func showLoginView(){
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as LoginViewController;
-        vc.delegate = self
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
- 
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
-        var locationArray = locations as NSArray
-        var locationObj = locationArray[0] as CLLocation
-        currentLocation = locationObj.coordinate
-        println("acquired location \(currentLocation)")
-        locationManager.stopUpdatingLocation()
-    }
-    
-    func locationManager(manager:CLLocationManager, didFailWithError error:NSError!) {
-        println("failed \(error)")
-    }
-    
-    func hackerLoggedIn() {
-        println("Hacker Logged In!")
-        self.dismissViewControllerAnimated(true, completion: nil)
-        postLoginInit()
-    }
-    
-    func setupHackerPrefs(){
-        if CurrentHacker.doesExist() {
-            if CurrentHacker.twitterEnabled == nil{
-                CurrentHacker.hacker()!.checkTwitterAccess(success: setupHackerDetails)
-             }
-        }
-    }
-    
-    func setupHackerDetails(twitterEnabled:Int){
-        CurrentHacker.twitterEnabled = twitterEnabled
-    }
-    
-    func postLoginInit(){
-        setupHackerPrefs()
-        launchApp()
-    }
-    
-    func launchApp() {
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as MainViewController;
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
     override func updateViewConstraints() {
         logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         logoImageView.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
         super.updateViewConstraints()
     }
+    
+    
+    
+    
+    func showLoginView(){
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController;
+        vc.delegate = self
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
  
+    func hackerLoggedIn() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        onLogin()
+        postLoginInit()
+    }
+    
+    func postLoginInit(){
+        launchApp()
+    }
+    
+    func onLogin(){
+        resetAPIWrapper()
+        trackLogin()
+        setHackerDeviceToken()
+    }
+    
+    func resetAPIWrapper(){
+        Hackinat.sharedInstance.resetAlamofireManager()
+    }
+    
+    func trackLogin(){
+        MixpanelHelper().identifyCurrentUser()
+        MixpanelHelper().trackLogin()
+    }
+    
+    func launchApp() {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as! MainViewController;
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+ 
+    func setHackerDeviceToken(){
+        let deviceAPNSToken = NSUserDefaults.standardUserDefaults().objectForKey("apns_device_token") as? String
+        if(deviceAPNSToken == nil){ return }
+        
+        if(CurrentHacker.apnsDeviceToken == nil){
+            CurrentHacker.hacker()?.setAndSyncDeviceToken(deviceAPNSToken!)
+        }
+    }
     
 }
