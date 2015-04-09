@@ -36,7 +36,7 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     
     
     func showLoginView(){
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as LoginViewController;
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController;
         vc.delegate = self
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -68,7 +68,7 @@ class InitialViewController: UIViewController, LoginViewDelegate {
     }
     
     func launchApp() {
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as MainViewController;
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("mainViewController") as! MainViewController;
         self.presentViewController(vc, animated: true, completion: nil)
     }
  
@@ -77,7 +77,7 @@ class InitialViewController: UIViewController, LoginViewDelegate {
         if(deviceAPNSToken == nil){ return }
         
         if(CurrentHacker.apnsDeviceToken == nil){
-            CurrentHacker.hacker()?.setDeviceToken(deviceAPNSToken!)
+            CurrentHacker.hacker()?.setAndSyncDeviceToken(deviceAPNSToken!)
         }
     }
     

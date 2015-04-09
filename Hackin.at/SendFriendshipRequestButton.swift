@@ -38,7 +38,7 @@ class SendFriendshipRequestButton: UIButton {
                 self.requestSent = true
                 self.enabled = false
             }
-            CurrentHacker().sendFriendshipRequest(toBeFriend, success)
+            CurrentHacker().sendFriendshipRequest(toBeFriend, onsuccess: success)
         }
     }
 }

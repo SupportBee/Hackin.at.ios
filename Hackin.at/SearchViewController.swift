@@ -53,7 +53,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as UITableViewCell
+        let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as! UITableViewCell
         let hacker = self.hackers[indexPath.row]
         cell.textLabel?.text  = "@\(hacker.login)"
         

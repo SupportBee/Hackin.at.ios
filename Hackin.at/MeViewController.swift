@@ -14,7 +14,7 @@ class MeViewController: UINavigationController{
     
     override func viewDidLoad() {
         var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
-        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as ProfileViewController;
+        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as! ProfileViewController;
         setViewControllers([vc], animated: false)
     }
 
