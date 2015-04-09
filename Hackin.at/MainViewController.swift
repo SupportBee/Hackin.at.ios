@@ -16,7 +16,7 @@ class MainViewController: UITabBarController {
     }
     
     func setupTabBarTitles(){
-        let viewControllers = self.viewControllers as Array<UINavigationController>
+        let viewControllers = self.viewControllers as! Array<UINavigationController>
         
         let friends = viewControllers[0]
         let requests = viewControllers[1]

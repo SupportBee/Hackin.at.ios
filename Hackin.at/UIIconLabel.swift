@@ -16,8 +16,11 @@ class UIIconLabel: UILabel {
         super.init(coder: aDecoder)
     }
     
-    override init() {
-        super.init()
+    
+    
+    init() {
+        //super.init()
+        super.init(frame: CGRectZero)
         let font = UIFont(name: "streamline", size: 24)!
         self.font = font
     }

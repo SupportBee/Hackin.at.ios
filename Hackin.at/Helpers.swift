@@ -38,11 +38,11 @@ class Helpers {
             
             
             if let dict = userJSON as? [String: AnyObject]{
-                login = dict["login"] as String?
-                type = dict["type"] as String?
+                login = dict["login"] as! String?
+                type = dict["type"] as! String?
                 
                 if let actorDict = dict["actor"] as? [String: AnyObject] {
-                    var actorLogin = actorDict["login"] as String?
+                    var actorLogin = actorDict["login"] as! String?
                     actor = Hacker(login: actorLogin!)
                 }
             }
