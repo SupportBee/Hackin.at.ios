@@ -83,7 +83,7 @@ class CurrentHacker:NSObject {
     
     func friends(#success: ([Hacker]) -> ()) -> () {
         func onFetch(result: AnyObject){
-            var hackersJSON = JSON(result)["friends"].arrayValue
+            var hackersJSON = JSON(result)["hackers"].arrayValue
             var hackers: Array<Hacker> = []
             
             hackers = hackersJSON.map({
