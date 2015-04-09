@@ -34,7 +34,7 @@ class CurrentHacker:NSObject {
                 if(dictionary == nil){
                     return nil
                 }else{
-                    return dictionary!.objectForKey("auth_key") as String?
+                    return dictionary!.objectForKey("auth_key") as! String?
                 }
             }else{
                 return nil
@@ -98,7 +98,7 @@ class CurrentHacker:NSObject {
     
     func sendFriendshipRequest(toBeFriend: Hacker,
         onsuccess: ()->()){
-        Hackinat.sharedInstance.sendFriendshipRequest(toBeFriend.login, onsuccess)
+        Hackinat.sharedInstance.sendFriendshipRequest(toBeFriend.login, success: onsuccess)
     }
     
     class func hacker() -> Hacker?{

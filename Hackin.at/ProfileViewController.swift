@@ -187,7 +187,7 @@ class ProfileViewController: UIViewController {
         
         Alamofire.request(.GET, avatarURL!)
             .response{ (_, _, data, _) in
-                self.profileImage.image = UIImage(data: (data as NSData) )
+                self.profileImage.image = UIImage(data: (data as! NSData) )
         }
         
         stickersLabel.font = UIFont(name: "pictonic", size: 18)

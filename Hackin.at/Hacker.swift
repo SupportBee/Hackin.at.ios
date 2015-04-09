@@ -112,7 +112,7 @@ class Hacker: NSObject {
         }
     }
 
-    func setDeviceToken(token: String){
+    func setAndSyncDeviceToken(token: String){
         self.deviceToken = token
         syncDeivceToken()
     }
@@ -155,7 +155,7 @@ class Hacker: NSObject {
         func fetchImage(){
             Alamofire.request(.GET, avatarURL()!)
                 .response{ (_, _, data, _) in
-                    self.avatarImage = UIImage(data: (data as NSData))
+                    self.avatarImage = UIImage(data: (data as! NSData))
                     if(self.avatarImage != nil){
                         success(self.avatarImage!)
                     }

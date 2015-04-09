@@ -24,7 +24,7 @@ class SendFriendshipRequestButton: UIButton {
     
     func renderButton(){
         println("Is Friend? \(toBeFriend.isFriends)")
-        println("Friendship \(toBeFriend.friendshipRequest?)")
+        println("Friendship \(toBeFriend.friendshipRequest)")
         setTitle("Add Friend", forState: UIControlState.Normal)
         setTitle("Waiting to Accept", forState: UIControlState.Disabled)
         setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
@@ -40,7 +40,7 @@ class SendFriendshipRequestButton: UIButton {
                 self.requestSent = true
                 self.enabled = false
             }
-            CurrentHacker().sendFriendshipRequest(toBeFriend, success)
+            CurrentHacker().sendFriendshipRequest(toBeFriend, onsuccess: success)
         }
     }
 }
