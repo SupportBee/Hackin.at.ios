@@ -154,7 +154,6 @@ class Hackinat: NSObject {
     func fetchMyFriends(success: (AnyObject) -> (), failure: () -> () = {}){
         manager.request(Router.GetMyFriends)
             .responseJSON { (_, _, JSON, _) in
-                println("JSON IS \(JSON)")
                 success(JSON!)
         }
     }
@@ -162,7 +161,6 @@ class Hackinat: NSObject {
     func fetchFriends(login: String, success: ([Hacker]) -> ()){
          manager.request(Router.GetFriends(login))
             .responseJSON { (_, _, json, _) in
-                println("json is \(json)")
                 var friendsJSON = JSON(json!)["hackers"].arrayValue
                 var friends: Array<Hacker> = []
                 
@@ -267,7 +265,6 @@ class Hackinat: NSObject {
     
     func fetchPlacesAroundLocation(#authKey:String, location: CLLocationCoordinate2D, success: (AnyObject) -> (), failure: () -> () = {}){
         var placesURL = "\(apiBaseDomain)/places?auth_key=\(authKey)&ll=\(location.latitude),\(location.longitude)"
-        println("Let's get the places around")
         Alamofire.request(.GET, placesURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)
