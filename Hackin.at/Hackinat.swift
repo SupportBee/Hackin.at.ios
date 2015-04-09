@@ -11,6 +11,7 @@ import CoreLocation
 import SwiftyJSON
 
 let apiBaseDomain = "http://staging.hackin.at"
+//let apiBaseDomain = "http://lvh.me:3000"
 
 enum Router: URLRequestConvertible {
     
@@ -161,7 +162,8 @@ class Hackinat: NSObject {
     func fetchFriends(login: String, success: ([Hacker]) -> ()){
          manager.request(Router.GetFriends(login))
             .responseJSON { (_, _, json, _) in
-                var friendsJSON = JSON(json!)["friends"].arrayValue
+                println("json is \(json)")
+                var friendsJSON = JSON(json!)["hackers"].arrayValue
                 var friends: Array<Hacker> = []
                 
                 friends = friendsJSON.map({
