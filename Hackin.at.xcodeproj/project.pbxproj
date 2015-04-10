@@ -35,6 +35,9 @@
 		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
 		F0560F6E1AD851DE0011E454 /* AddFriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F6D1AD851DE0011E454 /* AddFriendButton.swift */; };
 		F0560F701AD859BB0011E454 /* DeleteFriendshipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F6F1AD859BB0011E454 /* DeleteFriendshipButton.swift */; };
+		F0560F721AD869A40011E454 /* AcceptFriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F711AD869A40011E454 /* AcceptFriendButton.swift */; };
+		F0560F741AD86A430011E454 /* DenyFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F731AD86A430011E454 /* DenyFriendRequest.swift */; };
+		F0560F761AD875290011E454 /* CancelFriendRequestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F751AD875290011E454 /* CancelFriendRequestButton.swift */; };
 		F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F065B9171A420C6D00CF2A38 /* CoreLocation.framework */; };
 		F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08DCC851AB3F77700C0509B /* RequestsViewController.swift */; };
 		F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09325CA1AA822F9008A94CB /* HackersListingView.swift */; };
@@ -113,6 +116,9 @@
 		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F0560F6D1AD851DE0011E454 /* AddFriendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendButton.swift; sourceTree = "<group>"; };
 		F0560F6F1AD859BB0011E454 /* DeleteFriendshipButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFriendshipButton.swift; sourceTree = "<group>"; };
+		F0560F711AD869A40011E454 /* AcceptFriendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptFriendButton.swift; sourceTree = "<group>"; };
+		F0560F731AD86A430011E454 /* DenyFriendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenyFriendRequest.swift; sourceTree = "<group>"; };
+		F0560F751AD875290011E454 /* CancelFriendRequestButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelFriendRequestButton.swift; sourceTree = "<group>"; };
 		F065B9171A420C6D00CF2A38 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F08DCC851AB3F77700C0509B /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		F09325CA1AA822F9008A94CB /* HackersListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersListingView.swift; sourceTree = "<group>"; };
@@ -214,7 +220,10 @@
 				F04803331AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift */,
 				F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */,
 				F0560F6D1AD851DE0011E454 /* AddFriendButton.swift */,
+				F0560F711AD869A40011E454 /* AcceptFriendButton.swift */,
+				F0560F731AD86A430011E454 /* DenyFriendRequest.swift */,
 				F0560F6F1AD859BB0011E454 /* DeleteFriendshipButton.swift */,
+				F0560F751AD875290011E454 /* CancelFriendRequestButton.swift */,
 			);
 			name = FriendshipRequest;
 			sourceTree = "<group>";
@@ -541,6 +550,7 @@
 				F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */,
 				0F65B0D51AC0876800BB0E9F /* PushNotificationHandler.swift in Sources */,
 				F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */,
+				F0560F721AD869A40011E454 /* AcceptFriendButton.swift in Sources */,
 				F042016D1AC9B915001C7EDF /* AppScreens.swift in Sources */,
 				F0DB3BE41A41FBAA00DC8C9B /* LoginViewController.swift in Sources */,
 				F04803341AB2D1C4003E6D16 /* SendFriendshipRequestButton.swift in Sources */,
@@ -555,6 +565,7 @@
 				0F4350271A7FABDD00D58243 /* Hacker.swift in Sources */,
 				0F4350251A7F76FF00D58243 /* Hackinat.swift in Sources */,
 				F0D6BD011ABA9AE10077DC75 /* Helpers.swift in Sources */,
+				F0560F741AD86A430011E454 /* DenyFriendRequest.swift in Sources */,
 				F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */,
 				F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */,
 				F0DB3BC21A41FABF00DC8C9B /* AppDelegate.swift in Sources */,
@@ -569,6 +580,7 @@
 				0F6758871A849E2200A320C6 /* HackerTableCell.swift in Sources */,
 				0F4350291A80D1F000D58243 /* CurrentHacker.swift in Sources */,
 				F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */,
+				F0560F761AD875290011E454 /* CancelFriendRequestButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

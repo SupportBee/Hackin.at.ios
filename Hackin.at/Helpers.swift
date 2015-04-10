@@ -60,9 +60,9 @@ class Helpers {
             }else{
                 if let friendRequest = toBeFriend.friendRequest{
                     if (friendRequest.sender.login == CurrentHacker.hacker()!.login) {
-                    return AddFriendButton(toBeFriend: toBeFriend)
+                    return AcceptFriendButton(toBeFriend: toBeFriend)
                 }else{
-                    return AddFriendButton(toBeFriend: toBeFriend)
+                    return CancelFriendRequestButton(toBeFriend: toBeFriend)
                 }
                 }else{
                     return AddFriendButton(toBeFriend: toBeFriend)
