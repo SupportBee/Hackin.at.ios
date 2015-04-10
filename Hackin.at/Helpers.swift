@@ -52,4 +52,21 @@ class Helpers {
             return PushNotificationData(login: login!, type: type!, actor: actor, friendRequestID: nil)
         }
     }
+    
+    class func friendshipButton(toBeFriend: Hacker) -> UIButton {
+             if (toBeFriend.isFriends){
+                println("Friends Already. Can delete if you want!")
+                    return DeleteFriendshipButton(toBeFriend: toBeFriend)
+            }else{
+                if let friendRequest = toBeFriend.friendRequest{
+                    if (friendRequest.sender.login == CurrentHacker.hacker()!.login) {
+                    return AddFriendButton(toBeFriend: toBeFriend)
+                }else{
+                    return AddFriendButton(toBeFriend: toBeFriend)
+                }
+                }else{
+                    return AddFriendButton(toBeFriend: toBeFriend)
+            }
+        }
+    }
 }

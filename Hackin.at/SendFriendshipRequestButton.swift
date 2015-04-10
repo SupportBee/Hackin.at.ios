@@ -12,6 +12,14 @@ class SendFriendshipRequestButton: UIButton {
     
     var toBeFriend: Hacker!
     
+    var title: String {
+        return ""
+    }
+    
+    var disabledTitle: String {
+        return ""
+    }
+    
     var requestSent = false
     
     convenience init(toBeFriend: Hacker){
@@ -23,28 +31,12 @@ class SendFriendshipRequestButton: UIButton {
     }
     
     func renderButton(){
-        println("Is Friend? \(toBeFriend.isFriends)")
-        if(toBeFriend.friendRequest != nil){
-            println("Has a pending friendship request")
-        }else{
-            println("Has no pending friend requests")
-        }
-        setTitle("Add Friend", forState: UIControlState.Normal)
-        setTitle("Waiting to Accept", forState: UIControlState.Disabled)
-        setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        setTitle(title, forState: UIControlState.Normal)
+        setTitle(disabledTitle, forState: UIControlState.Disabled)
     }
     
     func setupTargetAction(){
-       addTarget(self, action: "buttonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        // Override
     }
-    
-    func buttonPressed(){
-        if (requestSent == false){
-            func success(){
-                self.requestSent = true
-                self.enabled = false
-            }
-            CurrentHacker().sendFriendshipRequest(toBeFriend, onsuccess: success)
-        }
-    }
+   
 }
