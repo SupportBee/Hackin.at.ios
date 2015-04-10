@@ -24,7 +24,11 @@ class SendFriendshipRequestButton: UIButton {
     
     func renderButton(){
         println("Is Friend? \(toBeFriend.isFriends)")
-        println("Friendship \(toBeFriend.friendshipRequest)")
+        if(toBeFriend.friendRequest != nil){
+            println("Has a pending friendship request")
+        }else{
+            println("Has no pending friend requests")
+        }
         setTitle("Add Friend", forState: UIControlState.Normal)
         setTitle("Waiting to Accept", forState: UIControlState.Disabled)
         setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)

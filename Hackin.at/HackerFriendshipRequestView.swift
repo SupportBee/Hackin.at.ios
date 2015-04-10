@@ -67,7 +67,7 @@ extension HackerTableCell {
                 afterAcceptReject()
                 showSuccessMessage("Friendship Request Accepted")
             }
-            Hackinat.sharedInstance.acceptFriendshipRequest(friendshipRequest.id, success: onSuccess)
+            Hackinat.sharedInstance.acceptFriendshipRequest(friendshipRequest.id!, success: onSuccess)
         }
 
         func rejectRequest(){
@@ -75,7 +75,7 @@ extension HackerTableCell {
                 afterAcceptReject()
                 showSuccessMessage("Friendship Request Rejected")
             }
-            Hackinat.sharedInstance.rejectFriendshipRequest(friendshipRequest.id, success: onSuccess)
+            Hackinat.sharedInstance.rejectFriendshipRequest(friendshipRequest.id!, success: onSuccess)
         }
         
         func afterAcceptReject(){
@@ -84,7 +84,7 @@ extension HackerTableCell {
         }
         
         override func setupViewData(hacker: Hacker) {
-            self.friendshipRequest = hacker.friendshipRequest!
+ //           self.friendshipRequest = hacker.friendshipRequest!
             super.setupViewData(hacker)
         }
         

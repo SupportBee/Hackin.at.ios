@@ -97,10 +97,15 @@ class Hacker: NSObject {
         return userDetails!["is_friends"].boolValue
     }
     
-    var friendshipRequest:FriendshipRequest?{
+    var friendRequest:FriendshipRequest?{
         if (userDetails == nil) {return nil}
         if (isFriends) {return nil}
-        return FriendshipRequest(json: userDetails!["friend_request"])
+        let friendRequestJSON = userDetails!["friend_request"]
+        if (friendRequestJSON != nil) {
+            println("Found a pending friend request")
+            return FriendshipRequest(json: friendRequestJSON)
+        }
+        return nil
     }
     
     var distance:String{
