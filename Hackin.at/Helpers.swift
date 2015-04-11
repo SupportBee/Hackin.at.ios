@@ -55,15 +55,14 @@ class Helpers {
     
     class func friendshipButton(toBeFriend: Hacker) -> UIButton {
              if (toBeFriend.isFriends){
-                println("Friends Already. Can delete if you want!")
                     return DeleteFriendshipButton(toBeFriend: toBeFriend)
             }else{
                 if let friendRequest = toBeFriend.friendRequest{
                     if (friendRequest.sender.login == CurrentHacker.hacker()!.login) {
-                    return AcceptFriendButton(toBeFriend: toBeFriend)
-                }else{
-                    return CancelFriendRequestButton(toBeFriend: toBeFriend)
-                }
+                        return CancelFriendRequestButton(toBeFriend: toBeFriend)
+                    }else{
+                        return AcceptFriendButton(toBeFriend: toBeFriend)
+                    }
                 }else{
                     return AddFriendButton(toBeFriend: toBeFriend)
             }
