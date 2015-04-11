@@ -173,11 +173,15 @@ class Hackinat: NSObject {
     }
     
     func sendFriendshipRequest(friendsLogin: String,
-        success: () -> ()){
+        success: (FriendshipRequest) -> ()){
             manager.request(Router.CreateFriendship(friendsLogin))
-                .response {(_) in
-                    success()
-                    }
+                .responseJSON { (_, _, json, _) in
+                    let friendshipReqJSON = JSON(json!)["friend_request"]
+                    success(FriendshipRequest(json: friendshipReqJSON))
+                }
+                //.response {(_) in
+                //    success()
+                //}
     }
     
     func acceptFriendshipRequest(requestID: Int, success: () -> ()){

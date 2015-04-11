@@ -26,6 +26,9 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
     }
     
     func renderButton(){
+        if(button != nil){
+            button.removeFromSuperview()
+        }
         button = FriendshipButtonSet.appropriateButton(toBeFriend)
         self.frame = button.frame
         button.delegate = self
@@ -37,7 +40,10 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
     }
     
     func actionCompleted() {
-        
+        // Re-render the button
+        // assumes that toBeFriend has been 
+        // updated correctly
+        renderButton()
     }
     
     override func updateConstraints() {

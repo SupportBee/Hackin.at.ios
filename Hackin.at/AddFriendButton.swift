@@ -21,9 +21,11 @@ class AddFriendButton: FriendshipButton {
     
     func buttonPressed(){
         if (requestSent == false){
-            func success(){
+            func success(friendRequest: FriendshipRequest){
                 self.requestSent = true
                 self.enabled = false
+                toBeFriend.isFriends = false
+                toBeFriend.friendRequest = friendRequest
                 delegate?.actionCompleted()
             }
             CurrentHacker().sendFriendshipRequest(toBeFriend, onsuccess: success)
