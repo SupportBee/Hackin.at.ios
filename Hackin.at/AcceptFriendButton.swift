@@ -18,4 +18,20 @@ class AcceptFriendButton: FriendshipButton {
         return "Accepting Friendship"
     }
     
+    func buttonPressed(){
+        if (requestSent == false){
+            func success(){
+                self.requestSent = true
+                self.enabled = false
+                toBeFriend.isFriends = true
+                toBeFriend.friendRequest = nil
+                delegate?.actionCompleted()
+            }
+            Hackinat.sharedInstance.acceptFriendshipRequest(toBeFriend.friendRequest!.id,
+                success: success)
+        }
+    }
+
+
+    
 }

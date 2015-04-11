@@ -11,7 +11,7 @@ import SwiftyJSON
 class FriendshipRequest:NSObject {
     
     var sender: Hacker!
-    var id: Int?
+    var id: Int!
     
     class func all(onFetch: ([FriendshipRequest]) -> ()){
         Hackinat.sharedInstance.fetchFriendshipRequests(onFetch)
