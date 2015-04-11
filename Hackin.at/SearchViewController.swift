@@ -60,7 +60,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         Helpers.showProfileImage(hacker, imageView: cell.imageView!)
         Helpers.roundImageView(cell.imageView!)
         
-        cell.accessoryView = SendFriendshipRequestButton(toBeFriend: hacker)
+        cell.accessoryView = FriendshipButton(toBeFriend: hacker)
         return cell;
     }
     

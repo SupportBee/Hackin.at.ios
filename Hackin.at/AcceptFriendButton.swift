@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AcceptFriendButton: SendFriendshipRequestButton {
+class AcceptFriendButton: FriendshipButton {
     
     override var title: String {
         return "Accept Friendship"

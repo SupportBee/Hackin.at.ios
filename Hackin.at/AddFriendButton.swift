@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddFriendButton: SendFriendshipRequestButton {
+class AddFriendButton: FriendshipButton {
    
     override var title: String {
         return "Add Friend"
@@ -24,6 +24,7 @@ class AddFriendButton: SendFriendshipRequestButton {
             func success(){
                 self.requestSent = true
                 self.enabled = false
+                delegate?.actionCompleted()
             }
             CurrentHacker().sendFriendshipRequest(toBeFriend, onsuccess: success)
         }

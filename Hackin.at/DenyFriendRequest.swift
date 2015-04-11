@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DenyFriendRequest: SendFriendshipRequestButton {
+class DenyFriendRequest: FriendshipButton {
     
     override var title: String {
         return "Deny Friendship"
