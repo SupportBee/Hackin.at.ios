@@ -36,6 +36,7 @@ class FriendshipButton: UIButton {
     func renderButton(){
         setTitle(title, forState: UIControlState.Normal)
         setTitle(disabledTitle, forState: UIControlState.Disabled)
+        setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
     }
     
     func setupTargetAction(){

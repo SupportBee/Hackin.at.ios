@@ -55,12 +55,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = hackersListing.dequeueReusableCellWithIdentifier("HackerCell") as! UITableViewCell
         let hacker = self.hackers[indexPath.row]
+        
         cell.textLabel?.text  = "@\(hacker.login)"
         
         Helpers.showProfileImage(hacker, imageView: cell.imageView!)
         Helpers.roundImageView(cell.imageView!)
         
-        cell.accessoryView = FriendshipButton(toBeFriend: hacker)
+        let button = FriendshipButtonSet(toBeFriend: hacker)
+        cell.accessoryView = button
+        
         return cell;
     }
     
