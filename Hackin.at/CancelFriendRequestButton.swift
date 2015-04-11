@@ -18,4 +18,18 @@ class CancelFriendRequestButton: FriendshipButton {
         return "Canceling Friendship"
     }
     
+    func buttonPressed(){
+        if (requestSent == false){
+            func success(){
+                self.requestSent = true
+                self.enabled = false
+                toBeFriend.isFriends = false
+                toBeFriend.friendRequest = nil
+                delegate?.actionCompleted()
+            }
+            Hackinat.sharedInstance.deleteFriendshipRequest(toBeFriend.friendRequest!.id,
+                success: success)
+        }
+    }
+    
 }

@@ -75,7 +75,7 @@ extension HackerTableCell {
                 afterAcceptReject()
                 showSuccessMessage("Friendship Request Rejected")
             }
-            Hackinat.sharedInstance.rejectFriendshipRequest(friendshipRequest.id!, success: onSuccess)
+            Hackinat.sharedInstance.deleteFriendshipRequest(friendshipRequest.id!, success: onSuccess)
         }
         
         func afterAcceptReject(){
