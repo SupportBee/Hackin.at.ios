@@ -48,6 +48,7 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
     
     override func updateConstraints() {
         button.autoPinEdgesToSuperviewMargins()
+        super.updateConstraints()
     }
     
     class func appropriateButton(toBeFriend: Hacker) -> FriendshipButton {

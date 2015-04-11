@@ -32,7 +32,6 @@ class FriendshipButton: UIButton {
         sizeToFit()
     }
 
-    
     func renderButton(){
         setTitle(title, forState: UIControlState.Normal)
         setTitle(disabledTitle, forState: UIControlState.Disabled)
