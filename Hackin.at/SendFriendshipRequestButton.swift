@@ -15,13 +15,15 @@ class FriendshipButtonSet: UIView {
     var button: UIButton!
     
     init(toBeFriend: Hacker){
-        button = Helpers.friendshipButton(toBeFriend)
-        super.init(frame: button.frame)
+        super.init(frame: CGRectZero)
         self.toBeFriend = toBeFriend
-        self.addSubview(button)
+        renderButton()
     }
     
     func renderButton(){
+        button = Helpers.friendshipButton(toBeFriend)
+        self.frame = button.frame
+        self.addSubview(button)
     }
 
     required init(coder aDecoder: NSCoder) {
