@@ -7,6 +7,32 @@
 //
 
 import UIKit
+import PureLayout
+
+class FriendshipButtonSet: UIView {
+    
+    var toBeFriend: Hacker!
+    var button: UIButton!
+    
+    init(toBeFriend: Hacker){
+        button = Helpers.friendshipButton(toBeFriend)
+        super.init(frame: button.frame)
+        self.toBeFriend = toBeFriend
+        self.addSubview(button)
+    }
+    
+    func renderButton(){
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func updateConstraints() {
+        button.autoPinEdgesToSuperviewMargins()
+    }
+    
+}
 
 class SendFriendshipRequestButton: UIButton {
     
@@ -36,7 +62,7 @@ class SendFriendshipRequestButton: UIButton {
     }
     
     func setupTargetAction(){
-        // Override
+       addTarget(self, action: "buttonPressed", forControlEvents: UIControlEvents.TouchUpInside)
     }
    
 }

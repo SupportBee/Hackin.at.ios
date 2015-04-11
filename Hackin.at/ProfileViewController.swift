@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
     
     func setupFriendshipButton(){
         if (hacker.login != CurrentHacker.hacker()?.login) {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: Helpers.friendshipButton(hacker))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: FriendshipButtonSet(toBeFriend: hacker))
         }
     }
     

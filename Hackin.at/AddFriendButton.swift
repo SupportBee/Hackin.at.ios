@@ -19,10 +19,6 @@ class AddFriendButton: SendFriendshipRequestButton {
     }
     
     
-    override func setupTargetAction(){
-       addTarget(self, action: "buttonPressed", forControlEvents: UIControlEvents.TouchUpInside)
-    }
-    
     func buttonPressed(){
         if (requestSent == false){
             func success(){
