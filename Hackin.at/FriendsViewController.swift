@@ -20,10 +20,13 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
     }
     
     func setupFriendsListing(){
-        friendsListing = HackersListingView(cellStyle: HackerTableCell.ContactView.self, pullToRefresh: true)
+        friendsListing = HackersListingView(
+            cellStyle: HackerTableCell.ContactView.self,
+            pullToRefresh: true,
+            hackersDataSource: HackersDataSource())
         friendsListing.currentNavigationController = navigationController!
         view.addSubview(friendsListing)
-        friendsListing.fetchFriends()
+        //friendsListing.fetchFriends()
     }
     
     override func updateViewConstraints() {

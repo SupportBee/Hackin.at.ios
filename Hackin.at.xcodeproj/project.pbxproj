@@ -61,6 +61,7 @@
 		F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */; };
 		F0F045CE1A89FDD3005CC0C8 /* Hackers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */; };
 		F0F045D01A8A026B005CC0C8 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F045CF1A8A026B005CC0C8 /* MeViewController.swift */; };
+		F0F0FBC21ADAF2B00085BCDB /* Hackers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0FBC11ADAF2B00085BCDB /* Hackers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		F0EEF13D1A88C6BE0035D0D3 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = Pods/DateTools/DateTools/DateTools.bundle; sourceTree = "<group>"; };
 		F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hackers.storyboard; sourceTree = "<group>"; };
 		F0F045CF1A8A026B005CC0C8 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		F0F0FBC11ADAF2B00085BCDB /* Hackers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hackers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				0F4350261A7FABDD00D58243 /* Hacker.swift */,
+				F0F0FBC11ADAF2B00085BCDB /* Hackers.swift */,
 				F01688601A41FFBA00566C8D /* ProfileViewController.swift */,
 				F0E1D1BA1AA990E300733856 /* HackerTableCells */,
 				F0F045CD1A89FDD3005CC0C8 /* Hackers.storyboard */,
@@ -581,6 +584,7 @@
 				F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */,
 				0F65B0D21AC084D700BB0E9F /* PushNotificationData.swift in Sources */,
 				F0E674161A4A129000DCA9F8 /* MainViewController.swift in Sources */,
+				F0F0FBC21ADAF2B00085BCDB /* Hackers.swift in Sources */,
 				F0560F701AD859BB0011E454 /* DeleteFriendshipButton.swift in Sources */,
 				F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */,
 				F04AAE081A8E1D3C007243B7 /* UIIconBarButtonItem.swift in Sources */,

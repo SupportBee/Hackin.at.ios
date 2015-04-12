@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
+class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, HackersDataSourceDelegate {
    
     var hackersTableView = UITableView()
     var hackers: Array<Hacker> = []
@@ -19,6 +19,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var backgroundLabel = UILabel()
     var backgroundLabelActive = false
     var emptyTableMessage:String?
+    var hackersDataSource: HackersDataSource!
     
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -27,10 +28,13 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     convenience init(
         cellStyle: HackerTableCell.Type = HackerTableCell.self,
         pullToRefresh:Bool = true,
-        emptyTableMessage: String? = nil){
+        emptyTableMessage: String? = nil,
+        hackersDataSource: HackersDataSource){
         self.init(frame:CGRectZero)
         self.cellStyle = cellStyle
         self.emptyTableMessage = emptyTableMessage
+        self.hackersDataSource = hackersDataSource
+        self.hackersDataSource.delegate = self
         setupTableViewWiring()
         addSubview(hackersTableView)
         setupTableViewStyle()
@@ -44,6 +48,12 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     func setupTableViewWiring(){
         hackersTableView.delegate = self
         hackersTableView.dataSource = self
+    }
+    
+    func hackersFetched(hackers: [Hacker]) {
+        self.hackers = hackers
+        renderHackers(hackers)
+        return
     }
     
     func setupAutoRefresh(){
@@ -78,11 +88,6 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
             renderHackers(hackers)
             self.tableRefreshControl.endRefreshing()
         }
-        CurrentHacker().friends(success: onFetch)
-    }
-    
-    func fetchFriends(){
-        CurrentHacker().friends(success: renderHackers)
     }
     
     func renderHackers(hackers:[Hacker]){
