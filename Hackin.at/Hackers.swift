@@ -49,6 +49,27 @@ class MyFriendsDataSource: HackersDataSource {
     
 }
 
+class FriendsofHackerDataSource: HackersDataSource {
+    
+    var hacker: Hacker!
+    
+    init(hacker: Hacker){
+        self.hacker = hacker
+    }
+    
+    func onFetch(friends: [Hacker]){
+        self.hackers = friends
+        delegate?.hackersFetched()
+    }
+    
+    
+    override func fetch() {
+        Hackinat.sharedInstance.fetchFriends(hacker.login, success: onFetch)
+    }
+    
+    
+}
+
 class MyPendingFriendsDataSource: HackersDataSource {
     
     func onFetch(requests: [FriendshipRequest]){

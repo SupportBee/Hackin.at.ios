@@ -39,7 +39,6 @@ class ProfileViewController: UIViewController {
         setupLoggedInUser()
         populateBasicInfo()
         renderUserDetails()
-        fetchFriends()
         setupTitle()
     }
     
@@ -51,7 +50,7 @@ class ProfileViewController: UIViewController {
     
     func setupTable(){
         friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self,
-            hackersDataSource: HackersDataSource())
+            hackersDataSource: FriendsofHackerDataSource(hacker: hacker))
         friendsListing.hackersTableView.tableHeaderView = tableHeaderView
         friendsListing.currentNavigationController = navigationController
         view.addSubview(friendsListing)
@@ -96,23 +95,6 @@ class ProfileViewController: UIViewController {
         }
     }
 
-    func fetchFriends(){
-        
-        func onFetch(friends: [Hacker]){
-            self.friends = friends
-            renderFriends()
-        }
-        
-        hacker.fetchFriends(success: onFetch)
-        
-    }
-    
-    func renderFriends(){
-        friendsLabel.text = "Friends (\(friends.count))"
-        //friendsListing.renderHackers(friends)
-        updateViewConstraints()
-    }
-    
     func setupStyles(){
         profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
         profileImage.clipsToBounds = true;
