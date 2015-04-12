@@ -44,7 +44,8 @@ class Hacker: NSObject {
     var avatarImage:UIImage?
     var deviceToken:String?
     
-    var friendshipRequest: FriendshipRequest?
+    var friendRequest: FriendshipRequest?
+    var isFriends = false
     
     let login:String
     
@@ -90,6 +91,19 @@ class Hacker: NSObject {
     var name:String?{
         if(userDetails == nil){ return nil }
         return userDetails!["name"].stringValue
+    }
+    
+    func parseIsFriends() {
+        isFriends = userDetails!["is_friends"].boolValue
+    }
+    
+    func parseFriendRequest() {
+        if (isFriends) {return}
+        let friendRequestJSON = userDetails!["friend_request"]
+        if (friendRequestJSON != nil) {
+            println("Found a pending friend request")
+            friendRequest = FriendshipRequest(json: friendRequestJSON)
+        }
     }
     
     var distance:String{
@@ -221,6 +235,8 @@ class Hacker: NSObject {
     
     private func setUserDetailsFromJSON(json: JSON){
         self.userDetails = json
+        parseIsFriends()
+        parseFriendRequest()
     }
 
 }

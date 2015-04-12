@@ -12,16 +12,13 @@ extension HackerTableCell {
     
     class FriendshipRequestView: FullView {
         
-        let acceptButton = UIButton()
-        let rejectButton = UIButton()
-        var friendshipRequest: FriendshipRequest!
+        var buttonSet: FriendshipButtonSet!
         var buttonsContainer: UIView!
         var successLabel: UILabel!
         
         required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
             setupButtonsContainer()
-            setupButtons()
         }
         
         required init(coder aDecoder: NSCoder) {
@@ -34,24 +31,9 @@ extension HackerTableCell {
             contentView.addSubview(buttonsContainer)
         }
         
-        func setupButtons(){
-            acceptButton.setTitle("Accept", forState: UIControlState.Normal)
-            acceptButton.backgroundColor = UIColor.greenColor()
-            acceptButton.addTarget(self, action: "acceptRequest", forControlEvents: UIControlEvents.TouchUpInside)
-            
-            
-            rejectButton.setTitle("Reject", forState: UIControlState.Normal)
-            rejectButton.backgroundColor = UIColor.grayColor()
-            rejectButton.addTarget(self, action: "rejectRequest", forControlEvents: UIControlEvents.TouchUpInside)
-            
-            buttonsContainer.addSubview(acceptButton)
-            buttonsContainer.addSubview(rejectButton)
-            
-        }
-        
-        func removeButtons(){
-            acceptButton.removeFromSuperview()
-            rejectButton.removeFromSuperview()
+        func setupButtons(hacker: Hacker){
+            buttonSet = AcceptDenyFriendshipButtonSet(toBeFriend: hacker)
+            buttonsContainer.addSubview(buttonSet)
         }
         
         func showSuccessMessage(message:String){
@@ -61,30 +43,11 @@ extension HackerTableCell {
             setNeedsUpdateConstraints()
         }
         
-        func acceptRequest(){
-            println("Accept!")
-            func onSuccess(){
-                afterAcceptReject()
-                showSuccessMessage("Friendship Request Accepted")
-            }
-            Hackinat.sharedInstance.acceptFriendshipRequest(friendshipRequest.id, success: onSuccess)
-        }
-
-        func rejectRequest(){
-            func onSuccess(){
-                afterAcceptReject()
-                showSuccessMessage("Friendship Request Rejected")
-            }
-            Hackinat.sharedInstance.rejectFriendshipRequest(friendshipRequest.id, success: onSuccess)
-        }
-        
         func afterAcceptReject(){
-            removeButtons()
-            self.friendshipRequest.sender.friendshipRequest = nil
         }
         
         override func setupViewData(hacker: Hacker) {
-            self.friendshipRequest = hacker.friendshipRequest!
+            setupButtons(hacker)
             super.setupViewData(hacker)
         }
         
@@ -101,14 +64,7 @@ extension HackerTableCell {
             if(successLabel != nil){
                 successLabel.autoPinEdgesToSuperviewMargins()
             }else{
-                acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Left)
-                acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Top)
-                acceptButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
-                
-                rejectButton.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: acceptButton, withOffset: AppTheme.Listing.elementsPadding)
-                rejectButton.autoPinEdgeToSuperviewEdge(ALEdge.Top)
-                rejectButton.autoPinEdgeToSuperviewEdge(ALEdge.Right)
-                rejectButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom)
+                buttonSet.autoPinEdgesToSuperviewMargins()
             }
         }
 

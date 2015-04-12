@@ -97,7 +97,7 @@ class CurrentHacker:NSObject {
     }
     
     func sendFriendshipRequest(toBeFriend: Hacker,
-        onsuccess: ()->()){
+        onsuccess: (FriendshipRequest)->()){
         Hackinat.sharedInstance.sendFriendshipRequest(toBeFriend.login, success: onsuccess)
     }
     

@@ -13,8 +13,7 @@ import PureLayout
 class MeViewController: UINavigationController{
     
     override func viewDidLoad() {
-        var hackersStoryboard = UIStoryboard(name: "Hackers", bundle: nil);
-        let vc = hackersStoryboard.instantiateViewControllerWithIdentifier("profileViewController") as! ProfileViewController;
+        let vc = AppScreens.Profile(CurrentHacker.hacker()!).vc
         setViewControllers([vc], animated: false)
     }
 

@@ -10,8 +10,10 @@ import Alamofire
 import CoreLocation
 import SwiftyJSON
 
+//let apiBaseDomain = "http://staging.hackin.at"
+let apiBaseDomain = "http://lvh.me:3000"
+
 enum Router: URLRequestConvertible {
-    static let baseURLString = "http://staging.hackin.at"
     
     case GetHacker(String)
     case SearchHackers(String)
@@ -23,7 +25,7 @@ enum Router: URLRequestConvertible {
     case GetNotifications
     case GetFriendshipRequests
     case AcceptFriendship(Int)
-    case RejectFriendship(Int)
+    case DeleteFriendshipRequest(Int)
     
     var method: Alamofire.Method {
         switch self {
@@ -38,7 +40,8 @@ enum Router: URLRequestConvertible {
             return .POST
         case .AcceptFriendship:
             return .POST
-        case .RejectFriendship, .DestroyDeviceToken:
+        case .DeleteFriendshipRequest,
+        .DestroyDeviceToken:
             return .DELETE
         }
     }
@@ -63,13 +66,13 @@ enum Router: URLRequestConvertible {
             return "/friend_requests"
         case .AcceptFriendship(let requestID):
             return "/friend_requests/\(requestID)/accept"
-        case .RejectFriendship(let requestID):
+        case .DeleteFriendshipRequest(let requestID):
             return "/friend_requests/\(requestID)"
         }
     }
     
     var URLRequest: NSURLRequest {
-        let URL = NSURL(string: Router.baseURLString)!
+        let URL = NSURL(string: apiBaseDomain)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
@@ -102,7 +105,6 @@ class Hackinat: NSObject {
         return Singleton.instance
     }
   
-    let apiBaseDomain = "http://staging.hackin.at"
     var manager: Alamofire.Manager!
     
     override init() {
@@ -153,7 +155,6 @@ class Hackinat: NSObject {
     func fetchMyFriends(success: (AnyObject) -> (), failure: () -> () = {}){
         manager.request(Router.GetMyFriends)
             .responseJSON { (_, _, JSON, _) in
-                println("JSON IS \(JSON)")
                 success(JSON!)
         }
     }
@@ -161,7 +162,7 @@ class Hackinat: NSObject {
     func fetchFriends(login: String, success: ([Hacker]) -> ()){
          manager.request(Router.GetFriends(login))
             .responseJSON { (_, _, json, _) in
-                var friendsJSON = JSON(json!)["friends"].arrayValue
+                var friendsJSON = JSON(json!)["hackers"].arrayValue
                 var friends: Array<Hacker> = []
                 
                 friends = friendsJSON.map({
@@ -173,11 +174,15 @@ class Hackinat: NSObject {
     }
     
     func sendFriendshipRequest(friendsLogin: String,
-        success: () -> ()){
+        success: (FriendshipRequest) -> ()){
             manager.request(Router.CreateFriendship(friendsLogin))
-                .response {(_) in
-                    success()
-                    }
+                .responseJSON { (_, _, json, _) in
+                    let friendshipReqJSON = JSON(json!)["friend_request"]
+                    success(FriendshipRequest(json: friendshipReqJSON))
+                }
+                //.response {(_) in
+                //    success()
+                //}
     }
     
     func acceptFriendshipRequest(requestID: Int, success: () -> ()){
@@ -186,9 +191,9 @@ class Hackinat: NSObject {
                     success()
                     }
     }
-
-    func rejectFriendshipRequest(requestID: Int, success: () -> ()){
-            manager.request(Router.RejectFriendship(requestID))
+   
+    func deleteFriendshipRequest(requestID: Int, success: () -> ()){
+            manager.request(Router.DeleteFriendshipRequest(requestID))
                 .response {(_) in
                     success()
                     }
@@ -265,7 +270,6 @@ class Hackinat: NSObject {
     
     func fetchPlacesAroundLocation(#authKey:String, location: CLLocationCoordinate2D, success: (AnyObject) -> (), failure: () -> () = {}){
         var placesURL = "\(apiBaseDomain)/places?auth_key=\(authKey)&ll=\(location.latitude),\(location.longitude)"
-        println("Let's get the places around")
         Alamofire.request(.GET, placesURL)
             .responseJSON { (_, _, JSON, _) in
                 success(JSON!)

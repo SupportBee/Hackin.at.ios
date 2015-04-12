@@ -52,4 +52,6 @@ class Helpers {
             return PushNotificationData(login: login!, type: type!, actor: actor, friendRequestID: nil)
         }
     }
+    
+    
 }

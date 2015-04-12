@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import PureLayout
 
-class SendFriendshipRequestButton: UIButton {
+class FriendshipButton: UIButton {
     
     var toBeFriend: Hacker!
+    var delegate: FriendshipButtonDelegate?
+    
+    var title: String {
+        return ""
+    }
+    
+    var disabledTitle: String {
+        return ""
+    }
     
     var requestSent = false
     
@@ -21,24 +31,16 @@ class SendFriendshipRequestButton: UIButton {
         setupTargetAction()
         sizeToFit()
     }
-    
+
     func renderButton(){
-        setTitle("Add Friend", forState: UIControlState.Normal)
-        setTitle("Waiting to Accept", forState: UIControlState.Disabled)
+        setTitle(title, forState: UIControlState.Normal)
+        setTitle(disabledTitle, forState: UIControlState.Disabled)
         setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
     }
     
     func setupTargetAction(){
        addTarget(self, action: "buttonPressed", forControlEvents: UIControlEvents.TouchUpInside)
     }
-    
-    func buttonPressed(){
-        if (requestSent == false){
-            func success(){
-                self.requestSent = true
-                self.enabled = false
-            }
-            CurrentHacker().sendFriendshipRequest(toBeFriend, onsuccess: success)
-        }
-    }
+   
+
 }

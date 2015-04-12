@@ -32,7 +32,7 @@ class RequestsViewController: UIViewController{
         func onFetch(requests: [FriendshipRequest]){
             self.requests = requests
             toBeFriends = requests.map({(request) -> Hacker in
-                request.sender.friendshipRequest = request
+//                request.sender.friendshipRequest = request
                 return request.sender
             })
             renderRequests()

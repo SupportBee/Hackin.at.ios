@@ -43,6 +43,12 @@ class ProfileViewController: UIViewController {
         setupTitle()
     }
     
+    func setupFriendshipButton(){
+        if (hacker.login != CurrentHacker.hacker()?.login) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: FriendshipButtonSet(toBeFriend: hacker))
+        }
+    }
+    
     func setupTable(){
         friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self)
         friendsListing.hackersTableView.tableHeaderView = tableHeaderView
@@ -163,6 +169,8 @@ class ProfileViewController: UIViewController {
     }
     
     func renderFullProfile(){
+        // Now that we have the data!
+        setupFriendshipButton()
         var userDetails = hacker.userDetails!
 
         var avatarURL = userDetails["avatar_url"].string
