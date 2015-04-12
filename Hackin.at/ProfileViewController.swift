@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController {
     
     func renderFriends(){
         friendsLabel.text = "Friends (\(friends.count))"
-        friendsListing.renderHackers(friends)
+        //friendsListing.renderHackers(friends)
         updateViewConstraints()
     }
     

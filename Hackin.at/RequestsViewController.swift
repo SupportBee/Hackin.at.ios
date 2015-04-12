@@ -43,7 +43,7 @@ class RequestsViewController: UIViewController{
     }
     
     func renderRequests(){
-        requestsTable.renderHackers(toBeFriends)
+        //requestsTable.renderHackers(toBeFriends)
     }
 
     override func updateViewConstraints() {

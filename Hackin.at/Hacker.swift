@@ -101,7 +101,6 @@ class Hacker: NSObject {
         if (isFriends) {return}
         let friendRequestJSON = userDetails!["friend_request"]
         if (friendRequestJSON != nil) {
-            println("Found a pending friend request")
             friendRequest = FriendshipRequest(json: friendRequestJSON)
         }
     }

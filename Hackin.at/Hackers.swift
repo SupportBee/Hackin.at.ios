@@ -9,7 +9,7 @@
 protocol HackersDataSourceProtocol {
     
     func fetch()
-    func count() -> Int
+    var count: Int { get }
     
 }
 
@@ -19,16 +19,30 @@ protocol HackersDataSourceDelegate {
     
 }
 
-public class HackersDataSource: NSObject, HackersDataSourceProtocol {
+class HackersDataSource: NSObject, HackersDataSourceProtocol {
     
-    var hackers: [Hacker]? = []
+    var hackers: [Hacker] = []
     var delegate: HackersDataSourceDelegate? = nil
     
-    func count() -> Int {
-        return 0
+    var count: Int {
+        return hackers.count
     }
     
     func fetch() {
+        // No-op
+    }
+    
+    func onFetch(hackers: [Hacker]){
+        self.hackers = hackers
+        delegate?.hackersFetched(hackers)
+    }
+        
+}
+
+class MyFriendsDataSource: HackersDataSource {
+    
+    override func fetch(){
+        CurrentHacker().friends(success: onFetch)
     }
     
 }

@@ -28,4 +28,8 @@ class TableRefreshControl {
     func endRefreshing(){
         self.refreshControl.endRefreshing()
     }
+    
+    var refreshing: Bool {
+        return refreshControl.refreshing
+    }
 }
