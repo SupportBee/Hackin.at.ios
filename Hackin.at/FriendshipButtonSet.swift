@@ -47,7 +47,11 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
     }
     
     override func updateConstraints() {
-        button.autoPinEdgesToSuperviewMargins()
+        // TODO: Hack since subclass may not have button
+        // Ex: AcceptDenyFriendshipButtonSet
+        if(button != nil){
+            button.autoPinEdgesToSuperviewMargins()
+        }
         super.updateConstraints()
     }
     

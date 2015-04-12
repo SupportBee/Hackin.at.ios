@@ -32,7 +32,7 @@ extension HackerTableCell {
         }
         
         func setupButtons(hacker: Hacker){
-            buttonSet = FriendshipButtonSet(toBeFriend: hacker)
+            buttonSet = AcceptDenyFriendshipButtonSet(toBeFriend: hacker)
             buttonsContainer.addSubview(buttonSet)
         }
         
