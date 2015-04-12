@@ -15,7 +15,7 @@ protocol HackersDataSourceProtocol {
 
 protocol HackersDataSourceDelegate {
     
-    func hackersFetched([Hacker])
+    func hackersFetched()
     
 }
 
@@ -32,17 +32,35 @@ class HackersDataSource: NSObject, HackersDataSourceProtocol {
         // No-op
     }
     
-    func onFetch(hackers: [Hacker]){
-        self.hackers = hackers
-        delegate?.hackersFetched(hackers)
-    }
+    
         
 }
 
 class MyFriendsDataSource: HackersDataSource {
     
+    func onFetch(hackers: [Hacker]){
+        self.hackers = hackers
+        delegate?.hackersFetched()
+    }
+    
     override func fetch(){
         CurrentHacker().friends(success: onFetch)
+    }
+    
+}
+
+class MyPendingFriendsDataSource: HackersDataSource {
+    
+    func onFetch(requests: [FriendshipRequest]){
+        let toBeFriends = requests.map({(request) -> Hacker in
+            return request.sender
+        })
+        self.hackers = toBeFriends
+        delegate?.hackersFetched()
+    }
+
+    override func fetch(){
+        FriendshipRequest.all(onFetch)
     }
     
 }

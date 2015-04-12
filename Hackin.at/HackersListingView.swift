@@ -55,7 +55,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
         hackersTableView.dataSource = self
     }
     
-    func hackersFetched(hackers: [Hacker]) {
+    func hackersFetched() {
         renderHackers()
         if tableRefreshControl.refreshing { tableRefreshControl.endRefreshing()}
     }
@@ -108,6 +108,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("Hackers \(hackersDataSource.count)")
         return hackersDataSource.count
     }
     

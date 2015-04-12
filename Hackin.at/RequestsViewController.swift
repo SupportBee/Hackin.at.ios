@@ -16,36 +16,17 @@ class RequestsViewController: UIViewController{
     
     override func viewDidLoad() {
         setupRequestsTable()
-        fetchMyFriendshipRequests()
     }
     
     func setupRequestsTable(){
         requestsTable = HackersListingView(cellStyle: HackerTableCell.FriendshipRequestView.self,
             pullToRefresh: false,
             emptyTableMessage: "No pending friendship requests.\n Time to hit a meetup?",
-            hackersDataSource: HackersDataSource())
+            hackersDataSource: MyPendingFriendsDataSource())
         view.addSubview(requestsTable)
      
     }
     
-    func fetchMyFriendshipRequests(){
-        
-        func onFetch(requests: [FriendshipRequest]){
-            self.requests = requests
-            toBeFriends = requests.map({(request) -> Hacker in
-//                request.sender.friendshipRequest = request
-                return request.sender
-            })
-            renderRequests()
-        }
-        
-        FriendshipRequest.all(onFetch)
-    }
-    
-    func renderRequests(){
-        //requestsTable.renderHackers(toBeFriends)
-    }
-
     override func updateViewConstraints() {
         requestsTable.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
         super.updateViewConstraints()
