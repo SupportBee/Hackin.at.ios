@@ -20,6 +20,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
     var backgroundLabelActive = false
     var emptyTableMessage:String?
     var hackersDataSource: HackersDataSource!
+    var pullToRefresh: Bool = false
     
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -27,7 +28,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
     
     convenience init(
         cellStyle: HackerTableCell.Type = HackerTableCell.self,
-        pullToRefresh:Bool = true,
+        pullToRefresh:Bool = false,
         emptyTableMessage: String? = nil,
         hackersDataSource: HackersDataSource){
         self.init(frame:CGRectZero)
@@ -35,10 +36,11 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
         self.emptyTableMessage = emptyTableMessage
         self.hackersDataSource = hackersDataSource
         self.hackersDataSource.delegate = self
+        self.pullToRefresh = pullToRefresh
         setupTableViewWiring()
         addSubview(hackersTableView)
         setupTableViewStyle()
-        setupAutoRefresh()
+        if pullToRefresh { setupAutoRefresh() }
         fetchHackers()
     }
     
@@ -57,7 +59,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
     
     func hackersFetched() {
         renderHackers()
-        if tableRefreshControl.refreshing { tableRefreshControl.endRefreshing()}
+        if (pullToRefresh && tableRefreshControl.refreshing) { tableRefreshControl.endRefreshing()}
     }
     
     func setupAutoRefresh(){

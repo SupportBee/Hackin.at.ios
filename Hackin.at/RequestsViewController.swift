@@ -20,7 +20,7 @@ class RequestsViewController: UIViewController{
     
     func setupRequestsTable(){
         requestsTable = HackersListingView(cellStyle: HackerTableCell.FriendshipRequestView.self,
-            pullToRefresh: false,
+            pullToRefresh: true,
             emptyTableMessage: "No pending friendship requests.\n Time to hit a meetup?",
             hackersDataSource: MyPendingFriendsDataSource())
         view.addSubview(requestsTable)
