@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
+class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, HackersDataSourceDelegate {
    
     var hackersTableView = UITableView()
     var hackers: Array<Hacker> = []
@@ -19,6 +19,8 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     var backgroundLabel = UILabel()
     var backgroundLabelActive = false
     var emptyTableMessage:String?
+    var hackersDataSource: HackersDataSource!
+    var pullToRefresh: Bool = false
     
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -26,15 +28,24 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     convenience init(
         cellStyle: HackerTableCell.Type = HackerTableCell.self,
-        pullToRefresh:Bool = true,
-        emptyTableMessage: String? = nil){
+        pullToRefresh:Bool = false,
+        emptyTableMessage: String? = nil,
+        hackersDataSource: HackersDataSource){
         self.init(frame:CGRectZero)
         self.cellStyle = cellStyle
         self.emptyTableMessage = emptyTableMessage
+        self.hackersDataSource = hackersDataSource
+        self.hackersDataSource.delegate = self
+        self.pullToRefresh = pullToRefresh
         setupTableViewWiring()
         addSubview(hackersTableView)
         setupTableViewStyle()
-        setupAutoRefresh()
+        if pullToRefresh { setupAutoRefresh() }
+        fetchHackers()
+    }
+    
+    func fetchHackers(){
+        hackersDataSource.fetch()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -46,13 +57,23 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
         hackersTableView.dataSource = self
     }
     
+    func hackersFetched() {
+        renderHackers()
+        if (pullToRefresh && tableRefreshControl.refreshing) { tableRefreshControl.endRefreshing()}
+    }
+    
     func setupAutoRefresh(){
         tableRefreshControl = TableRefreshControl.setupForTableViewWithAction(
             tableView: self.hackersTableView,
             target: self,
-            action: "refreshHackers"
+            action: "fetchHackers"
         )
     }
+    
+    func refreshHackers(){
+        fetchHackers()
+    }
+
     
     func setupTableViewStyle(){
         hackersTableView.estimatedRowHeight = 100
@@ -73,21 +94,9 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
         super.updateConstraints()
     }
     
-    func refreshHackers(){
-        func onFetch(hackers:[Hacker]){
-            renderHackers(hackers)
-            self.tableRefreshControl.endRefreshing()
-        }
-        CurrentHacker().friends(success: onFetch)
-    }
-    
-    func fetchFriends(){
-        CurrentHacker().friends(success: renderHackers)
-    }
-    
-    func renderHackers(hackers:[Hacker]){
+    func renderHackers(){
         if (emptyTableMessage != nil){
-            if(hackers.count == 0){
+            if(hackersDataSource.count == 0){
                 backgroundLabel.text = emptyTableMessage
                 hackersTableView.backgroundView = backgroundLabel
                 backgroundLabelActive = true
@@ -97,23 +106,23 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource {
                 updateConstraints()
             }
         }
-        self.hackers = hackers
         self.hackersTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hackers.count
+        println("Hackers \(hackersDataSource.count)")
+        return hackersDataSource.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.cellStyle(style: UITableViewCellStyle.Default, reuseIdentifier: "HackerCell")
-        let hacker = self.hackers[indexPath.row]
+        let hacker = hackersDataSource.hackers[indexPath.row]
         cell.setupViewData(hacker)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let hacker = self.hackers[indexPath.row]
+        let hacker = hackersDataSource.hackers[indexPath.row]
         let vc = AppScreens.Profile(hacker).vc
         currentNavigationController?.pushViewController(vc, animated: true)
     }

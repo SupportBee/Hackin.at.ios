@@ -101,7 +101,6 @@ class Hacker: NSObject {
         if (isFriends) {return}
         let friendRequestJSON = userDetails!["friend_request"]
         if (friendRequestJSON != nil) {
-            println("Found a pending friend request")
             friendRequest = FriendshipRequest(json: friendRequestJSON)
         }
     }
@@ -182,10 +181,6 @@ class Hacker: NSObject {
         }
     }
     
-    func fetchFriends(#success: ([Hacker]) -> ()){
-        Hackinat.sharedInstance.fetchFriends(login, success: success)
-    }
-
     func checkTwitterAccess(#success: (Int) -> ()){
         if(authKey != nil){
             func onFetch(){
