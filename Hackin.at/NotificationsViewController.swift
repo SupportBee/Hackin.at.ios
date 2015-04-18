@@ -54,9 +54,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         let actor = Hacker(json: notification["actor"])
         cell.textLabel?.text = notification["message"].stringValue
         
+        let profileImageSize = AppTheme.HackerContactView.profileImageSize
+        
+        cell.imageView!.frame = CGRectMake(0, 0, profileImageSize, profileImageSize)
         Helpers.showProfileImage(actor, imageView: cell.imageView!)
-        // TODO: Not working: Rounded Images
-        // Helpers.roundImageView(cell.imageView!)
+        Helpers.roundImageView(cell.imageView!)
         
         return cell
     }
