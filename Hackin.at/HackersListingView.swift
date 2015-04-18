@@ -122,6 +122,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("Did select row!")
         let hacker = hackersDataSource.hackers[indexPath.row]
         let vc = AppScreens.Profile(hacker).vc
         currentNavigationController?.pushViewController(vc, animated: true)

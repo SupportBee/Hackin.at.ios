@@ -26,7 +26,6 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
             hackersDataSource: MyFriendsDataSource())
         friendsListing.currentNavigationController = navigationController!
         view.addSubview(friendsListing)
-        //friendsListing.fetchFriends()
     }
     
     override func updateViewConstraints() {

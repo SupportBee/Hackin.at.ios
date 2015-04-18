@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 class RequestsViewController: UIViewController{
     
@@ -24,6 +25,7 @@ class RequestsViewController: UIViewController{
             pullToRefresh: true,
             emptyTableMessage: "No pending friendship requests.\n Time to hit a meetup?",
             hackersDataSource: MyPendingFriendsDataSource())
+        requestsTable.currentNavigationController = navigationController!
         view.addSubview(requestsTable)
      
     }
