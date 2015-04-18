@@ -8,7 +8,6 @@
 
 import UIKit
 import Fabric
-import TwitterKit
 import Crashlytics
 
 
@@ -22,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MixpanelHelper.setup()
         
-        Fabric.with([Twitter(), Crashlytics()])
-        Crashlytics.sharedInstance().debugMode = true
+        Fabric.with([Crashlytics()])
         
         setupAppStyling()
         

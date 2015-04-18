@@ -14,8 +14,6 @@
 		0F65B0D21AC084D700BB0E9F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F65B0D11AC084D700BB0E9F /* PushNotificationData.swift */; };
 		0F65B0D51AC0876800BB0E9F /* PushNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F65B0D41AC0876800BB0E9F /* PushNotificationHandler.swift */; };
 		0F6758871A849E2200A320C6 /* HackerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6758861A849E2200A320C6 /* HackerTableCell.swift */; };
-		0FE0224D1A89C70F00E17699 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224A1A89C70F00E17699 /* TwitterKit.framework */; };
-		0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */; };
 		0FE0224F1A89C70F00E17699 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0224C1A89C70F00E17699 /* Fabric.framework */; };
 		0FE022901A8B68F000E17699 /* TableRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0228F1A8B68F000E17699 /* TableRefreshControl.swift */; };
 		0FF759B11A9F120A0090B835 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF759B01A9F120A0090B835 /* Crashlytics.framework */; };
@@ -95,8 +93,6 @@
 		0F65B0D11AC084D700BB0E9F /* PushNotificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
 		0F65B0D41AC0876800BB0E9F /* PushNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationHandler.swift; sourceTree = "<group>"; };
 		0F6758861A849E2200A320C6 /* HackerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.swift; sourceTree = "<group>"; };
-		0FE0224A1A89C70F00E17699 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		0FE0224C1A89C70F00E17699 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		0FE0228F1A8B68F000E17699 /* TableRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRefreshControl.swift; sourceTree = "<group>"; };
 		0FF759B01A9F120A0090B835 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -160,7 +156,6 @@
 				F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */,
 				0FF759B11A9F120A0090B835 /* Crashlytics.framework in Frameworks */,
 				A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */,
-				0FE0224D1A89C70F00E17699 /* TwitterKit.framework in Frameworks */,
 				0FE0224F1A89C70F00E17699 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,8 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				0FF759B01A9F120A0090B835 /* Crashlytics.framework */,
-				0FE0224A1A89C70F00E17699 /* TwitterKit.framework */,
-				0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */,
 				0FE0224C1A89C70F00E17699 /* Fabric.framework */,
 				F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */,
 				F05137371ABFBEC800EF6542 /* Images.xcassets */,
@@ -490,7 +483,6 @@
 				F054582A1AE2ED3E002D04F6 /* streamline.ttf in Resources */,
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F05137381ABFBEC800EF6542 /* Images.xcassets in Resources */,
-				0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */,
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
