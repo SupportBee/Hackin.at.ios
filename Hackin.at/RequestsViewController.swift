@@ -15,6 +15,7 @@ class RequestsViewController: UIViewController{
     var toBeFriends: [Hacker] = []
     
     override func viewDidLoad() {
+        title = "Friend Requests"
         setupRequestsTable()
     }
     

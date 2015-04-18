@@ -17,6 +17,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     var notifications: Array<JSON> = []
     
     override func viewDidLoad() {
+        title = "Notifications"
         notificationsTableView = UITableView()
         view.addSubview(notificationsTableView)
         notificationsTableView.delegate = self
