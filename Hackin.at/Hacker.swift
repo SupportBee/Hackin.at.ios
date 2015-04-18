@@ -90,7 +90,8 @@ class Hacker: NSObject {
     
     var name:String?{
         if(userDetails == nil){ return nil }
-        return userDetails!["name"].stringValue
+        let name = userDetails!["name"].stringValue
+        return name
     }
     
     func parseIsFriends() {

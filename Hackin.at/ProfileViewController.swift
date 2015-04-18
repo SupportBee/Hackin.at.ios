@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetLabels()
         setupTable()
         clearPlaceholderLabels()
         setupStyles()
@@ -40,6 +41,11 @@ class ProfileViewController: UIViewController {
         populateBasicInfo()
         renderUserDetails()
         setupTitle()
+    }
+    
+    func resetLabels(){
+        nameLabel.text = ""
+        companyLabel.text = ""
     }
     
     func setupFriendshipButton(){
@@ -159,25 +165,24 @@ class ProfileViewController: UIViewController {
         var avatarURL = userDetails["avatar_url"].string
         
         // Personal Info
-        nameLabel.text = userDetails["name"].string
+        let name = userDetails["name"].string
+        nameLabel.text = name
+        nameLabel.sizeToFit()
+        
         companyLabel.text = userDetails["company"].string
         
         // Counts
         var reposCount = userDetails["github_repos"].int
         
-        
         reposCountLabel.text = "\(reposCount!) Public Repos"
-        
-        Alamofire.request(.GET, avatarURL!)
-            .response{ (_, _, data, _) in
-                self.profileImage.image = UIImage(data: (data as! NSData) )
-        }
         
         stickersLabel.font = UIFont(name: "pictonic", size: 18)
         stickersLabel.text = hacker.stickerCodes()
+        updateViewConstraints()
     }
     
     func populateBasicInfo(){
+        Helpers.showProfileImage(hacker, imageView: profileImage)
         loginLabel.text = "@\(hacker.login)"
     }
     
