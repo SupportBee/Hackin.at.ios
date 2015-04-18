@@ -26,6 +26,7 @@ class FriendshipButton: UIButton {
     
     convenience init(toBeFriend: Hacker){
         self.init()
+        self.titleLabel!.font = UIFont(name: "streamline", size: 32.0)
         self.toBeFriend = toBeFriend
         renderButton()
         setupTargetAction()

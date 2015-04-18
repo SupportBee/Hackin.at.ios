@@ -28,11 +28,11 @@
 		F044A6991AAAB3A9009FDE1F /* HackerTableCell.FullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */; };
 		F04803341AB2D1C4003E6D16 /* FriendshipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04803331AB2D1C4003E6D16 /* FriendshipButton.swift */; };
 		F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */; };
-		F04AAE021A8E0AFC007243B7 /* streamline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F04AAE011A8E0AFC007243B7 /* streamline.ttf */; };
 		F04AAE081A8E1D3C007243B7 /* UIIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */; };
 		F04AAE0A1A8E3875007243B7 /* HackerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */; };
 		F05137381ABFBEC800EF6542 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05137371ABFBEC800EF6542 /* Images.xcassets */; };
 		F05229DB1A823AD800E36E81 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05229DA1A823AD800E36E81 /* AppColors.swift */; };
+		F054582A1AE2ED3E002D04F6 /* streamline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05458291AE2E600002D04F6 /* streamline.ttf */; };
 		F0560F6E1AD851DE0011E454 /* AddFriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F6D1AD851DE0011E454 /* AddFriendButton.swift */; };
 		F0560F701AD859BB0011E454 /* DeleteFriendshipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F6F1AD859BB0011E454 /* DeleteFriendshipButton.swift */; };
 		F0560F721AD869A40011E454 /* AcceptFriendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0560F711AD869A40011E454 /* AcceptFriendButton.swift */; };
@@ -112,11 +112,11 @@
 		F044A6981AAAB3A9009FDE1F /* HackerTableCell.FullView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerTableCell.FullView.swift; sourceTree = "<group>"; };
 		F04803331AB2D1C4003E6D16 /* FriendshipButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipButton.swift; sourceTree = "<group>"; };
 		F0493F7C1A5328D400DA5762 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
-		F04AAE011A8E0AFC007243B7 /* streamline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = streamline.ttf; sourceTree = "<group>"; };
 		F04AAE071A8E1D3C007243B7 /* UIIconBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconBarButtonItem.swift; sourceTree = "<group>"; };
 		F04AAE091A8E3875007243B7 /* HackerSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerSummaryView.swift; sourceTree = "<group>"; };
 		F05137371ABFBEC800EF6542 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F05229DA1A823AD800E36E81 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		F05458291AE2E600002D04F6 /* streamline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = streamline.ttf; sourceTree = "<group>"; };
 		F0560F6D1AD851DE0011E454 /* AddFriendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendButton.swift; sourceTree = "<group>"; };
 		F0560F6F1AD859BB0011E454 /* DeleteFriendshipButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFriendshipButton.swift; sourceTree = "<group>"; };
 		F0560F711AD869A40011E454 /* AcceptFriendButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptFriendButton.swift; sourceTree = "<group>"; };
@@ -236,6 +236,14 @@
 			name = FriendshipRequest;
 			sourceTree = "<group>";
 		};
+		F05458281AE2E5F6002D04F6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F05458291AE2E600002D04F6 /* streamline.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		F0AA8A061A91A553008E382D /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				0FF759B01A9F120A0090B835 /* Crashlytics.framework */,
-				F04AAE011A8E0AFC007243B7 /* streamline.ttf */,
 				0FE0224A1A89C70F00E17699 /* TwitterKit.framework */,
 				0FE0224B1A89C70F00E17699 /* TwitterKitResources.bundle */,
 				0FE0224C1A89C70F00E17699 /* Fabric.framework */,
@@ -328,6 +335,7 @@
 		F0DB3BBE1A41FABF00DC8C9B /* Hackin.at */ = {
 			isa = PBXGroup;
 			children = (
+				F05458281AE2E5F6002D04F6 /* Fonts */,
 				0F65B0D31AC0874000BB0E9F /* PushNotification */,
 				0FE0228E1A8B68D200E17699 /* Utilities */,
 				0F0A15331A8342F400F00B74 /* Resources */,
@@ -479,10 +487,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F054582A1AE2ED3E002D04F6 /* streamline.ttf in Resources */,
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F05137381ABFBEC800EF6542 /* Images.xcassets in Resources */,
 				0FE0224E1A89C70F00E17699 /* TwitterKitResources.bundle in Resources */,
-				F04AAE021A8E0AFC007243B7 /* streamline.ttf in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
 				F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */,
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,

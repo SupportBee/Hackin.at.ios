@@ -11,7 +11,7 @@ import UIKit
 class DeleteFriendshipButton: FriendshipButton {
     
     override var title: String {
-        return "Delete Friend"
+        return "f"
     }
     
     override var disabledTitle: String {
