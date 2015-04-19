@@ -26,6 +26,7 @@ enum Router: URLRequestConvertible {
     case GetFriendshipRequests
     case AcceptFriendship(Int)
     case DeleteFriendshipRequest(Int)
+    case DeleteFriend(String)
     
     var method: Alamofire.Method {
         switch self {
@@ -41,6 +42,7 @@ enum Router: URLRequestConvertible {
         case .AcceptFriendship:
             return .POST
         case .DeleteFriendshipRequest,
+        .DeleteFriend,
         .DestroyDeviceToken:
             return .DELETE
         }
@@ -68,6 +70,8 @@ enum Router: URLRequestConvertible {
             return "/friend_requests/\(requestID)/accept"
         case .DeleteFriendshipRequest(let requestID):
             return "/friend_requests/\(requestID)"
+        case .DeleteFriend(let login):
+            return "/friends/\(login)"
         }
     }
     
@@ -194,6 +198,13 @@ class Hackinat: NSObject {
    
     func deleteFriendshipRequest(requestID: Int, success: () -> ()){
             manager.request(Router.DeleteFriendshipRequest(requestID))
+                .response {(_) in
+                    success()
+                    }
+    }
+
+    func deleteFriend(login: String, success: () -> ()){
+            manager.request(Router.DeleteFriend(login))
                 .response {(_) in
                     success()
                     }

@@ -32,6 +32,7 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
             setFrame = false
         }
         button = FriendshipButtonSet.appropriateButton(toBeFriend)
+        button.delegate = self
         if(setFrame) {self.frame = button.frame}
         self.addSubview(button)
     }

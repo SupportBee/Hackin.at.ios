@@ -11,13 +11,18 @@ import UIKit
 class CancelFriendRequestButton: FriendshipButton {
     
     override var title: String {
-        return "f"
+        return "p"
     }
     
     override var disabledTitle: String {
         return "Canceling Friendship"
     }
     
+    func makeRequest(success: () -> ()){
+            Hackinat.sharedInstance.deleteFriendshipRequest(toBeFriend.friendRequest!.id,
+                success: success)
+    }
+
     override func buttonPressed(){
         if (requestSent == false){
             func success(){
@@ -27,8 +32,7 @@ class CancelFriendRequestButton: FriendshipButton {
                 toBeFriend.friendRequest = nil
                 delegate?.actionCompleted()
             }
-            Hackinat.sharedInstance.deleteFriendshipRequest(toBeFriend.friendRequest!.id,
-                success: success)
+            makeRequest(success)
         }
     }
     

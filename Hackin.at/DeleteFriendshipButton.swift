@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeleteFriendshipButton: FriendshipButton {
+class DeleteFriendshipButton: CancelFriendRequestButton {
     
     override var title: String {
         return "f"
@@ -16,6 +16,11 @@ class DeleteFriendshipButton: FriendshipButton {
     
     override var disabledTitle: String {
         return "Waiting to Delete"
+    }
+    
+    override func makeRequest(success: () -> ()){
+        Hackinat.sharedInstance.deleteFriend(toBeFriend.login,
+                success: success)
     }
     
 }
