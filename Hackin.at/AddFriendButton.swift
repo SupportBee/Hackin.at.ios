@@ -19,7 +19,7 @@ class AddFriendButton: FriendshipButton {
     }
     
     
-    func buttonPressed(){
+    override func buttonPressed(){
         if (requestSent == false){
             func success(friendRequest: FriendshipRequest){
                 self.requestSent = true

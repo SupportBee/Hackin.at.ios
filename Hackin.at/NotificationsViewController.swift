@@ -15,16 +15,30 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     var notificationsTableView: UITableView!
     var notifications: Array<JSON> = []
+    var tableRefreshControl:TableRefreshControl!
     
     override func viewDidLoad() {
         title = "Notifications"
+        setupTableView()
+        setupAutoRefresh()
+        fetchNotifications()
+    }
+    
+    func setupTableView(){
         notificationsTableView = UITableView()
         view.addSubview(notificationsTableView)
         notificationsTableView.delegate = self
         notificationsTableView.dataSource = self
         notificationsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         notificationsTableView.tableFooterView = UIView(frame: CGRectZero)
-        fetchNotifications()
+    }
+    
+    func setupAutoRefresh(){
+         tableRefreshControl = TableRefreshControl.setupForTableViewWithAction(
+            tableView: notificationsTableView,
+            target: self,
+            action: "fetchNotifications"
+        )
     }
     
     func fetchNotifications() {
@@ -32,6 +46,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func renderNotifications(notificationsJSON: AnyObject!) {
+        if (tableRefreshControl.refreshing) { tableRefreshControl.endRefreshing()}
         notifications = JSON(notificationsJSON)["notifications"].arrayValue
         notificationsTableView.reloadData()
     }

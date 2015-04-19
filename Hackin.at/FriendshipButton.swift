@@ -42,6 +42,11 @@ class FriendshipButton: UIButton {
     func setupTargetAction(){
        addTarget(self, action: "buttonPressed", forControlEvents: UIControlEvents.TouchUpInside)
     }
+    
+    func buttonPressed(){
+        println("Implement in Subclass")
+        
+    }
    
 
 }

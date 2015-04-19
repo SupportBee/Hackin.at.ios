@@ -102,6 +102,7 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
                 backgroundLabelActive = true
                 updateConstraints()
             }else{
+                backgroundLabelActive = false
                 hackersTableView.backgroundView = nil
                 updateConstraints()
             }

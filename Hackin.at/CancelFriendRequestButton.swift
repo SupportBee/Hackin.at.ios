@@ -18,7 +18,7 @@ class CancelFriendRequestButton: FriendshipButton {
         return "Canceling Friendship"
     }
     
-    func buttonPressed(){
+    override func buttonPressed(){
         if (requestSent == false){
             func success(){
                 self.requestSent = true
