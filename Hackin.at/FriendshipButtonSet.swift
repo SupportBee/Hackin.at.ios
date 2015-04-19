@@ -26,12 +26,13 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
     }
     
     func renderButton(){
+        var setFrame = true
         if(button != nil){
             button.removeFromSuperview()
+            setFrame = false
         }
         button = FriendshipButtonSet.appropriateButton(toBeFriend)
-        self.frame = button.frame
-        button.delegate = self
+        if(setFrame) {self.frame = button.frame}
         self.addSubview(button)
     }
     
