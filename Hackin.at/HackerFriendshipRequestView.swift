@@ -10,7 +10,7 @@ import PureLayout
 
 extension HackerTableCell {
     
-    class FriendshipRequestView: FullView {
+    class FriendshipRequestView: ContactView {
         
         var buttonSet: FriendshipButtonSet!
         var buttonsContainer: UIView!

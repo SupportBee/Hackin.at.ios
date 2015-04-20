@@ -22,7 +22,7 @@ extension HackerTableCell {
         
         override func updateConstraints(){
         
-            nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
+            nameLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding, relation: NSLayoutRelation.GreaterThanOrEqual)
 
             super.updateConstraints()
         }
