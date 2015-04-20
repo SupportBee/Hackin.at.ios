@@ -449,6 +449,7 @@
 				TargetAttributes = {
 					F0DB3BBB1A41FABF00DC8C9B = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = BRUDE4HRDZ;
 					};
 					F0DB3BD01A41FABF00DC8C9B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -643,6 +644,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -685,7 +687,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -711,8 +714,9 @@
 				BUNDLE_DISPLAY_NAME_PREFIX = "α.";
 				BUNDLE_ID_SUFFIX = .debug;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FABRIC_API_KEY = b404d9c9ff53f280b1730a3647feff3523fd5a16;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FABRIC_API_KEY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -736,8 +740,9 @@
 				BUNDLE_DISPLAY_NAME_PREFIX = "";
 				BUNDLE_ID_SUFFIX = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				FABRIC_API_KEY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FABRIC_API_KEY = b404d9c9ff53f280b1730a3647feff3523fd5a16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
