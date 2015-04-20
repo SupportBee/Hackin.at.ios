@@ -74,7 +74,9 @@ class MyPendingFriendsDataSource: HackersDataSource {
     
     func onFetch(requests: [FriendshipRequest]){
         let toBeFriends = requests.map({(request) -> Hacker in
-            return request.sender
+            let pendingFriend = request.sender
+            pendingFriend.friendRequest = request
+            return pendingFriend
         })
         self.hackers = toBeFriends
         delegate?.hackersFetched()

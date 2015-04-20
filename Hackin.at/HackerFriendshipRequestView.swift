@@ -14,7 +14,6 @@ extension HackerTableCell {
         
         var buttonSet: FriendshipButtonSet!
         var buttonsContainer: UIView!
-        var successLabel: UILabel!
         
         required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,16 +35,7 @@ extension HackerTableCell {
             buttonsContainer.addSubview(buttonSet)
         }
         
-        func showSuccessMessage(message:String){
-            successLabel = UILabel()
-            successLabel.text = message
-            buttonsContainer.addSubview(successLabel)
-            setNeedsUpdateConstraints()
-        }
-        
-        func afterAcceptReject(){
-        }
-        
+       
         override func setupViewData(hacker: Hacker) {
             setupButtons(hacker)
             super.setupViewData(hacker)
@@ -54,18 +44,13 @@ extension HackerTableCell {
         override func updateConstraints(){
             
             super.updateConstraints()
-
             buttonsContainer.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: nameLabel, withOffset: AppTheme.Listing.elementsPadding)
             buttonsContainer.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: AppTheme.Listing.elementsPadding)
             buttonsContainer.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: profileImageView, withOffset: AppTheme.Listing.elementsPadding)
             buttonsContainer.autoPinEdgeToSuperviewEdge(ALEdge.Right)
+            buttonSet.autoPinEdgesToSuperviewMargins()
             
             
-            if(successLabel != nil){
-                successLabel.autoPinEdgesToSuperviewMargins()
-            }else{
-                buttonSet.autoPinEdgesToSuperviewMargins()
-            }
         }
 
     }
