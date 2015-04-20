@@ -764,7 +764,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUSH_WOOSH_APPID = "";
+				PUSH_WOOSH_APPID = "04BB6-ED6A8";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 			};
 			name = Release;
