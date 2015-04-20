@@ -25,7 +25,7 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>$(FABRIC_API_KEY)</string>
+		<string>b404d9c9ff53f280b1730a3647feff3523fd5a16</string>
 		<key>Kits</key>
 		<array>
 			<dict>

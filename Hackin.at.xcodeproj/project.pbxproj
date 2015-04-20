@@ -410,6 +410,7 @@
 				F016885E1A41FEAD00566C8D /* Copy Frameworks */,
 				2E4008E6833F311D1CC7F727 /* Embed Pods Frameworks */,
 				4E0B2BF5F8A278FECF092ACA /* Copy Pods Resources */,
+				F03869DA1AE57199006ADF71 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -547,6 +548,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		F03869DA1AE57199006ADF71 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run b404d9c9ff53f280b1730a3647feff3523fd5a16 07256f65c820af087fc3980bc26de56cee99bde78a696409eba163efddcd8e41";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -716,7 +730,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FABRIC_API_KEY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -742,7 +755,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FABRIC_API_KEY = b404d9c9ff53f280b1730a3647feff3523fd5a16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
