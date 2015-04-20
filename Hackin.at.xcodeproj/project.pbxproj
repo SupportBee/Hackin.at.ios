@@ -450,7 +450,6 @@
 				TargetAttributes = {
 					F0DB3BBB1A41FABF00DC8C9B = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = BRUDE4HRDZ;
 					};
 					F0DB3BD01A41FABF00DC8C9B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -739,6 +738,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PUSH_WOOSH_APPID = "623F0-4D537";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -753,8 +753,8 @@
 				BUNDLE_DISPLAY_NAME_PREFIX = "";
 				BUNDLE_ID_SUFFIX = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Prateek Dayal (BRUDE4HRDZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Prateek Dayal (BRUDE4HRDZ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
@@ -764,6 +764,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1bd63321-28c1-456f-8da8-7a1ae2db0513";
 				PUSH_WOOSH_APPID = "04BB6-ED6A8";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 			};
