@@ -14,8 +14,8 @@ class PushNotificationHandler {
         if(CurrentHacker.login != data.login){ return }
         
         switch data.type {
-        case "friend.request.sent":
-            println("friend.request.sent")
+        case "friend.request.received":
+            println("friend.request.received")
         case "friend.request.accepted":
             println("friend.request.accepted")
         default:
