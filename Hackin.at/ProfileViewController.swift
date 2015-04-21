@@ -165,7 +165,7 @@ class ProfileViewController: UIViewController {
         // Personal Info
         nameLabel.text = userDetails["name"].string
         companyLabel.text = userDetails["company"].string
-        friendsLabel.text = "Friend"
+        friendsLabel.text = "Friends"
         
         // Counts
         var reposCount = userDetails["github_repos"].int
