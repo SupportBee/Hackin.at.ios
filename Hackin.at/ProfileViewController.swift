@@ -68,6 +68,10 @@ class ProfileViewController: UIViewController {
     
     func clearPlaceholderLabels(){
         stickersLabel.text = ""
+        nameLabel.text = ""
+        reposCountLabel.text = ""
+        friendsLabel.text = ""
+        companyLabel.text = ""
     }
     
     @IBAction func followButtonPressed(sender: AnyObject) {
@@ -161,6 +165,7 @@ class ProfileViewController: UIViewController {
         // Personal Info
         nameLabel.text = userDetails["name"].string
         companyLabel.text = userDetails["company"].string
+        friendsLabel.text = "Friend"
         
         // Counts
         var reposCount = userDetails["github_repos"].int
@@ -168,16 +173,12 @@ class ProfileViewController: UIViewController {
         
         reposCountLabel.text = "\(reposCount!) Public Repos"
         
-        Alamofire.request(.GET, avatarURL!)
-            .response{ (_, _, data, _) in
-                self.profileImage.image = UIImage(data: (data as! NSData) )
-        }
-        
         stickersLabel.font = UIFont(name: "pictonic", size: 18)
         stickersLabel.text = hacker.stickerCodes()
     }
     
     func populateBasicInfo(){
+        Helpers.showProfileImage(hacker, imageView: profileImage)
         loginLabel.text = "@\(hacker.login)"
     }
     
