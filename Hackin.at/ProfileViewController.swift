@@ -68,7 +68,7 @@ class ProfileViewController: UIViewController {
     
     func clearPlaceholderLabels(){
         stickersLabel.text = ""
-        nameLabel.text = ""
+        nameLabel.text = "Fetching more info ..."
         reposCountLabel.text = ""
         friendsLabel.text = ""
         companyLabel.text = ""
