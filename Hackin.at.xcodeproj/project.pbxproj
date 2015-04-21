@@ -41,11 +41,18 @@
 		F086DD871AD9E821003C3AC9 /* AcceptDenyFriendshipButtonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F086DD861AD9E821003C3AC9 /* AcceptDenyFriendshipButtonSet.swift */; };
 		F08DCC861AB3F77700C0509B /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08DCC851AB3F77700C0509B /* RequestsViewController.swift */; };
 		F09325CB1AA822F9008A94CB /* HackersListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09325CA1AA822F9008A94CB /* HackersListingView.swift */; };
+		F0A204991AE5C8420086BE0E /* HockeySDK.embeddedframework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF3B771AE5C65400893128 /* HockeySDK.embeddedframework */; };
+		F0A2049B1AE5C9380086BE0E /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A2049A1AE5C9380086BE0E /* HockeySDK.framework */; };
 		F0AA8A051A91A543008E382D /* UIIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AA8A041A91A543008E382D /* UIIconLabel.swift */; };
 		F0AD153E1A49E94A00C1E456 /* logo_square.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD153D1A49E94A00C1E456 /* logo_square.png */; };
 		F0AD15441A49E9BA00C1E456 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */; };
 		F0B6451D1AB401FC00A2A953 /* FriendshipRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */; };
 		F0BDDC021A874C2200C1C78D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BDDC011A874C2200C1C78D /* AppTheme.swift */; };
+		F0BF3B701AE5C60000893128 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF3B6F1AE5C60000893128 /* AssetsLibrary.framework */; };
+		F0BF3B721AE5C60500893128 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF3B711AE5C60500893128 /* CoreText.framework */; };
+		F0BF3B741AE5C60A00893128 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF3B731AE5C60A00893128 /* MobileCoreServices.framework */; };
+		F0BF3B761AE5C60F00893128 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF3B751AE5C60F00893128 /* QuickLook.framework */; };
+		F0BF3B781AE5C65400893128 /* HockeySDK.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = F0BF3B771AE5C65400893128 /* HockeySDK.embeddedframework */; };
 		F0C8FB3B1AA6FB4700DEBE90 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */; };
 		F0C8FB3D1AA7D86800DEBE90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */; };
 		F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */; };
@@ -79,6 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F0A204991AE5C8420086BE0E /* HockeySDK.embeddedframework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,11 +131,17 @@
 		F086DD861AD9E821003C3AC9 /* AcceptDenyFriendshipButtonSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptDenyFriendshipButtonSet.swift; sourceTree = "<group>"; };
 		F08DCC851AB3F77700C0509B /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		F09325CA1AA822F9008A94CB /* HackersListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackersListingView.swift; sourceTree = "<group>"; };
+		F0A2049A1AE5C9380086BE0E /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework"; sourceTree = "<group>"; };
 		F0AA8A041A91A543008E382D /* UIIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIconLabel.swift; sourceTree = "<group>"; };
 		F0AD153D1A49E94A00C1E456 /* logo_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_square.png; path = Hackin.at/logo_square.png; sourceTree = "<group>"; };
 		F0AD15431A49E9BA00C1E456 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F0B6451C1AB401FC00A2A953 /* FriendshipRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipRequest.swift; sourceTree = "<group>"; };
 		F0BDDC011A874C2200C1C78D /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		F0BF3B6F1AE5C60000893128 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F0BF3B711AE5C60500893128 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F0BF3B731AE5C60A00893128 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F0BF3B751AE5C60F00893128 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		F0BF3B771AE5C65400893128 /* HockeySDK.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HockeySDK.embeddedframework; path = "HockeySDK-iOS/HockeySDK.embeddedframework"; sourceTree = "<group>"; };
 		F0C8FB3A1AA6FB4700DEBE90 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3C1AA7D86800DEBE90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F0C8FB3F1AA7D8C300DEBE90 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -153,7 +167,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BF3B761AE5C60F00893128 /* QuickLook.framework in Frameworks */,
+				F0BF3B741AE5C60A00893128 /* MobileCoreServices.framework in Frameworks */,
+				F0BF3B721AE5C60500893128 /* CoreText.framework in Frameworks */,
+				F0BF3B701AE5C60000893128 /* AssetsLibrary.framework in Frameworks */,
 				F065B91D1A420D7900CF2A38 /* CoreLocation.framework in Frameworks */,
+				F0A2049B1AE5C9380086BE0E /* HockeySDK.framework in Frameworks */,
 				0FF759B11A9F120A0090B835 /* Crashlytics.framework in Frameworks */,
 				A960B61E46FC8B09A40FBA10 /* Pods.framework in Frameworks */,
 				0FE0224F1A89C70F00E17699 /* Fabric.framework in Frameworks */,
@@ -391,6 +410,12 @@
 		F4F0913888F877786F5CE72B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0A2049A1AE5C9380086BE0E /* HockeySDK.framework */,
+				F0BF3B771AE5C65400893128 /* HockeySDK.embeddedframework */,
+				F0BF3B751AE5C60F00893128 /* QuickLook.framework */,
+				F0BF3B731AE5C60A00893128 /* MobileCoreServices.framework */,
+				F0BF3B711AE5C60500893128 /* CoreText.framework */,
+				F0BF3B6F1AE5C60000893128 /* AssetsLibrary.framework */,
 				20C58A03B72B5875578D89A0 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -410,6 +435,8 @@
 				F016885E1A41FEAD00566C8D /* Copy Frameworks */,
 				2E4008E6833F311D1CC7F727 /* Embed Pods Frameworks */,
 				4E0B2BF5F8A278FECF092ACA /* Copy Pods Resources */,
+				F03869DA1AE57199006ADF71 /* ShellScript */,
+				F0BF3B6E1AE5C55400893128 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -449,7 +476,6 @@
 				TargetAttributes = {
 					F0DB3BBB1A41FABF00DC8C9B = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = BRUDE4HRDZ;
 					};
 					F0DB3BD01A41FABF00DC8C9B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -485,6 +511,7 @@
 				F0DB3BC71A41FABF00DC8C9B /* Main.storyboard in Resources */,
 				F05137381ABFBEC800EF6542 /* Images.xcassets in Resources */,
 				F0493F7D1A5328D400DA5762 /* AppIcons.xcassets in Resources */,
+				F0BF3B781AE5C65400893128 /* HockeySDK.embeddedframework in Resources */,
 				F0C8FB401AA7D8C300DEBE90 /* Search.storyboard in Resources */,
 				0F0A15381A8343BA00F00B74 /* pictonic.ttf in Resources */,
 				F0EEF13E1A88C6BE0035D0D3 /* DateTools.bundle in Resources */,
@@ -547,6 +574,32 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		F03869DA1AE57199006ADF71 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run b404d9c9ff53f280b1730a3647feff3523fd5a16 07256f65c820af087fc3980bc26de56cee99bde78a696409eba163efddcd8e41";
+		};
+		F0BF3B6E1AE5C55400893128 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -716,16 +769,17 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FABRIC_API_KEY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PUSH_WOOSH_APPID = "623F0-4D537";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -740,19 +794,20 @@
 				BUNDLE_DISPLAY_NAME_PREFIX = "";
 				BUNDLE_ID_SUFFIX = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FABRIC_API_KEY = b404d9c9ff53f280b1730a3647feff3523fd5a16;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Prateek Dayal (BRUDE4HRDZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Prateek Dayal (BRUDE4HRDZ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUSH_WOOSH_APPID = "";
+				PROVISIONING_PROFILE = "1bd63321-28c1-456f-8da8-7a1ae2db0513";
+				PUSH_WOOSH_APPID = "04BB6-ED6A8";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 			};
 			name = Release;

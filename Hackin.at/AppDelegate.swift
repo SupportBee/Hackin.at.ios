@@ -9,7 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
-
+import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAppStyling()
         
         PushNotificationManager.pushManager().registerForPushNotifications()
+        
+    BITHockeyManager.sharedHockeyManager().configureWithIdentifier("abc801de68b61f51d1d79a226d0e1373")
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+
         
         return true
     }
