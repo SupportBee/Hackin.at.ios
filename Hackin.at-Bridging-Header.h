@@ -8,3 +8,5 @@
 #import "SZTextView/SZTextView.h"
 #import "Mixpanel/Mixpanel.h"
 #import "Pushwoosh/PushNotificationManager.h"
+#import "HockeySDK/HockeySDK.h"
+
