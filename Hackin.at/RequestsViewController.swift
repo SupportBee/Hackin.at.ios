@@ -18,6 +18,7 @@ class RequestsViewController: UIViewController{
     override func viewDidLoad() {
         title = "Friend Requests"
         setupRequestsTable()
+        requestsController = self
     }
     
     func setupRequestsTable(){

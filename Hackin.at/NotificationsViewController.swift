@@ -22,6 +22,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         setupTableView()
         setupAutoRefresh()
         fetchNotifications()
+        notificationsController = self
     }
     
     func setupTableView(){
@@ -41,7 +42,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         )
     }
     
-    func fetchNotifications() {
+    internal func fetchNotifications() {
         Hackinat.sharedInstance.fetchCurrentHackerNotifications(login: CurrentHacker.login!, authKey: CurrentHacker.authKey!, success: renderNotifications)
     }
     

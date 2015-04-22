@@ -13,6 +13,7 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBarTitles()
+        mainTabbar = self
     }
     
     func setupTabBarTitles(){
