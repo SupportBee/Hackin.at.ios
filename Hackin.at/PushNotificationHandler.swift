@@ -15,11 +15,11 @@ class PushNotificationHandler {
         
         switch data.type {
         case "friend.request.received":
-            println("friend.request.received")
+            mainTabbar?.selectedIndex = 1
         case "friend.request.accepted":
-            println("friend.request.accepted")
+            mainTabbar?.selectedIndex = 2
         default:
-            println("default")
+            println("Unhandled Push Notification - \(data.type)")
         }
     }
 }

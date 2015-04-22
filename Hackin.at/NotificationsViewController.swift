@@ -21,6 +21,10 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         title = "Notifications"
         setupTableView()
         setupAutoRefresh()
+        notificationsController = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         fetchNotifications()
     }
     

@@ -18,6 +18,11 @@ class RequestsViewController: UIViewController{
     override func viewDidLoad() {
         title = "Friend Requests"
         setupRequestsTable()
+        requestsController = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        requestsTable.fetchHackers()
     }
     
     func setupRequestsTable(){
@@ -27,7 +32,6 @@ class RequestsViewController: UIViewController{
             hackersDataSource: MyPendingFriendsDataSource())
         requestsTable.currentNavigationController = navigationController!
         view.addSubview(requestsTable)
-     
     }
     
     override func updateViewConstraints() {

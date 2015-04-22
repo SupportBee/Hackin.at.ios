@@ -9,6 +9,10 @@
 import UIKit
 import PureLayout
 
+var mainTabbar: UITabBarController?
+var requestsController: UIViewController?
+var notificationsController: UIViewController?
+
 class InitialViewController: UIViewController, LoginViewDelegate {
     
     @IBOutlet weak var logoImageView: UIImageView!
