@@ -19,6 +19,10 @@ class FriendsViewController: UIViewController, UISearchBarDelegate {
         setupFriendsListing()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        friendsListing.fetchHackers()
+    }
+    
     func setupFriendsListing(){
         friendsListing = HackersListingView(
             cellStyle: HackerTableCell.ContactView.self,

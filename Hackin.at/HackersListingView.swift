@@ -41,7 +41,8 @@ class HackersListingView: UIView, UITableViewDelegate, UITableViewDataSource, Ha
         addSubview(hackersTableView)
         setupTableViewStyle()
         if pullToRefresh { setupAutoRefresh() }
-        fetchHackers()
+     //   Do an explicit fetch
+     //   fetchHackers()
     }
     
     func fetchHackers(){

@@ -19,7 +19,7 @@ class PushNotificationHandler {
         case "friend.request.accepted":
             mainTabbar?.selectedIndex = 2
         default:
-            println("default")
+            println("Unhandled Push Notification - \(data.type)")
         }
     }
 }
