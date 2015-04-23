@@ -640,6 +640,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F04960401AE8A69C0050526C /* Release.Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release.Test;
+		};
+		F04960411AE8A69C0050526C /* Release.Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */;
+			buildSettings = {
+				API_BASE_DOMAIN = "https://hackin.at";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_DISPLAY_NAME_PREFIX = "";
+				BUNDLE_ID_SUFFIX = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Hackin.at/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MIXPANEL_API_KEY = 461933cc67dc538dcc31b6681c640038;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PUSH_WOOSH_APPID = "04BB6-ED6A8";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
+			};
+			name = Release.Test;
+		};
+		F04960421AE8A69C0050526C /* Release.Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Hackin.atTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hackin.at.app/Hackin.at";
+			};
+			name = Release.Test;
+		};
 		F0A12C0D1AE88708000C5355 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -858,7 +936,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MIXPANEL_API_KEY = 461933cc67dc538dcc31b6681c640038;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bd63321-28c1-456f-8da8-7a1ae2db0513";
+				PROVISIONING_PROFILE = "b343984d-b8c4-49e1-aaa3-99949a0a73de";
 				PUSH_WOOSH_APPID = "04BB6-ED6A8";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
 			};
@@ -907,6 +985,7 @@
 				F0DB3BD91A41FAC000DC8C9B /* Debug */,
 				F0A12C0D1AE88708000C5355 /* Staging */,
 				F0DB3BDA1A41FAC000DC8C9B /* Release */,
+				F04960401AE8A69C0050526C /* Release.Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -917,6 +996,7 @@
 				F0DB3BDC1A41FAC000DC8C9B /* Debug */,
 				F0A12C0E1AE88708000C5355 /* Staging */,
 				F0DB3BDD1A41FAC000DC8C9B /* Release */,
+				F04960411AE8A69C0050526C /* Release.Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -927,6 +1007,7 @@
 				F0DB3BDF1A41FAC000DC8C9B /* Debug */,
 				F0A12C0F1AE88708000C5355 /* Staging */,
 				F0DB3BE01A41FAC000DC8C9B /* Release */,
+				F04960421AE8A69C0050526C /* Release.Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
