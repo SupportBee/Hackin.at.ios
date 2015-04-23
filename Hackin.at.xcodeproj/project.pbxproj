@@ -737,6 +737,7 @@
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MIXPANEL_API_KEY = 6642e6642c98e47da5d2a327f73440d2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PUSH_WOOSH_APPID = "623F0-4D537";
@@ -763,6 +764,7 @@
 				INFOPLIST_FILE = Hackin.at/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MIXPANEL_API_KEY = 461933cc67dc538dcc31b6681c640038;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1bd63321-28c1-456f-8da8-7a1ae2db0513";
 				PUSH_WOOSH_APPID = "04BB6-ED6A8";

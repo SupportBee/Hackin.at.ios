@@ -51,6 +51,8 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MIXPANEL_API_KEY</key>
+	<string>$(MIXPANEL_API_KEY)</string>
 	<key>Pushwoosh_APPID</key>
 	<string>$(PUSH_WOOSH_APPID)</string>
 	<key>Pushwoosh_SHOW_ALERT</key>
