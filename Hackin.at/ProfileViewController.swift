@@ -178,7 +178,7 @@ class ProfileViewController: UIViewController {
     }
     
     func populateBasicInfo(){
-        Helpers.showProfileImage(hacker, imageView: profileImage)
+        Helpers.showProfileImage(hacker, imageView: profileImage, size: CGFloat(128.0))
         loginLabel.text = "@\(hacker.login)"
     }
     
