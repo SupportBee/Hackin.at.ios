@@ -61,7 +61,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         Helpers.showProfileImage(hacker, imageView: cell.imageView!)
         Helpers.roundImageView(cell.imageView!)
         
-        let button = FriendshipButtonSet(toBeFriend: hacker)
+        let button = FriendshipButtonSet(toBeFriend: hacker, bordered: true)
         cell.accessoryView = button
         
         return cell;
