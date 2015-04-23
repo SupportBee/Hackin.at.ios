@@ -103,7 +103,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
     
     
     
-    func webView(webView: WKWebView!, didFinishNavigation navigation: WKNavigation!) {
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         // If the URL has afterauth, extract auth_token and other info from it
         let url: NSURL = webView.URL!
         loginViewLoaded = true

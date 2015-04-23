@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
     
     func setupTable(){
         friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self,
-            hackersDataSource: FriendsofHackerDataSource(hacker: hacker))
+                        hackersDataSource: FriendsofHackerDataSource(hacker: hacker))
         friendsListing.hackersTableView.tableHeaderView = tableHeaderView
         friendsListing.currentNavigationController = navigationController
         view.addSubview(friendsListing)
@@ -89,12 +89,9 @@ class ProfileViewController: UIViewController {
     }
     
     func renderUserDetails(){
-        println("renderUserDetails")
         if(hacker.hasFullProfile()){
-            println("hasFullProfile")
             renderFullProfile()
         }else{
-            println("no hasFullProfile")
             hacker.fetchFullProfile(success: renderFullProfile)
         }
     }
@@ -178,7 +175,7 @@ class ProfileViewController: UIViewController {
     }
     
     func populateBasicInfo(){
-        Helpers.showProfileImage(hacker, imageView: profileImage)
+        Helpers.showProfileImage(hacker, imageView: profileImage, size: CGFloat(128.0))
         loginLabel.text = "@\(hacker.login)"
     }
     

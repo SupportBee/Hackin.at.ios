@@ -28,7 +28,7 @@ class RequestsViewController: UIViewController{
     func setupRequestsTable(){
         requestsTable = HackersListingView(cellStyle: HackerTableCell.FriendshipRequestView.self,
             pullToRefresh: true,
-            emptyTableMessage: "No unattended friendship requests.\n Time to hit a meetup?",
+            emptyTableMessage: "No pending friend requests.\n Time to hit a meetup?",
             hackersDataSource: MyPendingFriendsDataSource())
         requestsTable.currentNavigationController = navigationController!
         view.addSubview(requestsTable)

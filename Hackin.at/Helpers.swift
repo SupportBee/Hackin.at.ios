@@ -8,8 +8,8 @@
 
 class Helpers {
     
-    class func showProfileImage(hacker:Hacker, imageView: UIImageView){
-        hacker.fetchAvatarURL(size: CGFloat(48.0), success: {
+    class func showProfileImage(hacker:Hacker, imageView: UIImageView, size:CGFloat = 48.0){
+        hacker.fetchAvatarURL(size: size, success: {
             (url: String) in
             imageView.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "logo_square.png"))
         })

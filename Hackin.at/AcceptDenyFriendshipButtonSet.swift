@@ -33,10 +33,10 @@ class AcceptDenyFriendshipButtonSet: FriendshipButtonSet {
     
     override func renderButton() {
         // Two buttons!
-        acceptButton = AcceptFriendButton(toBeFriend: toBeFriend)
+        acceptButton = AcceptFriendButton(toBeFriend: toBeFriend, bordered: true)
         acceptButton.delegate = RequestCompletedHandler(message: "Request accepted", callback: showSuccessMessage)
         
-        denyButton = DenyFriendRequest(toBeFriend: toBeFriend)
+        denyButton = DenyFriendRequest(toBeFriend: toBeFriend, bordered: true)
         denyButton.delegate = RequestCompletedHandler(message: "Request denied", callback:  showSuccessMessage)
         self.addSubview(acceptButton)
         self.addSubview(denyButton)

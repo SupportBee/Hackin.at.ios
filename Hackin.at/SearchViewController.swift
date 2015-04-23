@@ -16,7 +16,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     var hackers: [Hacker] = []
     
     override func viewDidLoad(){
-        println("Search view controller")
         setupHackerListingView()
         setupSearchBar()
     }
@@ -44,7 +43,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        println("Searching for \(searchText)")
         Hacker.search(searchText, success: foundHackers)
     }
     
@@ -61,7 +59,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         Helpers.showProfileImage(hacker, imageView: cell.imageView!)
         Helpers.roundImageView(cell.imageView!)
         
-        let button = FriendshipButtonSet(toBeFriend: hacker)
+        let button = FriendshipButtonSet(toBeFriend: hacker, bordered: true)
         cell.accessoryView = button
         
         return cell;

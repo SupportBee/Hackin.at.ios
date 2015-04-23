@@ -19,7 +19,6 @@ public struct AppColors {
     
     static let secondaryLabel = UIColor(red: 152/255.0, green: 162/255.0, blue: 175/255.0, alpha: 1)
     
-
     static let barTint = UIColor(red: 242.0/255.0, green: 99.0/255.0, blue: 99.0/255.0, alpha: 1)
     static let tabBarTint = UIColor(red: 204/255.0, green: 204/255.0, blue: 204/255.0, alpha: 1)
     
@@ -27,9 +26,10 @@ public struct AppColors {
     
     static let profileBgColor = UIColor.clearColor()
     
-    
     static let searchBarColor = UIColor(red: 172/255.0, green: 71/255.0, blue: 71/255.0, alpha: 1)
     
     static let searchTextColor = UIColor(red: 242/255.0, green: 99/255.0, blue: 99/255.0, alpha: 1)
+    
+    static let primaryButtonColor = UIColor(red: 33/255.0, green: 133.0/255.0, blue: 207/255.0, alpha: 1)
     
 }

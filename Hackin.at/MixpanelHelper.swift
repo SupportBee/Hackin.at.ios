@@ -19,8 +19,9 @@ class MixpanelHelper {
     }
     
     class func setup(){
+        let api_key = NSBundle.mainBundle().infoDictionary?["MIXPANEL_API_KEY"] as! String
         Mixpanel.sharedInstanceWithToken(
-            "6642e6642c98e47da5d2a327f73440d2")
+            api_key)
     }
     
     func identifyCurrentUser(){
@@ -29,6 +30,10 @@ class MixpanelHelper {
     
     func trackLogin(){
         instance.track("Login")
+    }
+
+    func trackPushNotification(type: String){
+        instance.track("Open on Push", properties: [type: type])
     }
     
     func trackOpen(){

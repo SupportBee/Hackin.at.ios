@@ -18,10 +18,13 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
     
     var toBeFriend: Hacker!
     var button: FriendshipButton!
+    var bordered = false
     
-    init(toBeFriend: Hacker){
+    init(toBeFriend: Hacker,
+        bordered: Bool = false){
         super.init(frame: CGRectZero)
         self.toBeFriend = toBeFriend
+        self.bordered = bordered
         renderButton()
     }
     
@@ -31,7 +34,7 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
             button.removeFromSuperview()
             setFrame = false
         }
-        button = FriendshipButtonSet.appropriateButton(toBeFriend)
+        button = FriendshipButtonSet.appropriateButton(toBeFriend, bordered: bordered)
         button.delegate = self
         if(setFrame) {self.frame = button.frame}
         self.addSubview(button)
@@ -57,19 +60,20 @@ class FriendshipButtonSet: UIView, FriendshipButtonDelegate {
         super.updateConstraints()
     }
     
-    class func appropriateButton(toBeFriend: Hacker) -> FriendshipButton {
+    class func appropriateButton(toBeFriend: Hacker,
+        bordered: Bool = false) -> FriendshipButton {
         if (toBeFriend.isFriends){
-            return DeleteFriendshipButton(toBeFriend: toBeFriend)
+            return DeleteFriendshipButton(toBeFriend: toBeFriend, bordered: bordered)
         }else{
             if let friendRequest = toBeFriend.friendRequest{
                 if (friendRequest.sender.login == CurrentHacker.hacker()!.login) {
-                    let button = CancelFriendRequestButton(toBeFriend: toBeFriend)
+                    let button = CancelFriendRequestButton(toBeFriend: toBeFriend, bordered: bordered)
                     return button
                 }else{
-                    return AcceptFriendButton(toBeFriend: toBeFriend)
+                    return AcceptFriendButton(toBeFriend: toBeFriend, bordered: bordered)
                 }
             }else{
-                return AddFriendButton(toBeFriend: toBeFriend)
+                return AddFriendButton(toBeFriend: toBeFriend, bordered: bordered)
             }
         }
     }
