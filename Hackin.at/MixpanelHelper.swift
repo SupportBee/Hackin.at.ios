@@ -31,6 +31,10 @@ class MixpanelHelper {
     func trackLogin(){
         instance.track("Login")
     }
+
+    func trackPushNotification(type: String){
+        instance.track("Open on Push", properties: [type: type])
+    }
     
     func trackOpen(){
         instance.track("Open")

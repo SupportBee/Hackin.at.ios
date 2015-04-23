@@ -21,5 +21,6 @@ class PushNotificationHandler {
         default:
             println("Unhandled Push Notification - \(data.type)")
         }
+        MixpanelHelper().trackPushNotification(data.type)
     }
 }
