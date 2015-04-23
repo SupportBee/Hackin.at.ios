@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
     
     func setupTable(){
         friendsListing = HackersListingView(cellStyle: HackerTableCell.FullView.self,
-            hackersDataSource: FriendsofHackerDataSource(hacker: hacker))
+                        hackersDataSource: FriendsofHackerDataSource(hacker: hacker))
         friendsListing.hackersTableView.tableHeaderView = tableHeaderView
         friendsListing.currentNavigationController = navigationController
         view.addSubview(friendsListing)
