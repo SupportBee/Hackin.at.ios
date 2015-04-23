@@ -10,9 +10,7 @@ import Alamofire
 import CoreLocation
 import SwiftyJSON
 
-//let apiBaseDomain = "http://staging.hackin.at"
-let apiBaseDomain = "https://hackin.at"
-//let apiBaseDomain = "http://lvh.me:3000"
+let apiBaseDomain = NSBundle.mainBundle().infoDictionary?["API_BASE_DOMAIN"] as! String
 
 enum Router: URLRequestConvertible {
     

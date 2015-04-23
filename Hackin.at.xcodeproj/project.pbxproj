@@ -640,6 +640,96 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F0A12C0D1AE88708000C5355 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		F0A12C0E1AE88708000C5355 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				API_BASE_DOMAIN = "http://staging.hackin.at";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_DISPLAY_NAME_PREFIX = "α.";
+				BUNDLE_ID_SUFFIX = .debug;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Hackin.at-cizuiaqeoqhrcuetzkdvaudslqbj/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Hackin.at/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MIXPANEL_API_KEY = 6642e6642c98e47da5d2a327f73440d2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PUSH_WOOSH_APPID = "623F0-4D537";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackin.at-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		F0A12C0F1AE88708000C5355 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Hackin.atTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hackin.at.app/Hackin.at";
+			};
+			name = Staging;
+		};
 		F0DB3BD91A41FAC000DC8C9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -723,6 +813,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E77107AC7E516DF624E2B62 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				API_BASE_DOMAIN = "http://lvh.me:3000";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME_PREFIX = "α.";
 				BUNDLE_ID_SUFFIX = .debug;
@@ -750,6 +841,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6644DA7F23F5DCD3EAAA45AE /* Pods.release.xcconfig */;
 			buildSettings = {
+				API_BASE_DOMAIN = "https://hackin.at";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME_PREFIX = "";
 				BUNDLE_ID_SUFFIX = "";
@@ -813,6 +905,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0DB3BD91A41FAC000DC8C9B /* Debug */,
+				F0A12C0D1AE88708000C5355 /* Staging */,
 				F0DB3BDA1A41FAC000DC8C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -822,6 +915,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0DB3BDC1A41FAC000DC8C9B /* Debug */,
+				F0A12C0E1AE88708000C5355 /* Staging */,
 				F0DB3BDD1A41FAC000DC8C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -831,6 +925,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0DB3BDF1A41FAC000DC8C9B /* Debug */,
+				F0A12C0F1AE88708000C5355 /* Staging */,
 				F0DB3BE01A41FAC000DC8C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
