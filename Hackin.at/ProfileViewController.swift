@@ -89,12 +89,9 @@ class ProfileViewController: UIViewController {
     }
     
     func renderUserDetails(){
-        println("renderUserDetails")
         if(hacker.hasFullProfile()){
-            println("hasFullProfile")
             renderFullProfile()
         }else{
-            println("no hasFullProfile")
             hacker.fetchFullProfile(success: renderFullProfile)
         }
     }
